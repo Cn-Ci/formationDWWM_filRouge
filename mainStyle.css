@@ -1,7 +1,6 @@
 /**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
 body {
     height: 100%; 
-    scroll-behavior: smooth;
 }
 ul {
     list-style-type: none;
@@ -14,9 +13,15 @@ ul {
     background-image: url('img/mainBG.jpg');
     background-size : cover;
     height          : 100vh;
+    object-fit: contain
 }
 #page2 {
-    height: 100vh; 
+    text-align : center;
+    height     : 100vh; 
+    font-family: "Sitka Banner";
+}
+.couleur{
+    color: #1f9a22;   
 }
 
 /** NAVABR   --------------------------------------------------------------*/
@@ -46,7 +51,7 @@ a:hover{
 }
 .alink:hover{
     transition: color 1s;
-    color          : #1f9a22;   
+    color     : #1f9a22;   
 }
 .whiteColor, a {
     color    : white;
@@ -110,8 +115,26 @@ a:hover{
 #EntetePresentation{
     padding-top: 7%; 
     color      : #8f8f8f;
-    text-align : center;
-    font-family: "Sitka Banner";
 }
 
-/**   VERSION  TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.img_150w_150h{
+    max-width: 150px;
+    max-height: 150px;
+}
+
+/** VERSION TALETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 991px) {
+    #navBar{
+        background-color: #1f9a22;
+    }
+    .alink{
+        display: none;
+    }
+    #blocLogo{
+        margin-top: 20%;
+    }
+    #blocOverlay{
+        display: none;
+    }
+}

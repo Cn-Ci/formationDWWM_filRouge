@@ -30,6 +30,7 @@
     <body>
         <div class="container-fluid">
             <?php include 'navbar.php';?>
+            <?php include 'SearchBarForum.php';?>
         </div>
 
         <script 
