@@ -1,0 +1,117 @@
+/**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
+body {
+    height: 100%; 
+    scroll-behavior: smooth;
+}
+ul {
+    list-style-type: none;
+}
+
+.nopadding{
+    padding: 0px;
+}
+#page1 {
+    background-image: url('img/mainBG.jpg');
+    background-size : cover;
+    height          : 100vh;
+}
+#page2 {
+    height: 100vh; 
+}
+
+/** NAVABR   --------------------------------------------------------------*/
+#navBar{
+    position          : fixed;
+    z-index           : 999;
+    text-align        : center;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    opacity           : 0.9;
+}
+#logo{
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+}
+.alink{
+    font-size : 23px;
+    padding   : 35px 20px 35px 20px;
+    transition: color 1s;
+    color     : white;
+    font-family: "Sitka Banner";
+}
+a:hover{
+    text-decoration: none;    
+}
+.alink:hover{
+    transition: color 1s;
+    color          : #1f9a22;   
+}
+.whiteColor, a {
+    color    : white;
+}
+
+/** SLOGAN MILIEU ECRAN --------------------------------------------------*/
+#mdSlogan{
+    font-size  : 150px;
+    font-family: Impact, Charcoal, sans-serif;    
+}
+#sousSlogan{
+    font-size  : 30px;
+    font-family: "Sitka Banner";
+}
+#blocLogo{
+    margin-top: 13%;
+}
+#showDestination{
+    background-color: #c1c1c1;
+    padding         : 15px 50px 15px 50px;
+    border-radius   : 100px;
+    transition      : background-color 1s;                   
+}
+#showDestination:hover{
+    transition      : background-color 1s;
+    background-color:  #1f9a22; 
+}
+#showDBlock{
+    display:inline-block;
+}
+
+/** BOTTOM ---------------------------------------------------------------*/
+#triangle{
+    display     : inline-block;
+    height      : 0;
+    width       : 0;
+    border-top  : 25px solid white;
+    border-right: 25px solid transparent;
+    border-left : 25px solid transparent;
+}
+.footer{
+    text-align: center;
+}
+#blocOverlay{
+    height    : 130px; 
+    transition: box-shadow 500ms;
+    margin-top: 9%;
+}
+#blocOverlay:hover{
+    box-shadow: 0 -100px 115px -100px white inset; 
+    transition: box-shadow 500ms;
+}
+#discoverSite{
+    color: white;
+}
+#test{
+    height: 100%;
+}
+
+/** PAGE 2 ----------------------------------------------------------------*/
+#EntetePresentation{
+    padding-top: 7%; 
+    color      : #8f8f8f;
+    text-align : center;
+    font-family: "Sitka Banner";
+}
+
+/**   VERSION  TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
