@@ -41,18 +41,19 @@
                     
                         <!-- JAVAAAAAAAA -->
                         <script LANGUAGE="JavaScript">
-                            <!--
+                            
                             document.write("<body>");
-                            var tab = new Array("../image/icone-inscription/icone1.jpg","../image/icone-inscription/icone2.jpg","../image/icone-inscription/icone3.jpg", "../image/icone-inscription/icone4.jpg", "../image/icone-inscription/icone5.jpg", "../image/icone-inscription/icone6.jpg");
-                            //remplacez aaa, bbb et ccc par vos images
+                            var tab = new Array("img/icone1.jpg","img/icone2.jpg","img/icone3.jpg", "img/icone4.jpg", "img/icone5.jpg", "img/icone6.jpg");
+                            //le tableau d'images aléatoires
 
                             var n = parseInt( Math.random() * tab.length)
                             while (isNaN(n)) {
                             n = parseInt( Math.random() * tab.length)
                             }
 
-                            document.write("<img src='../image/icone_inscription/' " + tab[n] + "' alt='Image aléatoire'>");
-                            //-->
+                            document.write("<img src='img/' " + tab[n] + "' alt='Image aléatoire'>");
+                            //le répertoire qui bug huhu 
+                            
                         </script> 
 
 
@@ -64,10 +65,10 @@
                     <div class="identifantsCo justify-content-center pt-3 ">
                         <!-- identifiant -->
                         <div class="identifiants justify-content-center row">
-                            <div id="iconeID text-center">
+                            <div id="iconeID col-4 justify-content-right">
                                 <img src="img/id.png">
                             </div>
-                            <div class="formID ">
+                            <div class="formID col-8">
                                 <form action="formdatas.php?action=connexion" method="post">
                                     <input type="text" name="identifiant" id="identifiant" alt="votre nom d'identifiant" placeholder="Identifiant" required>
                             </div>
