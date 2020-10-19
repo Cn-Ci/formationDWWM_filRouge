@@ -4,13 +4,13 @@
 	session_start();
 ?>
 
-<nav class="col-sm 12 row" id="navBar">
+<nav class="col-sm 12 row ombre" id="navBar">
 
 	<div class="col-sm-12 col-lg-2"><img id="logo" src="img/logoMobiliT.png" alt="Logo"></div> 
 
 	<a href="#" class="col-sm-12 col-lg-2 alink">ACCUEIL</a>
 
-	<a href="#" class="col-sm-12 col-lg-2 alink">PRÉSENTATION</li></a>
+	<a href="#" class="col-sm-12 col-lg-2 alink">PRÉSENTATION</a>
 
 	<a href="#" class="col-sm-12 col-lg-2 alink">DESTINATIONS</a>
 	<?php
@@ -22,7 +22,7 @@
 	?>
 
 	<div class="col">
-	
+		
 	</div>
 
 </nav>
