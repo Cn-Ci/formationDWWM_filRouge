@@ -20,7 +20,7 @@
         <link 
             rel="stylesheet" 
             type="text/css" 
-            href="styleOrga.css">
+            href="footerStyle.css">
         <!-- TYPO -->
         <link 
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
@@ -42,7 +42,7 @@
         <hr class="hrsep">
 
             <!-- image footer -->
-                <div id="foot" class="img-fluid w-100">
+                <div id="foot" class="img-fluid">
 
 
     <!-- colonnes -->
@@ -50,7 +50,7 @@
             <div class="row">
 
                 <!-- colonne 1 -->
-                    <div class="col-12 col-lg-4 text-center p-2">
+                    <div class="col-4 col-lg-4 text-center p-2">
                     Navigation
                             <hr class="hrcon">
                             <p></p>
@@ -77,7 +77,7 @@
             
 
                     <!-- colonne 2 -->
-                    <div class="col-12 col-lg-4 text-center p-2 text-black-100">
+                    <div class="col-4 col-lg-4 text-center p-2 text-black-100">
                         Aide
                             <hr class="hrcon">
                                 <p>
@@ -104,7 +104,7 @@
                     </div>
 
                     <!-- colonne 3 -->
-                    <div class="col-12 col-lg-4 text-center p-2 text-black-100">
+                    <div class="col-4 col-lg-4 text-center p-2 text-black-100">
                             CONTACT
                             <hr class="hrcon">
                                     <p class="text-center">mobiliT</p>
