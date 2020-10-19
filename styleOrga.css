@@ -157,7 +157,7 @@ h4 {
     border: 4px solid #fff;
     background: #ec496e;
     position: absolute;
-    top: 50%;
+    top: 12%;
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%)
@@ -342,6 +342,9 @@ h4 {
     }
     .main-timeline .timeline-content {
         margin-top: 115px
+    }
+    .main-timeline .timeline:before {
+        top: 16%;
     }
 }
 
