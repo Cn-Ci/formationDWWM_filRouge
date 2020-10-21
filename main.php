@@ -64,8 +64,8 @@
         </div>
 
         <!----------------------------------------------------------------------PAGE 2------------------------------------------------------------------------>
-        <div id="page2" class="container-fluid">
-            <div class="row" id="EntetePresentation">
+        <div id="page2" class="container-fluid ombre">
+            <div class="row text-center" id="EntetePresentation">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <h1 class="couleur">MOBILI'T QU'EST-CE-QUE C'EST ?</h1>
