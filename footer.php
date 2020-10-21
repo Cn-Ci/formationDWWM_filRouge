@@ -112,10 +112,21 @@
                                     <p class="text-center"><i class="fas fa-phone-square-alt pr-3"></i>0 123 456 789 </p>
                                     <p class="text-center"><i class="fas fa-at pr-3"></i>mobiliT@pro.fr </p>
                    </div>
+                   </div>
+<div class="text center">
+                   <h2> Newsletter </h2>
+<p> Inscrivez-vous et vous receverez nos meilleurs offres</p>
+<p> Newsletter </p>
+<div class="fondfoot">
+<h4>Entrez votre adresse e-mail</h4>
+
+<p>Copyright &copy 2020 XXX.fr™. Tous droits réservés.</p>
+
+</div>
+
             </div>
         </div>
         </div>
-
 
 
     </footer>

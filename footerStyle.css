@@ -12,12 +12,7 @@ footer {
 }
 
 #foot {
-    width: 100%;
-    height: 300px;
-    background-image: url('img/bg-footer.png');
-    padding-top: 1px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('img/bg-foot.jpg');
 }
 
 .contact {
@@ -43,10 +38,7 @@ footer {
 @media (min-width: 1200px) {
     /** Footer   --------------------------------------------------------------*/
     #foot {
-        width: 100%;
-        height: 300px;
-        background-image: url('img/bg-footer.png');
-        padding-top: 1px
+        background-image: url('img/bg-foot.jpg');
     }
     .contact {
         background-color: rgba(0, 0, 0, 0.479);
