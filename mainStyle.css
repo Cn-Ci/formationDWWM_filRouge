@@ -5,10 +5,6 @@ body {
 ul {
     list-style-type: none;
 }
-
-.container-fluid {
-    padding:0px 0px 0px 0px !important;
-}
 .ombre{
     -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
     -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
@@ -21,12 +17,13 @@ ul {
     background-image: url('img/mainBG.jpg');
     background-size : cover;
     height          : 100vh;
-    object-fit: contain;
+    object-fit      : contain;
 }
 #page2 {
-    text-align : center;
-    height     : 100vh; 
-    font-family: "Sitka Banner";
+    height          : 100%; 
+    font-family     : 'Caviar Dreams', sans-serif;
+    background-color: #f8f8f8;
+    z-index         : 995;
 }
 .couleur{
     color: #228b22;   
@@ -34,11 +31,16 @@ ul {
 
 /** NAVABR   --------------------------------------------------------------*/
 #navBar{
-    position          : fixed;
     z-index           : 999;
     text-align        : center;
+    position          : fixed;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
     opacity           : 0.9;
-    margin            : 0px;
+    height            : 100px;
+    background-color  : white;
+
 }
 #logo{
     max-width: 100px;
@@ -46,21 +48,30 @@ ul {
     margin-top: 10px;
 }
 .alink{
-    font-size : 23px;
-    padding   : 35px 20px 35px 20px;
-    transition: color 1s;
-    color     : white;
-    font-family: "Sitka Banner";
+    font-size  : 23px;
+    padding    : 35px 20px 35px 20px;
+    transition : color 1s;
+    color      :#228b22;
+    font-family: 'Caviar Dreams', sans-serif;
+
 }
 a:hover{
     text-decoration: none;    
 }
 .alink:hover{
     transition: color 1s;
-    color     : #228b22;   
+    color     : #114811;   
 }
 .whiteColor, a {
     color    : white;
+}
+#BoutonBurgermenuTab{
+    width     : 30px;
+    height    : 30px;
+    margin-top: 30px;        
+    position  : absolute;
+    z-index   : 999;
+    cursor    : pointer;
 }
 
 /** SLOGAN MILIEU ECRAN --------------------------------------------------*/
@@ -70,7 +81,7 @@ a:hover{
 }
 #sousSlogan{
     font-size  : 30px;
-    font-family: "Sitka Banner";
+    font-family: 'Caviar Dreams', sans-serif;
 }
 #blocLogo{
     margin-top: 13%;
@@ -116,7 +127,7 @@ a:hover{
 
 /** PAGE 2 ----------------------------------------------------------------*/
 #EntetePresentation{
-    padding-top: 7%; 
+    padding-top: 6%; 
     color      : #8f8f8f;
 }
 
@@ -124,6 +135,99 @@ a:hover{
     max-width: 150px;
     max-height: 150px;
 }
+
+/** PAGE 3 ----------------------------------------------------------------*/
+.imagePersonne{
+    border       : black solid 1px;
+    border-radius: 10%;
+}
+.descriptionPersonne{ 
+    text-align: justify;
+}
+.personnel{
+    margin-top: 10%;
+}
+​
+/*! SOCIAL  BLOCK*/
+#facebook{
+    background-color: blue;
+    color           : white;
+    border          : 1px solid white;
+    height          : 50px;
+    width           : 50px;
+    border-radius   : 50%;
+}
+ul.social-network {
+	padding-top    : 20px;
+	padding-bottom : 20px;
+	border-radius  : 50px;
+	list-style     : none;
+    margin-left    : 0 !important;
+    padding-left   : 0px !important;
+}
+ul.social-network li {
+	display: inline;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+.social-network a.icoRss   :hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+.social-circle li a {
+	display              : inline-block;
+	position             : relative;
+	margin               : 0 auto 0 auto;
+	-moz-border-radius   : 50%;
+	-webkit-border-radius: 50%;
+	border-radius        : 50%;
+	text-align           : center;
+	width                : 50px;
+	height               : 50px;
+	font-size            : 20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform    : rotate(360deg);
+	-webkit-transform : rotate(360deg);
+	-ms--transform    : rotate(360deg);
+	transform         : rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition   : all 0.2s;
+	-o-transition     : all 0.2s;
+	-ms-transition    : all 0.2s;
+	transition        : all 0.2s;
+}
+.social-circle i {
+	color             : black;
+	-webkit-transition: all 0.8s;
+	-moz-transition   : all 0.8s;
+	-o-transition     : all 0.8s;
+	-ms-transition    : all 0.8s;
+	transition        : all 0.8s;
+}
+
+
 /** FORUM -----------------------------------------------------------------*/
 #affichagePost{
     padding: 1%;
@@ -148,21 +252,96 @@ a:hover{
 }
 #sticky-footer {
     flex-shrink: none;
-  }
+}
+@media screen and (max-width: 1223px){
+    #page1, #page2, #page3 {
+        height: 100%;
+    }
+}
 
 /** VERSION TALETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-@media screen and (max-width: 991px) {
-    #navBar{
-        background-color: #228b22;
-    }
-    .alink{
-        display: none;
+@media screen and (max-width: 991px){
+    #page1, #page2, #page3{
+        height: 100%;
     }
     #blocLogo{
-        margin-top: 20%;
+        margin-top   : 20%; 
+        margin-bottom: 5%;           
     }
     #blocOverlay{
         display: none;
+    }
+    /*! NAVABR */  
+    #navBar{
+        background-color  : white;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+        box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    }
+    #BoutonBurgermenuTab{
+        width     : 30px;
+        height    : 30px;
+        margin-top: 30px;        
+        position  : absolute;
+        z-index   : 999;
+        cursor    : pointer;
+    }
+    #BoutonBurgermenuTab .barre1{
+        width           : 100%;
+        height          : 3px;
+        background-color: #228b22;
+        z-index         : 999;
+        margin-top      : 5px;
+    }
+    #BoutonBurgermenuTab .barre2{
+        width           : 100%;
+        height          : 3px;
+        background-color: #228b22; ;
+        z-index         : 999;
+        margin-top      : 5px;
+    }
+    #BoutonBurgermenuTab .barre1.isClick{
+        transform : rotate(45deg);
+        transition: transform 1s;
+        position  : fixed;
+        width     : 30px;
+    }  
+    #BoutonBurgermenuTab .barre2.isClick{
+        transform : rotate(-45deg);
+        transition: transform 1s;
+        position  : fixed;
+        width     : 30px;
+    } 
+    .menuTab{
+        transition       : transform .2s ease-in-out;
+        transform        : translate(0%,-150%);
+        -webkit-transform: translate(0%,-150%);
+        background-color : white;
+        box-sizing       : content-box;
+    }
+    .menuTab.isOpen{
+        width             : auto;
+        transform         : translate(0%);
+        -webkit-transform : translate(0%);
+        background-color  : white;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+        box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    }
+}
+
+/** VERSION PORTABLE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:575px) {
+    /*! NAVABR */
+    #BoutonBurgermenuTab{
+        position: absolute;
+        z-index : 999;
+        width   : 5%;
+        height  : 10px;
+        cursor  : pointer;
+    } 
+    #mdSlogan{
+        font-size  : 120px;   
     }
 }

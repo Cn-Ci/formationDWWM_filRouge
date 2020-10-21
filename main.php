@@ -25,6 +25,15 @@
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
             rel="stylesheet"
             type="text/css"/>
+        <link 
+            href="https://fonts.cdnfonts.com/css/caviar-dreams" 
+            rel="stylesheet">
+        <link 
+            href="https://fonts.googleapis.com/css?family=Cinzel" 
+            rel="stylesheet">
+        <link 
+            href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" 
+            rel="stylesheet">
     </head>
 
     <body>
@@ -38,7 +47,7 @@
                         <p class="whiteColor" id="mdSlogan">MOBILI'T</p>
                     </div>
                     <div>
-                        <p class="whiteColor" id="sousSlogan">Idées & Conseils voyage pour personnes <br>en situation de handicap</p>
+                        <p class="whiteColor" id="sousSlogan">Idées & Conseils voyage pour personnes en situation de handicap</p>
                     </div>
                     <a href="#">
                         <div id="showDBlock">
@@ -47,7 +56,6 @@
                     </a>
                 </div>
             </div>
-
             <a id="bottom" href="#" onclick="goToPage2()">
                 <div id="blocOverlay" class="row">
                     <div id="test" class="col-sm-12 footer whiteColor"><p id="discoverSite">DÉCOUVRIR NOTRE SITE</p><div id="triangle"></div></div>
@@ -59,14 +67,13 @@
         <div id="page2" class="container-fluid">
             <div class="row" id="EntetePresentation">
                 <div class="col-sm-2"></div>
-                <div class="col-8">
+                <div class="col-sm-8">
                     <h1 class="couleur">MOBILI'T QU'EST-CE-QUE C'EST ?</h1>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus velit non elit bibendum, at suscipit arcu dignissim. Pellentesque viverra neque quis.</h5>
                     <h5>Cras tempus velit non elit bibendum, at suscipit arcu dignissim. Pellentesque viverra.</h5>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
-
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-2 mt-5">
@@ -87,12 +94,75 @@
                     <p>Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
                 </div>
                 <div class="col-lg-2"></div>    
-            </div>
+            </div> 
         </div>
 
         <!----------------------------------------------------------------------PAGE 3------------------------------------------------------------------------>
         <div id="page3" class="container-fluid">
-           
+            <div class="row text-center mt-2"  style="height: 100vh;">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 pl-5 pr-5 personnel">
+                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel2"><br>
+                    <h3>
+                        <strong>Nom Prénom<br>
+                        Personnel 2</strong>
+                    </h3>
+                    <p class="couleur mt-3 descriptionPersonne">
+                        Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                    </p><br>
+                    <ul class="social-network social-circle">
+                        <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+			        </ul>
+                </div>
+                <div class="col-lg-2 pl-5 pr-5 personnel">
+                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel2"><br>
+                    <h3>
+                        <strong>Nom Prénom<br>
+                        Personnel 2</strong>
+                    </h3>
+                    <p class="couleur mt-3 descriptionPersonne">
+                        Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                    </p><br>
+                    <ul class="social-network social-circle">
+                        <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+			        </ul>
+                </div>
+                <div class="col-lg-2 pl-5 pr-5 personnel">
+                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel3"><br>
+                    <h3>
+                        <strong>Nom Prénom<br>
+                        Personnel 3</strong>
+                    </h3>
+                    <p class="couleur mt-3 descriptionPersonne">
+                        Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                    </p><br>
+                    <ul class="social-network social-circle">
+                        <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+			        </ul>
+                </div>
+                <div class="col-lg-2 pl-5 pr-5 personnel">
+                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel4"><br>
+                    <h3>
+                        <strong>Nom Prénom<br>
+                        Personnel 4</strong>
+                    </h3>
+                    <p class="couleur mt-3 descriptionPersonne">
+                        Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                    </p><br>
+                    <ul class="social-network social-circle">
+                        <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+			        </ul>
+                </div>
+                <div class="col-lg-2"></div>    
+            </div>
         </div>
 
         <script 
