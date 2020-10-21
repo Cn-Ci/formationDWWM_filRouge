@@ -20,7 +20,7 @@ ul {
     object-fit      : contain;
 }
 #page2 {
-    height          : 100%; 
+    height          : 100vh; 
     font-family     : 'Caviar Dreams', sans-serif;
     background-color: #f8f8f8;
     z-index         : 995;

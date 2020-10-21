@@ -56,7 +56,7 @@
                     </a>
                 </div>
             </div>
-            <a id="bottom" href="#" onclick="goToPage2()">
+            <a id="bottom" href="#page2" onclick="goToPage2()">
                 <div id="blocOverlay" class="row">
                     <div id="test" class="col-sm-12 footer whiteColor"><p id="discoverSite">DÉCOUVRIR NOTRE SITE</p><div id="triangle"></div></div>
                 </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-sm-2"></div>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-2 mt-5">
                     <img class="img_150w_150h" src="img/valise.png" alt=""><br>
@@ -102,7 +102,7 @@
             <div class="row text-center mt-2"  style="height: 100vh;">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-2 pl-5 pr-5 personnel">
-                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel2"><br>
+                    <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel2"><br>
                     <h3>
                         <strong>Nom Prénom<br>
                         Personnel 2</strong>
@@ -117,7 +117,7 @@
 			        </ul>
                 </div>
                 <div class="col-lg-2 pl-5 pr-5 personnel">
-                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel2"><br>
+                    <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel2"><br>
                     <h3>
                         <strong>Nom Prénom<br>
                         Personnel 2</strong>
@@ -132,7 +132,7 @@
 			        </ul>
                 </div>
                 <div class="col-lg-2 pl-5 pr-5 personnel">
-                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel3"><br>
+                    <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel3"><br>
                     <h3>
                         <strong>Nom Prénom<br>
                         Personnel 3</strong>
@@ -147,7 +147,7 @@
 			        </ul>
                 </div>
                 <div class="col-lg-2 pl-5 pr-5 personnel">
-                    <img class="img_150w_150h imagePersonnel" src="img/img_Personnel.jpg" alt="Pesonnel4"><br>
+                    <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel4"><br>
                     <h3>
                         <strong>Nom Prénom<br>
                         Personnel 4</strong>
