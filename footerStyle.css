@@ -31,9 +31,9 @@ footer {
 
 .news {
     text-align: center !important;
-    background-color: rgba(0, 0, 0, 0.479);
-    margin-right: 200px;
-    margin-left: 200px;
+    background-color: rgba(0, 0, 0, 0.76);
+    margin-right: 10px;
+    margin-left: 10px;
     margin-top: 10px;
     padding-bottom: 5px;
     border-radius: 5px;
@@ -42,10 +42,10 @@ footer {
 
 .fondfoot {
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.678);
+    background-color: rgba(255, 255, 255, 0.418);
     margin-bottom: 50px;
-    margin-right: 350px;
-    margin-left: 350px;
+    margin-right: 10px;
+    margin-left: 10px;
     margin-top: 30px;
     border-radius: 5px;
     padding: 10px;
@@ -60,12 +60,41 @@ footer {
         background-size: cover;
     }
     .contact {
-        background-color: rgba(0, 0, 0, 0.479);
+        background-color: rgba(0, 0, 0, 0.76);
         margin-right: 250px;
         margin-left: 250px;
         margin-bottom: 100px;
         margin-top: 25px;
         border-radius: 10px;
         color: white !important;
+    }
+    .news a {
+        color: white;
+        text-decoration: none;
+    }
+    .news a:hover {
+        color: white;
+        text-decoration: none;
+    }
+    .news {
+        text-align: center !important;
+        background-color: rgba(0, 0, 0, 0.76);
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        color: white !important;
+    }
+    .fondfoot {
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.418);
+        margin-bottom: 50px;
+        margin-right: 350px;
+        margin-left: 350px;
+        margin-top: 30px;
+        border-radius: 5px;
+        padding: 10px;
+        color: black !important;
     }
 }

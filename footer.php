@@ -49,13 +49,17 @@
                     <!-- Newsletters -->             
                     <div class="news text-center">
                             <h2> Newsletter </h2>
-                                <p> 
+                                <h4> 
                                     Inscrivez-vous et vous receverez nos meilleurs offres
-                                </p>
+                                </h4>
 
 
                                 <div class="fondfoot">
-                                    <h4>Entrez votre adresse e-mail</h4>   
+                                    <h4>
+                                            <input type="email" id="email" name="email" class="text-center rounded m-2" placeholder="Votre adresse e-mail">
+                                            </br>
+                                            <input type="submit" class="btn btn-success" value="Envoyer"/>
+                                    </h4>   
                                 </div>
 
 
@@ -124,7 +128,7 @@
                                                         <p class="text-center">mobiliT</p>
                                                         <p class="text-center"><i class="fas fa-map-marker-alt pr-3"></i>79 Rue de Marseille, 75010 Paris</p>
                                                         <p class="text-center"><i class="fas fa-phone-square-alt pr-3"></i>0 123 456 789 </p>
-                                                        <p class="text-center"><i class="fas fa-at pr-3"></i>mobiliT@pro.fr </p>
+                                                        <p class="text-center"><i class="fas fa-at pr-3"></i><a href="mailto:#">mobiliT@pro.fr</a></p>
                                         </div>
                                 </div>
                     </div>

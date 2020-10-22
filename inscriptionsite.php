@@ -14,6 +14,7 @@
     <link href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" rel="stylesheet" type="text/css" />
     <!-- CSS -->
     <link rel="stylesheet" href="inscription.css">
+    
 </head>
 
 <body>
@@ -50,9 +51,6 @@
                             while (isNaN(n)) {
                             n = parseInt( Math.random() * tab.length)
                             }
-
-                            document.write("<img src='img/' " + tab[n] + "' alt='Image aléatoire'>");
-                            //le répertoire qui bug huhu 
                             
                         </script> 
 
@@ -65,10 +63,10 @@
                     <div class="identifantsCo justify-content-center pt-3 ">
                         <!-- identifiant -->
                         <div class="identifiants justify-content-center row">
-                            <div id="iconeID col-4 justify-content-right">
+                            <div id="iconeID col-7 justify-content-right">
                                 <img src="img/id.png">
                             </div>
-                            <div class="formID col-8">
+                            <div class="formID col-5">
                                 <form action="formdatas.php?action=connexion" method="post">
                                     <input type="text" name="identifiant" id="identifiant" alt="votre nom d'identifiant" placeholder="Identifiant" required>
                             </div>

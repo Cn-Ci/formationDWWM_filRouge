@@ -5,6 +5,10 @@ hr.style1 {
     width: 240px;
 }
 
-#mdp{
+#mdp {
     justify-content: center;
+}
+
+#iconeID img {
+    padding-left: 50px;
 }
