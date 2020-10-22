@@ -207,9 +207,9 @@
 
 
 <!-- footer include -->
-        <div class="container-fluid">
+        
             <?php include 'footer.php';?>
-        </div>
+        
 
         </footer>
 
