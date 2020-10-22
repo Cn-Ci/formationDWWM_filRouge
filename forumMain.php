@@ -25,7 +25,8 @@
                 overflow-x:hidden;
             }
             #navBar{
-                position:relative;
+                position: relative !important;
+                margin : 0px;
             }
         </style>
         <!-- TYPO -->

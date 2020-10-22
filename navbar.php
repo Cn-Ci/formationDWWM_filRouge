@@ -27,4 +27,119 @@
 	</nav>
 </div>
 
+<style>
+	#navBar{
+		z-index           : 999;
+		text-align        : center;
+		position          : fixed;
+		-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+		-moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+		box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+		opacity           : 0.9;
+		height            : 100px;
+		background-color  : white;
+		margin-right: 0px;
+	}
+	#logo{
+		max-width: 100px;
+		max-height: 100px;
+		margin-top: 10px;
+	}
+	.alink{
+		font-size  : 23px;
+		padding    : 35px 20px 35px 20px;
+		transition : color 1s;
+		color      :#228b22;
+		font-family: 'Caviar Dreams', sans-serif;
+
+	}
+	a:hover{
+		text-decoration: none;    
+	}
+	.alink:hover{
+		transition: color 1s;
+		color     : #114811;   
+	}
+	.whiteColor, a {
+		color    : white;
+	}
+	#BoutonBurgermenuTab{
+		width     : 30px;
+		height    : 30px;
+		margin-top: 30px;        
+		position  : absolute;
+		z-index   : 999;
+		cursor    : pointer;
+	}
+
+	@media screen and (max-width: 991px){
+		#navBar{
+			background-color  : white;
+			-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+			-moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+			box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+		}
+		#BoutonBurgermenuTab{
+			width     : 30px;
+			height    : 30px;
+			margin-top: 30px;        
+			position  : absolute;
+			z-index   : 999;
+			cursor    : pointer;
+		}
+		#BoutonBurgermenuTab .barre1{
+			width           : 100%;
+			height          : 3px;
+			background-color: #228b22;
+			z-index         : 999;
+			margin-top      : 5px;
+		}
+		#BoutonBurgermenuTab .barre2{
+			width           : 100%;
+			height          : 3px;
+			background-color: #228b22; ;
+			z-index         : 999;
+			margin-top      : 5px;
+		}
+		#BoutonBurgermenuTab .barre1.isClick{
+			transform : rotate(45deg);
+			transition: transform 1s;
+			position  : fixed;
+			width     : 30px;
+		}  
+		#BoutonBurgermenuTab .barre2.isClick{
+			transform : rotate(-45deg);
+			transition: transform 1s;
+			position  : fixed;
+			width     : 30px;
+		} 
+		.menuTab{
+			transition       : transform .2s ease-in-out;
+			transform        : translate(0%,-150%);
+			-webkit-transform: translate(0%,-150%);
+			background-color : white;
+			box-sizing       : content-box;
+		}
+		.menuTab.isOpen{
+			width             : auto;
+			transform         : translate(0%);
+			-webkit-transform : translate(0%);
+			background-color  : white;
+			-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+			-moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+			box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+		}
+	}
+
+	@media screen and (max-width:575px) {
+		/*! NAVABR */
+		#BoutonBurgermenuTab{
+			position: absolute;
+			z-index : 999;
+			width   : 5%;
+			height  : 10px;
+			cursor  : pointer;
+		} 
+	}	
+</style>
 
