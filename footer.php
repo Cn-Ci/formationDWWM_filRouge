@@ -46,24 +46,21 @@
 
 
 
-<!-- Newsletters -->             
-<div class="news text-center">
-                                            <h2> Newsletter </h2>
-                                                <p> 
-                                                    Inscrivez-vous et vous receverez nos meilleurs offres
-                                                </p>
+                    <!-- Newsletters -->             
+                    <div class="news text-center">
+                            <h2> Newsletter </h2>
+                                <p> 
+                                    Inscrivez-vous et vous receverez nos meilleurs offres
+                                </p>
 
 
-                                                    <div class="fondfoot">
-                                                        <h4>Entrez votre adresse e-mail</h4>   
-                                                    </div>
-                                                            
-                                                    
-                                        </div>
+                                <div class="fondfoot">
+                                    <h4>Entrez votre adresse e-mail</h4>   
+                                </div>
 
 
                         <!-- colonnes -->
-                            <div class="contact" >
+
                                 <div class="row">
 
                                     <!-- colonne 1 -->
@@ -130,11 +127,7 @@
                                                         <p class="text-center"><i class="fas fa-at pr-3"></i>mobiliT@pro.fr </p>
                                         </div>
                                 </div>
-                            
-                            </div>
-                                                        
-                                        
-                            
+                    </div>
                 </div>
 
 

@@ -19,22 +19,12 @@ footer {
     padding: 10px;
 }
 
-.contact {
-    background-color: rgba(0, 0, 0, 0.479);
-    margin-bottom: 10px;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 25px;
-    border-radius: 10px;
-    color: white !important;
-}
-
-.contact a {
+.news a {
     color: white;
     text-decoration: none;
 }
 
-.contact a:hover {
+.news a:hover {
     color: white;
     text-decoration: none;
 }
@@ -54,8 +44,8 @@ footer {
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.678);
     margin-bottom: 50px;
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 350px;
+    margin-left: 350px;
     margin-top: 30px;
     border-radius: 5px;
     padding: 10px;
