@@ -1,31 +1,38 @@
 /**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 body {
     height: 100%;
     scroll-behavior: smooth;
 }
+
 ul {
     list-style-type: none;
 }
+
 .nopadding {
     padding-top: 0px;
 }
+
 .couleur {
     color: #228B22;
 }
+
 #page1 {
     background-image: url('img/mainBG.jpg');
     background-size: cover;
     height: 100vh;
 }
 
+
 /* NAVABR  --------------------------------------------------------------*/
 
-.principale{
-    padding-top:200px;
+.principale {
+    padding-top: 200px;
 }
 
 
 /* deploiement du texte */
+
 #fermeture {
     display: none;
 }

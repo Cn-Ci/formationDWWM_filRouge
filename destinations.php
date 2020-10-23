@@ -51,14 +51,13 @@
             <?php include 'navbar.php';?>
         </div>
 
-        <div class="principale mt-20">
+        <div class="principale">
             <!-- Image de la France -->
-            <div id="les4images" class="image text-center row col-10 offset-1">
-                <div class=" ">
-                    <div class="col-8 offset-2 row "><img src="img/carteO.png" class="img-fluid col-6  "><img src="img/carteE.png"class="img-fluid col-6 "></div>
-                    <div class="col-8 offset-2 row"><img src="img/carteSO.png" class="img-fluid col-6"><img src="img/carteSE.png" class="img-fluid col-6"></div>
-                        
-                </div>
+            <div id="les4img" class="col-12 ">
+                <center>
+                    <div class="img-fluid col-6 row "><img src="img/carteO.png" class="img-fluid col-6 p-0"><img src="img/carteE.png"class="img-fluid col-6 p-0"></div>
+                    <div class="img-fluid col-6 row"><img src="img/carteSO.png" class="img-fluid col-6 p-0"><img src="img/carteSE.png" class="img-fluid col-6 p-0"></div>
+                </center>
             </div>        
 
             <!-- OUEST -->
@@ -77,15 +76,17 @@
                                 </p>
                             </div>
                         </div>
-                        <a href="#fermeture">En lire plus</a>
+                        <div class="plus text-right">
+                            <a href="#fermeture">En lire plus</a>
+                        </div>
                     </div>
 
                     <!-- lien forum + lien exploration -->
-                    <div class="forumLien row align-items-center ">
-                        <div class="forum col-9">
-                        
+                    <div class="forumLien row col-12">
+                        <div class="forum text-center col-10">
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton d-flex justify-content-center col-3"> 
+                        <div class="bouton tect-center col-2"> 
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
