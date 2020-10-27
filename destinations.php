@@ -61,13 +61,14 @@
             </div>        
 
             <!-- OUEST -->
-            <div id="ouest" class="align-items-center m-5 d-flex justify-content-center">
-                <div class="ouest1 row d-flex justify-content-center">
+            <div id="ouest" class="align-items-center m-5 ">
+                <!-- Bretagne -->
+                <div class="ouest1 row d-flex justify-content-center m-2 mb-4">
                     <!-- image et texte -->
                     <div class="">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-s-6 col-4"><img src="img/bretagne.jpg" class="img-fluid w-100" alt="La Bretagne"></div>
-                            <div class="col-s-xs-12 col-8 text-justify">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-4 mb-2"><img src="img/bretagne.jpg" class="img-fluid w-100" alt="La Bretagne"></div>
+                            <div class="col-sm-12 col-xs-12 col-md-12 align-item-rigth text-justify">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed pharetra arcu. Proin vitae gravida erat. Aliquam sit amet odio imperdiet augue feugiat fermentum. Nullam ultricies nibh sagittis efficitur pretium. Phasellus venenatis tellus nisi, ut ultricies erat aliquam vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut et enim aliquet, malesuada nunc vel, lacinia nisl. Cras pretium accumsan sem, ut cursus massa ultricies quis. Nullam eget fringilla magna. Pellentesque sed maximus nisl, vel tincidunt felis. Sed blandit aliquam eros in molestie.
                                 In aliquet condimentum congue. Praesent ut nibh lectus. Vestibulum vestibulum imperdiet vehicula. Pellentesque et aliquam augue. Proin quis enim eros. Donec interdum tortor dictum, viverra diam ac, euismod leo. Donec suscipit neque non velit blandit, ac ultricies massa convallis. Morbi id sem vitae justo feugiat facilisis. Morbi finibus tempus sapien nec consequat. Nam posuere nulla sed purus fringilla eleifend. Quisque porta libero at ipsum ultricies imperdiet. Fusce eget mauris volutpat, fermentum orci ut, rhoncus magna. Aliquam elit elit, finibus sit amet vulputate in, porta nec orci. Aliquam semper orci id sem mattis, ac ornare nibh euismod. Ut lacinia vestibulum metus, vitae efficitur purus mollis ac.</p>
                                 <p id="fermeture">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed pharetra arcu. Proin vitae gravida erat. Aliquam sit amet odio imperdiet augue feugiat fermentum. Nullam ultricies nibh sagittis efficitur pretium. Phasellus venenatis tellus nisi, ut ultricies erat aliquam vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut et enim aliquet, malesuada nunc vel, lacinia nisl. Cras pretium accumsan sem, ut cursus massa ultricies quis. Nullam eget fringilla magna. Pellentesque sed maximus nisl, vel tincidunt felis. Sed blandit aliquam eros in molestie.
@@ -93,7 +94,75 @@
                     </div>
 
                 </div>
+                <!-- Nantes -->
+                <div class="ouest1 row d-flex justify-content-center m-2 mb-4">
+                    <!-- image et texte -->
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-4 mb-2"><img src="img/Nantes.jpg" class="img-fluid w-100" alt="la ville de Nantes"></div>
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-7 align-item-rigth text-justify">
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed pharetra arcu. Proin vitae gravida erat. Aliquam sit amet odio imperdiet augue feugiat fermentum. Nullam ultricies nibh sagittis efficitur pretium. Phasellus venenatis tellus nisi, ut ultricies erat aliquam vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut et enim aliquet, malesuada nunc vel, lacinia nisl. Cras pretium accumsan sem, ut cursus massa ultricies quis. Nullam eget fringilla magna. Pellentesque sed maximus nisl, vel tincidunt felis. Sed blandit aliquam eros in molestie.
+                                In aliquet condimentum congue. Praesent ut nibh lectus. Vestibulum vestibulum imperdiet vehicula. Pellentesque et aliquam augue. Proin quis enim eros. Donec interdum tortor dictum, viverra diam ac, euismod leo. Donec suscipit neque non velit blandit, ac ultricies massa convallis. Morbi id sem vitae justo feugiat facilisis. Morbi finibus tempus sapien nec consequat. Nam posuere nulla sed purus fringilla eleifend. Quisque porta libero at ipsum ultricies imperdiet. Fusce eget mauris volutpat, fermentum orci ut, rhoncus magna. Aliquam elit elit, finibus sit amet vulputate in, porta nec orci. Aliquam semper orci id sem mattis, ac ornare nibh euismod. Ut lacinia vestibulum metus, vitae efficitur purus mollis ac.
+                                </p>
+                                <p id="fermeture2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed pharetra arcu. Proin vitae gravida erat. Aliquam sit amet odio imperdiet augue feugiat fermentum. Nullam ultricies nibh sagittis efficitur pretium. Phasellus venenatis tellus nisi, ut ultricies erat aliquam vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut et enim aliquet, malesuada nunc vel, lacinia nisl. Cras pretium accumsan sem, ut cursus massa ultricies quis. Nullam eget fringilla magna. Pellentesque sed maximus nisl, vel tincidunt felis. Sed blandit aliquam eros in molestie.
+                                In aliquet condimentum congue. Praesent ut nibh lectus. Vestibulum vestibulum imperdiet vehicula. Pellentesque et aliquam augue. Proin quis enim eros. Donec interdum tortor dictum, viverra diam ac, euismod leo. Donec suscipit neque non velit blandit, ac ultricies massa convallis. Morbi id sem vitae justo feugiat facilisis. Morbi finibus tempus sapien nec consequat. Nam posuere nulla sed purus fringilla eleifend. Quisque porta libero at ipsum ultricies imperdiet. Fusce eget mauris volutpat, fermentum orci ut, rhoncus magna. Aliquam elit elit, finibus sit amet vulputate in, porta nec orci. Aliquam semper orci id sem mattis, ac ornare nibh euismod. Ut lacinia vestibulum metus, vitae efficitur purus mollis ac.
+                                <a href="#2">Fermer</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="plus text-right">
+                            <a href="#fermeture2">En lire plus</a>
+                        </div>
+                    </div>
 
+                    <!-- lien forum + lien exploration -->
+                    <div class="forumLien row col-12">
+                        <div class="forum text-center col-10">
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                        </div>
+                        <div class="bouton tect-center col-2"> 
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mont Saint Michel -->
+                <div class="ouest1 row d-flex justify-content-center m-2 mb-4">
+                    <!-- image et texte -->
+                    <div class="">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-4 mb-2"><img src="img/Mtstmich.jpg" class="img-fluid w-100" alt="la ville de Nantes"></div>
+                            <div class="col-sm-12 col-xs-12 col-md-12 align-item-rigth text-justify">
+                                <p style="text-indent: 30px">La ou plutot les Normandies présentent une très large gamme de paysages; des côtes aux terres vallonnées, mais MobiliT a fait le choix de mettre en avant l'un de ses joyeux historiques et architecturaux : le Mont Saint Michel.
+                                Vieux de plus de dix siècles, l'édifice accueille chaque année des millions de visiteurs et est depuis maintenant une dizaine d'années accessible à tous !</p>
+                                </br> <p style="text-indent: 30px" class="font-weight-bold color-228b22" > Du parking à la nef de son abbaye, en passant par sa baie, le village a développé des parcours "pour tous" aussi bien handicap moteur que visuel ou auditif. Vous ne manquerez plus rien de la visite. </p>
+                                </br><p id="fermeture3" style="text-indent: 15px">L'abbaye du Mont Saint Michel ainsi que la baie qui entoure le village sont tous deux classés au patrimoine monidaux de l'UNESCO. La baie est réputée pour ses marées exceptionnelles (les plus grandes d'Europe), qui remontent selon la légende, a la vitesse d'un cheval au galop.
+                                </p><p style="text-indent: 30px">Le village est depuis des siècles le théâtres de pélerinages et donc de venue massive de gens. On y retrouve donc de nombreuses auberges, attestant de l'attractivité de l'abbaye ainsi que de nombreuses ruelles moyennageuses, transformant le rocher en labyrinthe pour des touristes non avertis.
+                                </p><p style="text-indent: 30px">La visite du Mont est aussi l'occasion unique de revenir sur le travail des très nombreux artistes venus affronter l'exercice des couleurs, lors des somptueux levers ou couchers de soleil.
+                                <a href="##">Fermer</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="plus text-right">
+                            <a href="##fermeture3">En lire plus</a>
+                        </div>
+                    </div>
+
+                    <!-- lien forum + lien exploration -->
+                    <div class="forumLien row col-12">
+                        <div class="forum text-center col-10">
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                        </div>
+                        <div class="bouton tect-center col-2"> 
+                            <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                        </div>
+
+                    </div>
+
+                </div>
                 <div>
     
             </div>
