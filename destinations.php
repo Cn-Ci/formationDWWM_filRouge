@@ -135,19 +135,24 @@
                     <div class="">
                         <div class="row">
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-4 mb-2"><img src="img/Mtstmich.jpg" class="img-fluid w-100" alt="la ville de Nantes"></div>
-                            <div class="col-sm-12 col-xs-12 col-md-12 align-item-rigth text-justify">
+                            <div class="col-sm-12 col-xs-12 col-md-12  col-lg-7 align-item-rigth text-justify">
                                 <p style="text-indent: 30px">La ou plutot les Normandies présentent une très large gamme de paysages; des côtes aux terres vallonnées, mais MobiliT a fait le choix de mettre en avant l'un de ses joyeux historiques et architecturaux : le Mont Saint Michel.
                                 Vieux de plus de dix siècles, l'édifice accueille chaque année des millions de visiteurs et est depuis maintenant une dizaine d'années accessible à tous !</p>
                                 </br> <p style="text-indent: 30px" class="font-weight-bold color-228b22" > Du parking à la nef de son abbaye, en passant par sa baie, le village a développé des parcours "pour tous" aussi bien handicap moteur que visuel ou auditif. Vous ne manquerez plus rien de la visite. </p>
-                                </br><p id="fermeture3" style="text-indent: 15px">L'abbaye du Mont Saint Michel ainsi que la baie qui entoure le village sont tous deux classés au patrimoine monidaux de l'UNESCO. La baie est réputée pour ses marées exceptionnelles (les plus grandes d'Europe), qui remontent selon la légende, a la vitesse d'un cheval au galop.
-                                </p><p style="text-indent: 30px">Le village est depuis des siècles le théâtres de pélerinages et donc de venue massive de gens. On y retrouve donc de nombreuses auberges, attestant de l'attractivité de l'abbaye ainsi que de nombreuses ruelles moyennageuses, transformant le rocher en labyrinthe pour des touristes non avertis.
-                                </p><p style="text-indent: 30px">La visite du Mont est aussi l'occasion unique de revenir sur le travail des très nombreux artistes venus affronter l'exercice des couleurs, lors des somptueux levers ou couchers de soleil.
-                                <a href="##">Fermer</a>
-                                </p>
+                                <!-- en lire plus -->
+                                <div class="collapse multi-collapse" id="fermeture3">
+                                    <div>
+
+                                        <p id="fermeture3" style="text-indent: 15px">L'abbaye du Mont Saint Michel ainsi que la baie qui entoure le village sont tous deux classés au patrimoine monidaux de l'UNESCO. La baie est réputée pour ses marées exceptionnelles (les plus grandes d'Europe), qui remontent selon la légende, a la vitesse d'un cheval au galop.</p>
+                                        <p id="fermeture3" style="text-indent: 30px">Le village est depuis des siècles le théâtres de pélerinages et donc de venue massive de gens. On y retrouve donc de nombreuses auberges, attestant de l'attractivité de l'abbaye ainsi que de nombreuses ruelles moyennageuses, transformant le rocher en labyrinthe pour des touristes non avertis.</p>
+                                        <p id="fermeture3" style="text-indent: 30px">La visite du Mont est aussi l'occasion unique de revenir sur le travail des très nombreux artistes venus affronter l'exercice des couleurs, lors des somptueux levers ou couchers de soleil.</p>
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="plus text-right">
-                            <a href="##fermeture3">En lire plus</a>
+                            <a  class="text-success" data-toggle="collapse" href="#fermeture3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">En lire plus</a>
                         </div>
                     </div>
 
@@ -157,7 +162,7 @@
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton tect-center col-2"> 
-                            <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
