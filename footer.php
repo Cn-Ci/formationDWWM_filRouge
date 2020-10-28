@@ -50,13 +50,15 @@
                     <div class="news text-center">
                             <h2> Newsletter </h2>
                                 <h4> 
-                                    Inscrivez-vous et vous receverez nos meilleurs offres
+                                    Inscrivez-vous 
+                                    </br>
+                                    pour recevez nos meilleurs offres !
                                 </h4>
 
 
                                 <div class="fondfoot">
                                     <h4>
-                                            <input type="email" id="email" name="email" class="text-center rounded m-2" placeholder="Votre adresse e-mail">
+                                            <input type="email" id="email" name="email" class="text-center rounded m-4" placeholder="Votre adresse e-mail">
                                             </br>
                                             <input type="submit" class="btn btn-success" value="Envoyer"/>
                                     </h4>   
@@ -68,7 +70,7 @@
                                 <div class="row">
 
                                     <!-- colonne 1 -->
-                                        <div class="col-4 col-lg-4 text-center p-2">
+                                        <div class="col-12 col-lg-4 text-center p-2">
                                         Navigation
                                                 <hr class="hrcon">
                                                 <p></p>
@@ -95,7 +97,7 @@
                                 
 
                                         <!-- colonne 2 -->
-                                        <div class="col-4 col-lg-4 text-center p-2 text-black-100">
+                                        <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                                             Aide
                                                 <hr class="hrcon">
                                                     <p>
@@ -122,7 +124,7 @@
                                         </div>
 
                                         <!-- colonne 3 -->
-                                        <div class="col-4 col-lg-4 text-center p-2 text-black-100">
+                                        <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                                                 CONTACT
                                                 <hr class="hrcon">
                                                         <p class="text-center">mobiliT</p>
