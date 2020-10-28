@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>MOBILI'T - Organisation</title>
+        <title>MOBILI'T - destinations</title>
         <meta charset="utf-8">
         <!-- BOOTSTRAP -->
         <link 
@@ -71,15 +71,15 @@
                                 <img src="img/Bretagne.jpg" class="img-fluid w-100" alt="la ville de Nantes">
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
-                                <p style="text-indent: 20px">S'il est une région de France fière de son identité c'est bien : la Bretagne !</p>
-                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Cette ville moderne est bien en avance sur l'amènagement du territoire pour toutes les mobilités et vous permettra, quelque soit votre handicap, de la découvrir facilement.  </p>
+                                <p style="text-indent: 20px">S'il est une région de France fière de son identité c'est bien elle : la Bretagne ! Bras de France cerné par les mers, la Bretagne est une région aussi accueillante que belle. La Bretagne est souvent assimilée à la mer, de par ces centaines d'îles et ses côtes, mais c'est aussi un territoire riche, bercé de légendes et coutumes celtiques.</p>
+                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Si la région est réputée pour le caractère de ses mers et ses paysages parfois escarpés, c'est aussi une terre et une culture d'accueil. Nombreux sentiers sont aujourd'hui accessibles à tous, zoos, chateaux  et de nombreux hébergements labélisés vous ouvrent leur porte . En Bretagne en 2018, c'était plus de 200 professionnels du tourisme reconnu par l'Etat via le label Tourisme & Handicap</p>
                                 <!-- en lire plus -->
                                 <div class="collapse multi-collapse" id="fermeture1">
                                     <div>
 
-                                        <p id="fermeture1" style="text-indent: 20px">La ville accueille chaque année les déambulations des Géants de la compagnie Royal de Luxe, qui émerveillent autant enfants que parents. C'est aussi le départ de courses nautiques et une ville réputée pour la chaleur de ses nuits (concerts, spectacles, bars, restaurants...)</p>
-                                        <p id="fermeture1" style="text-indent: 20px">Si vous recherchez d'avantage de calme que de bouillonnement, Nantes c'est aussi une centaine d'espace verts ou se promener en toute tranquilité. Elle abrite notemment le seul parc Natura2000 en zone urbaine, de France qu'il vous sera possible de visiter sur réservation.</p>
-                                        <p id="fermeture1" style="text-indent: 20px">Côté Histoire, son passé est aussi chargé que sulfureux. Du Moyen-âge au commerce triangulaire, nombreuses sont les traces de son histoire. Offrez-vous, le temps d'un weekend une escapade temporelle.</p>
+                                        <p id="fermeture1" style="text-indent: 20px">Le climat breton peut, comme dit le dicton, varier d'une heure à l'autre et offre ainsi de nombreuses occasions de goûter à la richesse de la gastronomie locale. Amateurs et amatrices de produits de la mer, tenez-vous bien ! Une cuisine qui puise ses racines dans l'agriculture locale, faite de produits simples et sains. </p>
+                                        <p id="fermeture1" style="text-indent: 20px"> La Bretagne est souvent valorisée par ses côtes et sa nature, cependant certaines villes méritent le détour ! A l'instar de Rennes, capitale régionale, ville verte et dynamique qui a su se rendre accessible au plus grand nombre. Sans quitter l'agglomération, vous pourrez retourner sur les traces d'Arthur et Merlin en découvrant les jardins de Brocéliande.</p>
+                                        <p id="fermeture1" style="text-indent: 20px">La Bretagne, c'est aussi une culture de la fête, d'inombrable fanfares et Fes-tnoz animent chaque weekend les villages, places et marchés de la région.  </p>
                                         
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton tect-center col-2"> 
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
