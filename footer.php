@@ -47,18 +47,18 @@
 
 
                     <!-- Newsletters -->             
-                    <div class="news text-center">
+                    <div class="news col-12 text-center container-fluid">
                             <h2> Newsletter </h2>
                                 <h4> 
                                     Inscrivez-vous 
                                     </br>
-                                    pour recevez nos meilleurs offres !
+                                    pour recevoir nos meilleurs offres !
                                 </h4>
 
 
                                 <div class="fondfoot">
-                                    <h4>
-                                            <input type="email" id="email" name="email" class="text-center rounded m-4" placeholder="Votre adresse e-mail">
+                                    <h4 class="col-12 container-fluid">
+                                            <input type="email" id="email" name="email" class=" text-center rounded m-4" placeholder="Votre adresse e-mail">
                                             </br>
                                             <input type="submit" class="btn btn-success" value="Envoyer"/>
                                     </h4>   
