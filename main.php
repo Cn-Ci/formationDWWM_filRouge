@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <title>MOBILI'T - Acceuil</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <!-- BOOTSTRAP -->
         <link 
@@ -39,9 +40,9 @@
     <body>
         <!----------------------------------------------------------------------PAGE 1------------------------------------------------------------------------->
         <div id="page1" class="container-fluid">
-            <?php include 'navbar.php';?>
+            <?php include_once 'navbar.php';?>
             <div class="row">
-                <div class="col-sm-1"></div>
+                <div class="col-sm-12 col-lg-1"></div>
                 <div id="blocLogo" class="col-sm-12 col-md-6 col-lg-4">
                     <div>
                         <p class="whiteColor" id="mdSlogan">MOBILI'T</p>
@@ -74,24 +75,24 @@
                 </div>
                 <div class="col-sm-2"></div>
             </div>
-            <div class="row text-center">
+            <div class="row text-center pb-5">
                 <div class="col-lg-2"></div>
-                <div class="col-lg-2 mt-5">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                     <img class="img_150w_150h" src="img/valise.png" alt=""><br>
                     <h3 class="mt-5"><span class="couleur">L'organisation</span></h3>
-                    <p>Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                    <p class="text-justify">Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-2 mt-5">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                     <img class="img_150w_150h" src="img/plane.png" alt=""><br>
                     <h3 class="mt-5"><span class="couleur">Les destinations</span></h3>
-                    <p class="text-center">Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                    <p class="text-justify">Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-2 mt-5">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                     <img class="img_150w_150h" src="img/forumImage.png" alt=""><br>
                     <h3 class="mt-5"><span class="couleur">Blabla</span></h3>
-                    <p>Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                    <p class="text-justify">Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
                 </div>
                 <div class="col-lg-2"></div>    
             </div> 
@@ -101,7 +102,7 @@
         <div id="page3" class="container-fluid">
             <div class="row text-center mt-2"  style="height: 100vh;">
                 <div class="col-lg-2"></div>
-                <div class="col-lg-2 pl-5 pr-5 personnel">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                     <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel2"><br>
                     <h3>
                         <strong>Nom Prénom<br>
@@ -116,7 +117,7 @@
                         <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 			        </ul>
                 </div>
-                <div class="col-lg-2 pl-5 pr-5 personnel">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                     <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel2"><br>
                     <h3>
                         <strong>Nom Prénom<br>
@@ -131,7 +132,7 @@
                         <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 			        </ul>
                 </div>
-                <div class="col-lg-2 pl-5 pr-5 personnel">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                     <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel3"><br>
                     <h3>
                         <strong>Nom Prénom<br>
@@ -146,7 +147,7 @@
                         <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 			        </ul>
                 </div>
-                <div class="col-lg-2 pl-5 pr-5 personnel">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                     <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel4"><br>
                     <h3>
                         <strong>Nom Prénom<br>
@@ -164,6 +165,12 @@
                 <div class="col-lg-2"></div>    
             </div>
         </div>
+
+        <!-------------------------------------------------------------------FOOTER------------------------------------------------------------------------------->
+        <?php
+            //TODO 
+            // include_once 'footer.php'; 
+        ?>
 
         <script 
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 

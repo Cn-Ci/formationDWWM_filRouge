@@ -38,7 +38,6 @@
 		opacity           : 0.9;
 		height            : 100px;
 		background-color  : white;
-		margin-right: 0px;
 	}
 	#logo{
 		max-width: 100px;
@@ -51,7 +50,6 @@
 		transition : color 1s;
 		color      :#228b22;
 		font-family: 'Caviar Dreams', sans-serif;
-
 	}
 	a:hover{
 		text-decoration: none;    

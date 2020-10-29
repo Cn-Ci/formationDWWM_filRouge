@@ -1,7 +1,4 @@
 /**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
-body {
-    height: 100%; 
-}
 ul {
     list-style-type: none;
 }
@@ -27,6 +24,9 @@ ul {
 }
 .couleur{
     color: #228b22;   
+}
+.text-justify{
+    text-align: justify;
 }
 
 /** SLOGAN MILIEU ECRAN --------------------------------------------------*/
@@ -70,7 +70,7 @@ ul {
 #blocOverlay{
     height    : 130px; 
     transition: box-shadow 500ms;
-    margin-top: 11%;
+    margin-top: 8%;
 }
 #blocOverlay:hover{
     box-shadow: 0 -100px 115px -100px white inset; 
@@ -82,10 +82,9 @@ ul {
 
 /** PAGE 2 ----------------------------------------------------------------*/
 #EntetePresentation{
-    padding-top: 6%; 
+    padding-top: 8%; 
     color      : #8f8f8f;
 }
-
 .img_150w_150h{
     max-width: 150px;
     max-height: 150px;
@@ -208,7 +207,7 @@ a.socialIcon:hover, .socialHoverClass {
 #sticky-footer {
     flex-shrink: none;
 }
-@media screen and (max-width: 1223px){
+@media screen and (max-width: 1600px){
     #page1, #page2, #page3 {
         height: 100%;
     }
@@ -230,8 +229,14 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 /** VERSION PORTABLE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width:575px) {
-    #mdSlogan{
-        font-size  : 120px;   
+@media only screen and (max-width: 500px) {
+    html {
+        width: fit-content  !important;
+    }
+    body { 
+        font-size: 1.5em; 
+    }
+    h5{
+        font-size: 1em; 
     }
 }
