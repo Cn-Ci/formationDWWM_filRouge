@@ -25,7 +25,7 @@
             rel="stylesheet" 
             type="text/css" 
             href="mainStyle.css">
-            <link 
+        <link 
             rel="stylesheet" 
             type="text/css" 
             href="destinations.css">
@@ -61,7 +61,7 @@
             </div>        
 
             <!-- OUEST -->
-            <div id="ouest" class="align-items-center m-5 ">
+            <div id="ouest" class="align-items-center  ">
                 <!-- Bretagne -->
                 <div class="ouest1 row d-flex justify-content-center m-2 mb-4">
                     <!-- image et texte -->
@@ -95,7 +95,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -135,7 +135,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -168,9 +168,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="plus text-right col-10 offset-1 mb-2">
+                        <!-- <div class="plus text-right col-10 offset-1 mb-2">
                             <a  class="text-success" data-toggle="collapse" href="#fermeture3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">En lire plus</a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- lien forum + lien exploration -->
@@ -178,14 +178,14 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
 
                 </div>
-                <div>
+                
     
             </div>
 
@@ -225,7 +225,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -265,7 +265,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -308,14 +308,14 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
 
                 </div>
-                <div>
+                
     
             </div>
 
@@ -355,7 +355,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -395,7 +395,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -438,14 +438,14 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
 
                 </div>
-                <div>
+                
     
             </div>
 
@@ -484,7 +484,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -524,7 +524,7 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
@@ -567,14 +567,14 @@
                         <div class="forum text-center col-10">
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton tect-center col-2"> 
+                        <div class="bouton text-center col-2"> 
                             <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
 
                 </div>
-                <div>
+                
     
             </div>
         
