@@ -78,16 +78,11 @@ a {
 
 /** IMAGE et Autre   --------------------------------------------------------------*/
 
-#plane img {
-    z-index: 10;
-    margin-top: 200px !important;
-    margin-bottom: 100px !important;
-    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.253);
-    /* gauche, bas, blur, taille, couleur  */
-    width: 500px;
-    margin: 50px auto;
-    background: white;
-    border-radius: 5px;
+#carousel {
+    padding-top: 200px;
+    padding-bottom: 50px;
+    width: 70%;
+    margin:auto;
 }
 
 .hrsep {
