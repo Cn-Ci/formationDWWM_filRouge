@@ -246,7 +246,7 @@
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
                                 <h4 class="mb-3">DIJON & SES ALENTOURS</h4>
-                                <p style="text-indent: 20px">Capitale des Loires et frontalière de la Bretagne, Nantes est une ville bercée par l'histoire et l'eau. Forte de cette ressource naturelle, la ville a su redorer son blason en aménageant la Loire et en amenant de la verdure dans la cité, élue capitale verte en 2013. Consciente de son attractivité, la ville propose tout au long de l'année une large gamme d'activités gratuites.   </p>
+                                <p style="text-indent: 20px">Capitale des des Ducs de Bourgogne, Dijon est aujourd'hui plus réputée pour sa moutarde que son histoire, c'est pourtant une place forte de l'Histoire de France, comme en témoigne son architecture. Très épargnée par les guerres, la ville recèle encore de trésors historiques (notamment un castrum du XIeme siècle) et de nombreux batiments du duchet de Bourgogne. </p>
                                 </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Cette ville moderne est bien en avance sur l'amènagement du territoire pour toutes les mobilités et vous permettra, quelque soit votre handicap, de la découvrir facilement.  </p>
                                 <!-- en lire plus -->
                                 <div class="collapse multi-collapse" id="fermeture5">
