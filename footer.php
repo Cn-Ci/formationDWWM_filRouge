@@ -52,6 +52,7 @@
                         </br>
                         pour recevoir nos meilleurs offres !
                     </h4>
+                    
 
                     <div class="fondfoot">
                         <h4 class="col-12 container-fluid">
