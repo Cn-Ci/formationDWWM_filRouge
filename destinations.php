@@ -68,7 +68,7 @@
                     <div class="">
                         <div class="row">
                             <div class="col-12 col-lg-4 mb-2">
-                                <img src="img/Bretagne.jpg" class="img-fluid w-100" alt="la ville de Nantes">
+                                <img src="img/bretagne.jpg" class="img-fluid w-100" alt="les côtes roses de la région bretonne">
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
                                 <h4 class="mb-3">LA BRETAGNE</h4>
@@ -254,7 +254,7 @@
 
                                         <p id="fermeture5" style="text-indent: 20px">Pour les amateurs de verdure urbaine, la ville propose actuellement des visites de ses principaux parcs (Colombière et Darcy) ainsi que du Lac Kir labellisées handi-tourisme .</p>
                                         <p id="fermeture5" style="text-indent: 20px">A l'occasion de sa rénovation en 2018, le Musée de Beaux Arts de Dijon, réputé pour son stock impressionnant d'oeuvres, s'est modernisé et adapté à un plus large public. Les espaces étant accessible à tous et les visites adaptées aux différents publics.</p>
-                                        <p id="fermeture5" style="text-indent: 20px">Enfin pour les plus gourmands et gourmandes, en attendant l'ouverture de la toute nouvelle Cité  Nationale de la Gastronomie, vous saurez vous ravir les papilles avec un très large choix de restaurants, labelisés handi-tourisme eux aussi.</p>
+                                        <p id="fermeture5" style="text-indent: 20px">Enfin pour les plus gourmands et gourmandes, en attendant l'ouverture de la toute nouvelle Cité  Nationale de la Gastronomie, vous saurez vous ravir les papilles avec un très large choix de restaurants, labellisés handi-tourisme eux aussi.</p>
                                         
                                     </div>
                                 </div>
@@ -465,15 +465,16 @@
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
                                 <h4 class="mb-3">LES ALPES & LE MASSIF DU MONT BLANC</h4>
-                                <p style="text-indent: 20px">S'il est une région de France fière de son identité c'est bien elle : la Bretagne ! Bras de France cerné par les mers, la Bretagne est une région aussi accueillante que belle. La Bretagne est souvent assimilée à la mer, de par ces centaines d'îles et ses côtes, mais c'est aussi un territoire riche, bercé de légendes et coutumes celtiques.</p>
-                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Si la région est réputée pour le caractère de ses mers et ses paysages parfois escarpés, c'est aussi une terre et une culture d'accueil. Nombreux sentiers sont aujourd'hui accessibles à tous, zoos, chateaux  et de nombreux hébergements labélisés vous ouvrent leur porte . En Bretagne en 2018, c'était plus de 200 professionnels du tourisme reconnu par l'Etat via le label Tourisme & Handicap</p>
+                                <p style="text-indent: 20px">Les Alpes ne sont pas les plus vieilles montagnes d'Europe, mais bien les plus hautes aujourd'hui. Elles abritent donc le Mont-Blanc, beffroi de l'Europe, qui veille sur les nombreux pays limitrophes.
+                            </br> Les montagnes n'ont pas toujours été des destinations touristiques car peu praticables. La France a su valoriser ses richesse naturelles, et peut aujourd'hui se targuer d'avoir l'un des plus vastes parcours pédestres mondiaux, avec plus de 180 000km et une grande pluralité de pistes skiables .</p>
+                            </br>
+                            <p style="text-indent: 20px" class="font-weight-bold color-228b22"> Été comme hiver, les domaines sont aujourd'hui adaptés à l'accueil de tous les publics, de toutes nationalités. Vous pouvez donc maintenant parcourir la montagne par les airs, dévaler les pistes en hiver, gravir certains sommets et vous reposer le soir dans des hébergements adaptés et labéllisés.</p>
                                 <!-- en lire plus -->
                                 <div class="collapse multi-collapse" id="fermeture10">
                                     <div>
 
-                                        <p id="fermeture10" style="text-indent: 20px">Le climat breton peut, comme dit le dicton, varier d'une heure à l'autre et offre ainsi de nombreuses occasions de goûter à la richesse de la gastronomie locale. Amateurs et amatrices de produits de la mer, tenez-vous bien ! Une cuisine qui puise ses racines dans l'agriculture locale, faite de produits simples et sains. </p>
-                                        <p id="fermeture10" style="text-indent: 20px"> La Bretagne est souvent valorisée par ses côtes et sa nature, cependant certaines villes méritent le détour ! A l'instar de Rennes, capitale régionale, ville verte et dynamique qui a su se rendre accessible au plus grand nombre. Sans quitter l'agglomération, vous pourrez retourner sur les traces d'Arthur et Merlin en découvrant les jardins de Brocéliande.</p>
-                                        <p id="fermeture10" style="text-indent: 20px">La Bretagne, c'est aussi une culture de la fête, d'inombrable fanfares et Fes-tnoz animent chaque weekend les villages, places et marchés de la région.  </p>
+                                        <p id="fermeture10" style="text-indent: 20px">Côté sport, des énormes avancées ont été faites et il vosu est maintenant possible de descendre les pistes de vélo en CIMGO, celles de ski en Handiski, de monter les sommets en joëlette ou encore de parcours le ciel, la p lupart des clubs de parapentes étant reconnus accessibles tout handicap.  </p>
+                                        <p id="fermeture10" style="text-indent: 20px">Une bastronomie complète toujours la contemplation de beaux paysages. Il est désormais facile de sillonner les vallées à la rencontre de commerçants locaux ou de musées dédiés, accessibles à tous. Et de se restaurer, de nombreux établissements étant aujourd'hui aptes à l'accueil du public le plus large possible.</p>
                                         
                                     </div>
                                 </div>
@@ -502,19 +503,19 @@
                     <div class="">
                         <div class="row">
                             <div class="col-12 col-lg-4 mb-2">
-                                <img src="img/vallee.jpg" class="img-fluid w-100" alt="la vallée du Rhone">
+                                <img src="img/vallee.jpg" class="img-fluid w-100" alt="le fameux pont d'Avignon">
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
                                 <h4 class="mb-3">LA VALLÉE DU RHÔNE</h4>
-                                <p style="text-indent: 20px">Capitale des Loires et frontalière de la Bretagne, Nantes est une ville bercée par l'histoire et l'eau. Forte de cette ressource naturelle, la ville a su redorer son blason en aménageant la Loire et en amenant de la verdure dans la cité, élue capitale verte en 2013. Consciente de son attractivité, la ville propose tout au long de l'année une large gamme d'activités gratuites.   </p>
-                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Cette ville moderne est bien en avance sur l'amènagement du territoire pour toutes les mobilités et vous permettra, quelque soit votre handicap, de la découvrir facilement.  </p>
+                                <p style="text-indent: 20px">Vallon prolifique, la vallée du Rhône s'étend de Lyon au sud d'Arles, où le fleuve se jette dans la Méditerranée. Territoire viticole, agricole et touristique, la vallée du Rhône est un de ces joyaux naturels dont regorge la France. Si l'on imagine souvent des espaces sauvages inaccessibles, de gros efforts ont été faits pour permettre au maximum de personne de découvrir la région.</p>
+                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > De la ville à la mer, en passant par les reliefs parfois arrides de l'Ardèche et la verdure de la Drôme, c'est plus de 200 hébergements labellisés Handi Tourisme, des dizaines de musées et parc et de nombreuses activitées proposées pour tous et toutes. La promesse d'un road trip réussi et riche en découverte ! Pour les amateurs et amatrices d'itinérance !</p>
                                 <!-- en lire plus -->
                                 <div class="collapse multi-collapse" id="fermeture11">
                                     <div>
 
-                                        <p id="fermeture11" style="text-indent: 20px">La ville accueille chaque année les déambulations des Géants de la compagnie Royal de Luxe, qui émerveillent autant enfants que parents. C'est aussi le départ de courses nautiques et une ville réputée pour la chaleur de ses nuits (concerts, spectacles, bars, restaurants...)</p>
-                                        <p id="fermeture11" style="text-indent: 20px">Si vous recherchez d'avantage de calme que de bouillonnement, Nantes c'est aussi une centaine d'espace verts ou se promener en toute tranquilité. Elle abrite notamment le seul parc Natura2000 en zone urbaine, de France qu'il vous sera possible de visiter sur réservation.</p>
-                                        <p id="fermeture11" style="text-indent: 20px">Côté Histoire, son passé est aussi chargé que sulfureux. Du Moyen-âge au commerce triangulaire, nombreuses sont les traces de son histoire. Offrez-vous, le temps d'un weekend une escapade temporelle.</p>
+                                        <p id="fermeture11" style="text-indent: 20px">Le Palais Idéal du Facteur Cheval est un immanquable de votre voyage. Musée incongru niché au coeur de la Drôme, ce musée est l'oeuvre d'un seul homme; Ferdinand Cheval. L'oeuvre est toujours entretenue pour faire perdurer les 33 ans de travail acharné qu'il a demandé, gardant en mémoire la volonté première de son créateur : le partager au plus grand nombre. Ainsi des visite en Langue des Signes sont possibles, des audio-guides à disposition et le tout accessible pour les personnes à mobilité réduite.</p>
+                                        <p id="fermeture11" style="text-indent: 20px">Au coeur des vignes du Rhône, et à quelques minutes de Lyon, le Plateau d'Yzeron vous propose une aventure dans les arbres, labellisée lui aussi pour son accueil de tous les publics, et cerise sur le gateau, le Plateau vous propose après vos efforts, une  relaxation au SPA, au coeur de cette forêt. </p>
+                                        <p id="fermeture11" style="text-indent: 20px">Puisque la vallée du Rhône est une région géogarphique mais aussi une appellation de vin, des plus gustatives, il vous sera aussi possible de visiter de nombreux domaines, ainsi que le Musée des Vignerons de Forez. Belle occasion de découvrir le travail, le quotidien et le vin de cette région. </p>
                                         
                                     </div>
                                 </div>
@@ -531,7 +532,7 @@
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="http://pro.auvergnerhonealpes-tourisme.com/res/799ac9c933566e60eabe6caf83fb0145f40f6bea.pdf" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -556,9 +557,9 @@
                                 <div class="collapse multi-collapse" id="fermeture12">
                                     <div>
 
-                                        <p id="fermeture12" style="text-indent: 20px">L'abbaye du Mont Saint Michel ainsi que la baie qui entoure le village sont tous deux classés au patrimoine monidaux de l'UNESCO. La baie est réputée pour ses marées exceptionnelles (les plus grandes d'Europe), qui remontent selon la légende, a la vitesse d'un cheval au galop.</p>
-                                        <p id="fermeture12" style="text-indent: 20px">Le village est depuis des siècles le théâtres de pélerinages et donc de venue massive de gens. On y retrouve donc de nombreuses auberges, attestant de l'attractivité de l'abbaye ainsi que de nombreuses ruelles moyennageuses, transformant le rocher en labyrinthe pour des touristes non avertis.</p>
-                                        <p id="fermeture12" style="text-indent: 20px">La visite du Mont est aussi l'occasion unique de revenir sur le travail des très nombreux artistes venus affronter l'exercice des couleurs, lors des somptueux levers ou couchers de soleil.</p>
+                                        <p id="fermeture12" style="text-indent: 20px">En site de plein air, Marseille a rendu accessible la Canebière, le Vieux Port, le Jardin du Pharo, sa fameuse Basilique Notre Dame de la Garde et bien d'autres encore.</p>
+                                        <p id="fermeture12" style="text-indent: 20px">La ville peut se targuer de nouveaux musées dont le Mucem, tous accessibles gratuitement et avec des équipements adaptés à tous les handicaps. L'avènement du numérique permet aussi de compléter la visite, notamment au Mucem (musée le plus récent de la ville).</p>
+                                        <p id="fermeture12" style="text-indent: 20px">Pour conclure toute visite de Marseille, il vous faudra gouter une pizza sur le pouce, spécialité à la Canebière, mais aussi vosu rendre sur l'une des plages de la ville, où vous pourrez expérimenter de nombreuses activités aquatiques mais aussi une expérience unique en France de visite immersive de la ville grâce à la réalité virtuelle.</p>
                                         
                                     </div>
                                 </div>
@@ -575,7 +576,7 @@
                             <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.yanous.com/pratique/tourisme/tourisme130104.html" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.marseille-tourisme.com/organisez-votre-sejour/tourisme-et-handicap/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
                         </div>
                     </div>
                 </div>
