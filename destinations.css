@@ -23,6 +23,10 @@ ul {
     height: 100vh;
 }
 
+.btn {
+    
+    font-size:20px;
+}
 
 /* NAVABR  --------------------------------------------------------------*/
 
@@ -40,3 +44,4 @@ ul {
 #fermeture:target {
     display: block;
 }
+

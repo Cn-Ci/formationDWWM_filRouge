@@ -135,10 +135,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-large btn-outline-success color-228B22" style="font-size:smaller">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton text-center col-2"> 
-                            <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                        <div class="bouton col-2"> 
+                            <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 ">M'y rendre</button> </a>
                         </div>
 
                     </div>
