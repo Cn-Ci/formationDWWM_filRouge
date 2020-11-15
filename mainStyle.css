@@ -22,6 +22,10 @@ ul {
     background-color: #f8f8f8;
     z-index         : 995;
 }
+#page3 {
+    height          : 100vh; 
+    font-family     : 'Caviar Dreams', sans-serif;
+}
 .couleur{
     color: #228b22;   
 }

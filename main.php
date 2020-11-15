@@ -21,7 +21,15 @@
             rel="stylesheet" 
             type="text/css" 
             href="mainStyle.css">
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="footerStyle.css">
         <!-- TYPO -->
+        <link 
+            href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
+            rel="stylesheet"
+            type="text/css"/>
         <link 
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
             rel="stylesheet"
@@ -100,7 +108,7 @@
 
         <!----------------------------------------------------------------------PAGE 3------------------------------------------------------------------------>
         <div id="page3" class="container-fluid">
-            <div class="row text-center mt-2"  style="height: 100vh;">
+            <div class="row text-center mt-2">
                 <div class="col-lg-2"></div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                     <img class="img_150w_150h imagePersonnel" src="img/man.png" alt="Pesonnel2"><br>
@@ -167,10 +175,10 @@
         </div>
 
         <!-------------------------------------------------------------------FOOTER------------------------------------------------------------------------------->
-        <?php
-            //TODO 
-            // include_once 'footer.php'; 
-        ?>
+        <footer>
+            <?php include_once 'footer.php'; ?>
+        </footer>
+
 
         <script 
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
