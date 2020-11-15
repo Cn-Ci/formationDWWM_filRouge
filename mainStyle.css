@@ -26,6 +26,13 @@ ul {
     height          : 100vh; 
     font-family     : 'Caviar Dreams', sans-serif;
 }
+#page4 {
+    height          : 100vh; 
+    font-family     : 'Caviar Dreams', sans-serif;
+}
+#apercuForum{
+    border: 1px solid rgba(0,0,0,0.1);
+}
 .couleur{
     color: #228b22;   
 }
@@ -86,7 +93,7 @@ ul {
 
 /** PAGE 2 ----------------------------------------------------------------*/
 #EntetePresentation{
-    padding-top: 8%; 
+    padding-top: 10%; 
     color      : #8f8f8f;
 }
 .img_150w_150h{
@@ -185,6 +192,16 @@ a.socialIcon:hover, .socialHoverClass {
 	transition        : all 0.8s;
 }
 
+/** PAGE 4---------------------------------------------------------------- */
+.ImgPostForum {
+    max-width: 300px;
+    max-height: 100px;
+    margin: 2%;
+}
+#ImgApercuForum {
+    max-width: 700px;
+    max-height: 700px;
+}
 
 /** FORUM -----------------------------------------------------------------*/
 #affichagePost{
@@ -217,10 +234,11 @@ a.socialIcon:hover, .socialHoverClass {
     }
 }
 
+
 /** VERSION TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 991px){
-    #page1, #page2, #page3{
+    #page1, #page2, #page3, #page4{
         height: 100%;
     }
     #blocLogo{
@@ -233,6 +251,13 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 /** VERSION PORTABLE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 560px){
+    #mdSlogan{
+        font-size  : 130px;
+        font-family: Impact, Charcoal, sans-serif;    
+    }
+}
+
 @media only screen and (max-width: 500px) {
     html {
         width: fit-content  !important;
