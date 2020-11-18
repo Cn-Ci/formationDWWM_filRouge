@@ -7,6 +7,10 @@ ul {
     -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
     box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
 }
+.font {
+    
+    font-family     : 'Caviar Dreams', sans-serif;
+}
 .nopadding{
     padding: 0px;
 }
@@ -30,11 +34,11 @@ ul {
     height          : 100vh; 
     font-family     : 'Caviar Dreams', sans-serif;
 }
-#apercuForum{
-    border: 1px solid rgba(0,0,0,0.1);
-}
 .couleur{
     color: #228b22;   
+}
+.bg-color{
+    background-color: #228b22;   
 }
 .text-justify{
     text-align: justify;
@@ -97,7 +101,7 @@ ul {
     color      : #8f8f8f;
 }
 .img_150w_150h{
-    max-width: 150px;
+    max-width : 150px;
     max-height: 150px;
 }
 
@@ -193,47 +197,39 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 /** PAGE 4---------------------------------------------------------------- */
+#apercuForum {
+    margin-top: 15%;
+}
+#imgBlockApercuForum {
+    width: fit-content  !important;
+    object-fit: contain !important;
+}
 .ImgPostForum {
-    max-width: 300px;
+    max-width : 300px;
     max-height: 100px;
-    margin: 2%;
+    margin    : 2%;
 }
 #ImgApercuForum {
-    max-width: 700px;
+    max-width : 700px;
     max-height: 700px;
+}
+.postRecent {
+    border      : 1px solid rgba(0,0,0,0.1);
+    padding-left: 0px !important;
+}
+.secondPost {
+    color : white;
 }
 
 /** FORUM -----------------------------------------------------------------*/
-#affichagePost{
-    padding: 1%;
-}
-#affichagePost > div{
-    font-weight: bold;
-    font-family: "Sitka Banner";
-}
-.post1{
-    padding           : 1%;
-    border            : 1px solid rgba(0,0,0,0.1);
-    margin-top        : 1%;
-    font-family       : "Sitka Banner";
-}
-.post2{
-    padding           : 1%;
-    border            : 1px solid rgba(0,0,0,0.1);
-    margin-top        : 1%;
-    font-family       : "Sitka Banner";
-    color             : white;
-    background-color  : #228b22;
-}
 #sticky-footer {
     flex-shrink: none;
 }
 @media screen and (max-width: 1600px){
-    #page1, #page2, #page3 {
+    #page1, #page2, #page3, #page4 {
         height: 100%;
     }
 }
-
 
 /** VERSION TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

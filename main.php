@@ -178,23 +178,23 @@
         <div id="page4" class="container-fluid">
             <div class="row">
                 <div class="col-lg-2"></div>
-                <div id="apercuForum" class="col-lg-8 mt-5">
+                <div id="apercuForum" class="col-sm-12 col-lg-8">
                     <div class="row">
-                        <div class="col-lg-6 row" style="padding-right: 0px !important">
-                            <div class="col-lg-12 postRecent row">
-                                <div class="col-sm-4 mt-3"><img class="ImgPostForum" src="img/bretagne.jpg" alt="Apercu image post forum"></div>
-                                <div class="col-sm-8 mt-3"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
+                        <div class="col-sm-12 col-lg-12 col-xl-6 row" style="padding-right: 0px !important">
+                            <div class="col-12 postRecent row">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="img/bretagne.jpg" alt="Apercu image post forum"></div>
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
                             </div>
-                            <div class="col-lg-12 postRecent row">
-                                <div class="col-sm-4 mt-3"><img class="ImgPostForum" src="img/vignoble.jpg" alt="Apercu image post forum"></div>
-                                <div class="col-sm-8 mt-3"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
+                            <div class="col-12 postRecent row bg-color secondPost">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="img/vignoble.jpg" alt="Apercu image post forum"></div>
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
                             </div>
-                            <div class="col-lg-12 postRecent row">
-                                <div class="col-sm-4 mt-3"><img class="ImgPostForum" src="img/vallee.jpg" alt="Apercu image post forum"></div>
-                                <div class="col-sm-8 mt-3"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
+                            <div class="col-12 postRecent row">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="img/vallee.jpg" alt="Apercu image post forum"></div>
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
                             </div>
                         </div>
-                        <div class="col-lg-6" style="padding-left: 0px !important">
+                        <div id="imgBlockApercuForum" class="col-sm-12 col-lg-12 col-xl-6 row">
                             <img id="ImgApercuForum" src="img/paysbasque.jpg" alt="Aperçu Forum">
                         </div>
                     </div>
