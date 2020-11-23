@@ -1,8 +1,7 @@
 <?php 
 
-class Helpers {
+class Helpers extends Users{
     private $code;
-    private $idUser;
     private $facebook;
     private $linkedin;
 
