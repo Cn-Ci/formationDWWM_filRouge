@@ -1,6 +1,6 @@
 <?php 
 
-class Commentaires {
+class Commentaire {
     private $idComm;
     private $date;
     private $contenuComm;

@@ -1,6 +1,6 @@
 <?php 
 
-class Helpers extends Users{
+class Helper extends User{
     private $code;
     private $facebook;
     private $linkedin;
@@ -9,7 +9,7 @@ class Helpers extends Users{
         return 
         $this->code;
         $this->idUser;
-        $this->facebook;
+        $this->facebook;-
         $this->linkedin;
     }
     

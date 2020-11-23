@@ -1,13 +1,13 @@
 <?php 
 
-class Destinations {
+class Destination extends Region{
     private $idDestination;
     private $lieu;
     private $image;
     private $description;
     private $lien;
     private $extraitForum;
-    private $idUser;
+    // private $idUser;
     
     function toString(){
         return 
