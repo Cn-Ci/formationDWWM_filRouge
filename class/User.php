@@ -12,12 +12,12 @@ class User {
     
     function __toString() {
         return "[id] -> " . $this->id .
-            "[pseudo] -> " . $this->pseudo;
-            "[email] -> " . $this->email;
-            "[nom] -> " . $this->nom;
-            "[prenom] -> " . $this->prenom;
-            "[photo] -> " . $this->photo;
-            "[mdp] -> " . $this->mdp;
+            "[pseudo] -> " . $this->pseudo .
+            "[email] -> " . $this->email .
+            "[nom] -> " . $this->nom .
+            "[prenom] -> " . $this->prenom .
+            "[photo] -> " . $this->photo .
+            "[mdp] -> " . $this->mdp 
             "[profil] -> " . $this->profil;
     }
 
@@ -45,7 +45,7 @@ class User {
     {
         return $this->email;
     }
-    public function setEmail(String $email) :Self //? Url de l'image ?
+    public function setEmail(String $email) :Self
     {
         $this->email = $email;
         return $this;
@@ -75,7 +75,7 @@ class User {
     {
         return $this->photo;
     }
-    public function setPhoto(String $photo) :Self
+    public function setPhoto(String $photo) :Self //? Url de l'image ?
     {
         $this->photo = $photo;
         return $this;
