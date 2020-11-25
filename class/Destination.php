@@ -11,7 +11,7 @@ class Destination extends Region{
     
     function __toString(){
         return "[Destinations] -> "  . $this->idDestination .
-            "[lieu] -> " $this->lieu .
+            "[lieu] -> " . $this->lieu .
             "[image] -> " . $this->image . 
             "[description] -> " . $this->description .   
             "[lien] -> " . $this->lien .

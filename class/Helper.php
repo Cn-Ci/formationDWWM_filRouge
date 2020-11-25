@@ -1,5 +1,5 @@
 <?php 
-include_once 'Users.php'
+include_once ('Users.php');
 
 class Helper extends User{
     private $code;
