@@ -10,111 +10,94 @@ class User {
     private $mdp;
     private $profil;
     
-    function toString(){
-        return 
-        $this->id;
-        $this->pseudo;
-        $this->email;
-        $this->nom;
-        $this->prenom;
-        $this->photo;
-        $this->mdp;
-        $this->profil;
+    function __toString() {
+        return "[id] -> " . $this->id .
+            "[pseudo] -> " . $this->pseudo;
+            "[email] -> " . $this->email;
+            "[nom] -> " . $this->nom;
+            "[prenom] -> " . $this->prenom;
+            "[photo] -> " . $this->photo;
+            "[mdp] -> " . $this->mdp;
+            "[profil] -> " . $this->profil;
     }
 
-    public function getId()
+    public function getId() :Int 
     {
         return $this->id;
     }
-
-    public function setId($id)
+    public function setId(Int $id) :Self 
     {
         $this->id = $id;
-
         return $this;
     }
 
-    public function getPseudo()
+    public function getPseudo() :String 
     {
         return $this->pseudo;
     }
-
-    public function setPseudo($pseudo)
+    public function setPseudo(String $pseudo) :Self
     {
         $this->pseudo = $pseudo;
-
         return $this;
     }
 
-    public function getEmail()
+    public function getEmail() :String
     {
         return $this->email;
     }
-
-    public function setEmail($email)
+    public function setEmail(String $email) :Self //? Url de l'image ?
     {
         $this->email = $email;
-
         return $this;
     }
 
-    public function getNom()
+    public function getNom()  :String
     {
         return $this->nom;
     }
-
-    public function setNom($nom)
+    public function setNom(String $nom) :Self
     {
         $this->nom = $nom;
-
         return $this;
     }
 
-    public function getPrenom()
+    public function getPrenom() :String
     {
         return $this->prenom;
     }
-
-    public function setPrenom($prenom)
+    public function setPrenom(String $prenom) :Self
     {
         $this->prenom = $prenom;
-
         return $this;
     }
 
-    public function getPhoto()
+    public function getPhoto() :String
     {
         return $this->photo;
     }
- 
-    public function setPhoto($photo)
+    public function setPhoto(String $photo) :Self
     {
         $this->photo = $photo;
-
         return $this;
     }
 
-    public function getMdp()
+    public function getMdp() :String
     {
         return $this->mdp;
     }
-
-    public function setMdp($mdp)
+    public function setMdp(String $mdp) :Self
     {
         $this->mdp = $mdp;
-
         return $this;
     }
 
-    public function getProfil()
+    public function getProfil() :String
     {
         return $this->profil;
     }
-
-    public function setProfil($profil)
+    public function setProfil(String $profil) :Self
     {
         $this->profil = $profil;
-
         return $this;
     }
 }
