@@ -100,6 +100,4 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
         $db->close();
         return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
     }
-
-    
 }

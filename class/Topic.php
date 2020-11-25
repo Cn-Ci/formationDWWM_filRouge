@@ -16,6 +16,10 @@ class Topic {
             "[nbComm] -> " . $this->nbComm .
             "[idUser] -> " . $this->idUser;
     }
+
+    public function datetimeToString($datetime) :?String {
+        return $dateToString = $datetime->format('Y-m-d²');
+    }
     
     public function getIdTopic() :Int
     {
@@ -37,7 +41,7 @@ class Topic {
         return $this;
     }
  
-    public function getDate() :Datetime
+    public function getDatePost() :Datetime
     {
         return $this->date;
     }
