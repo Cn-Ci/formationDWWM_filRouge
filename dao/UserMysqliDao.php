@@ -37,7 +37,7 @@ class UserMysqliDao extends ConnectionMysqliDao implements CommunDAO{
             $rs->free();
             $db->close();
     
-            return $emp
+            return $emp;
         
     }
 
