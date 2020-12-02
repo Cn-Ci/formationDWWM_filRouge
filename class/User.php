@@ -17,7 +17,7 @@ class User {
             "[nom] -> " . $this->nom .
             "[prenom] -> " . $this->prenom .
             "[photo] -> " . $this->photo .
-            "[mdp] -> " . $this->mdp 
+            "[mdp] -> " . $this->mdp .
             "[profil] -> " . $this->profil;
     }
 
