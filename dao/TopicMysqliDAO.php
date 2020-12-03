@@ -65,7 +65,7 @@
             return $dataAllTopic;
         }
 
-        public function update(Object $Topic) :Void {
+        public function update(Object $Topic, $idTopic) :Void {
             $db = ConnectionMysqliDao::connect();
 
             $idTopic        = getIdTopic();

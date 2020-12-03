@@ -48,10 +48,10 @@
 
         public static function serviceUpdateTopic(Int $idTopic, String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $idAuthor) :Void {
             $TopicToModify = new Topic();
-            $TopicToModify->setIdTopic($idTopic)->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($idAuthor);
+            $TopicToModify->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($idAuthor);
 
             try {
-                TopicMysqliDAO::update($TopicToModify);
+                TopicMysqliDAO::update($TopicToModify, $idTopic);
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }

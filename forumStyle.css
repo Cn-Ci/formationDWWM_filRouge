@@ -1,0 +1,17 @@
+body{
+    overflow-x  : hidden;
+    font-family : 'Caviar Dreams', sans-serif;
+}
+table{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+th{
+    font-style: bold;
+}
+#navBar{
+    position: relative !important;
+    margin : 0px;
+}
+#thTitle {
+    width: 60%;
+}
