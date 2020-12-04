@@ -22,7 +22,7 @@
 
 
     <div class="col-sm-12 col-lg-2 text-center">
-        <button type="submit" class="btn btn-success color-228B22 mb-10" id="boutonsubmit">+ Créer un post</button>
+        <a href="createPost_forum.php"><button type="submit" class="btn btn-success color-228B22 mb-10" id="boutonsubmit">+ Créer un post</button></a>
     </div>
 </div>
 

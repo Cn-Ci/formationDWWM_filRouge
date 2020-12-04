@@ -44,14 +44,6 @@ class Topic implements JsonSerializable{
         $this->titreTopic = $titreTopic;
         return $this;
     }
-
-    public function getnbLike() :Int {
-        return $this->nbLike;
-    }
-    public function setnbLike(int $nbLike) :Self {
-        $this->nbLike = $nbLike;
-        return $this;
-    }
  
     public function getDateTopic() :Datetime {
         return $this->date;

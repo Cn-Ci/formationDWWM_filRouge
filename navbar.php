@@ -1,5 +1,10 @@
 <?php
-	//PDO
+/* 	try {
+		$PDO = new PDO( '...' );
+	}
+	catch( PDOException $Exception ) {
+		echo "$Exception->getMessage(), $Exception->getCode()";
+	} */
 
 	session_start();
 ?>
@@ -14,9 +19,9 @@
 	<div class="col-xs-5 col-sm-12 col-lg-1"><img id="logo" src="img/logoMobiliT.png" alt="Logo"></div> 
 
 	<nav class="row col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 menuTab">
-		<a href="#" class="col-sm-12 col-md-12 col-lg-3 alink">ACCUEIL</a>
-		<a href="#" class="col-sm-12 col-md-12 col-lg-3 alink">PRÉSENTATION</a>
-		<a href="#" class="col-sm-12 col-md-12 col-lg-3 alink">DESTINATIONS</a>
+		<a href="main.php" class="col-sm-12 col-md-12 col-lg-3 alink">ACCUEIL</a>
+		<a href="timeline.php" class="col-sm-12 col-md-12 col-lg-3 alink">ORGANISATION</a>
+		<a href="destinations.php" class="col-sm-12 col-md-12 col-lg-3 alink">DESTINATIONS</a>
 		<?php
 			if (isset($_SESSION['id'])){
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg-3 alink">MON COMPTE</a><?php

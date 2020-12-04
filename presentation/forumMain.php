@@ -4,16 +4,18 @@
 
     function showTableContent($dataTopic, $exception) :Void {
         foreach ($dataTopic as $Topic) {
-            printTd($Topic);
+            echo "<tr>";
+                printTd($Topic);
+            echo "</tr>";
         }
     }
 
     function printTd(Object $Topic) :Void {  
         echo '<td>' . $Topic->getTitreTopic() . '</td>  
-            <td>' . $Topic->getDateTopic() . '</td>
-            <td>' . $Topic->getIdAuthor() . '</td>
-            <td>' . $Topic->getNbLike() . '</td> 
-            <td>' . $Topic->getNbComm() . '</td>';
+                <td>' . $Topic->getDateTopic() . '</td>
+                <td>' . $Topic->getIdAuthor() . '</td>
+                <td>' . $Topic->getNbLike() . '</td> 
+                <td>' . $Topic->getNbComm() . '</td>';
     }
 ?>
 
