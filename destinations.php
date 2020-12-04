@@ -63,6 +63,7 @@
                     <div class="">
                         <div class="row">
                             <div class="col-12 col-lg-4 mb-2">
+                            
                                 <img src="img/bretagne.jpg" class="img-fluid w-100" alt="les côtes roses de la région bretonne">
                             </div>
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
@@ -418,8 +419,7 @@
                                 <h4 class="mb-3">ARCACHON & LA DUNE DU PILAT</h4>
                                 <p style="text-indent: 20px">La Dune du Pilat est un des rares monuments classés en mouvement. En effet cette étendue de sable de 3km et plus de 100m de haut, si elle est la plus grande d'Europe, c'est aussi un immense ban de sable en mouvement perpétuel.
                                 Ce édifice naturel attire donc plus de 2 millions de visiteurs par an.</p>
-                                <p style="text-indent: 20px" class="m-0 p-0">Quant au bassin d'Arcachon, communauté urbaine la plus proche de la Grande Dune, il prospère dans un environnement unique, une enclave maritime qui le protège de la rudesse de l'océan atlantique, tout en offrant tous les bienfaits de l'air marin.</p>
-                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Du parking à la nef de son abbaye, en passant par sa baie, le village a développé des parcours "pour tous" aussi bien handicap moteur que visuel ou auditif. Vous ne manquerez plus rien de la visite. </p>
+                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > Quant au bassin d'Arcachon, communauté urbaine la plus proche de la Grande Dune, il prospère dans un environnement unique, une enclave maritime qui le protège de la rudesse de l'océan atlantique, tout en offrant tous les bienfaits de l'air marin.</p>
                                 <!-- en lire plus -->
                                 <div class="collapse multi-collapse" id="fermeture9">
                                     <div>
