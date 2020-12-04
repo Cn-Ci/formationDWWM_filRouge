@@ -61,8 +61,6 @@
             } catch(ServiceException $ce) {
                 echo 'Error';
             }  
-        } else if ($_GET["action"]=="showAllTopic") {
-
         }
     }
 ?> 

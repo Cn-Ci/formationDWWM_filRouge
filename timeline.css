@@ -1,5 +1,6 @@
 .main-timeline9 {
-    position: relative
+    position: relative;
+    margin-top: 15%;
 }
 
 .main-timeline9:after,
@@ -269,6 +270,9 @@
 }
 
 @media only screen and (max-width:990px) {
+    .main-timeline9 {
+        margin-top: 20%;
+    }
     .main-timeline9:before {
         left: 100%
     }
@@ -327,7 +331,16 @@
     }
 }
 
+@media only screen and (max-width:768px) {
+    .main-timeline9{
+        margin-top: 30%;
+    }
+}
+
 @media only screen and (max-width:480px) {
+    .main-timeline9{
+        margin-top: 40%;
+    }
     .main-timeline9:before {
         left: 0
     }
