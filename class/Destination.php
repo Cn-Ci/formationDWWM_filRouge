@@ -2,6 +2,7 @@
 
 class Destination extends Region{
     private $idDestination;
+    private $region;
     private $lieu;
     private $image;
     private $petiteDescription;
@@ -33,6 +34,26 @@ class Destination extends Region{
         return $this;
     }
 
+    /**
+     * Get the value of region
+     */ 
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Set the value of region
+     *
+     * @return  self
+     */ 
+    public function setRegion($region)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+    
     public function getLieu() :String
     {
         return $this->lieu;
@@ -172,6 +193,8 @@ class Destination extends Region{
         $this->idUser = $idUser;
         return $this;
     }
+
+    
 
     
 }

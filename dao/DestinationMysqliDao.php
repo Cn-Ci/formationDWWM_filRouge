@@ -2,13 +2,13 @@
 
 require_once(__DIR__.'/DaoSqlException.php');
 require_once(__DIR__.'/ConnectionMysqliDao.php');
-require_once(__DIR__.'/interface.php');
+require_once(__DIR__.'/interfaceDao.php');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
 
     //CREATE
-    public static function add(destination $objet){
+    public function add(destination $objet){
             try{$db=parent :: connect(); //connection à la base de données
                 $stmt= $db->prepare("INSERT INTO `destination` ('idDestination','region', 'lieu', 'image', 'petiteDescription','description', 'atout1', 'atout2', 'atout3','lien', 'extraitForum') VALUES (null,?,?,?,?,?,?,?,?,?,?)"); //requête SQL d'insertion
                 $stmt->bind_param('ssssssssssss', $region, $lieu, $image, $petiteDescription, $description, $atout1, $atout2, $atout3,$lien, $extraitForum);
@@ -22,7 +22,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
 
     
     //RESEARCH BY idDestination
-    public static function researchBy(string $idDestination){
+    public  function researchBy(string $idDestination){
             try{$db= parent :: connect();
                 $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=?"); //récupère les données d'un utilisateur précisé
                 $stmt->bind_param('i', $idDestination);
@@ -71,6 +71,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
     //UPDATE
     public function update(destination $objet){
         $idDestination= $objet->getIdDestination();
+        $region=$objet->getRegion();
         $lieu=$objet->getLieu();
         $image=$objet->getImage();
         $petiteDescription=$objet->getPetiteDescription();
@@ -83,8 +84,8 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
             
         try{$db=parent :: connect();
             
-            $stmt=$db->prepare("UPDATE destination SET lieu=?, image=?, petiteDescription=?, description=?, atout1=?, atout2=? , atout3=?, lien=?, extraitForum=? WHERE idDestination=?"); // mise à jour des données
-            $stmt->bind_param('sssssssssi',$lieu, $image, $description, $lien, $extraitForum, $idDestination);
+            $stmt=$db->prepare("UPDATE destination SET region=?, lieu=?, image=?, petiteDescription=?, description=?, atout1=?, atout2=? , atout3=?, lien=?, extraitForum=? WHERE idDestination=?"); // mise à jour des données
+            $stmt->bind_param('ssssssssssi',$region, $lieu, $image, $description, $lien, $extraitForum, $idDestination);
             $rs=$stmt->execute();
 
             $db->close();

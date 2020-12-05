@@ -1,6 +1,6 @@
 <?php
     require_once '../class/Topic.php';
-    require_once '../class/ServiceException.php';
+    require_once '../service/ServiceException.php';
     require_once '../dao/TopicMysqliDAO.php';
 
     class ServiceTopic {

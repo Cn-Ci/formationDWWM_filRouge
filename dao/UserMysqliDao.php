@@ -2,6 +2,8 @@
 
 include_once(__DIR__.'/ConnectionMysqliDao.php');
 include_once(__DIR__ . '/dao/interface.php');
+require_once(__DIR__. '/interfaceDao.php');
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
 class UserMysqliDao extends ConnectionMysqliDao implements CommunDAO{
