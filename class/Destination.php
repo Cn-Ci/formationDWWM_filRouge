@@ -4,7 +4,11 @@ class Destination extends Region{
     private $idDestination;
     private $lieu;
     private $image;
+    private $petiteDescription;
     private $description;
+    private $atout1;
+    private $atout2;
+    private $atout3;
     private $lien;
     private $extraitForum;
     private $idUser;
@@ -49,6 +53,26 @@ class Destination extends Region{
         return $this;
     }
 
+    /**
+     * Set the value of petiteDescription
+     *
+     * @return  self
+     */ 
+    public function setPetiteDescription($petiteDescription)
+    {
+        $this->petiteDescription = $petiteDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of petiteDescription
+     */ 
+    public function getPetiteDescription()
+    {
+        return $this->petiteDescription;
+    }
+
     public function getDescription() :String
     {
         return $this->description;
@@ -56,6 +80,66 @@ class Destination extends Region{
     public function setDescription(String $description) :Self
     {
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Get the value of atout1
+     */ 
+    public function getAtout1()
+    {
+        return $this->atout1;
+    }
+
+    /**
+     * Set the value of atout1
+     *
+     * @return  self
+     */ 
+    public function setAtout1($atout1)
+    {
+        $this->atout1 = $atout1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of atout1
+     */ 
+    public function getAtout2()
+    {
+        return $this->atout1;
+    }
+
+    /**
+     * Set the value of atout1
+     *
+     * @return  self
+     */ 
+    public function setAtout2($atout2)
+    {
+        $this->atout1 = $atout1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of atout1
+     */ 
+    public function getAtout3()
+    {
+        return $this->atout1;
+    }
+
+    /**
+     * Set the value of atout1
+     *
+     * @return  self
+     */ 
+    public function setAtout3($atout3)
+    {
+        $this->atout1 = $atout1;
+
         return $this;
     }
 
@@ -88,4 +172,6 @@ class Destination extends Region{
         $this->idUser = $idUser;
         return $this;
     }
+
+    
 }

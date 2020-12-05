@@ -1,103 +1,113 @@
 <?php
 
-include_once(__DIR__.'/ConnectionMysqliDao.php');
+require_once(__DIR__.'/DaoSqlException.php');
+require_once(__DIR__.'/ConnectionMysqliDao.php');
+require_once(__DIR__.'/interface.php');
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
 
     //CREATE
     public static function add(destination $objet){
-            //connection à la base de données
-            $db=parent :: connect();
-            //requête SQL d'insertion
-            $stmt= $db->prepare("INSERT INTO `destination` ('idDestination','region', 'lieu', 'image', 'description', 'lien', 'extraitForum') VALUES (null,?,?,?,?,?,?)");
-            $stmt->bind_param('ssssssss', $region, $lieu, $image, $description, $lien, $extraitForum);
-            $rs=$stmt->execute();
-        
-            $db->close();
-            return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
+            try{$db=parent :: connect(); //connection à la base de données
+                $stmt= $db->prepare("INSERT INTO `destination` ('idDestination','region', 'lieu', 'image', 'petiteDescription','description', 'atout1', 'atout2', 'atout3','lien', 'extraitForum') VALUES (null,?,?,?,?,?,?,?,?,?,?)"); //requête SQL d'insertion
+                $stmt->bind_param('ssssssssssss', $region, $lieu, $image, $petiteDescription, $description, $atout1, $atout2, $atout3,$lien, $extraitForum);
+                $rs=$stmt->execute();
+                $db->close();
+                return $rs; // le résultat est retourné pour pouvoir afficher le message de succes
+            } catch (mysqli_sql_exception $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            } 
     }
 
     
-    //RESEARCH BY email
+    //RESEARCH BY idDestination
     public static function researchBy(string $idDestination){
-
-            $db= parent :: connect();
-    
-            //récupère les données d'un utilisateur précisé
-            $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=?");
-            $stmt->bind_param('i', $idDestination);
-            $stmt->execute();
-            $rs=$stmt->get_result();
-            $data=$rs->fetch_array(MYSQLI_ASSOC);
-            $dest = new Destination();
-            $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setDescription($data['description'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
-            
-            $rs->free();
-            $db->close();
-    
-            return $dest;
+            try{$db= parent :: connect();
+                $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=?"); //récupère les données d'un utilisateur précisé
+                $stmt->bind_param('i', $idDestination);
+                $stmt->execute();
+                $rs=$stmt->get_result();
+                $data=$rs->fetch_array(MYSQLI_ASSOC);
+                $dest = new Destination();
+                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
+                
+                $rs->free();
+                $db->close();
+        
+                return $dest;
+            } catch (mysqli_sql_exception $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            }
         
     }
 
     //RESEARCH ALL
     public  function research(){
-        
-        $db= parent :: connect();
+        try{$db= parent :: connect();
 
-        //récupère toute les données de la table users
-        $stmt=$db->prepare("SELECT * FROM destination");
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data = $rs->fetch_all(MYSQLI_ASSOC);
+            $stmt=$db->prepare("SELECT * FROM destination"); //récupère toute les données de la table destination
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data = $rs->fetch_all(MYSQLI_ASSOC);
 
-        $i=0;
-        foreach($data as $key=>$value){
-            $dest= new Destination();
-            $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setDescription($data['description'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
-            $data[$i]=$dest;
-            $i++;
+            $i=0;
+            foreach($data as $key=>$value){
+                $dest= new Destination();
+                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
+                $data[$i]=$dest;
+                $i++;
+            }
+            
+            $rs->free();
+            $db->close();
+
+            return $data;
+        } catch (mysqli_sql_exception $DaoException) {
+            throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
         }
-        
-        $rs->free();
-        $db->close();
-
-        return $data;
     }
 
     //UPDATE
     public function update(destination $objet){
-
         $idDestination= $objet->getIdDestination();
         $lieu=$objet->getLieu();
         $image=$objet->getImage();
+        $petiteDescription=$objet->getPetiteDescription();
         $description=$objet->getDescription();
+        $atout1=$objet->getAtout1();
+        $atout2=$objet->getAtout2();
+        $atout3=$objet->getAtout3();
         $lien=$objet->getLien();
         $extraitForum=$objet->getExtraitForum();
-        
-        $db=parent :: connect();
-        
-        // mise à jour des données
-        $stmt=$db->prepare("UPDATE destination SET lieu=?, image=?, description=?, lien=?, extraitForum=? WHERE idDestination=?");
-        $stmt->bind_param('sssssi',$lieu, $image, $description, $lien, $extraitForum, $idDestination);
-        $rs=$stmt->execute();
+            
+        try{$db=parent :: connect();
+            
+            $stmt=$db->prepare("UPDATE destination SET lieu=?, image=?, petiteDescription=?, description=?, atout1=?, atout2=? , atout3=?, lien=?, extraitForum=? WHERE idDestination=?"); // mise à jour des données
+            $stmt->bind_param('sssssssssi',$lieu, $image, $description, $lien, $extraitForum, $idDestination);
+            $rs=$stmt->execute();
 
-        $db->close();
-                    
-        return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
+            $db->close();
+                        
+            return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
+        }catch (mysqli_sql_exception $DaoException) {
+            throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+        }
     }
 
     //DELETE
     public  function delete($id){
-
-        $db=parent :: connect();
-        
-        // on supprime les données
-        $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=?");
-        $stmt->bind_param('i', $idDestination);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-                
-        $db->close();
-        return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
+ 
+        try{$db=parent :: connect();
+            $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=?"); // on supprime les données
+            $stmt->bind_param('i', $idDestination);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+                    
+            $db->close();
+            return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
+        }catch (mysqli_sql_exception $DaoException) {
+            throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+        }
     }
 }
