@@ -1,0 +1,14 @@
+/* Connexion */
+
+hr.style1 {
+    border-top: 2px solid #228b22;
+    width: 240px;
+}
+
+#mdp {
+    justify-content: center;
+}
+
+#iconeID img {
+    padding-left: 50px;
+}
