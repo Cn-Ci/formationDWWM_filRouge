@@ -22,13 +22,10 @@
         <link 
             rel="stylesheet" 
             type="text/css" 
-<<<<<<< HEAD
             href="styleOrga.css">
         <link 
             rel="stylesheet" 
             type="text/css" 
-=======
->>>>>>> 253a86a... peauffinage
             href="footerStyle.css">
         <!-- TYPO -->
         <link 
@@ -182,20 +179,12 @@
         </div>
         <hr>
 
-<<<<<<< HEAD
 <!-- footer include -->
         
             <footer>
                 <?php include_once 'footer.php';
                 ?>
             </footer>
-=======
-        <!-- footer include -->
-            
-        <footer>
-            <?php include_once 'footer.php'; ?>
-        </footer>
->>>>>>> 253a86a... peauffinage
 
         <script 
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
