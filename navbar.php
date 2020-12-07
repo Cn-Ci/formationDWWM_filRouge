@@ -9,6 +9,8 @@
 	session_start();
 ?>
 
+<link rel="stylesheet" href="inscription.css">
+
 <div class="col-sm-12 row pr-0" id="navBar">
 
 	<div id="BoutonBurgermenuTab">
@@ -26,10 +28,14 @@
 			if (isset($_SESSION['id'])){
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg-3 alink">MON COMPTE</a><?php
 			} else {
-				?><a href="#" class="col-sm-12 col-md-12 col-lg-3 alink">CONNEXION</a><?php
+				?><a href="#" class="col-sm-12 col-md-12 col-lg-3 alink" data-toggle="modal" data-target="#exampleModal">CONNEXION</a><?php
 			}
 		?>
 	</nav>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<?php include_once('inscriptionsite.php');?>
 </div>
 
 <style>
