@@ -52,8 +52,7 @@
             $db = ConnectionMysqliDao::connect();
 
             try {
-                $searchRequest = $db->prepare("SELECT * FROM topic");
-                $searchRequest->execute();
+                $searchRequest = $db->query("SELECT * FROM topic");
                 $result       = $searchRequest->get_result();
                 $dataAllTopic = $result->fetch_all(MYSQLI_ASSOC);
             } catch (mysqli_sql_exception $DaoException) {
