@@ -578,14 +578,10 @@
             </div>
         </div> 
 
-        <!-- Footer -->
-        <footer>
+
             <!-- ligne de séparation -->
             <hr class="hrsep">
-            
-            <div class="container-fluid">
                 <?php include 'footer.php';?>
-            </div>
         </footer>
 
         <!-- JQUERY -->

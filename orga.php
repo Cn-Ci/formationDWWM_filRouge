@@ -51,7 +51,7 @@
        <!-- Caroussel -->
 
 
-       <div class="container-fluid my-2 text-center ">
+       <div class="container-fluid text-center ">
             <div id="carousel">
                 <div id="carouselExampleIndicators" class="carousel slide  " data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -192,29 +192,10 @@
     </div>
     <hr>
 
-
-            
-        <!-- Footer -->
-        <footer>
-
-       
-     
-
-
-
-    <!-- Footer -->
-
-    <footer>
-   
-
-
-
-
 <!-- footer include -->
         
-            <?php include 'footer.php';?>
-        
-
+<footer>
+            <?php include_once 'footer.php'; ?>
         </footer>
 
         <script 

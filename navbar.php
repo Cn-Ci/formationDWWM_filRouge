@@ -20,7 +20,7 @@
 
 	<nav class="row col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 menuTab">
 		<a href="main.php" class="col-sm-12 col-md-12 col-lg-3 alink">ACCUEIL</a>
-		<a href="timeline.php" class="col-sm-12 col-md-12 col-lg-3 alink">ORGANISATION</a>
+		<a href="orga.php" class="col-sm-12 col-md-12 col-lg-3 alink">ORGANISATION</a>
 		<a href="destinations.php" class="col-sm-12 col-md-12 col-lg-3 alink">DESTINATIONS</a>
 		<?php
 			if (isset($_SESSION['id'])){

@@ -1,6 +1,4 @@
-<?php 
-function html() {
-?> 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,14 +16,7 @@ function html() {
     <!-- CSS -->
     <link rel="stylesheet" href="inscription.css"> 
 </head>
-<?php 
-}
-function inscription($errorCode=null){
-    if($errorCode && $errorCode == 10000){
-        echo "<center><div class='alert alert-danger'> Erreur lors de l'affichage de la page d'inscription ! !</div></center>";
-    }
-}
-?>
+
 <body>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#btnIns">Inscription</button>
@@ -156,12 +147,12 @@ function inscription($errorCode=null){
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputPW1">Saisir un mot de passe</label>
-                                            <input type="text" class="form-control" id="inputPW1" placeholder="********" alt="Saisissez un mot de passe"
+                                            <input type="password" class="form-control" name="password" alt="votre mot de passe" id="inputPW1" placeholder="********" alt="Saisissez un mot de passe"
                                                     pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Un mot de passe de 8 à 30 caractères, comprenant un nombre ou un caractère spécial, une majuscule et une minuscule."required>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPW2">Confirmation</label>
-                                            <input type="text" class="form-control" id="inputPW2" placeholder="********" alt="Confirmer votre mot de passe">
+                                            <input type="password" class="form-control" name="password" alt="votre mot de passe" id="inputPW2" placeholder="********" alt="Confirmer votre mot de passe">
                                         </div>
                                     </div>
                                     <div class="modal-footer">

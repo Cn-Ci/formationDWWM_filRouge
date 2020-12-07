@@ -54,7 +54,7 @@ class UserConnectMysqliDao extends ConnectionMysqliDao implements CommunDAO{
 
             $query = "SELECT * FROM user WHERE :email = ?";
             $stmt = $db->prepare($query);
-            $stmt->bind_param(':email', $email);
+            $stmt->bindParam(':email', $email);
 
             $stmt->execute();
             $data= $rs->fetchAll();
