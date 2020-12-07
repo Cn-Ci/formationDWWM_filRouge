@@ -1,11 +1,9 @@
 <?php
-/* 	try {
-		$PDO = new PDO( '...' );
+	try {
+		$bdd = new PDO('mysql:host=cnciprrcnci.mysql.db; dbname=cnciprrcnci', 'cnciprrcnci', '2ADd67cJb');
+	} catch(PDOException $e) {
+		echo "Error :" . $e->getMessage(), $e->getCode();
 	}
-	catch( PDOException $Exception ) {
-		echo "$Exception->getMessage(), $Exception->getCode()";
-	} */
-
 	session_start();
 ?>
 
@@ -21,14 +19,15 @@
 	<div class="col-xs-5 col-sm-12 col-lg-1"><img id="logo" src="img/logoMobiliT.png" alt="Logo"></div> 
 
 	<nav class="row col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 menuTab">
-		<a href="main.php" class="col-sm-12 col-md-12 col-lg-3 alink">ACCUEIL</a>
-		<a href="orga.php" class="col-sm-12 col-md-12 col-lg-3 alink">ORGANISATION</a>
-		<a href="destinations.php" class="col-sm-12 col-md-12 col-lg-3 alink">DESTINATIONS</a>
+		<a href="main.php" class="col-sm-12 col-md-12 col-lg alink">ACCUEIL</a>
+		<a href="orga.php" class="col-sm-12 col-md-12 col-lg alink">ORGANISATION</a>
+		<a href="destinations.php" class="col-sm-12 col-md-12 col-lg alink">DESTINATIONS</a>
+		<a href="forumMain.php" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
-				?><a href ='#' class="col-sm-12 col-md-12 col-lg-3 alink">MON COMPTE</a><?php
+				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a><?php
 			} else {
-				?><a href="#" class="col-sm-12 col-md-12 col-lg-3 alink" data-toggle="modal" data-target="#exampleModal">CONNEXION</a><?php
+				?><a href="#" class="col-sm-12 col-md-12 col-lg alink" data-toggle="modal" data-target="#exampleModal">CONNEXION</a><?php
 			}
 		?>
 	</nav>

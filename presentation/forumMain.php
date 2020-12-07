@@ -1,6 +1,6 @@
 <?php 
-    require_once '../navbar.php';
-    require_once 'SearchBarForum.php';
+    require_once('../navbar.php');
+    require_once('SearchBarForum.php');
 
     function showTableContent($dataTopic, $exception) :Void {
         foreach ($dataTopic as $Topic) {
@@ -12,10 +12,11 @@
 
     function printTd(Object $Topic) :Void {  
         echo '<td>' . $Topic->getTitreTopic() . '</td>  
-                <td>' . $Topic->getDateTopic() . '</td>
-                <td>' . $Topic->getIdAuthor() . '</td>
-                <td>' . $Topic->getNbLike() . '</td> 
-                <td>' . $Topic->getNbComm() . '</td>';
+            <td>' . $Topic->getDateTopic() . '</td>
+            <td>' . $Topic->getIdAuthor() . '</td>
+            <td>' . $Topic->getNbLike() . '</td> 
+            <td>' . $Topic->getNbComm() . '</td>'
+        ;
     }
 ?>
 
