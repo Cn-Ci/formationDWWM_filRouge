@@ -24,6 +24,10 @@
             rel="stylesheet" 
             type="text/css" 
             href="destinations.css">
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="footerStyle.css">
         <!-- TYPO -->
         <link 
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 

@@ -29,6 +29,10 @@
             rel="stylesheet" 
             type="text/css" 
             href="styleOrga.css">
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="footerStyle.css">
         <!-- TYPO -->
         <link 
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
@@ -194,9 +198,10 @@
 
 <!-- footer include -->
         
-<footer>
-            <?php include_once 'footer.php'; ?>
-        </footer>
+            <footer>
+                <?php include_once 'footer.php';
+                ?>
+            </footer>
 
         <script 
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
