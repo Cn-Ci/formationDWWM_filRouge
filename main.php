@@ -10,12 +10,6 @@
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
             crossorigin="anonymous">
-        <!-- JQUERY -->
-        <script
-            src         ="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin ="anonymous">
-        </script>
         <!-- CSS -->
         <link 
             rel="stylesheet" 
@@ -26,14 +20,6 @@
             type="text/css" 
             href="footerStyle.css">
         <!-- TYPO -->
-        <link 
-            href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
-            rel="stylesheet"
-            type="text/css"/>
-        <link 
-            href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
-            rel="stylesheet"
-            type="text/css"/>
         <link 
             href="https://fonts.cdnfonts.com/css/caviar-dreams" 
             rel="stylesheet">
@@ -218,6 +204,12 @@
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
             crossorigin="anonymous">
+        </script>
+        <!-- JQUERY -->
+        <script
+            src         ="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin ="anonymous">
         </script>
         <script 
             type="text/javascript" 
