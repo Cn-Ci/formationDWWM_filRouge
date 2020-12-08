@@ -1,9 +1,9 @@
 <?php
 
-interface communDAO {
-    public function add(object $objet);
-    public function delete(int $id);
-    public function update(object $objet);
+interface interfaceDao {
+    public function add(Object $objet);
+    public function delete(Int $id);
+    public function update(Object $objet);
     public function research();
-    public function researchBy(int $id);
+    public function researchBy(Int $id);
 }

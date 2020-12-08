@@ -1,9 +1,4 @@
 <?php
-	try {
-		$bdd = new PDO('mysql:host=cnciprrcnci.mysql.db; dbname=cnciprrcnci', 'cnciprrcnci', '2ADd67cJb');
-	} catch(PDOException $e) {
-		echo "Error :" . $e->getMessage(), $e->getCode();
-	}
 	session_start();
 ?>
 
@@ -22,7 +17,7 @@
 		<a href="main.php" class="col-sm-12 col-md-12 col-lg alink">ACCUEIL</a>
 		<a href="orga.php" class="col-sm-12 col-md-12 col-lg alink">ORGANISATION</a>
 		<a href="destinations.php" class="col-sm-12 col-md-12 col-lg alink">DESTINATIONS</a>
-		<a href="forumMain.php" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
+		<a href="controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a><?php

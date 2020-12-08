@@ -31,19 +31,19 @@
         public static function serviceReseachAll() :?Array {
             try {
                 $data = TopicMysqliDao::research();
+                $dataToObject = array (); 
+                //TODO idAuthor = $SESSION['pseudo']
+                foreach ($data as $value) {
+                    $Topic = new Topic();
+                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'])->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($value['idUsers']);
+                    array_push($dataToObject, $Topic);
+                }
+
+                return $dataToObject;
+
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
-            }
-
-            $dataToObject = array ();
-
-            foreach ($data as $value) {
-                $Topic = new Topic();
-                $Topic->setIdTopic($value[''])->setTitreTopic($value[''])->setDateTopic($value[''])->setContentTopic($value[''])->setNbComm($value[''])->setIdAuthor($value['']);
-                array_push($dataToObject, $Topic);
-            }
-
-            return $dataToObject;
+            } 
         }
 
         public static function serviceUpdateTopic(Int $idTopic, String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $idAuthor) :Void {

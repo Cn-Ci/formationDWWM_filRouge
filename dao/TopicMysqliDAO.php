@@ -4,8 +4,8 @@
     require_once(__DIR__. '/interfaceDao.php');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    class TopicMysqliDAO implements communDAO {
-        public static function add(Object $Topic) :Void {
+    class TopicMysqliDAO implements interfaceDao {
+        public function add(Object $Topic) :Void {
             $db = ConnectionMysqliDao::connect();
 
             $topicTitle     = getTitreTopic();
@@ -29,7 +29,7 @@
             }
         }
 
-        public static function researchBy(Int $idTopic) :?Array {
+        public function researchBy(Int $idTopic) :?Array {
             $db = ConnectionMysqliDao::connect();
 
             try {
@@ -48,24 +48,20 @@
             return $data;
         }
 
-        public  function research() :?Array {
+        public function research() :?Array {
             $db = ConnectionMysqliDao::connect();
 
             try {
                 $searchRequest = $db->query("SELECT * FROM topic");
-                $result       = $searchRequest->get_result();
-                $dataAllTopic = $result->fetch_all(MYSQLI_ASSOC);
+                $searchRequest->execute();
+                $Topics = $searchRequest->fetchAll();
+                return $Topics;
             } catch (mysqli_sql_exception $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
-
-            $result->free();
-            $db->close();
-
-            return $dataAllTopic;
         }
 
-        public function update(Object $Topic, $idTopic) :Void {
+        public function update(Object $Topic) :Void {
             $db = ConnectionMysqliDao::connect();
 
             $idTopic        = getIdTopic();

@@ -1,9 +1,8 @@
 <?php 
-    require_once '../service/serviceTopic.php';
+    require_once('../service/serviceTopic.php');
+    require_once('../presentation/forumMain.php');
 
-    session_start();
-
-    if (isset($_POST)) {
+    if (!empty($_POST)) {
         if (isset($_POST['AddTopic'])) {
             if (!empty($_POST['title'])    && isset($_POST['title'])    &&
                 !empty($_POST['datePost']) && isset($_POST['datePost']) && 
@@ -43,7 +42,7 @@
                 }
             }
         }
-    } elseif (isset($_GET)) {
+    } elseif (!empty($_GET)) {
         if ($_GET["action"] == "DeleteTopic") {   
             if (!empty($_GET['idTopic'])) {
 
@@ -57,9 +56,10 @@
             }
         } else if ($_GET["action"]=="showAllTopic") {
             try {
-                ServiceTopic::serviceReseachAll();
+                $Topics = ServiceTopic::serviceReseachAll();
+                RenderForumMain($Topics);
             } catch(ServiceException $ce) {
-                echo 'Error';
+                RenderForumMain($Topics, $ce);
             }  
         }
     }

@@ -7,7 +7,7 @@ class Topic implements JsonSerializable{
     private $contenu;
     private $nbLike;
     private $nbComm;
-    private $idUser;
+    private $idAuthor;
 
     function __toString() {
         return "[idTopic] -> " . $this->idTopic .
@@ -48,7 +48,8 @@ class Topic implements JsonSerializable{
     public function getDateTopic() :Datetime {
         return $this->date;
     }
-    public function setDateTopic(Datetime $date) :Self {
+    public function setDateTopic(String $StringDate) :Self {
+        $date = new datetime($StringDate);
         $this->date = $date;
         return $this;
     }
@@ -70,6 +71,10 @@ class Topic implements JsonSerializable{
     }
 
     public function getIdAuthor() :Int {
-        return $this->idUser;
+        return $this->idAuthor;
+    }
+    public function setIdAuthor(Int $idAuthor) {
+        $this->idAuthor = $idAuthor;
+        return $this;
     }
 }
