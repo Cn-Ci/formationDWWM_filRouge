@@ -1,7 +1,7 @@
 <?php 
     require_once(__DIR__.'/DaoSqlException.php');
     require_once(__DIR__.'/ConnectionMysqliDao.php');
-    require_once(__DIR__. '/interfaceDao.php');
+    require_once(__DIR__.'/interfaceDao.php');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     class TopicMysqliDAO implements interfaceDao {

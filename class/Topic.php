@@ -7,7 +7,7 @@ class Topic implements JsonSerializable{
     private $contenu;
     private $nbLike;
     private $nbComm;
-    private $idAuthor;
+    private $Author;
 
     function __toString() {
         return "[idTopic] -> " . $this->idTopic .
@@ -70,11 +70,11 @@ class Topic implements JsonSerializable{
         return $this;
     }
 
-    public function getIdAuthor() :Int {
+    public function getIdAuthor() :String {
         return $this->idAuthor;
     }
-    public function setIdAuthor(Int $idAuthor) {
-        $this->idAuthor = $idAuthor;
+    public function setIdAuthor(String $idAuthor) {
+        $this->Author = $Author;
         return $this;
     }
 }
