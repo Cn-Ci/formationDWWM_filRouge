@@ -71,9 +71,9 @@ class Topic implements JsonSerializable{
     }
 
     public function getIdAuthor() :String {
-        return $this->idAuthor;
+        return $this->Author;
     }
-    public function setIdAuthor(String $idAuthor) {
+    public function setIdAuthor(String $Author) {
         $this->Author = $Author;
         return $this;
     }

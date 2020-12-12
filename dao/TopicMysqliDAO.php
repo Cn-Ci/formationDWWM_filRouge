@@ -52,7 +52,7 @@
             $db = ConnectionMysqliDao::connect();
 
             try {
-                $searchRequest = $db->query("SELECT * FROM topic");
+                $searchRequest = $db->query("SELECT * FROM topic AS t ORDER BY t.date DESC LIMIT 20");
                 $searchRequest->execute();
                 $Topics = $searchRequest->fetchAll();
                 return $Topics;

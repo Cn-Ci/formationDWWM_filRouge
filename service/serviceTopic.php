@@ -6,6 +6,7 @@
     class ServiceTopic {
         public static function serviceAddTopic(String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $idAuthor) :Void {
             $Topic = new Topic();
+            $author = $SESSION['id'];
             $Topic->setTitreTopic()->setDateTopic()->setContentTopic()->setNbComm()->setIdAuthor();
 
             try {
@@ -32,13 +33,14 @@
             try {
                 $data = TopicMysqliDao::research();
                 $dataToObject = array (); 
-                //TODO idAuthor = $SESSION['pseudo']
                 foreach ($data as $value) {
+                    /*$author = UserMysqliDao::researchBy($value['idUsers']);*/
+                    $author = "test";
                     $Topic = new Topic();
-                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'])->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($value['idUsers']);
+                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'])->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author);
                     array_push($dataToObject, $Topic);
                 }
-
+                
                 return $dataToObject;
 
             } catch (DaoSqlException $ServiceException) {

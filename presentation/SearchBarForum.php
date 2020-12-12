@@ -27,7 +27,6 @@
     .container-fluid {
         padding:0px 0px 0px 0px!important;
     }
-    
     #barForum{
         margin-top    : 10%;
         border-bottom : 1px solid rgba(0,0,0,0.1);
