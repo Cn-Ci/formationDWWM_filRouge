@@ -9,7 +9,7 @@
             $db = ConnectionMysqliDao::connect();
 
             $topicTitle     = getTitreTopic();
-            $topicDate      = getDatePost();
+            $topicDate      = getDatePost(); //? USE DATETIMETOSTRING() METHOD
             $topicContent   = getContenu();
             $topicNbComment = getNbComm();
             $idUser         = getIdUser();

@@ -4,35 +4,33 @@
 
     if (!empty($_POST)) {
         if (isset($_POST['AddTopic'])) {
-            if (!empty($_POST['title'])    && isset($_POST['title'])    &&
-                !empty($_POST['datePost']) && isset($_POST['datePost']) && 
-                !empty($_POST['content'])  && isset($_POST['content'])  &&
-                !empty($_POST['nbComm'])   && isset($_POST['nbComm'])   &&
-                !empty($_POST['idAuthor']) && isset($_POST['idAuthor'])) {
+            if (!empty($_POST['title'])       && isset($_POST['title'])    &&
+                !empty($_POST['content'])     && isset($_POST['content'])  &&
+                !empty($_SESSION['username']) && isset($_SESSION['username'])) {
 
                 $title     = htmlentities($_POST['title']);
-                $datePost  = htmlentities($_POST['datePost']);
+                $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
-                $nbComment = htmlentities($_POST['nbComm']);
-                $idAuthor  = $_SESSION['id'];
+                $nbComment = 0;
+                $Author    = $_SESSION['username'];
 
                 try {
-                    ServiceTopic::service_addEmp($title, $datePost, $content, $nbComment, $idAuthor);
+                    ServiceTopic::service_addEmp($title, $datePost, $content, $nbComment, $Author);
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }
             }
         } elseif (isset($_POST['ModifyTopic'])) {
-            if (!empty($_POST['ModifiedTitle'])    && isset($_POST['ModifiedTitle'])    &&
-                !empty($_POST['ModifiedDatePost']) && isset($_POST['ModifiedDatePost']) && 
-                !empty($_POST['ModifiedContent'])  && isset($_POST['ModifiedContent'])  &&
-                !empty($_POST['ModifiedNbComm'])   && isset($_POST['ModifiedNbComm'])   &&
-                !empty($_POST['ModifiedIdAuthor']) && isset($_POST['ModifiedIdAuthor'])) {
+            if (!empty($_POST['title'])       && isset($_POST['title'])    &&
+                !empty($_POST['datePost'])    && isset($_POST['datePost']) && 
+                !empty($_POST['content'])     && isset($_POST['content'])  &&
+                !empty($_POST['nbComm'])      && isset($_POST['nbComm'])   &&
+                !empty($_SESSION['username']) && isset($_SESSION['username'])) {
 
                 $title     = htmlentities($_POST['title']);
-                $datePost  = htmlentities($_POST['datePost']);
+                $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
-                $nbComment = htmlentities($_POST['nbComm']);
+                $nbComment = 0;//? GET NB COMMENT
                 $idAuthor  = $_SESSION['id'];
 
                 try {

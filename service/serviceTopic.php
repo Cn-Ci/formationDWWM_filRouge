@@ -4,10 +4,9 @@
     require_once '../dao/TopicMysqliDAO.php';
 
     class ServiceTopic {
-        public static function serviceAddTopic(String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $idAuthor) :Void {
+        public static function serviceAddTopic(String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $Author) :Void {
             $Topic = new Topic();
-            $author = $SESSION['id'];
-            $Topic->setTitreTopic()->setDateTopic()->setContentTopic()->setNbComm()->setIdAuthor();
+            $Topic->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($Author);
 
             try {
                 TopicMysqliDAO::add($Topic);
