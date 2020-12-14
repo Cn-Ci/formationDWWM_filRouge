@@ -1,0 +1,32 @@
+body {
+    background-image: url(paysage-hd_1600x900.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    }
+
+.titre {
+    color: rgba(83, 81, 81, 0.856);
+}
+.mail {
+    margin: auto;
+    border: none;
+}
+
+.btnInscription {
+    background-color: #228b229f;
+    border-radius: 20px;
+    border-color: white;
+}
+
+.retour {
+    background-color: #22588bad;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+}
+
+.form-control-plaintext {
+    color: white !important;
+
+}
