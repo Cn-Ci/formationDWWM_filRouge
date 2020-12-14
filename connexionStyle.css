@@ -8,6 +8,7 @@ body {
 .titre {
     color: rgba(83, 81, 81, 0.856);
 }
+
 .mail {
     margin: auto;
     border: none;
@@ -29,4 +30,10 @@ body {
 .form-control-plaintext {
     color: white !important;
 
+}
+
+@media only screen and (max-width:990px) {
+    body {
+        background-size: 250%;
+        }
 }

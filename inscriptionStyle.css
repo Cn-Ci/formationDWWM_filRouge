@@ -2,7 +2,11 @@ body {
 background-image: url(../filrouge2/img/oliver-schwendener-9lcWCCRXiKU-unsplash.jpg);
 background-repeat: no-repeat;
 background-size: cover;
-background-size: 100%;
+
+}
+
+.titre {
+    color: rgba(83, 81, 81, 0.856);
 }
 
 .mail {

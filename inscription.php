@@ -1,3 +1,5 @@
+<?php function html(){
+?>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +11,12 @@
     <title>Inscription</title>
 </head>
 <body>
-
-    <form class="tableau text-center m-5" action="../controller/controllerUtilIndex.php?action=connect" method="post">
-        <h3 class="m-5">Formulaire d'inscription</h3>
+<?php 
+}
+function inscription(){
+?>
+    <form class="tableau text-center m-5" action="../controller/controllerUserConnect.php?action=inscription" method="post">
+        <h3 class="titre m-5">Formulaire d'inscription</h3>
         <div class="mail col-sm-5">
             <input required class="col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
         </div>
@@ -33,14 +38,16 @@
             <input type="file" id="file" name="file" multiple>
             <hr>
         </div>
-            <button class="btnConnexion col-3 text-center btn btn-primary mt-3" type="submit" name="inscrire" >S'inscrire</button>    
+            <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire" >S'inscrire</button>    
     </form>
     <div class="text-center">
-        <a href='../controller/controllerUtilIndex.php'>
+        <a href='../controller/controllerUserConnect.php'>
             <button type="submit" class="retour col-4 text-center m-2 ">Retour à la page d'accueil</button>
         </a>
     </div>
-    
+<?php
+}
+?>   
 
 </body>
 </html>

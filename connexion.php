@@ -16,9 +16,9 @@
             <hr class="m-0">
         </div>
         <div class="mail col-sm-5 mt-2">
-            <input requided class="col-4 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mdp"> <br/>
+            <input requided class="col-4 col-lg-2 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mdp"> <br/>
         </div>
-        <button class="btnInscription col-2 text-center btn btn-primary " type="submit" name="connexion" >Connexion</button>    
+        <button class="btnInscription col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connexion" >Connexion</button>    
     </form>
     <div class="text-center">
         <a href='../controller/controllerUtilIndex.php'>
