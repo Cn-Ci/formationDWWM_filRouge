@@ -21,7 +21,7 @@ class UserConnectMysqliDao extends ConnectionMysqliDao implements CommunDAO{
             $getId = $User->getId();
             $getPseudo = $User->getPseudo();
             $getEmail = $User->getEmail();
-            $getPrenom = $User->getPseudo();
+            $getPrenom = $User->getPrenom();
             $getPhoto = $User->getPhoto();
             $getMdp = $User->getMdp();
             $getProfil = $User->getProfil();
