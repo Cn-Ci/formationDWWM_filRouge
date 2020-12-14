@@ -5,7 +5,7 @@ include_once('../service/ServiceException.php');
 include_once('../service/UserConnectService.php');  
 
 
-echo "test 0";/* 
+/*echo "test 0"; 
 if (isset($_GET['action']) && !empty($_GET['action']))
 {    
     echo "test 1";
