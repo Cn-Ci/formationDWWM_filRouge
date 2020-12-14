@@ -1,15 +1,13 @@
 <?php
 
-include_once(__DIR__.'/ConnectionMysqliDao.php');
-include_once(__DIR__ . '/dao/interface.php');
-require_once(__DIR__. '/interfaceDao.php');
-require_once(__DIR__. '/PDOException.php');
+include_once('ConnectionMysqliDao.php');
+require_once('../Exception/PDOException.php');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-class UserConnectMysqliDao extends ConnectionMysqliDao implements CommunDAO{
+class UserConnectMysqliDAO extends ConnectionMysqliDao {
 
 
  public function addUser(User $user)
@@ -26,7 +24,7 @@ class UserConnectMysqliDao extends ConnectionMysqliDao implements CommunDAO{
             $getMdp = $User->getMdp();
             $getProfil = $User->getProfil();
 
-            $query = "INSERT INTO user VALUES (NULL,:pseudo,:email,:pseudo,:photo,:mdp,:profil)"; //           
+            $query = "INSERT INTO user VALUES (NULL,:pseudo,:email,:pseudo,:photo,:mdp,:profil)";           
             $stmt = $db->prepare($query); 
             
             $stmt->bindParam(':pseudo', $getPseudo);           

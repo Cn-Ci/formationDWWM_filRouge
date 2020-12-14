@@ -1,6 +1,6 @@
 <?php 
 include_once('../dao/UserConnectMysqliDAO.php');
-include_once("DAOSqlException.php");
+include_once("../Exception/UserException.php");
 include_once('../service/ServiceException.php');
 
 Class UtilService {
@@ -10,7 +10,7 @@ Class UtilService {
         try { 
             UserConnectMysqliDAO::addUser($user);
         } 
-        catch (DAOSqlException $de) {
+        catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());
         }  
     } 
@@ -21,7 +21,7 @@ Class UtilService {
             UtilisateurMysqliDAO::researchUserByMail($user);
             return $data;
         } 
-        catch (DAOSqlException $de) {
+        catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());
         }  
     }
@@ -42,7 +42,7 @@ Class UtilService {
                 UserConnectMysqliDAO::addUser($user);
             }
         } 
-        catch (DAOSqlException $de) {
+        catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());
         }  
     }
@@ -65,7 +65,7 @@ Class UtilService {
             return false;
             header('location: controllerUserConnect.php?erreur=notexist'); 
         } 
-        catch (DAOSqlException $de) {
+        catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());
         }    
     }

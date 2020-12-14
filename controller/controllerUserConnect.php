@@ -4,8 +4,6 @@ include_once("../inscription.php");
 include_once('../service/ServiceException.php');  
 include_once('../service/UserConnectService.php');  
 
-
-echo "test 0"; 
 if (isset($_GET['action']) && !empty($_GET['action']))
 {    
     echo "test 1";
@@ -13,7 +11,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         try {
             echo "test 2";
-            html();
+            htmlInscription();
             inscription();
         } 
         catch (ServiceException $se) {
@@ -29,12 +27,13 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         isset($_POST['email'] ))
         {
             try {
+                echo "test 5.1";
             $user = new User;
             $user->setEmail($_POST['email'])
                 ->setMdp($_POST['mdp']);
 
             UserConnectService::UserVerif($user);
-            echo "test 5";
+            echo "test 5.2";
             html();
             inscription();
             }
@@ -106,4 +105,4 @@ else
     } 
 } 
 
-?> */
+?>
