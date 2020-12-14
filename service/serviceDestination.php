@@ -1,5 +1,5 @@
 <?php
-    require_once(__DIR__.'/DestiantionMysqliDao.php');
+    require_once(__DIR__.'/DestiantionPDODao.php');
     require_once(__DIR__.'/ServiceException.php');
     
 
@@ -9,7 +9,7 @@
             $dest->setId($id)->setRegion($region)->setLieu($lieu)->setImage($image)->setPetiteDescription($petiteDescription)->setDescription($description)->setAtout1($atout1)->setAtout2($atout2)->setAtout3($atout3)->setLien($lien)->setExtraitForum($extraitForum);
 
             try {
-                DestinationMysqliDao::add($dest);
+                DestinationPDODao::add($dest);
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }
@@ -17,7 +17,7 @@
 
         public  function serviceResearchBy(Int $idDestination) :?Destination {
             try {
-                $data = DestinationMysqliDao::researchBy($idDestination);
+                $data = DestinationPDODao::researchBy($idDestination);
                 return $data;
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
@@ -26,7 +26,7 @@
 
         public  function serviceReseachAll() {
             try {
-                $data = DestinationMysqliDao::research();
+                $data = DestinationPDODao::research();
                 return $data;
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
@@ -40,7 +40,7 @@
 
 
             try {
-                $rs=DestinationMysqliDAO::update($destinationToModify);
+                $rs=DestinationPDODao::update($destinationToModify);
                 return $rs ;
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
@@ -49,7 +49,7 @@
 
         public  function serviceDelete(Int $idDestination) {
             try {    
-                DestinationMysqliDao::delete($idDestination);
+                DestinationPDODao::delete($idDestination);
             } catch(DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }

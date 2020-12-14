@@ -5,7 +5,7 @@ require_once(__DIR__.'/ConnectionMysqliDao.php');
 require_once(__DIR__.'/interfaceDao.php');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
+class DestinationPDODao extends ConnectionMysqliDao implements communDAO{
 
     //CREATE
     public function add(destination $objet){
@@ -15,7 +15,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
                 $rs=$stmt->execute();
                 $db->close();
                 return $rs; // le résultat est retourné pour pouvoir afficher le message de succes
-            } catch (mysqli_sql_exception $DaoException) {
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } 
     }
@@ -28,7 +28,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
                 $stmt->bind_param('i', $idDestination);
                 $stmt->execute();
                 $rs=$stmt->get_result();
-                $data=$rs->fetch_array(MYSQLI_ASSOC);
+                $data=$rs->fetch_array();
                 $dest = new Destination();
                 $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
                 
@@ -36,7 +36,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
                 $db->close();
         
                 return $dest;
-            } catch (mysqli_sql_exception $DaoException) {
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
         
@@ -49,7 +49,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
             $stmt=$db->prepare("SELECT * FROM destination"); //récupère toute les données de la table destination
             $stmt->execute();
             $rs=$stmt->get_result();
-            $data = $rs->fetch_all(MYSQLI_ASSOC);
+            $data = $rs->fetch_all();
 
             $i=0;
             foreach($data as $key=>$value){
@@ -63,7 +63,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
             $db->close();
 
             return $data;
-        } catch (mysqli_sql_exception $DaoException) {
+        } catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
         }
     }
@@ -91,7 +91,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
             $db->close();
                         
             return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
-        }catch (mysqli_sql_exception $DaoException) {
+        }catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
         }
     }
@@ -107,7 +107,7 @@ class DestinationMysqliDao extends ConnectionMysqliDao implements communDAO{
                     
             $db->close();
             return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
-        }catch (mysqli_sql_exception $DaoException) {
+        }catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
         }
     }

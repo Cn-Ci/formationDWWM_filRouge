@@ -1,56 +1,96 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <title>MOBILI'T - destinations</title>
-        <meta charset="utf-8">
-        BOOTSTRAP
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
-            crossorigin="anonymous" />
-        <link 
-            rel="stylesheet" 
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-            crossorigin="anonymous">
-        
-        <!-- CSS -->
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="mainStyle.css">
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="destinations.css">
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="footerStyle.css">
-        <!-- TYPO -->
-        <link 
-            href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
-            rel="stylesheet"
-            type="text/css"/>
-        <link 
-            href="https://fonts.cdnfonts.com/css/caviar-dreams" 
-            rel="stylesheet">
-        <link 
-            href="https://fonts.googleapis.com/css?family=Cinzel" 
-            rel="stylesheet">
-        <link 
-            href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" 
-            rel="stylesheet">
-    </head>
-    
-    <body>
-        <!-- Navbar -->
-        <div class="container-fluid">
-            <?php include 'navbar.php';?>
-        </div> -->
+<?php
 
-        <div class="principale">
+function html($title){ ?>
+    <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <title><?php echo $title  ?></title>
+            <meta charset="utf-8">
+            <!-- BOOTSTRAP -->
+            <link 
+                rel="stylesheet" 
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+                integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+                crossorigin="anonymous" />
+            <link 
+                rel="stylesheet" 
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+                crossorigin="anonymous">
+            
+            <!-- CSS -->
+            <link 
+                rel="stylesheet" 
+                type="text/css" 
+                href="mainStyle.css">
+            <link 
+                rel="stylesheet" 
+                type="text/css" 
+                href="destinations.css">
+            <link 
+                rel="stylesheet" 
+                type="text/css" 
+                href="footerStyle.css">
+            <!-- TYPO -->
+            <link 
+                href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
+                rel="stylesheet"
+                type="text/css"/>
+            <link 
+                href="https://fonts.cdnfonts.com/css/caviar-dreams" 
+                rel="stylesheet">
+            <link 
+                href="https://fonts.googleapis.com/css?family=Cinzel" 
+                rel="stylesheet">
+            <link 
+                href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" 
+                rel="stylesheet">
+        </head>
+        <body>
+<?php }
+
+function navbar(){ ?>
+    <!-- Navbar -->
+    <div class="container-fluid">
+        <?php include 'navbar.php';?>
+    </div>
+<?php }
+
+function footer(){ ?>
+    
+            <!-- ligne de séparation -->
+            <hr class="hrsep">
+                <?php include 'footer.php';?>
+            </footer>
+
+            <!-- JQUERY -->
+            <script
+                src         ="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin ="anonymous">
+            </script>
+
+            <!-- JAVASCRIPT -->
+            <script 
+                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+                crossorigin="anonymous">
+            </script>
+            <script 
+                src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+                crossorigin="anonymous">
+            </script>
+            <script 
+                type="text/javascript" 
+                src="script.js">
+            </script>
+        </body>
+    </html>
+<?php }
+
+function affichageDestination(){ ?>
+    <div class="principale">
             <!-- Image de la France -->
             <div id="les4img" class="col-12 ">
                 <center>
@@ -193,7 +233,7 @@
             </div>
 
 
-            <!-- EST -->
+            <!-- NORD EST -->
             <div id="est" class="align-items-center m-3 ">
                 <!-- LES VIGNOBLES -->
                 <div class="est1 row d-flex justify-content-center m-2 mb-4">
@@ -580,37 +620,10 @@
                     </div>
                 </div>
             </div>
-
-            <div> <button class="btn btn-outline-success"> + Ajouter un article </button> </div>
-        </div> 
-
-
-            <!-- ligne de séparation -->
-            <hr class="hrsep">
-                <?php include 'footer.php';?>
-        </footer>
-
-        <!-- JQUERY -->
-        <script
-            src         ="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin ="anonymous">
-        </script>
         
-        <!-- JAVASCRIPT -->
-        <script 
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
-            crossorigin="anonymous">
-        </script>
-        <script 
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-            crossorigin="anonymous">
-        </script>
-        <script 
-            type="text/javascript" 
-            src="script.js">
-        </script>
-    </body>
-</html>
+<?php }
+
+function buttonAjout(){ ?>
+        <div> <button class="btn btn-outline-success"> + Ajouter un article </button> </div>
+    </div> 
+<?php }
