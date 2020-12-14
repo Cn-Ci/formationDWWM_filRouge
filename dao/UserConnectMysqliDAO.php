@@ -1,5 +1,5 @@
 <?php
-
+include_once('../class/User.php');
 include_once('ConnectionMysqliDao.php');
 require_once('../Exception/PDOException.php');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -13,26 +13,27 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
  public function addUser(User $user)
     {   
         try {
-            $newConnect = new ConnexionMysqliDAO();
+            $newConnect = new ConnectionMysqliDAO();
             $db = $newConnect->connect(); 
 
-            $getId = $User->getId();
-            $getPseudo = $User->getPseudo();
-            $getEmail = $User->getEmail();
-            $getPrenom = $User->getPrenom();
-            $getPhoto = $User->getPhoto();
-            $getMdp = $User->getMdp();
-            $getProfil = $User->getProfil();
+            $getPseudo = $user->getPseudo();
+            $getEmail = $user->getEmail();
+            $getNom = $user->getNom();
+            $getPrenom = $user->getPrenom();
+            $getPhoto = $user->getPhoto();
+            $getMdp = $user->getMdp();
+            $profil = 'utilisateur';
 
-            $query = "INSERT INTO user VALUES (NULL,:pseudo,:email,:pseudo,:photo,:mdp,:profil)";           
+            $query = "INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:photo,:mdp,:profil)";           
             $stmt = $db->prepare($query); 
             
             $stmt->bindParam(':pseudo', $getPseudo);           
             $stmt->bindParam(':email', $getEmail);
+            $stmt->bindParam(':nom', $getNom);
             $stmt->bindParam(':prenom', $getPrenom);
             $stmt->bindParam(':photo', $getPhoto);
             $stmt->bindParam(':mdp', $getMdp);
-            $stmt->bindParam(':profil', $getProfil);
+            $stmt->bindParam(':profil', $profil);
 
             $stmt->execute();
 
@@ -44,25 +45,25 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
         }         
     }
 
-    function researchUserByMail(User $user) 
+    public function researchUserByMail($email)
     {
-        try {
-            $newConnect = new ConnexionMysqliDAO();
-            $db = $newConnect->connect(); 
+        var_dump($email);
+        try
+        {
+            $newConnect = new ConnectionMysqliDAO();
+            $db = $newConnect->connect();
 
-            $query = "SELECT * FROM user WHERE :email = ?";
+            $query = "SELECT * FROM user WHERE email = :email";
             $stmt = $db->prepare($query);
-            $stmt->bindParam(':email', $email);
-
+            $stmt->bindParam(":email", $email);
             $stmt->execute();
-            $data= $rs->fetchAll();
- 
-            $db = null;
-            $stmt = null; 
-            return $data;
-        } 
-        catch (mysqli_sql_exception $e) {
-            throw new DaoSqlException($e->getMessage(), $e->getCode());
+            $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'User');
+
+            return $email[0];
+        }
+        catch (PDOException $e) {
+            print "erreur !: " . $e->getMessage() . "<br/>";
+            die();
         }
     }
 }

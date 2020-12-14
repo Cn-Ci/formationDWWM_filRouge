@@ -41,7 +41,7 @@ class User {
         return $this;
     }
 
-    public function getEmail() :String
+    public function getEmail() :string
     {
         return $this->email;
     }

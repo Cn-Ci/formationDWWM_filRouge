@@ -1,6 +1,10 @@
 <?php
+
+
 //session_start();
+
 include_once("../inscription.php");
+include_once("../connexion.php");
 include_once('../service/ServiceException.php');  
 include_once('../service/UserConnectService.php');  
 
@@ -23,16 +27,22 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     elseif ($_GET['action']=="inscription")   
     { 
         echo "test 4";
+        //var_dump ($_POST['username']);
         if (isset($_POST['inscrire']) &&
         isset($_POST['email'] ))
-        {
+        {  
+            echo "test 5.0";
             try {
-                echo "test 5.1";
+            echo "test 5.1";
             $user = new User;
-            $user->setEmail($_POST['email'])
-                ->setMdp($_POST['mdp']);
+            $user->setPseudo($_POST['pseudo'])
+                ->setEmail($_POST['email'])
+                ->setNom($_POST['nom'])
+                ->setPrenom($_POST['prenom'])
+                ->setPhoto($_POST['photo'])
+                ->setMdp($_POST['password']);
 
-            UserConnectService::UserVerif($user);
+            UserConnectService::UserVerif($user,($_POST['email']));
             echo "test 5.2";
             html();
             inscription();
@@ -48,13 +58,13 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         try {
             echo "test 7";
-            html();
-            inscription();
+            htmlConnection();
+            connection();
         } 
         catch (ServiceException $se) {
             echo "test 8";
-            html();
-            inscription();
+            htmlConnection();
+            connection();
         }  
     }
     elseif (($_GET['action'] == "connect"))
@@ -65,10 +75,10 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         {
             try {
                 $user = new User;
-                $user->setEmail($_POST['email'])
-                    ->setMdp($_POST['mdp']);
+                $user->setEmail($_POST['username'])
+                    ->setMdp($_POST['password']);
                         
-                    UserConnectService::userConnect($user);
+                    UserConnectService::userConnect($_GET['username']);
 
                 if (UserConnectService::userConnect($user))
                 {

@@ -26,7 +26,7 @@
 				// <a href="#" class="col-sm-12 col-md-12 col-lg alink" data-toggle="modal" data-target="#exampleModal">CONNEXION</a>
 				?>
 				 <a type='button' class='btn btn-secondary col-4 m-5' href='controller/controllerUserConnect.php?action=afficherInscription'>S'inscrire</a>
-                    <a type='button' class='btn btn-success col-4 m-5' href='../controller/controllerUserConnect.php?action=connexion'>Se connecter</a>
+                    <a type='button' class='btn btn-success col-4 m-5' href='controller/controllerUserConnect.php?action=connexion'>Se connecter</a>
 				
 				<style>
 					.btn {

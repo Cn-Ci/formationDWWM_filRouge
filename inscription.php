@@ -27,7 +27,10 @@ function inscription($errorCode=null){
             <input required class="col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
         </div>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="text" name="username"  placeholder="Saisir votre email"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
+        </div>
+        <div class="mail col-sm-5">
+            <input required class="col-4 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
         </div>
         <div class="mail col-sm-5">
             <input required class="col-4 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
@@ -37,14 +40,13 @@ function inscription($errorCode=null){
             <hr>
         </div>
         <div class="mail col-sm-5">
-            <input requided class="col-4 text-center form-control-plaintext" readonly type="password" name="password" placeholder="Selectionner votre photo ci dessous"> <br/>
-            <input type="file" id="file" name="file" multiple>
+            <input requided class="col-4 text-center form-control-plaintext" readonly type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
             <hr>
         </div>
-            <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire" >S'inscrire</button>    
+            <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
     </form>
     <div class="text-center">
-        <a href='../controller/controllerUserConnect.php'>
+        <a href='main.php'>
             <button type="submit" class="retour col-4 text-center m-2 ">Retour à la page d'accueil</button>
         </a>
     </div>

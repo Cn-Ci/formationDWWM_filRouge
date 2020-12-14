@@ -3,7 +3,7 @@ include_once('../dao/UserConnectMysqliDAO.php');
 include_once("../Exception/UserException.php");
 include_once('../service/ServiceException.php');
 
-Class UtilService {
+Class UserConnectService {
 
     static function addUser(User $user) 
     {
@@ -26,18 +26,19 @@ Class UtilService {
         }  
     }
 
-    static function UserVerif(User $user)
+    static function UserVerif(User $user, $email)
     {  
         try { 
-            $data = UserConnectMysqliDAO::researchUserByMail($user->getEmail());
+            $userConnect = new UserConnectMysqliDAO;
+            $data = $userConnect->researchUserByMail($email);
             if ($data)
             {
                 header('location: controllerUserConnect.php?action=afficherInscription');
             }
             else
             {
-                $password = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-                $user->setPassword($mdp);
+                $mdp = password_hash($user->getMdp(), PASSWORD_DEFAULT);
+                $user->setMdp($mdp);
 
                 UserConnectMysqliDAO::addUser($user);
             }
@@ -47,16 +48,17 @@ Class UtilService {
         }  
     }
 
-    static function userConnect(User $user)
+    static function userConnect($email)
     {
         try { 
-            $data = UserConnectMysqliDAO::researchUserByMail($user->getEmail());
+            $userConnect = new UserConnectMysqliDAO;
+            $data = $userConnect->researchUserByMail($email);
         if ($data) 
         {     
-            $password = $_POST['mdp'];
-            if (password_verify($password,$data['mdp']))
+            $password = $_POST['password'];
+            if (password_verify($password,$data['password']))
             {
-                $_SESSION['email'] = $data['email'];
+                $_SESSION['username'] = $data['username'];
                 $_SESSION['profil'] = $data['profil'];
                 return true;
             }
