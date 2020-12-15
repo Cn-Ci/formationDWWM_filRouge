@@ -46,7 +46,7 @@ function inscription($errorCode=null){
             <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
     </form>
     <div class="text-center">
-        <a href='main.php'>
+        <a href='../navbar.php'>
             <button type="submit" class="retour col-4 text-center m-2 ">Retour à la page d'accueil</button>
         </a>
     </div>

@@ -18,7 +18,7 @@ function connection(){
     <form class="tableau text-center m-5" action="../controller/controllerUserConnect.php?action=connect" method="post">
         <h3 class="titre m-3">Connexion</h3>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="text" name="username"  placeholder="Saisir votre email"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
             <hr class="m-0">
         </div>
         <div class="mail col-sm-5 mt-2">
@@ -27,7 +27,7 @@ function connection(){
         <button class="btnInscription col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connecter" >Connexion</button>    
     </form>
     <div class="text-center">
-        <a href='../controller/controllerUtilIndex.php'>
+        <a href='../navbar.php'>
             <button type="submit" class="retour col-4 text-center btn btn-dark m-2 ">Retour à la page d'accueil</button>
         </a>
     </div>

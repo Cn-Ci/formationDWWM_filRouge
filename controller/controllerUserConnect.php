@@ -20,14 +20,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         } 
         catch (ServiceException $se) {
             echo "test 3";
-            html();
+            htmlInscription();
             inscription(10000);
         } 
     } 
     elseif ($_GET['action']=="inscription")   
     { 
         echo "test 4";
-        //var_dump ($_POST['username']);
+        var_dump ($_POST['action']);
         if (isset($_POST['inscrire']) &&
         isset($_POST['email'] ))
         {  
@@ -44,12 +44,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
             UserConnectService::UserVerif($user,($_POST['email']));
             echo "test 5.2";
-            html();
-            inscription();
+            htmlConnection();
+            connection();
             }
             catch (ServiceException $se){
             echo "test 6";
-            html();
+            htmlInscription();
             inscription($se->getMessage(), $se->getCode());
             }   
         }
@@ -71,31 +71,32 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         echo "test 9";
         if (isset($_POST['connecter']) &&
-        isset($_POST['username'] ))
+        isset($_POST['email'] ))
         {
             try {
+                echo "test 10";
                 $user = new User;
-                $user->setEmail($_POST['username'])
+                $user->setEmail($_POST['email'])
                     ->setMdp($_POST['password']);
                         
-                    UserConnectService::userConnect($_GET['username']);
+                    UserConnectService::userConnect($_GET['email']);
 
                 if (UserConnectService::userConnect($user))
                 {
                     echo "test 10";
-                    html();
+                    htmlInscription();
                     inscription();
                 }
                 else 
                 {
                     echo "test 11";
-                    html();
+                    htmlInscription();
                     inscription();
                 }  
             }
             catch (ServiceException $se) {
                 echo "test 12";
-                html();
+                htmlInscription();
                 inscription();
             }  
         }
@@ -105,12 +106,12 @@ else
 {
     try {
         echo "test 13";
-        html();
+        htmlInscription();
         inscription();
     } 
     catch (ServiceException $se) {
         echo "test 14";
-        html();
+        htmlInscription();
         inscription();
     } 
 } 
