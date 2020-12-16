@@ -23,14 +23,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             inscription(10000);
         } 
     } 
-    if ($_GET['action']=="inscription")   
+    elseif ($_GET['action']=="inscription")   
     { 
-
-        if (isset($_POST["inscrire"]) &&
-        isset($_POST["email"] ))
+        if (isset($_POST['inscrire']) &&
+        isset($_POST['username'] ))
         {
             echo "test 5.0";
-           
             try {
             echo "test 5.1";
             $user = new User;
@@ -77,19 +75,19 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 $user = new User;
                 $user->setEmail($_POST['email'])
                     ->setMdp($_POST['password']);
-                       // var_dump($_POST, $user, $_POST['email'], $_POST['password'], $_GET['email']);
-                    UserConnectService::userConnect($_POST['email']);
+                        
+                    UserConnectService::userConnect($_GET['email']);
 
                 if (UserConnectService::userConnect($user))
                 {
                     echo "test 10";
-                    htmlUser();
+                    htmlInscription();
                     inscription();
                 }
                 else 
                 {
                     echo "test 11";
-                    htmlUser();
+                    htmlInscription();
                     inscription();
                 }  
             }

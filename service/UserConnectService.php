@@ -36,11 +36,12 @@ Class UserConnectService {
                 header('location: controllerUserConnect.php?action=afficherInscription');
             }
             else
-            {
+            { 
                 $mdp = password_hash($user->getMdp(), PASSWORD_DEFAULT);
                 $user->setMdp($mdp);
 
-                UserConnectMysqliDAO::addUser($user);
+                $userAdd = new UserConnectMysqliDAO();
+                $userAdd->addUser($user);
             }
         } 
         catch (UserException $de) {
@@ -48,24 +49,31 @@ Class UserConnectService {
         }  
     }
 
-    static function userConnect($email)
+    static function userConnect($user)
     {
         try { 
             $userConnect = new UserConnectMysqliDAO;
-            $data = $userConnect->researchUserByMail($email);
+            $data = $userConnect->researchUserByMail($user);
+            //var_dump($data, $user);
         if ($data) 
         {     
+            //var_dump($data, $user, $_POST, $_POST['password']);
+            //var_dump($password,$data['password']);
             $password = $_POST['password'];
+            var_dump($data['']);die;
+            //var_dump($password = $_POST['password'] . "et ici on a le date" . ['password']);die;
             if (password_verify($password,$data['password']))
             {
-                $_SESSION['username'] = $data['username'];
+                //var_dump($data, $email, $_POST, $_POST['password']);die;
+                $_SESSION['email'] = $data['email'];
                 $_SESSION['profil'] = $data['profil'];
                 return true;
             }
         }
         else
             return false;
-            header('location: controllerUserConnect.php?erreur=notexist'); 
+            echo "erreur connection"
+;            // header('location: controllerUserConnect.php?erreur=notexist'); 
         } 
         catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());

@@ -45,7 +45,7 @@ class User {
     {
         return $this->email;
     }
-    public function setEmail(String $email) :Self
+    public function setEmail(?String $email) :Self
     {
         $this->email = $email;
         return $this;

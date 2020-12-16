@@ -47,19 +47,19 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
 
     public function researchUserByMail($email)
     {
-        var_dump($email);
+        //var_dump($email);
         try
         {
             $newConnect = new ConnectionMysqliDAO();
             $db = $newConnect->connect();
 
-            $query = "SELECT * FROM user WHERE email = :email";
+            $query = "SELECT * FROM user WHERE email = :email LIMIT 1";
             $stmt = $db->prepare($query);
             $stmt->bindParam(":email", $email);
             $stmt->execute();
-            $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'User');
+            $userEmail = $stmt->fetchAll(PDO::FETCH_CLASS,'User');
 
-            return $email[0];
+            return $userEmail;
         }
         catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";
