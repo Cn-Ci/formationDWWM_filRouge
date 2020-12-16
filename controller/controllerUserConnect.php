@@ -89,8 +89,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 else 
                 {
                     echo "test 11";
-                    htmlUser();
-                    inscription();
+                    include_once('../navbar.php');
                 }  
             }
             catch (ServiceException $se) {

@@ -57,7 +57,7 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt = $db->prepare($query);
             $stmt->bindParam(":email", $email);
             $stmt->execute();
-            $userEmail = $stmt->fetchAll(PDO::FETCH_CLASS,'User');
+            $userEmail = $stmt->fetch();
 
             return $userEmail;
         }

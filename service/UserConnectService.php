@@ -54,17 +54,30 @@ Class UserConnectService {
         try { 
             $userConnect = new UserConnectMysqliDAO;
             $data = $userConnect->researchUserByMail($user);
-            //var_dump($data, $user);
+          
+            //$userConnect->getMdp();
+            
         if ($data) 
         {     
             //var_dump($data, $user, $_POST, $_POST['password']);
             //var_dump($password,$data['password']);
+            //$truc = nomdetafonction(); $truc->getMdp()
+            
             $password = $_POST['password'];
-            var_dump($data['']);die;
-            //var_dump($password = $_POST['password'] . "et ici on a le date" . ['password']);die;
-            if (password_verify($password,$data['password']))
+            
+           
+            // echo '<pre>';
+            // var_dump($data['mdp']);
+            // echo '</pre>';
+            // var_dump($data['pseudo']);die;
+            
+             
+
+            if (password_verify($password,$data['mdp']))
             {
                 //var_dump($data, $email, $_POST, $_POST['password']);die;
+
+
                 $_SESSION['email'] = $data['email'];
                 $_SESSION['profil'] = $data['profil'];
                 return true;
