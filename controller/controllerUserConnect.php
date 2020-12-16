@@ -3,8 +3,7 @@
 
 //session_start();
 
-include_once("../inscription.php");
-include_once("../connexion.php");
+include_once("..//presentation/userPresentation.php");
 include_once('../service/ServiceException.php');  
 include_once('../service/UserConnectService.php');  
 
@@ -15,21 +14,18 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         try {
             echo "test 2";
-            htmlInscription();
+            htmlUser();
             inscription();
         } 
         catch (ServiceException $se) {
             echo "test 3";
-            htmlInscription();
+            htmlUser();
             inscription(10000);
         } 
     } 
-    elseif ($_GET['action']=="inscription")   
+    elseif ($_GET['action']=="toto")   
     { 
-        echo "test 4";
-        var_dump ($_POST['action']);
-        if (isset($_POST['inscrire']) &&
-        isset($_POST['email'] ))
+        if (isset($_POST['inscrire']) )
         {  
             echo "test 5.0";
             try {
@@ -44,12 +40,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
             UserConnectService::UserVerif($user,($_POST['email']));
             echo "test 5.2";
-            htmlConnection();
+            htmlUser();
             connection();
             }
             catch (ServiceException $se){
             echo "test 6";
-            htmlInscription();
+            htmlUser();
             inscription($se->getMessage(), $se->getCode());
             }   
         }
@@ -58,12 +54,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         try {
             echo "test 7";
-            htmlConnection();
+            htmlUser();
             connection();
         } 
         catch (ServiceException $se) {
             echo "test 8";
-            htmlConnection();
+            htmlUser();
             connection();
         }  
     }
@@ -96,7 +92,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             }
             catch (ServiceException $se) {
                 echo "test 12";
-                htmlInscription();
+                htmlUser();
                 inscription();
             }  
         }
@@ -106,12 +102,12 @@ else
 {
     try {
         echo "test 13";
-        htmlInscription();
+        htmlUser();
         inscription();
     } 
     catch (ServiceException $se) {
         echo "test 14";
-        htmlInscription();
+        htmlUser();
         inscription();
     } 
 } 
