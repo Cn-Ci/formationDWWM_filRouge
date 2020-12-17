@@ -30,7 +30,7 @@
                 $title     = htmlentities($_POST['title']);
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
-                $nbComment = 0;//? GET NB COMMENT
+                $nbComment = 0; //? GET NB COMMENT
                 $idAuthor  = $_SESSION['id'];
 
                 try {

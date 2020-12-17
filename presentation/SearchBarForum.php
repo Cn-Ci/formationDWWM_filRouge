@@ -1,14 +1,11 @@
 <div id="barForum" class="col-sm 12 row">
 
     <div class="col-sm-12 col-lg-2">
-        <button id="dropBox" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trier par 
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Date</a>
-            <a class="dropdown-item" href="#">Nombre de commentaire</a>
-            <a class="dropdown-item" href="#">Nombre de vues</a>
-        </div>
+        <select class="form-control" name="filter" id="filter">
+            <option >Trier par</option>
+            <option >Date</option>
+            <option >Nombre de commentaire</option>
+        </select>
     </div> 
 
     <div class="col-sm-12 col-lg-8">     
@@ -30,7 +27,7 @@
     #barForum{
         margin-top    : 10%;
         border-bottom : 1px solid rgba(0,0,0,0.1);
-        padding       : 10px 10px 10px 10px;
+        padding       : 10px 10px 0px 10px;
         margin        : 0px 0px 0px 0px;
     }
     #dropBox{

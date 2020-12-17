@@ -1,7 +1,7 @@
 <?php 
-/*     if (!isset($_SESSION) || empty($_SESSION)) {
-        header('conenxion.php'); //* REDIRECTE TO LOGIN PAGE
-    } */
+    if (!isset($_SESSION) || empty($_SESSION)) {
+        header('../connexion.php');
+    }
 ?> 
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-12">
                     <div id="blockTopic">
-                        <form>                                                
+                        <form method='POST' action='../controller/controleurTopic.php'>                                                
                             <input type="text" name="title" id="inputTitle" placeholder="Titre..." class="mb-5">
 
                             <textarea name="content" id="inputContent" cols="30" rows="15" placeholder="Mon avis..."></textarea>
