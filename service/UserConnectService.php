@@ -77,9 +77,11 @@ Class UserConnectService {
             {
                 //var_dump($data, $email, $_POST, $_POST['password']);die;
 
-
+                $_SESSION['id'] = $data['id'];
+                $_SESSION['pseudo'] = $data['pseudo'];
                 $_SESSION['email'] = $data['email'];
                 $_SESSION['profil'] = $data['profil'];
+                
                 return true;
             }
         }
