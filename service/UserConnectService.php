@@ -86,7 +86,7 @@ Class UserConnectService {
         else
             return false;
             echo "erreur connection"
-;            // header('location: controllerUserConnect.php?erreur=notexist'); 
+;           header('location: controllerUserConnect.php?erreur=notexist'); 
         } 
         catch (UserException $de) {
             throw new ServiceException($de->getMessage(), $de->getCode());

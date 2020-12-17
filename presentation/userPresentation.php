@@ -26,26 +26,26 @@ function inscription($errorCode=null){
     <form class="tableau text-center m-5" action="../controller/controllerUserConnect.php?action=inscription" method="post">
         <h3 class="titre m-5">Formulaire d'inscription</h3>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
         </div>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control" type="email" name="email"  placeholder="Saisir votre email"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
         </div>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
         </div>
         <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
+            <input required class="col-4 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
         </div>   
+        <div class="mail col-sm-5">
+            <input requided class="col-4 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
+            <hr>
+        </div>
+        <div class="mail col-sm-5">
+            <input requided class="col-4 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
+            <hr>
+        </div>
         
-        <div class="mail col-sm-5">
-            <input requided class="col-4 text-center form-control" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
-            <hr>
-        </div>
-        <div class="mail col-sm-5">
-            <input requided class="col-4 text-center form-control" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
-            <hr>
-        </div>
             <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
     </form>
     <div class="text-center">
@@ -74,11 +74,8 @@ function connection(){
                 <button type="submit" class="retour col-4 text-center btn btn-dark m-2 ">Retour à la page d'accueil</button>
             </a>
         </div>
-        
-    </body>
-    </html>
-    <?php
-    }
+<?php
+}
 ?>   
 
 </body>
