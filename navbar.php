@@ -21,28 +21,16 @@
 		<?php
 			if (isset($_SESSION['id'])){
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
-				<a type='button' class='btn btn-danger col-4 m-5 text-black' href='../controller/controllerUtilIndex.php?action=deconnexion'>Se déconnecter</a><?php
+				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=deconnexion'>Se déconnecter</a><?php
 			} else {
-				// <a href="#" class="col-sm-12 col-md-12 col-lg alink" data-toggle="modal" data-target="#exampleModal">CONNEXION</a>
 				?>
-				 <a type='button' class='btn btn-secondary col-4 m-5' href='controller/controllerUserConnect.php?action=afficherInscription'>S'inscrire</a>
-                    <a type='button' class='btn btn-success col-4 m-5' href='controller/controllerUserConnect.php?action=connexion'>Se connecter</a>
-				
-				<style>
-					.btn {
-						color:black;
-					}
-				</style>
-				
+				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>
+                <a type='button' class='col-sm-12 col-md-12 col-lg alink' href='controller/controllerUserConnect.php?action=connexion'>SE CONNECTER</a>
 				<?php
 			}
 		?>
 	</nav>
 </div>
-
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	include_once('inscriptionsite.php');?>
-</div> -->
 
 <style>
 	#navBar{
