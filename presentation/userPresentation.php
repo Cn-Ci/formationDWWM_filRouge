@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/connexionStyle.css">
     <link rel="stylesheet" href="../css/inscriptionStyle.css">
-    <title>Inscription</title>
+    <title>Formulaire</title>
 </head>
 <body>
 <?php 
@@ -22,35 +22,36 @@ function inscription($errorCode=null){
         echo "<center><div class='alert alert-danger'> Erreur lors de l'affichage de la page d'inscription ! !</div></center>";
     }
 ?>
-    <!-- <form class="tableau text-center m-5" action="controllerUserConnect.php?action=toto" method="post"> -->
-    <form class="tableau text-center m-5" action="../controller/controllerUserConnect.php?action=inscription" method="post">
-        <h3 class="titre m-5">Formulaire d'inscription</h3>
-        <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
+    <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=inscription" method="post">
+        <h3 class="col titre mt-5 mb-5">Formulaire d'inscription</h3>
+        <div class="mail col col-sm-5">
+            <input required class="col col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
         </div>
-        <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
+        <div class="mail col col-sm-5">
+            <input required class="col col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
         </div>
-        <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
+        <div class="mail col col-sm-5">
+            <input required class="col col-4 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
         </div>
-        <div class="mail col-sm-5">
-            <input required class="col-4 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
+        <div class="mail col col-sm-5">
+            <input required class="col col-4 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
         </div>   
-        <div class="mail col-sm-5">
-            <input requided class="col-4 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
+        <div class="mail col align-items-center text-center col-sm-5">
+            <input requided class="col col-4 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
             <hr>
         </div>
-        <div class="mail col-sm-5">
-            <input requided class="col-4 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
+        <div class="fichier col col-sm-5">
+            <input requided class="col col-4 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
             <hr>
-        </div>
-        
-            <button class="btnConnexion col-4 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
+        </div>    
+            <button class="btnConnexion col col-lg-2 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
     </form>
-    <div class="text-center">
-        <a href='../navbar.php'>
-            <button type="submit" class="retour col-4 text-center m-2 ">Retour à la page d'accueil</button>
+    <div class="row text-center">
+        <a href='../controller/controllerUserConnect.php?action=connexion'>
+            <button class='btnConnexion col col-lg-2 text-center btn btn-primary mb-4'>Se connecter</button>
+        </a>
+        <a href='../main.php'>
+            <button type="submit" class="retour col col-lg-4 text-center m-2 ">Retour à la page d'accueil</button>           
         </a>
     </div>
 <?php

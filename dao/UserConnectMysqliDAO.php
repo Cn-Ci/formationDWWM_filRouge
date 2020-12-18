@@ -45,9 +45,8 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
         }         
     }
 
-    public function researchUserByMail($email)
+    public function researchUserByEmail($email)
     {
-        //var_dump($email);
         try
         {
             $newConnect = new ConnectionMysqliDAO();

@@ -7,32 +7,38 @@ include_once("..//presentation/userPresentation.php");
 include_once('../service/ServiceException.php');  
 include_once('../service/UserConnectService.php');  
 
+/* IF ACTION -----------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------*/
 if (isset($_GET['action']) && !empty($_GET['action']))
 {    
-    echo "test 1";
+    echo "test 1 action OK --- ";
+    /* ****************************************** INSCRIPTION - Affichage formulaire inscription */
     if ($_GET['action']=="afficherInscription")   
     {
+        echo "test 2 action afficherinscription --- ";
         try {
-            echo "test 2";
+            /**_ INSCRIPTION - Affichage ________________**/
+            echo "test 3 affichage page inscription OK --- ";
             htmlUser();
             inscription();
         } 
         catch (ServiceException $se) {
-            echo "test 3";
+            /**_ INSCRIPTION - Affichage erreur  _______**/
+            echo "test 4 affichager page inscription KO --- ";
             htmlUser();
             inscription(10000);
         } 
-    } 
-    if ($_GET['action']=="inscription")   
+    }
+    /* ****************************************** INSCRIPTION - Formulaire ?action=inscription */
+    elseif ($_GET['action']=="inscription")   
     { 
-
-        if (isset($_POST["inscrire"]) &&
-        isset($_POST["email"] ))
+        echo "test 5 action inscription OK --- ";
+        /* :::::::::::::: INSCRIPTION - Name bouton "inscrire" ::::::::::::::*/
+        if (isset($_POST["inscrire"]) && isset($_POST["email"] ))
         {
-            echo "test 5.0";
-           
+            echo "test 6 name inscrire OK --- ";
             try {
-            echo "test 5.1";
+            /**_ INSCRIPTION - Verification email _________**/
             $user = new User;
             $user->setPseudo($_POST['pseudo'])
                 ->setEmail($_POST['email'])
@@ -41,74 +47,98 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 ->setPhoto($_POST['photo'])
                 ->setMdp($_POST['password']);
 
-            UserConnectService::UserVerif($user,($_POST['email']));
-            echo "test 5.2";
-            htmlUser();
-            connection();
-            }
+            //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
+            //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
+            if (UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])))
+                {
+                    /**_ INSCRIPTION - if email not exist et hash ______**/
+                    echo "test 7 affichage connexion Verification email et hash OK --- ";
+                    include_once('../navbar.php');
+                }
+                else 
+                {
+                /**_ INSCRIPTION - If email exist ______**/
+                  echo "test 8 affichage page connexion et verification email et hash KO --- ";
+                  htmlUser();
+                  inscription(); 
+                }  
+            } 
             catch (ServiceException $se){
-            echo "test 6";
-            htmlUser();
-            inscription($se->getMessage(), $se->getCode());
-            }   
-        }
-    }   
-    elseif ($_GET['action'] == "connexion" )
+                /**_ INSCRIPTION - Affichage erreur  _______**/
+                echo "test 9 affichager page inscription KO --- ";
+                htmlUser();
+                inscription($se->getMessage(), $se->getCode());
+            } 
+        } 
+    }
+
+    /* ****************************************** CONNEXION - Affichage formulaire inscription */
+    if ($_GET['action'] == "connexion" )
     {
+        echo "test 10 action connexion OK --- ";
         try {
-            echo "test 7";
+            /**_ CONNEXION - Affichage ___________________**/
+            echo "test 11 affichage page connexion affiche OK --- ";
             htmlUser();
             connection();
         } 
         catch (ServiceException $se) {
-            echo "test 8";
+            /**_ CONNEXION - Affichage erreur ____________**/
+            echo "test 12 affichage page connexion affiche KO --- ";
             htmlUser();
             connection();
         }  
     }
     elseif (($_GET['action'] == "connect"))
     {
-        echo "test 9";
-        if (isset($_POST['connecter']) &&
-        isset($_POST['email'] ))
+        echo "test 13 action connect OK --- ";
+    /* :::::::::::::: CONNEXION - Name bouton "connecter" ::::::::::::::*/
+        if (isset($_POST['connecter']) && isset($_POST['email'] ))
         {
             try {
-                echo "test 10";
+                /**_ CONNEXION - Verification email ______**/
+                echo "test 14 name connecter OK --- ";
                 $user = new User;
                 $user->setEmail($_POST['email'])
                     ->setMdp($_POST['password']);
-                       // var_dump($_POST, $user, $_POST['email'], $_POST['password'], $_GET['email']);
-                    UserConnectService::userConnect($_POST['email']);
 
-                if (UserConnectService::userConnect($user))
+                if (UserConnectService::userConnect($_POST['email']))
                 {
-                    echo "test 10";
-                    htmlUser();
-                    inscription();
+                   /**_ CONNEXION - If email exist ______**/
+                   echo "test 15 user exist --- ";
+                   //include_once('../navbar.php');
                 }
                 else 
                 {
-                    echo "test 11";
-                    include_once('../navbar.php');
+                    /**_ CONNEXION - If email not-exist ___**/ 
+                    echo "test 16 user not exist --- ";
+                    htmlUser();
+                    inscription();
                 }  
             }
             catch (ServiceException $se) {
-                echo "test 12";
+                /**_ CONNEXION - erreur verification ______**/
+                echo "test 17 verification KO --- ";
                 htmlUser();
                 inscription();
             }  
         }
-    }     
+    } 
 }
+
+/* IF NOT ACTION --------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------*/    
 else   
 {
     try {
-        echo "test 13";
+        /**_ NO ACTION - erreur ___________________________**/
+        echo "test 18 action KO --- ";
         htmlUser();
         inscription();
     } 
     catch (ServiceException $se) {
-        echo "test 14";
+        /**_ NO ACTION - erreur ____________________________**/
+        echo "test 19 action KO --- ";
         htmlUser();
         inscription();
     } 

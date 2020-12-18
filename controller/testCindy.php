@@ -113,4 +113,80 @@ else
     } 
 } 
 
+
+
+
+
+public function searchMissionByPays($idPays){
+    try{
+        $newConnect = new BddConnect();
+        $db = $newConnect->connexion();
+
+        $query = "SELECT * FROM mission WHERE idPays = :idPays";
+
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(":idPays", $idPays);
+        $stmt->execute();
+
+        $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
+
+        return $missions;
+    }
+    catch (PDOException $e){
+        throw new PDOException($e->getMessage(),$e->getCode());
+    }
+    finally{
+        $db = null;
+        $stmt = null;
+    }
+}
+
+public function searchMissionByTypeActivite($idTypeActivite){
+    try {
+        $newConnect = new BddConnect();
+        $db = $newConnect->connexion();
+
+        $query = "SELECT * FROM mission WHERE idTypeActivite = :idTypeActivite";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(":idTypeActivite", $idTypeActivite);
+        $stmt->execute();
+
+        $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
+
+        return $missions;
+    } 
+    catch (PDOException $e){
+        throw new PDOException($e->getMessage(),$e->getCode());
+    }
+    finally{
+        $db = null;
+        $stmt = null;
+    }
+}
+
+public function searchById($idMission)
+    {
+        try 
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+
+            $query = "SELECT * FROM mission WHERE idMission = :idMission";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idMission", $idMission);
+            $stmt->execute();
+
+            $mission = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');////MYSQLI FETCH ARRAY
+            //varDump($mission);
+
+            return $mission[0];
+        } 
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }
+        finally{
+            $db = null;
+            $stmt = null;
+        }
+    }
 ?>
