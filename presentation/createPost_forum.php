@@ -2,6 +2,8 @@
     if (!isset($_SESSION) || empty($_SESSION)) {
         header('../connexion.php');
     }
+
+    //! var_dump($_SESSION);
 ?> 
 
 <!DOCTYPE html>
