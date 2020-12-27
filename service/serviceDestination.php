@@ -1,10 +1,14 @@
 <?php
-    require_once(__DIR__.'/DestiantionPDODao.php');
-    require_once(__DIR__.'/ServiceException.php');
+    require_once(__DIR__.'/../dao/DestinationPDODao.php');
+    require_once(__DIR__.'/../service/ServiceException.php');
+    require_once(__DIR__.'/../service/interfaceDestinationService.php');
+    require_once(__DIR__.'/../service/interfaceCommunService.php');
+
+
     
 
-    class ServiceDestination implements communDestinationService, communService {
-        public  function serviceAddDestination($id=null, string $region, string $lieu, string $image, string $petiteDescription, string $description,string $atout1, string $atout2, string $atout3,string $lien, string $extraitForum, string $idUser): void {
+    class ServiceDestination implements interfaceDestinationService, communService {
+        public function serviceAddDestination($id=null, string $region, string $lieu, string $image, string $petiteDescription, string $description,string $atout1, string $atout2, string $atout3,string $lien, string $extraitForum, string $idUser): void {
             $dest = new Destination();
             $dest->setId($id)->setRegion($region)->setLieu($lieu)->setImage($image)->setPetiteDescription($petiteDescription)->setDescription($description)->setAtout1($atout1)->setAtout2($atout2)->setAtout3($atout3)->setLien($lien)->setExtraitForum($extraitForum);
 

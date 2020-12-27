@@ -1,8 +1,9 @@
 <?php 
+require_once(__DIR__.'/Region.php');
 
 class Destination extends Region{
     private $idDestination;
-    private $region;
+    protected $region;
     private $lieu;
     private $image;
     private $petiteDescription;
@@ -14,14 +15,36 @@ class Destination extends Region{
     private $extraitForum;
     private $idUser;
     
-    function __toString(){
-        return "[Destinations] -> "  . $this->idDestination .
+    public function __toString(){
+        return "[idDestination] -> "  . $this->idDestination .
+            "[region] -> " . $this->region.
             "[lieu] -> " . $this->lieu .
             "[image] -> " . $this->image . 
-            "[description] -> " . $this->description .   
+            "[petiteDescription] ->" . $this->petiteDescription.
+            "[description] -> " . $this->description .
+            "[atout1] -> " . $this->atout1 .   
+            "[atout2] -> " . $this->atout2 .   
+            "[atout3] -> " . $this->atout3 .
             "[lien] -> " . $this->lien .
             "[extraitForum] -> " . $this->extraitForum .
             "[idUser] -> " . $this->idUser;
+    }
+
+    public function jsonSerialize(){
+        return [
+            'idDestination ' =>   $this->getIdDestination() ,
+            'region ' =>  $this->getRegion(),
+            'lieu ' =>  $this->getLieu(),
+            'image ' =>  $this->getImage(), 
+            'petiteDescription' =>  $this->getPetiteDescritpion(),
+            'description ' =>  $this->getDescription(),
+            'atout1 ' =>  $this->getAtout1(),
+            'atout2 ' =>  $this->getAtout2(),   
+            'atout3 ' =>  $this->getAtout3(),
+            'lien ' =>  $this->getLien(),
+            'extraitForum ' =>  $this->getExtraitForum() ,
+            'idUser ' =>  $this->getIdUser()
+        ];
     }
 
     public function getIdDestination() :Int

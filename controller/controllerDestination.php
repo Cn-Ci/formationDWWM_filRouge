@@ -2,12 +2,16 @@
     require_once('../service/serviceDestination.php');
     require_once('../presentation/destinationPresentation.php');
 
-    if (!isset($_POST) && !isset($_GET)) && $_SESSION="ROLE_USER" {
-        
+          
 
-                try {
-                    ServiceTopic::service_addEmp($title, $datePost, $content, $nbComment, $Author);
-                } catch(ServiceException $ce) {
-                    echo 'Error';
-                }
-            }
+               
+                    $destinations=ServiceDestination::serviceReseachAll();
+                    html($title="Destinations");
+                    navbar();
+                    boutonFrance();
+                    affichageDestination($destinations, $ouest);
+                    if(isset($_SESSION) && $_SESSION['profil']= "administrateur"){
+                        buttonAjout();
+                    }
+                    footer();
+

@@ -1,15 +1,29 @@
 <?php
 
+
+require_once(__DIR__.'/../class/Destination.php');
 require_once(__DIR__.'/DaoSqlException.php');
 require_once(__DIR__.'/ConnectionMysqliDao.php');
 require_once(__DIR__.'/interfaceDao.php');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-class DestinationPDODao extends ConnectionMysqliDao implements communDAO{
+class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
 
     //CREATE
-    public function add(destination $objet){
-            try{$db=parent :: connect(); //connection à la base de données
+    public function add(object $destination){
+
+        $region= $destination->getRegion();
+        $lieu= $destination->getLieu();
+        $image= $destination->getImage();
+        $petiteDescription= $destination->getPetiteDescription();
+        $description= $destination->getDescription();
+        $atout1= $destination->getAtout1();
+        $atout2= $destination->getAtout2();
+        $atout3= $destination->getAtout3();
+        $lien= $destination->getLien();
+        $extratiForum= $destination->getExtratiForum();
+
+            try{$db=ConnectionMysqliDao::connect(); //connection à la base de données
                 $stmt= $db->prepare("INSERT INTO `destination` ('idDestination','region', 'lieu', 'image', 'petiteDescription','description', 'atout1', 'atout2', 'atout3','lien', 'extraitForum') VALUES (null,?,?,?,?,?,?,?,?,?,?)"); //requête SQL d'insertion
                 $stmt->bind_param('ssssssssssss', $region, $lieu, $image, $petiteDescription, $description, $atout1, $atout2, $atout3,$lien, $extraitForum);
                 $rs=$stmt->execute();
@@ -22,7 +36,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements communDAO{
 
     
     //RESEARCH BY idDestination
-    public  function researchBy(string $idDestination){
+    public  function researchBy(int $idDestination){
             try{$db= parent :: connect();
                 $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=?"); //récupère les données d'un utilisateur précisé
                 $stmt->bind_param('i', $idDestination);
@@ -69,7 +83,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements communDAO{
     }
 
     //UPDATE
-    public function update(destination $objet){
+    public function update(object $objet){
         $idDestination= $objet->getIdDestination();
         $region=$objet->getRegion();
         $lieu=$objet->getLieu();
