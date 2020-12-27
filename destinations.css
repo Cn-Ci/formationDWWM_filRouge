@@ -13,20 +13,12 @@ ul {
     padding-top: 0px;
 }
 
-.couleur {
-    color: #228B22;
+.btn{
+    width: auto;
+    height: 70px;
+    font-size: 20px !important;
 }
 
-#page1 {
-    background-image: url('img/mainBG.jpg');
-    background-size: cover;
-    height: 100vh;
-}
-
-.btn {
-    
-    font-size:20px;
-}
 
 /* NAVABR  --------------------------------------------------------------*/
 

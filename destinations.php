@@ -3,7 +3,7 @@
     <head>
         <title>MOBILI'T - destinations</title>
         <meta charset="utf-8">
-        BOOTSTRAP
+        <!-- BOOTSTRAP -->
         <link 
             rel="stylesheet" 
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
@@ -23,11 +23,11 @@
         <link 
             rel="stylesheet" 
             type="text/css" 
-            href="destinations.css">
+            href="footerStyle.css">
         <link 
             rel="stylesheet" 
             type="text/css" 
-            href="footerStyle.css">
+            href="destinations.css">
         <!-- TYPO -->
         <link 
             href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
@@ -94,10 +94,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" id="btn1" class="btn btn-outline-success color-228B22 width:auto ">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.tourismebretagne.com/handi-tourisme-en-bretagne/"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -138,7 +138,7 @@
                             <a href ="#"><button type="button" class="btn btn-large btn-outline-success color-228B22" style="font-size:smaller">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton col-2"> 
-                            <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 ">M'y rendre</button> </a>
+                            <a href ="https://www.nantes-tourisme.com/fr/pratique/accessibilite-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto ">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -179,10 +179,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.ot-montsaintmichel.com/pratique/tourisme-pour-tous/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -227,10 +227,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="http://tourisme-sud-cote-chalonnaise.com/caves-et-domaines-accessibles-aux-personnes-en-situation-de-handicap/"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="http://tourisme-sud-cote-chalonnaise.com/caves-et-domaines-accessibles-aux-personnes-en-situation-de-handicap/"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -268,10 +268,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.bourgogne-tourisme.com/profils/tourisme-et-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.bourgogne-tourisme.com/profils/tourisme-et-handicap" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -311,10 +311,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="http://www.maintienadomicile-conseils.com/tourisme-handicap-dans-le-nord-de-la-france" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="http://www.maintienadomicile-conseils.com/tourisme-handicap-dans-le-nord-de-la-france" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -359,10 +359,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.toulouse-tourisme.com/handi-tour-guide/toulouse/pcumid031v50ccnv"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.toulouse-tourisme.com/handi-tour-guide/toulouse/pcumid031v50ccnv"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -400,10 +400,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.hendaye-tourisme.fr/images/pages/document/document-30_1489654687-83689150.pdf" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.hendaye-tourisme.fr/images/pages/document/document-30_1489654687-83689150.pdf" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -443,10 +443,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.handiplusaquitaine.fr/etape/Le%20bassin%20d%20Arcachon" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.handiplusaquitaine.fr/etape/Le%20bassin%20d%20Arcachon" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
                     </div>
                 </div>
@@ -487,10 +487,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.savoie-mont-blanc.com/Preparer-son-sejour/Handitourisme"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.savoie-mont-blanc.com/Preparer-son-sejour/Handitourisme"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -528,10 +528,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="http://pro.auvergnerhonealpes-tourisme.com/res/799ac9c933566e60eabe6caf83fb0145f40f6bea.pdf" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="http://pro.auvergnerhonealpes-tourisme.com/res/799ac9c933566e60eabe6caf83fb0145f40f6bea.pdf" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
 
                     </div>
@@ -572,10 +572,10 @@
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
                         <div class="forum text-center col-10">
-                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            <a href ="#"><button type="button" class="btn btn-outline-success color-228B22 w:auto">Accéder au Forum</button> </a>
                         </div>
                         <div class="bouton text-center col-2"> 
-                            <a href ="https://www.marseille-tourisme.com/organisez-votre-sejour/tourisme-et-handicap/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            <a href ="https://www.marseille-tourisme.com/organisez-votre-sejour/tourisme-et-handicap/" target="_blank"><button type="button" class="btn btn-outline-success color-228B22 w:auto">M'y rendre</button> </a>
                         </div>
                     </div>
                 </div>
