@@ -22,15 +22,15 @@ function html($title){ ?>
             <link 
                 rel="stylesheet" 
                 type="text/css" 
-                href="mainStyle.css">
+                href="../mainStyle.css">
             <link 
                 rel="stylesheet" 
                 type="text/css" 
-                href="destinations.css">
+                href="../destinations.css">
             <link 
                 rel="stylesheet" 
                 type="text/css" 
-                href="footerStyle.css">
+                href="../footerStyle.css">
             <!-- TYPO -->
             <link 
                 href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
@@ -52,7 +52,7 @@ function html($title){ ?>
 function navbar(){ ?>
     <!-- Navbar -->
     <div class="container-fluid">
-        <?php include 'navbar.php';?>
+        <?php include '../navbar.php';?>
     </div>
 <?php }
 
@@ -60,7 +60,7 @@ function footer(){ ?>
     
             <!-- ligne de séparation -->
             <hr class="hrsep">
-                <?php include 'footer.php';?>
+                <?php include '../footer.php';?>
             </footer>
 
             <!-- JQUERY -->
@@ -94,8 +94,8 @@ function boutonFrance(){ ?>
             <!-- Image de la France -->
             <div id="les4img" class="col-12 ">
                 <center>
-                    <div class="img-fluid col-6 row "><img src="img/carteO.png" class="img-fluid col-6 p-0"><img src="img/carteE.png"class="img-fluid col-6 p-0"></div>
-                    <div class="img-fluid col-6 row"><img src="img/carteSO.png" class="img-fluid col-6 p-0"><img src="img/carteSE.png" class="img-fluid col-6 p-0"></div>
+                    <div class="img-fluid col-6 row "><img src="../img/carteO.png" class="img-fluid col-6 p-0"><img src="../img/carteE.png"class="img-fluid col-6 p-0"></div>
+                    <div class="img-fluid col-6 row"><img src="../img/carteSO.png" class="img-fluid col-6 p-0"><img src="../img/carteSE.png" class="img-fluid col-6 p-0"></div>
                 </center>
             </div>   
 <?php }

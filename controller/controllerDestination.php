@@ -9,7 +9,7 @@
                     html($title="Destinations");
                     navbar();
                     boutonFrance();
-                    affichageDestination($destinations, $ouest);
+                    affichageDestination($destinations, $region="nord_ouest");
                     if(isset($_SESSION) && $_SESSION['profil']= "administrateur"){
                         buttonAjout();
                     }

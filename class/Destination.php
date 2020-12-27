@@ -148,11 +148,11 @@ class Destination extends Region{
     }
 
     /**
-     * Get the value of atout1
+     * Get the value of atout2
      */ 
     public function getAtout2()
     {
-        return $this->atout1;
+        return $this->atout2;
     }
 
     /**
@@ -162,17 +162,17 @@ class Destination extends Region{
      */ 
     public function setAtout2($atout2)
     {
-        $this->atout1 = $atout1;
+        $this->atout2 = $atout2;
 
         return $this;
     }
 
     /**
-     * Get the value of atout1
+     * Get the value of atout3
      */ 
     public function getAtout3()
     {
-        return $this->atout1;
+        return $this->atout3;
     }
 
     /**
@@ -182,7 +182,7 @@ class Destination extends Region{
      */ 
     public function setAtout3($atout3)
     {
-        $this->atout1 = $atout1;
+        $this->atout3 = $atout3;
 
         return $this;
     }
@@ -197,11 +197,11 @@ class Destination extends Region{
         return $this;
     }
 
-    public function getExtraitForum() :String
+    public function getExtraitForum() :?String
     {
         return $this->extraitForum;
     }
-    public function setExtraitForum(String $extraitForum) :Self
+    public function setExtraitForum(?String $extraitForum) :Self
     {
         $this->extraitForum = $extraitForum;
         return $this;

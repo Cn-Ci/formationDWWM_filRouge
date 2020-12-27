@@ -22,12 +22,23 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout3= $destination->getAtout3();
         $lien= $destination->getLien();
         $extratiForum= $destination->getExtratiForum();
+        $idUser= $destination->getIdUser();
 
             try{$db=ConnectionMysqliDao::connect(); //connection à la base de données
-                $stmt= $db->prepare("INSERT INTO `destination` ('idDestination','region', 'lieu', 'image', 'petiteDescription','description', 'atout1', 'atout2', 'atout3','lien', 'extraitForum') VALUES (null,?,?,?,?,?,?,?,?,?,?)"); //requête SQL d'insertion
-                $stmt->bind_param('ssssssssssss', $region, $lieu, $image, $petiteDescription, $description, $atout1, $atout2, $atout3,$lien, $extraitForum);
+                $stmt= $db->prepare("INSERT INTO `destination`  VALUES (NULL,:region, :lieu, :image, :petiteDescription,:description, :atout1, :atout2, :atout3,:lien, :extraitForum, :idUser)"); //requête SQL d'insertion
+                $stmt->bindParam(':region', $region);
+                $stmt->bindParam(':lieu', $lieu);
+                $stmt->bindParam(':image', $image);
+                $stmt->bindParam(':petiteDescription', $petiteDescription);
+                $stmt->bindParam(':description', $description);
+                $stmt->bindParam(':atout1', $atout1);
+                $stmt->bindParam(':atout2', $atout2);
+                $stmt->bindParam(':atout3', $atout3);
+                $stmt->bindParam(':lien', $lien);
+                $stmt->bindParam(':extraitForum', $extraitForum);
+                $stmt->bindParam(':idUser', $idUser);
                 $rs=$stmt->execute();
-                $db->close();
+                
                 return $rs; // le résultat est retourné pour pouvoir afficher le message de succes
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
@@ -38,16 +49,15 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
     //RESEARCH BY idDestination
     public  function researchBy(int $idDestination){
             try{$db= parent :: connect();
-                $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=?"); //récupère les données d'un utilisateur précisé
-                $stmt->bind_param('i', $idDestination);
+                $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=:idDestination"); //récupère les données d'un utilisateur précisé
+                $stmt->bindParam(':iDestination', $idDestination);
                 $stmt->execute();
-                $rs=$stmt->get_result();
-                $data=$rs->fetch_array();
+                $data=$stmt->fetch();
                 $dest = new Destination();
-                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
+                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']->setIdUser($data['idUser']));
                 
-                $rs->free();
-                $db->close();
+                $rs->closeCursor();
+                
         
                 return $dest;
             } catch (PDOException $DaoException) {
@@ -62,21 +72,21 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
 
             $stmt=$db->prepare("SELECT * FROM destination"); //récupère toute les données de la table destination
             $stmt->execute();
-            $rs=$stmt->get_result();
-            $data = $rs->fetch_all();
+            
+            $data = $stmt->fetchAll();
 
             $i=0;
             foreach($data as $key=>$value){
                 $dest= new Destination();
-                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
-                $data[$i]=$dest;
+                $dest->setRegion($data[$i]['region'])->setLieu($data[$i]['lieu'])->setImage($data[$i]['image'])->setPetiteDescription($data[$i]['petiteDescription'])->setDescription($data[$i]['description'])->setAtout1($data[$i]['atout1'])->setAtout2($data[$i]['atout2'])->setAtout3($data[$i]['atout3'])->setLien($data[$i]['lien'])->setExtraitForum($data[$i]['extraitForum']);
+                $tableauDestination[$i]=$dest;
                 $i++;
             }
             
-            $rs->free();
-            $db->close();
+            $stmt->closeCursor();
+            
 
-            return $data;
+            return $tableauDestination;
         } catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
         }
@@ -95,14 +105,24 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout3=$objet->getAtout3();
         $lien=$objet->getLien();
         $extraitForum=$objet->getExtraitForum();
+        $idUser= $objet->getIdUser();
             
         try{$db=parent :: connect();
             
-            $stmt=$db->prepare("UPDATE destination SET region=?, lieu=?, image=?, petiteDescription=?, description=?, atout1=?, atout2=? , atout3=?, lien=?, extraitForum=? WHERE idDestination=?"); // mise à jour des données
-            $stmt->bind_param('ssssssssssi',$region, $lieu, $image, $description, $lien, $extraitForum, $idDestination);
+            $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, image=:image, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
+            $stmt->bindParam(':region', $region);
+            $stmt->bindParam(':lieu', $lieu);
+            $stmt->bindParam(':image', $image);
+            $stmt->bindParam(':petiteDescription', $petiteDescription);
+            $stmt->bindParam(':description', $description);
+            $stmt->bindParam(':atout1', $atout1);
+            $stmt->bindParam(':atout2', $atout2);
+            $stmt->bindParam(':atout3', $atout3);
+            $stmt->bindParam(':lien', $lien);
+            $stmt->bindParam(':extraitForum', $extraitForum);
             $rs=$stmt->execute();
 
-            $db->close();
+            
                         
             return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
         }catch (PDOException $DaoException) {
@@ -111,15 +131,14 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
     }
 
     //DELETE
-    public  function delete($id){
+    public  function delete(int $idDestination){
  
         try{$db=parent :: connect();
-            $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=?"); // on supprime les données
-            $stmt->bind_param('i', $idDestination);
-            $stmt->execute();
-            $rs=$stmt->get_result();
+            $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=:idDestination"); // on supprime les données
+            $stmt->bindParam(':idDestination', $idDestination);
+            $rs=$stmt->execute();
                     
-            $db->close();
+            
             return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
         }catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
