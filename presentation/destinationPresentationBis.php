@@ -1,6 +1,52 @@
 <?php
 
+foreach($destination as $dest){
+    while($dest->getRegion() == $region){
+        $i=1;?>
+        <div id="<?php  echo $region?>" class="align-items-center m-3">
+            <div class="<?php  echo $region.$i?> row d-flex justify-content-center m-2 mb-4">
+                        <!-- image et texte -->
+                        
+                        <div class="">
+                            <div class="row">
+                                <div class="col-12 col-lg-4 mb-2">
+                                
+                                    <img src="<?php echo $dest->getImage() ?>" class="img-fluid w-100" alt="les côtes roses de la région bretonne">
+                                </div>
+                                <div class="col-12  col-lg-7 align-item-rigth text-justify">
+                                    <h4 class="mb-3"><?php echo $dest->getLieu() ?></h4>
+                                    <p style="text-indent: 20px"><?php echo $dest->getPetiteDescription() ?></p>
+                                    </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > <?php echo $dest->getDescription() ?></p>
+                                    <!-- en lire plus -->
+                                    <div class="collapse multi-collapse" id="fermeture1">
+                                        <div>
 
+                                            <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout1() ?></p>
+                                            <p id="fermeture1" style="text-indent: 20px"> <?php echo $dest->getAtout2() ?></p>
+                                            <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout3() ?></p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plus text-right col-10 offset-1 mb-2">
+                                <a  class="text-success" data-toggle="collapse" href="#fermeture1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">En lire plus</a>
+                            </div>
+                        </div>
+
+                        <!-- lien forum + lien exploration -->
+                        <div class="forumLien row col-12">
+                            <div class="forum text-center col-10">
+                                <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                            </div>
+                            <div class="bouton text-center col-2"> 
+                                <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                            </div>
+                        </div>
+                    </div>
+        <?php $i++;
+    }
+}
 
 function affichageDestination(){ ?>
     <!-- OUEST -->
