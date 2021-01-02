@@ -65,5 +65,37 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             die();
         }
     }
+
+    function editUser(object $user) 
+    {
+        try
+        {
+            $pseudo = $user->getPseudo();
+            $email= $user->getEmail();
+            $nom= $user->getNom();
+            $prenom = $user->getPrenom();
+            $mdp = $user->getMdp();
+    
+            $newConnect = new ConnectionMysqliDAO();
+            $db = $newConnect->connect();
+
+            $stmt = $db->prepare( "UPDATE user (pseudo , email , nom, photo , mdp )SET :pseudo , :email , :nom, :photo , :mdp where email = :email");
+
+            $stmt->bindParam(':pseudo', $getPseudo);           
+            $stmt->bindParam(':email', $getEmail);
+            $stmt->bindParam(':nom', $getNom);
+            $stmt->bindParam(':prenom', $getPrenom);
+            $stmt->bindParam(':photo', $getPhoto);
+            $stmt->bindParam(':mdp', $getMdp);
+            $stmt->execute();
+            
+            $db = null;
+            $stmt = null; 
+        }
+        catch (PDOException $e) {
+            print "erreur !: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
 }
 

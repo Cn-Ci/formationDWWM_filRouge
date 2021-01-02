@@ -102,5 +102,18 @@ Class UserConnectService {
             throw new ServiceException($de->getMessage(), $de->getCode());
         }    
     }
+
+    static function editUser(User $user) 
+    {
+        try { 
+            echo "EditUser test 114 OK --- ";
+            $userEdit = new UserConnectMysqliDAO;
+            $userEdit->editUser($user); 
+        } 
+        catch (UserException $de) {
+            echo "EditUser test 115 KO --- ";
+            throw new ServiceException($de->getMessage(), $de->getCode());
+        }  
+    } 
     
 }

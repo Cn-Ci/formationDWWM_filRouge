@@ -26,7 +26,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             /**_ INSCRIPTION - Affichage erreur  _______**/
             echo "test 4 affichager page inscription KO --- ";
             htmlUser();
-            inscription(10000);
+            inscription(23002);
         } 
     }
     /* ****************************************** INSCRIPTION - Formulaire ?action=inscription */
@@ -53,14 +53,16 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ INSCRIPTION - if email not exist et hash ______**/
                     echo "test 7 affichage connexion Verification email et hash OK --- ";
-                    include_once('../navbar.php');
+                    htmlUser();
+                    inscription(24001); 
+                    // include_once('../navbar.php');
                 }
                 else 
                 {
                 /**_ INSCRIPTION - If email exist ______**/
                   echo "test 8 affichage page connexion et verification email et hash KO --- ";
                   htmlUser();
-                  inscription(); 
+                  inscription(1062); 
                 }  
             } 
             catch (ServiceException $se){
@@ -86,7 +88,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             /**_ CONNEXION - Affichage erreur ____________**/
             echo "test 12 affichage page connexion affiche KO --- ";
             htmlUser();
-            connection();
+            connection(23003);
         }  
     }
     elseif (($_GET['action'] == "connect"))
@@ -104,27 +106,60 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
                 if (UserConnectService::userConnect($_POST['email']))
                 {
-                   /**_ CONNEXION - If email exist ______**/
-                   echo "test 15 user exist --- ";
-                   //include_once('../navbar.php');
+                    /**_ CONNEXION - If email exist ______**/
+                    echo "test 15 user exist --- ";
+                    //include_once('../navbar.php');
+                    htmlUser();
+                    connection(24002);
                 }
                 else 
                 {
                     /**_ CONNEXION - If email not-exist ___**/ 
                     echo "test 16 user not exist --- ";
                     htmlUser();
-                    inscription();
+                    inscription(23004);
                 }  
             }
             catch (ServiceException $se) {
                 /**_ CONNEXION - erreur verification ______**/
                 echo "test 17 verification KO --- ";
                 htmlUser();
-                inscription();
+                inscription($se->getMessage(), $se->getCode());
             }  
         }
     } 
 }
+
+ /* ****************************************** CONNEXION - Affichage formulaire inscription */
+if($_GET["action"]=="modif" && isset($_POST['email']) ) 
+{
+   $user = new User;
+   $user->setPseudo($_POST['pseudo'])
+       ->setEmail($_POST['email'])
+       ->setNom($_POST['nom'])
+       ->setPrenom($_POST['prenom'])
+       ->setPhoto($_POST['photo'])
+       ->setMdp($_POST['password']);
+
+   $userEdit = UserConnectService::researchUserByEmail($user);   
+   var_dump($userEdit);
+   
+   htmlUser();
+   modification($userEdit);
+    }
+    if($_GET["action"]=="modifierOK") 
+    {        
+       $user = new User;
+       $user->setPseudo($_POST['pseudo'])
+           ->setEmail($_POST['email'])
+           ->setNom($_POST['nom'])
+           ->setPrenom($_POST['prenom'])
+           ->setPhoto($_POST['photo'])
+           ->setMdp($_POST['password']);
+
+        UserConnectService::editUser($user); 
+}
+
 
 /* IF NOT ACTION --------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------*/    
@@ -140,7 +175,7 @@ else
         /**_ NO ACTION - erreur ____________________________**/
         echo "test 19 action KO --- ";
         htmlUser();
-        inscription();
+        inscription(23001);
     } 
 } 
 

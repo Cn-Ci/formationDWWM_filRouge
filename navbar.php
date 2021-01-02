@@ -21,8 +21,9 @@
 		<?php
 			if (isset($_SESSION['id'])){
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
-				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=deconnexion'>SE DÉCONNECTER</a><?php
-			} else {
+				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=deconnexion'>SE DÉCONNECTER</a>
+				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=modif'>MODIFIER MON PROFIL</a><?php	
+		} else {
 				?>
 				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>
                 <a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=connexion'>SE CONNECTER</a>
