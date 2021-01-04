@@ -126,74 +126,59 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             }  
         }
     } 
-}
-
 
  /* ****************************************** CONNEXION - Affichage formulaire modification */
-if($_GET["action"]=="modif" && isset($_SESSION['email']) ) 
-{
-    echo "test 18 page modif ok";
-    $user = new User;
-    $user->setPseudo($_POST['pseudo'])
-        ->setEmail($_POST['email'])
-        ->setNom($_POST['nom'])
-        ->setPrenom($_POST['prenom'])
-        ->setPhoto($_POST['photo'])
-        ->setMdp($_POST['password']);
-
-    $userEdit = UserConnectService::researchUserByEmail($user);   
-    var_dump($userEdit);
-    
-    htmlUser();
-    modification($userEdit);
-    // "Votre modification a bien été pris en compte"
-    }
-    if($_GET["action"]=="modifierOK") 
-    {        
-        echo "test 19 modif ok";
-       $user = new User;
-       $user->setPseudo($_POST['pseudo'])
-           ->setEmail($_POST['email'])
-           ->setNom($_POST['nom'])
-           ->setPrenom($_POST['prenom'])
-           ->setPhoto($_POST['photo'])
-           ->setMdp($_POST['password']);
-
-        UserConnectService::editUser($user); 
-}
-
- /* ****************************************** DECONNEXION - Affichage formulaire deconnexion */
-if ($_GET['action'] == "deconnexion" )
+    if($_GET["action"]=="modif" && isset($_SESSION['email']) ) 
     {
-        try {
-            echo "test 20 Deconnexion OK";
-            session_destroy();
-            include_once('../controller/controleurMain.php');
-            // "Vous êtes deconnecté"
-        } 
-        catch (ServiceException $se) {
-            echo "test 21 Deconnexion KO";
-            session_destroy();
-            include_once('../controller/controleurMain.php');
-        } 
-    }  
+        echo "test 18 page modif ok ";
+        $user = new User;
+        $user->setPseudo($_SESSION['pseudo'])
+            ->setEmail($_SESSION['email'])
+            ->setNom($_SESSION['nom'])
+            ->setPrenom($_SESSION['prenom'])
+            ->setPhoto($_SESSION['photo'])
+            ->setMdp($_SESSION['mdp']);
 
-// /* IF NOT ACTION --------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------*/    
-// else   
-// {
-//     try {
-//         /**_ NO ACTION - erreur ___________________________**/
-//         echo "test 18 action KO --- ";
-//         htmlUser();
-//         inscription();
-//     } 
-//     catch (ServiceException $se) {
-//         /**_ NO ACTION - erreur ____________________________**/
-//         echo "test 19 action KO --- ";
-//         htmlUser();
-//         inscription(23001);
-//     } 
-// } 
+            /**_ CONNEXION - If email not-exist ___**/ 
+            echo "test 20 user not exist --- Pret pour modification";
+            htmlUser();
+            modification($user);
+        
+    }
+    elseif($_GET["action"]=="modifierOK") 
+    {        
+        echo "test 21 modif ok ";
+        
+        $user = new User;
+        $user->setPseudo($_POST['pseudo'])
+            ->setEmail($_POST['email'])
+            ->setNom($_POST['nom'])
+            ->setPrenom($_POST['prenom'])
+            ->setPhoto($_POST['photo']);
+
+            $userEdit = new UserConnectService;
+            $data = $userEdit->editUser($user); 
+            var_dump($user);
+            
+        //UserConnectService::editUser($user); 
+        //var_dump(UserConnectService::editUser($user));
+    }
+
+    /* ****************************************** DECONNEXION - Affichage formulaire deconnexion */
+    if ($_GET['action'] == "deconnexion" )
+        {
+            try {
+                echo "test 22 Deconnexion OK";
+                session_destroy();
+                include_once('../controller/controleurMain.php');
+                // "Vous êtes deconnecté"
+            } 
+            catch (ServiceException $se) {
+                echo "test 23 Deconnexion KO";
+                session_destroy();
+                include_once('../controller/controleurMain.php');
+            } 
+    } 
+} 
 
 // ?>
