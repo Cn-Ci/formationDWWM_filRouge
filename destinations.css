@@ -37,3 +37,9 @@ ul {
     display: block;
 }
 
+
+/* changer la taille de l'image dans la modification de la destination */
+#imageDestinationModif{
+    width: 64px;
+    height:64px;
+}

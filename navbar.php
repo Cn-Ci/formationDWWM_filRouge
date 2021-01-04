@@ -17,7 +17,11 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
+<<<<<<< HEAD
 				$email = $_SESSION['email']; var_dump($email);
+=======
+				
+>>>>>>> daf048d... le bug
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
 				
 				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUserConnect.php?action=deconnexion'>SE DÉCONNECTER</a>

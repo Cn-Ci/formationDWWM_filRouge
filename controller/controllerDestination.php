@@ -15,11 +15,10 @@
     // if(isset($_SESSION) && $_SESSION['profil']= "administrateur"){
         buttonAjout();
     // }
-
     footer();
     
     if(isset($_POST) && !empty($_POST) && isset($_GET['action']) && !empty($_GET['action'])){
-        if ($_GET['action']="ajoutDestination") {
+        if ($_GET['action']=="ajoutDestination") {
             if (!empty($_POST['lieu'])       && isset($_POST['lieu'])    &&
                 !empty($_POST['region'])     && isset($_POST['region'])  &&
                 !empty($_POST['image'])     && isset($_POST['image'])  &&
@@ -49,5 +48,19 @@
                     echo 'Error';
                 }
             }
+        }   
+    }elseif(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action']=="suppDestination"){
+        if (!empty($_GET['id'])) {
+            echo($_GET['id']);
+            $idDestination = htmlentities($_GET['id']);
+            
+            try {
+                ServiceDestination::serviceDelete($idDestination);
+                
+            } catch(ServiceException $ce) {
+                echo 'Error';
+            }    
         }
+    }elseif(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action']=="majDestination"){
+        
     }

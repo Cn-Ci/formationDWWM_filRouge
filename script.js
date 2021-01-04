@@ -62,6 +62,20 @@ $('#ajoutDestination').click(function(e){
 	console.log(e)
 	
 })
+$('#ModifDestination').click(function(e){
+	const display=$('#formModifDestination');
+	
+	if(display.css("display","none")){
+		$('#formModifDestination').slideDown();
+		display.css("display","block");
+		
+	}else if(display.css("display","block")){
+		$('#formModifDestination').slideUp();
+		display.css("display","none");
+	}
+	console.log(e)
+	
+})
 
 
 

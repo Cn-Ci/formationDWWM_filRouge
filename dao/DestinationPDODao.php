@@ -78,7 +78,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
             $i=0;
             foreach($data as $key=>$value){
                 $dest= new Destination();
-                $dest->setRegion($data[$i]['region'])->setLieu($data[$i]['lieu'])->setImage($data[$i]['image'])->setPetiteDescription($data[$i]['petiteDescription'])->setDescription($data[$i]['description'])->setAtout1($data[$i]['atout1'])->setAtout2($data[$i]['atout2'])->setAtout3($data[$i]['atout3'])->setLien($data[$i]['lien'])->setExtraitForum($data[$i]['extraitForum']);
+                $dest->setIdDestination($data[$i]['idDestination'])->setRegion($data[$i]['region'])->setLieu($data[$i]['lieu'])->setImage($data[$i]['image'])->setPetiteDescription($data[$i]['petiteDescription'])->setDescription($data[$i]['description'])->setAtout1($data[$i]['atout1'])->setAtout2($data[$i]['atout2'])->setAtout3($data[$i]['atout3'])->setLien($data[$i]['lien'])->setExtraitForum($data[$i]['extraitForum'])->setIdUser($data[$i]['idUser']);
                 $tableauDestination[$i]=$dest;
                 $i++;
             }
@@ -134,11 +134,10 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
     public  function delete(int $idDestination){
  
         try{$db=parent :: connect();
-            $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=:idDestination"); // on supprime les données
+            $stmt=$db->prepare("DELETE * FROM destination WHERE idDestination=:idDestination"); // on supprime les données
             $stmt->bindParam(':idDestination', $idDestination);
             $rs=$stmt->execute();
                     
-            
             return $rs;  /** le résultat est retourné pour pouvoir afficher le message de suppression */
         }catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());

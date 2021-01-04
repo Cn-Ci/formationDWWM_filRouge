@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 function html($title){ ?>
     <!DOCTYPE html>
         <html lang="fr">
@@ -54,10 +55,15 @@ function navbar(){ ?>
     <div class="container-fluid">
         <?php include '../navbar.php';?>
     </div>
+    
+    <div class="principale">
 <?php }
 
 function footer(){ ?>
-    
+<!-- fin de la d.iv destination $region -->
+</div>
+    <!-- fin de la d.iv class="principale" -->
+    </div>
             <!-- ligne de séparation -->
             <hr class="hrsep">
                 <?php include '../footer.php';?>
@@ -90,7 +96,7 @@ function footer(){ ?>
 <?php }
 
 function boutonFrance(){ ?>
-    <div class="principale">
+        
             <!-- Image de la France -->
             <div id="les4img" class="col-6 offset-3 mb-2">
                 <center>
@@ -102,140 +108,161 @@ function boutonFrance(){ ?>
 
 function affichageDestination($destination, $region){ 
     $i=1; ?>
+
     <div id="<?php  echo $region?>" class="align-items-center m-3">
-    <?php foreach($destination as $dest){
-         if($dest->getRegion() == $region){?>
-            
+        <?php foreach($destination as $dest){
+            if($dest->getRegion() == $region){?>
+
+                <!-- affichage de la destination -->
                 <div class="<?php  echo $region.$i?> row d-flex justify-content-center m-2 mb-4">
-                            <!-- image et texte -->
-                            
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-12 col-lg-4 mb-2">
-                                    <img src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>" class="img-fluid w-100" alt="les côtes roses de la région bretonne"/>
-                                        <!-- <div class="img-fluid w-100" alt="les côtes roses de la région bretonne"><?php //echo $dest->getImage() ?></div> -->
+                    <div class="">
+                        <div class="row">
+                            <!-- image  -->
+                            <div class="col-12 col-lg-4 mb-2">
+                                
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>" class="img-fluid w-100" alt="les côtes roses de la région bretonne"/>
+                            </div>
+                            <!-- desription + atouts -->
+                            <div class="col-12  col-lg-7 align-item-rigth text-justify">
+                                <!-- titre en majuscule -->
+                                <h4 class="mb-3 row d-flex justify-content-between">
+                                    <div><?php echo strtoupper($dest->getLieu()) ?></div>
+                                </h4>
+                                <!-- intro et description -->
+                                <p style="text-indent: 20px"><?php echo $dest->getPetiteDescription() ?></p>
+                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > <?php echo $dest->getDescription() ?></p>
+                                <!-- en lire plus = les atouts -->
+                                <div class="collapse multi-collapse" id="fermeture1">
+                                    <div>
+                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout1() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px"> <?php echo $dest->getAtout2() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout3() ?></p>
                                     </div>
-                                    <div class="col-12  col-lg-7 align-item-rigth text-justify">
-                                        <h4 class="mb-3">
-                                        <?php echo strtoupper($dest->getLieu()) 
-                                        if ($_SESSION['id']==$dest->getIdUser()){ ?>
-                                            <button type>
-                                        <?php}?>
-                                        </h4>
-                                        <p style="text-indent: 20px"><?php echo $dest->getPetiteDescription() ?></p>
-                                        </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > <?php echo $dest->getDescription() ?></p>
-                                        <!-- en lire plus -->
-                                        <div class="collapse multi-collapse" id="fermeture1">
+                                    <!-- les boutons -->
+                                    <div class="row d-flex justify-content-around ">
+                                        <?php if($_SESSION['id']==$dest->getIdUser()){ ?>
                                             <div>
-
-                                                <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout1() ?></p>
-                                                <p id="fermeture1" style="text-indent: 20px"> <?php echo $dest->getAtout2() ?></p>
-                                                <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout3() ?></p>
-                                                
+                                                <a href='../controller/controllerDestination.php?action=suppDestination&amp;id=<?php echo $dest->getIdDestination()?>'>
+                                                    <button class='btn btn-outline-danger' value='Remove'>Supprimer</button>
+                                                </a>
+                                            </div> 
+                                            <div>
+                                                <?php 
+                                                    $maj=true;
+                                                    buttonAjout($maj, $dest);
+                                                ?>
                                             </div>
-                                        </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
-                                <div class="plus text-right col-10 offset-1 mb-2">
-                                    <a  class="text-success" data-toggle="collapse" href="#fermeture1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">En lire plus</a>
-                                </div>
-                            </div>
-
-                            <!-- lien forum + lien exploration -->
-                            <div class="forumLien row col-12">
-                                <div class="forum text-center col-10">
-                                    <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">Accéder au Forum</button> </a>
-                                </div>
-                                <div class="bouton text-center col-2"> 
-                                    <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">M'y rendre</button> </a>
-                                </div>
-                            </div>
-                        
-            <?php $i++;
-        }
-        echo "</div>";
-    }
-    
-}
-
-function buttonAjout(){ ?>
-        <div> <button id="ajoutDestination" class="btn btn-outline-success"> + Ajouter un article </button> </div>
-    </div> 
-    
-
-    <div id="formAjoutDestination" class="container" style="display:none">
-        <div class="globalConnexion text-center p-2 col-10 offset-1">
-            <form action="../controller/controllerDestination.php?action=ajoutDestination" method="POST">
-                <!-- Region -->
-                <div class="form-group">
-                    <div class="form-row align-items-center">
-                        <div class="col-6">
-                            <!-- lieu -->
-                            <div class="form-group ">
-                                <label for="lieuDestination">Lieu </label>
-                                <input type="text" class="form-control" id="lieuDestination" name="lieu" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
-                            </div>
-                        
-                            <div class="form-group ">
-                                <label for="selectRegion">Choisissez une région de France</label>
-                                <select class="form-control" id="selectRegion" name="region">
-                                    <option>Auvergne-Rhône-Alpes</option>
-                                    <option>Bourgogne-Franche-Comté</option>
-                                    <option>Bretagne</option>
-                                    <option>Centre</option>
-                                    <option>Corse</option>
-                                    <option>Grand-Est</option>
-                                    <option>Hauts-de-France</option>
-                                    <option>Ile-de-France</option>
-                                    <option>Normandie</option>
-                                    <option>Nouvelle-Aquitaine</option>
-                                    <option>Occitanie</option>
-                                    <option>Pays-de-Loire</option>
-                                    <option>Provence-Alpes-Côte-d-Azur</option>
-                                </select>
                             </div>
                         </div>
-                        <!-- Image -->
-                        <div class="col-6 form-group">
-                            
-                                <label for="photoDestination">Photo</label>
-                                <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
-                            
+                        <div class="plus text-right col-10 offset-1 mb-2">
+                            <a  class="text-success" data-toggle="collapse" href="#fermeture1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">En lire plus</a>
                         </div>
                     </div>
-                </div>               
-                
-                <!-- Petite description -->
-                <div class="form-group">
-                    <label for="introDestination">Description introductive</label>
-                    <input type="text" class="form-control" name="petiteDescription" minlength="10" maxlength="255" id="introDestination" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
-                </div>
-                <div class="form-group">
-                    <label for="descriptionDestination">Description du lieu</label>
-                    <input type="text" class="form-control" name="description" minlength="100" maxlength="500" id="descriptionDestination" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
-                </div>
-                <div class="form-group">
-                    <label for="atout1Destination">Premier atout</label>
-                    <input type="text" class="form-control" name="atout1" minlength="100" maxlength="300" id="atout1Destination" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
-                </div>
-                <div class="form-group">
-                    <label for="atout2Destination">Deuxième atout</label>
-                    <input type="text" class="form-control" name="atout2" minlength="100" maxlength="300" id="atout2Destination" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
-                </div>
-                <div class="form-group">
-                    <label for="atout3Destination">Deuxième atout</label>
-                    <input type="text" class="form-control" name="atout3" minlength="100" maxlength="300" id="atout3Destination" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
-                </div>
-                <div class="form-group">
-                    <label for="lienSiteWeb">Lien vers un site web </label>
-                    <input type="text" class="form-control" name="lien" maxlength="300" id="lienSiteWeb" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
-                </div>
-                <div class="form-group">
-                    <label for="lienExtraitForum">Lien vers un extrait du forum </label>
-                    <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
-                </div>
-                <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;">Ajouter</button>
-            </form>
+
+                    <!-- lien forum + lien exploration -->
+                    <div class="forumLien row col-12">
+                        <div class="forum text-center col-10">
+                            <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">Accéder au Forum</button> </a>
+                        </div>
+                        <div class="bouton text-center col-2"> 
+                            <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">M'y rendre</button> </a>
+                        </div>
+                    </div>
+                            
+                    <?php $i++;
+                // fermeture de la d.iv d'une destination
+                echo "</div>";
+            }
+        }
+}
+
+function buttonAjout($maj=null, $dest=null){ ?>
+        <div> 
+            <button id="ajoutDestination" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}?>'> 
+                <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}?>
+            </button> 
         </div>
-    </div>
-<?php }
+
+        <div id="formAjoutDestination" class="container" <?php if(!$maj || $maj==null){ echo 'style="display:none" ';}elseif($maj){echo 'style="display:block"';}?>>
+            <div class="globalConnexion text-center p-2 col-10 offset-1">
+                <form action="../controller/controllerDestination.php?action=ajoutDestination" method="POST">
+                    <!-- Region -->
+                    <div class="form-group">
+                        <div class="form-row align-items-center">
+                            <div class="col-6">
+                                <!-- lieu -->
+                                <div class="form-group ">
+                                    <label for="lieuDestination">Lieu </label>
+                                    <input type="text" class="form-control" id="lieuDestination" name="lieu" value="<?php if($maj){echo $dest->getLieu() ;}?>" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
+                                </div>
+                            
+                                <div class="form-group ">
+                                    <label for="selectRegion"><?php if(!$maj || $maj==null){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}?></label>
+                                    <select class="form-control" id="selectRegion" name="region">
+                                        <option>Auvergne-Rhône-Alpes</option>
+                                        <option>Bourgogne-Franche-Comté</option>
+                                        <option>Bretagne</option>
+                                        <option>Centre</option>
+                                        <option>Corse</option>
+                                        <option>Grand-Est</option>
+                                        <option>Hauts-de-France</option>
+                                        <option>Ile-de-France</option>
+                                        <option>Normandie</option>
+                                        <option>Nouvelle-Aquitaine</option>
+                                        <option>Occitanie</option>
+                                        <option>Pays-de-Loire</option>
+                                        <option>Provence-Alpes-Côte-d-Azur</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Image -->
+                            <div class="col-6 form-group">
+                                
+                                    <label for="photoDestination">Photo</label>
+                                    <?php if($maj){ ?>
+                                        <img id="imageDestinationModif" src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>"/>
+                                    <?php;}?>
+                                    <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
+                                
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Petite description -->
+                    <div class="form-group">
+                        <label for="introDestination">Description introductive</label>
+                        <input type="text" class="form-control" name="petiteDescription" minlength="10" maxlength="255" id="introDestination" value="<?php if($maj){echo $dest->getPetiteDescription() ;}?>" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
+                    </div>
+                    <div class="form-group">
+                        <label for="descriptionDestination">Description du lieu</label>
+                        <input type="text" class="form-control" name="description" minlength="100" maxlength="500" id="descriptionDestination" value="<?php if($maj){echo $dest->getDescription() ;}?>" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="atout1Destination">Premier atout</label>
+                        <input type="text" class="form-control" name="atout1" minlength="100" maxlength="300" id="atout1Destination" value="<?php if($maj){echo $dest->getAtout1() ;}?>" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="atout2Destination">Deuxième atout</label>
+                        <input type="text" class="form-control" name="atout2" minlength="100" maxlength="300" id="atout2Destination" value="<?php if($maj){echo $dest->getAtout2() ;}?>" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="atout3Destination">Deuxième atout</label>
+                        <input type="text" class="form-control" name="atout3" minlength="100" maxlength="300" id="atout3Destination" value="<?php if($maj){echo $dest->getAtout3() ;}?>" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
+                    </div>
+                    <div class="form-group">
+                        <label for="lienSiteWeb">Lien vers un site web </label>
+                        <input type="text" class="form-control" name="lien" maxlength="300" id="lienSiteWeb" value="<?php if($maj){echo $dest->getLien() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="lienExtraitForum">Lien vers un extrait du forum </label>
+                        <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
+                    </div>
+                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if(!$maj || $maj==null){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}?></button>
+                </form>
+            </div>
+        </div>
+    
+<?php } 
