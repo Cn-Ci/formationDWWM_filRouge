@@ -11,7 +11,7 @@
 	<div class="col-xs-5 col-sm-12 col-lg-1"><img id="logo" src="../img/logoMobiliT.png" alt="Logo"></div> 
 
 	<nav class="row col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 menuTab">
-		<a href="../controller/controllerMain.php" class="col-sm-12 col-md-12 col-lg alink">ACCUEIL</a>
+		<a href="../controller/controleurMain.php" class="col-sm-12 col-md-12 col-lg alink">ACCUEIL</a>
 		<a href="../orga.php" class="col-sm-12 col-md-12 col-lg alink">ORGANISATION</a>
 		<a href="../controller/controllerDestination.php" class="col-sm-12 col-md-12 col-lg alink">DESTINATIONS</a>
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>

@@ -92,10 +92,13 @@ function footer(){ ?>
 function boutonFrance(){ ?>
     <div class="principale">
             <!-- Image de la France -->
-            <div id="les4img" class="col-12 ">
+            <div id="les4img" class="col-6 offset-3">
                 <center>
-                    <div class="img-fluid col-6 row "><img src="../img/carteO.png" class="img-fluid col-6 p-0"><img src="../img/carteE.png"class="img-fluid col-6 p-0"></div>
-                    <div class="img-fluid col-6 row"><img src="../img/carteSO.png" class="img-fluid col-6 p-0"><img src="../img/carteSE.png" class="img-fluid col-6 p-0"></div>
+                    <!-- <div class="img-fluid col-6 row "><img src="../img/carteO.png" class="img-fluid col-6 p-0"><img src="../img/carteE.png"class="img-fluid col-6 p-0"></div>
+                    <div class="img-fluid col-6 row"><img src="../img/carteSO.png" class="img-fluid col-6 p-0"><img src="../img/carteSE.png" class="img-fluid col-6 p-0"></div> -->
+                
+                <script src="../presentation/cmap/France-map.js"></script>
+                <script>francefree()</script>
                 </center>
             </div>   
 <?php }
