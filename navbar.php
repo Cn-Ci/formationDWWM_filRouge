@@ -17,9 +17,7 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
-				
 				$email = $_SESSION['email']; var_dump($email);
-
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
 				<?php
 				$email = $_SESSION['email']; 

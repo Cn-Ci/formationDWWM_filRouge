@@ -109,12 +109,12 @@ function boutonFrance(){ ?>
 function affichageDestination($destination, $region){ 
     $i=1; ?>
 
-    <div id="<?php  echo $region?>" class="align-items-center m-3">
+    <div id="<?php  echo $region ?>" class="align-items-center m-3">
         <?php foreach($destination as $dest){
-            if($dest->getRegion() == $region){?>
+            if($dest->getRegion() == $region){ ?>
 
                 <!-- affichage de la destination -->
-                <div class="<?php  echo $region.$i?> row d-flex justify-content-center m-2 mb-4">
+                <div class="<?php  echo $region.$i ?> row d-flex justify-content-center m-2 mb-4">
                     <div class="">
                         <div class="row">
                             <!-- image  -->
@@ -135,7 +135,7 @@ function affichageDestination($destination, $region){
                                 <div class="collapse multi-collapse" id="fermeture1">
                                     <div>
                                         <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout1() ?></p>
-                                        <p id="fermeture1" style="text-indent: 20px"> <?php echo $dest->getAtout2() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout2() ?></p>
                                         <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout3() ?></p>
                                     </div>
                                     <!-- les boutons -->
@@ -265,4 +265,4 @@ function buttonAjout($maj=null, $dest=null){ ?>
             </div>
         </div>
     
-<?php } 
+<?php } ?>
