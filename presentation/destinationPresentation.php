@@ -106,7 +106,8 @@ function boutonFrance(){ ?>
             </div>   
 <?php }
 
-function affichageDestination($destination, $region){ 
+function affichageDestination($destination, $region)
+{ 
     $i=1; ?>
 
     <div id="<?php  echo $region ?>" class="align-items-center m-3">
@@ -119,7 +120,6 @@ function affichageDestination($destination, $region){
                         <div class="row">
                             <!-- image  -->
                             <div class="col-12 col-lg-4 mb-2">
-                                
                                 <img src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>" class="img-fluid w-100" alt="les côtes roses de la région bretonne"/>
                             </div>
                             <!-- desription + atouts -->
@@ -140,7 +140,8 @@ function affichageDestination($destination, $region){
                                     </div>
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
-                                        <?php if($_SESSION['id']==$dest->getIdUser()){ ?>
+                                        <?php if($_SESSION['id']==$dest->getIdUser())
+                                        { ?>
                                             <div>
                                                 <a href='../controller/controllerDestination.php?action=suppDestination&amp;id=<?php echo $dest->getIdDestination()?>'>
                                                     <button class='btn btn-outline-danger' value='Remove'>Supprimer</button>
@@ -152,7 +153,8 @@ function affichageDestination($destination, $region){
                                                     buttonAjout($maj, $dest);
                                                 ?>
                                             </div>
-                                        <?php } ?>
+                                        <?php 
+                                        } ?>
                                     </div>
                                 </div>
                             </div>
@@ -179,14 +181,15 @@ function affichageDestination($destination, $region){
         }
 }
 
-function buttonAjout($maj=null, $dest=null){ ?>
+function buttonAjout($maj=null, $dest=null)
+{ ?>
         <div> 
-            <button id="ajoutDestination" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}?>'> 
-                <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}?>
+            <button id="ajoutDestination" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
+                <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
             </button> 
         </div>
 
-        <div id="formAjoutDestination" class="container" <?php if(!$maj || $maj==null){ echo 'style="display:none" ';}elseif($maj){echo 'style="display:block"';}?>>
+        <div id="formAjoutDestination" class="container" <?php if(!$maj || $maj==null){ echo 'style="display:none" ';}elseif($maj){echo 'style="display:block"';}else{};?>>
             <div class="globalConnexion text-center p-2 col-10 offset-1">
                 <form action="../controller/controllerDestination.php?action=ajoutDestination" method="POST">
                     <!-- Region -->
@@ -200,7 +203,7 @@ function buttonAjout($maj=null, $dest=null){ ?>
                                 </div>
                             
                                 <div class="form-group ">
-                                    <label for="selectRegion"><?php if(!$maj || $maj==null){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}?></label>
+                                    <label for="selectRegion"><?php if(!$maj || $maj==null){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}else{};?></label>
                                     <select class="form-control" id="selectRegion" name="region">
                                         <option>Auvergne-Rhône-Alpes</option>
                                         <option>Bourgogne-Franche-Comté</option>
@@ -224,7 +227,8 @@ function buttonAjout($maj=null, $dest=null){ ?>
                                     <label for="photoDestination">Photo</label>
                                     <?php if($maj==true){ ?>
                                         <img id="imageDestinationModif" src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ) ?>"/>
-                                    <?php;}?>
+                                    <?php
+                                }?>
                                     <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
                                 
                             </div>
@@ -260,7 +264,7 @@ function buttonAjout($maj=null, $dest=null){ ?>
                         <label for="lienExtraitForum">Lien vers un extrait du forum </label>
                         <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
-                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if(!$maj || $maj==null){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}?></button>
+                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if(!$maj || $maj==null){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}else{};?></button>
                 </form>
             </div>
         </div>
