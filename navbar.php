@@ -17,9 +17,10 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
+				var_dump($_SESSION['email']);
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
-				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=deconnexion'>SE DÉCONNECTER</a>
-				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUtilIndex.php?action=modif'>MODIFIER MON PROFIL</a><?php	
+				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUserConnect.php?action=deconnexion'>SE DÉCONNECTER</a>
+				<a type='button' class='btn btn-danger col-lg m-5 text-black' href="../controller/controllerUserConnect.php?action=modif&amp;email=$_POST['email']">MODIFIER MON PROFIL</a><?php	
 		} else {
 				?>
 				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>

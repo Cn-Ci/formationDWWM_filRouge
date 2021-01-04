@@ -129,25 +129,27 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     } 
 }
 
- /* ****************************************** CONNEXION - Affichage formulaire inscription */
+ /* ****************************************** CONNEXION - Affichage formulaire modification */
 if($_GET["action"]=="modif" && isset($_POST['email']) ) 
 {
-   $user = new User;
-   $user->setPseudo($_POST['pseudo'])
-       ->setEmail($_POST['email'])
-       ->setNom($_POST['nom'])
-       ->setPrenom($_POST['prenom'])
-       ->setPhoto($_POST['photo'])
-       ->setMdp($_POST['password']);
+    echo "test 18 page modif ok";
+    $user = new User;
+    $user->setPseudo($_POST['pseudo'])
+        ->setEmail($_POST['email'])
+        ->setNom($_POST['nom'])
+        ->setPrenom($_POST['prenom'])
+        ->setPhoto($_POST['photo'])
+        ->setMdp($_POST['password']);
 
-   $userEdit = UserConnectService::researchUserByEmail($user);   
-   var_dump($userEdit);
-   
-   htmlUser();
-   modification($userEdit);
+    $userEdit = UserConnectService::researchUserByEmail($user);   
+    var_dump($userEdit);
+    
+    htmlUser();
+    modification($userEdit);
     }
     if($_GET["action"]=="modifierOK") 
     {        
+        echo "test 19 modif ok";
        $user = new User;
        $user->setPseudo($_POST['pseudo'])
            ->setEmail($_POST['email'])
@@ -159,6 +161,22 @@ if($_GET["action"]=="modif" && isset($_POST['email']) )
         UserConnectService::editUser($user); 
 }
 
+ /* ****************************************** DECONNEXION - Affichage formulaire deconnexion */
+if ($_GET['action'] == "deconnexion" )
+    {
+        try {
+            echo "test 20 Deconnexion OK";
+            session_destroy();
+            html();
+            utilIndex(24002);
+        } 
+        catch (ServiceException $se) {
+            echo "test 21 Deconnexion KO";
+            session_destroy();
+            html();
+            utilIndex(23007);
+        } 
+    }  
 
 // /* IF NOT ACTION --------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------*/    
