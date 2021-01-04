@@ -62,5 +62,5 @@
             }    
         }
     }elseif(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action']=="majDestination"){
-        
+        echo('chouchou');
     }

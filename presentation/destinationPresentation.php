@@ -222,8 +222,8 @@ function buttonAjout($maj=null, $dest=null){ ?>
                             <div class="col-6 form-group">
                                 
                                     <label for="photoDestination">Photo</label>
-                                    <?php if($maj){ ?>
-                                        <img id="imageDestinationModif" src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>"/>
+                                    <?php if($maj==true){ ?>
+                                        <img id="imageDestinationModif" src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ) ?>"/>
                                     <?php;}?>
                                     <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
                                 
