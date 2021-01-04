@@ -45,3 +45,23 @@ function doGetJson(url, selected) {
 	});
 	return deferred.promise();
 }
+
+
+// Afficher le formulaire en cliquant sur le bouton ajouter - Destination
+$('#ajoutDestination').click(function(e){
+	const display=$('#formAjoutDestination');
+	
+	if(display.css("display","none")){
+		$('#formAjoutDestination').slideDown();
+		display.css("display","block");
+		
+	}else if(display.css("display","block")){
+		$('#formAjoutDestination').slideUp();
+		display.css("display","none");
+	}
+	console.log(e)
+	
+})
+
+
+

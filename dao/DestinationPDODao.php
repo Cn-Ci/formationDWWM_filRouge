@@ -21,7 +21,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout2= $destination->getAtout2();
         $atout3= $destination->getAtout3();
         $lien= $destination->getLien();
-        $extratiForum= $destination->getExtratiForum();
+        $extratiForum= $destination->getExtraitForum();
         $idUser= $destination->getIdUser();
 
             try{$db=ConnectionMysqliDao::connect(); //connection à la base de données

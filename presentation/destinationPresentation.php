@@ -83,7 +83,7 @@ function footer(){ ?>
             </script>
             <script 
                 type="text/javascript" 
-                src="script.js">
+                src="../script.js">
             </script>
         </body>
     </html>
@@ -92,13 +92,10 @@ function footer(){ ?>
 function boutonFrance(){ ?>
     <div class="principale">
             <!-- Image de la France -->
-            <div id="les4img" class="col-6 offset-3">
+            <div id="les4img" class="col-6 offset-3 mb-2">
                 <center>
-                    <!-- <div class="img-fluid col-6 row "><img src="../img/carteO.png" class="img-fluid col-6 p-0"><img src="../img/carteE.png"class="img-fluid col-6 p-0"></div>
-                    <div class="img-fluid col-6 row"><img src="../img/carteSO.png" class="img-fluid col-6 p-0"><img src="../img/carteSE.png" class="img-fluid col-6 p-0"></div> -->
-                
-                <script src="../presentation/cmap/France-map.js"></script>
-                <script>francefree()</script>
+                    <script src="../presentation/cmap/France-map.js"></script>
+                    <script>francefree()</script>
                 </center>
             </div>   
 <?php }
@@ -119,7 +116,12 @@ function affichageDestination($destination, $region){
                                         <!-- <div class="img-fluid w-100" alt="les côtes roses de la région bretonne"><?php //echo $dest->getImage() ?></div> -->
                                     </div>
                                     <div class="col-12  col-lg-7 align-item-rigth text-justify">
-                                        <h4 class="mb-3"><?php echo strtoupper($dest->getLieu()) ?></h4>
+                                        <h4 class="mb-3">
+                                        <?php echo strtoupper($dest->getLieu()) 
+                                        if ($_SESSION['id']==$dest->getIdUser()){ ?>
+                                            <button type>
+                                        <?php}?>
+                                        </h4>
                                         <p style="text-indent: 20px"><?php echo $dest->getPetiteDescription() ?></p>
                                         </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > <?php echo $dest->getDescription() ?></p>
                                         <!-- en lire plus -->
@@ -142,10 +144,10 @@ function affichageDestination($destination, $region){
                             <!-- lien forum + lien exploration -->
                             <div class="forumLien row col-12">
                                 <div class="forum text-center col-10">
-                                    <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22">Accéder au Forum</button> </a>
+                                    <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">Accéder au Forum</button> </a>
                                 </div>
                                 <div class="bouton text-center col-2"> 
-                                    <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22">M'y rendre</button> </a>
+                                    <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">M'y rendre</button> </a>
                                 </div>
                             </div>
                         
@@ -157,13 +159,13 @@ function affichageDestination($destination, $region){
 }
 
 function buttonAjout(){ ?>
-        <div> <button class="btn btn-outline-success"> + Ajouter un article </button> </div>
+        <div> <button id="ajoutDestination" class="btn btn-outline-success"> + Ajouter un article </button> </div>
     </div> 
     
 
-    <div class="container" style="display:none">
+    <div id="formAjoutDestination" class="container" style="display:none">
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-            <form action="destinationPresentation.php?action=ajoutDestination" method="post">
+            <form action="../controller/controllerDestination.php?action=ajoutDestination" method="POST">
                 <!-- Region -->
                 <div class="form-group">
                     <div class="form-row align-items-center">
@@ -171,24 +173,33 @@ function buttonAjout(){ ?>
                             <!-- lieu -->
                             <div class="form-group ">
                                 <label for="lieuDestination">Lieu </label>
-                                <input type="text" class="form-control" id="lieuDestination" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
+                                <input type="text" class="form-control" id="lieuDestination" name="lieu" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
                             </div>
                         
                             <div class="form-group ">
                                 <label for="selectRegion">Choisissez une région de France</label>
-                                <select class="form-control" id="selectRegion">
-                                    <option>nord est</option>
-                                    <option>nord ouest</option>
-                                    <option>sud est</option>
-                                    <option>sud ouest</option>
+                                <select class="form-control" id="selectRegion" name="region">
+                                    <option>Auvergne-Rhône-Alpes</option>
+                                    <option>Bourgogne-Franche-Comté</option>
+                                    <option>Bretagne</option>
+                                    <option>Centre</option>
+                                    <option>Corse</option>
+                                    <option>Grand-Est</option>
+                                    <option>Hauts-de-France</option>
+                                    <option>Ile-de-France</option>
+                                    <option>Normandie</option>
+                                    <option>Nouvelle-Aquitaine</option>
+                                    <option>Occitanie</option>
+                                    <option>Pays-de-Loire</option>
+                                    <option>Provence-Alpes-Côte-d-Azur</option>
                                 </select>
                             </div>
                         </div>
                         <!-- Image -->
-                        <div class="col-6 ">
+                        <div class="col-6 form-group">
                             
                                 <label for="photoDestination">Photo</label>
-                                <input type="file" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
+                                <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
                             
                         </div>
                     </div>
@@ -197,33 +208,33 @@ function buttonAjout(){ ?>
                 <!-- Petite description -->
                 <div class="form-group">
                     <label for="introDestination">Description introductive</label>
-                    <input type="text" class="form-control" minlength="10" maxlength="255" id="introDestination" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
+                    <input type="text" class="form-control" name="petiteDescription" minlength="10" maxlength="255" id="introDestination" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
                 </div>
                 <div class="form-group">
                     <label for="descriptionDestination">Description du lieu</label>
-                    <input type="text" class="form-control" minlength="100" maxlength="500" id="descriptionDestination" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
+                    <input type="text" class="form-control" name="description" minlength="100" maxlength="500" id="descriptionDestination" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
                 </div>
                 <div class="form-group">
                     <label for="atout1Destination">Premier atout</label>
-                    <input type="text" class="form-control" minlength="100" maxlength="300" id="atout1Destination" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
+                    <input type="text" class="form-control" name="atout1" minlength="100" maxlength="300" id="atout1Destination" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
                 </div>
                 <div class="form-group">
                     <label for="atout2Destination">Deuxième atout</label>
-                    <input type="text" class="form-control" minlength="100" maxlength="300" id="atout2Destination" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
+                    <input type="text" class="form-control" name="atout2" minlength="100" maxlength="300" id="atout2Destination" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
                 </div>
                 <div class="form-group">
                     <label for="atout3Destination">Deuxième atout</label>
-                    <input type="text" class="form-control" minlength="100" maxlength="300" id="atout2Destination" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
+                    <input type="text" class="form-control" name="atout3" minlength="100" maxlength="300" id="atout3Destination" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
                 </div>
                 <div class="form-group">
                     <label for="lienSiteWeb">Lien vers un site web </label>
-                    <input type="text" class="form-control" maxlength="300" id="lienSiteWeb" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
+                    <input type="text" class="form-control" name="lien" maxlength="300" id="lienSiteWeb" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
                 </div>
                 <div class="form-group">
                     <label for="lienExtraitForum">Lien vers un extrait du forum </label>
-                    <input type="text" class="form-control" maxlength="300" id="lienExtraitForum" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
+                    <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                 </div>
-                <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;">Submit</button>
+                <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;">Ajouter</button>
             </form>
         </div>
     </div>
