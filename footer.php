@@ -17,7 +17,7 @@
         <div class="fondfoot">
             <h4 class="col-12 container-fluid">
                 <input type="email" id="email" name="email" class=" text-center rounded m-4" placeholder="Votre adresse e-mail"></br>
-                <input type="submit" class="btn btn-success" value="Envoyer"/>
+                <input type="submit" id="btn-newsletter" class="btn btn-success" value="Envoyer"/>
             </h4>   
         </div>
 
@@ -28,14 +28,10 @@
                 Navigation
                 <hr class="hrcon">
                 <p>
-                    <a href="orga.php">
-                        Accueil
-                    </a>
+                    <a href="orga.php">Accueil</a>
                 </p>
                 <p>
-                    <a href="orga.php">
-                        Organisation
-                    </a>
+                    <a href="orga.php">Organisation</a>
                 </p>
                 <p>
                     <a href="#">

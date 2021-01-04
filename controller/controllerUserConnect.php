@@ -108,9 +108,9 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ CONNEXION - If email exist ______**/
                     echo "test 15 user exist --- ";
-                    //include_once('../navbar.php');
-                    htmlUser();
-                    connection(24002);
+                    include_once('../navbar.php');
+                    // htmlUser();
+                    // connection(24002);
                 }
                 else 
                 {
@@ -161,22 +161,22 @@ if($_GET["action"]=="modif" && isset($_POST['email']) )
 }
 
 
-/* IF NOT ACTION --------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------*/    
-else   
-{
-    try {
-        /**_ NO ACTION - erreur ___________________________**/
-        echo "test 18 action KO --- ";
-        htmlUser();
-        inscription();
-    } 
-    catch (ServiceException $se) {
-        /**_ NO ACTION - erreur ____________________________**/
-        echo "test 19 action KO --- ";
-        htmlUser();
-        inscription(23001);
-    } 
-} 
+// /* IF NOT ACTION --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------*/    
+// else   
+// {
+//     try {
+//         /**_ NO ACTION - erreur ___________________________**/
+//         echo "test 18 action KO --- ";
+//         htmlUser();
+//         inscription();
+//     } 
+//     catch (ServiceException $se) {
+//         /**_ NO ACTION - erreur ____________________________**/
+//         echo "test 19 action KO --- ";
+//         htmlUser();
+//         inscription(23001);
+//     } 
+// } 
 
-?>
+// ?>
