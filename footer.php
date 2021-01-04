@@ -6,19 +6,18 @@
     <!-- Newsletters -->             
     <div class="news col-12 text-center container-fluid">
         <h2> Newsletter </h2>
-        
-        <h4> 
-            Inscrivez-vous 
+        <h4> Inscrivez-vous 
             </br>
             pour recevoir nos meilleurs offres !
         </h4>
         
-
         <div class="fondfoot">
-            <h4 class="col-12 container-fluid">
-                <input type="email" id="email" name="email" class=" text-center rounded m-4" placeholder="Votre adresse e-mail"></br>
-                <input type="submit" id="btn-newsletter" class="btn btn-success" value="Envoyer"/>
-            </h4>   
+            <form method="post" action="indexNewsletter.php?email=1">
+                <input type="text"  id="email" name="email" size="25" class="col-11 text-center form-control-plaintext rounded m-4" placeholder="Votre adresse e-mail"/>
+                <input type="radio" name="new" value="0" />S''inscrire
+                <input type="radio" name="new" value="1" />Se désinscrire<br />
+                <input type="submit" value="Envoyer" name="submit"  class="btn btn-success" /> 
+            </form>
         </div>
 
         <!-- colonnes -->
@@ -27,48 +26,20 @@
             <div class="col-12 col-lg-4 text-center p-2">
                 Navigation
                 <hr class="hrcon">
-                <p>
-                    <a href="orga.php">Accueil</a>
-                </p>
-                <p>
-                    <a href="orga.php">Organisation</a>
-                </p>
-                <p>
-                    <a href="#">
-                        Destinations
-                    </a>
-                </p>
-                <p>
-                    <a href="#">
-                        Forum
-                    </a>
-                </p>
+                <p><a href="orga.php">Accueil</a></p>
+                <p><a href="orga.php">Organisation</a></p>
+                <p> <a href="#">Destinations</a></p>
+                <p><a href="#">Forum</a> </p>
             </div>
 
             <!-- colonne 2 -->
             <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                 Aide
                 <hr class="hrcon">
-                <p>
-                    <a href="#">
-                    Personnel
-                    </a>
-                </p>
-                <p>
-                    <a href="#">
-                        Recherche
-                    </a>
-                </p>
-                <p>
-                    <a href="#">
-                        s'inscrire
-                    </a>
-                </p>
-                <p>
-                    <a href="#">
-                        Votre compte
-                    </a>
-                </p>
+                <p><a href="#">Personnel</a></p>
+                <p><a href="#">Recherche</a></p>
+                <p><a href="#">s'inscrire</a></p>
+                <p><a href="#">Votre compte</a></p>
             </div>
 
             <!-- colonne 3 -->

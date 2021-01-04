@@ -222,7 +222,7 @@
                 </script>
                 <script 
                     type="text/javascript" 
-                    src="script.js">
+                    src="../script.js">
                 </script>
             </body>
         </html><?php 

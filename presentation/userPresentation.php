@@ -67,6 +67,11 @@ function inscription($errorCode=null){
             <button type="submit" class="retour col col-lg-4 text-center m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>           
         </a>
     </div>
+    <script>
+        window.onload = function(){
+            document.getElementById('myTextFocusPseudo').focus();
+        }
+    </script>
 <?php
 }
 
@@ -94,6 +99,11 @@ function connection($errorCode=null){
                 <button type="submit" class="retour col-4 text-center btn btn-dark m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>
         </div>
+        <script>
+        window.onload = function(){
+            document.getElementById('myTextFocusEmail').focus();
+        }
+    </script>
 <?php
 }
 
@@ -138,19 +148,14 @@ function modification($userEdit, $errorCode=null){
                 <button type="submit" class='retour col-4 text-center btn btn-dark m-2 '><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>    
         </div>
+        <script>
+            window.onload = function(){
+                document.getElementById('myTextFocusPseudoModif').focus();
+            }
+        </script>
 <?php 
 }
 ?>   
-    <script>
-        window.onload = function(){
-            document.getElementById('myTextFocusPseudo').focus();
-        }
-        window.onload = function(){
-            document.getElementById('myTextFocusEmail').focus();
-        }
-        window.onload = function(){
-            document.getElementById('myTextFocusPseudoModif').focus();
-        }
-    </script>
+    
 </body>
 </html>

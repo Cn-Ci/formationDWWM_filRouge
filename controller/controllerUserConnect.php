@@ -52,9 +52,8 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ INSCRIPTION - if email not exist et hash ______**/
                     echo "test 7 affichage connexion Verification email et hash OK --- ";
-                    htmlUser();
-                    inscription(24001); 
-                    // include_once('../navbar.php');
+                    include_once('../controller/controleurMain.php');
+                    // "Vous etes inscrit"
                 }
                 else 
                 {
@@ -109,7 +108,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                     echo "test 15 user exist --- ";
                     include_once('../controller/controleurMain.php');
                     // htmlUser();
-                    // connection(24002);
+                    // connection(24002); "Vous etes connecté"
                 }
                 else 
                 {
@@ -129,8 +128,9 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     } 
 }
 
+
  /* ****************************************** CONNEXION - Affichage formulaire modification */
-if($_GET["action"]=="modif" && isset($_POST['email']) ) 
+if($_GET["action"]=="modif" && isset($_SESSION['email']) ) 
 {
     echo "test 18 page modif ok";
     $user = new User;
@@ -146,6 +146,7 @@ if($_GET["action"]=="modif" && isset($_POST['email']) )
     
     htmlUser();
     modification($userEdit);
+    // "Votre modification a bien été pris en compte"
     }
     if($_GET["action"]=="modifierOK") 
     {        
@@ -167,14 +168,13 @@ if ($_GET['action'] == "deconnexion" )
         try {
             echo "test 20 Deconnexion OK";
             session_destroy();
-            html();
-            utilIndex(24002);
+            include_once('../controller/controleurMain.php');
+            // "Vous êtes deconnecté"
         } 
         catch (ServiceException $se) {
             echo "test 21 Deconnexion KO";
             session_destroy();
-            html();
-            utilIndex(23007);
+            include_once('../controller/controleurMain.php');
         } 
     }  
 
