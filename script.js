@@ -1,6 +1,5 @@
 //! CFG 
 let response;
-const p = doGetJson("db_voitures.php", false);
 
 $(document).ready(function(){
 	$('#BoutonBurgermenuTab').click(function(){
@@ -10,21 +9,23 @@ $(document).ready(function(){
 	});
 });
 
-p.done(function(maReponse) {
-    console.log("3", maReponse);
-    console.log("4");
-    console.log("5");
-});
-
 $('#filter').on('change', function(e) {
 	const filterSelected = $('#filter :selected');
-	let url = filterSelected ? 'URL ?filter=' + filterSelected : ' URL WITHOUT FILTER';
+	let url = filterSelected ? 'controleurTopic.php?filter=' + filterSelected : 'controleurTopic.php?action=showAllTopic';
 	doGetJson(url, true);
+});
+
+$('#SearchBar').on('input', function(e) {
+	var value = $(this).val().toLowerCase();
+	
+	$("tbody tr").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	});
 });
 
 function doGetJson(url, selected) {
 	const deferred = $.Deferred();
-	$.getJson(url, function(data) {
+	$.getJSON(url, function(data) {
 		response = data;
 		$('tbody').empty();
 
@@ -32,11 +33,12 @@ function doGetJson(url, selected) {
 			if (selected) {
 				console.log('test');
 			}
+
 			$('<tr>').append(
 				$('<td>')).html(valeur.titre),
 				$('<td>').html(valeur.auteur),
 				$('<td>').html(valeur.date),
-				$('<td>').html(valeur.commentaires).appendTo($('tobdy')
+				$('<td>').html(valeur.commentaires).appendTo($('tbody')
 			);
 		});
 		deferred.resolve(response);

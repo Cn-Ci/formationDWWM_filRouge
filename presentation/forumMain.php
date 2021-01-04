@@ -23,7 +23,7 @@ function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
     <!DOCTYPE html>
     <html lang="fr">
         <head>
-            <title>MOBILI'T - Acceuil</title>
+            <title>MOBILI'T - Forum</title>
             <meta charset="utf-8">
             <!-- BOOTSTRAP -->
             <link 

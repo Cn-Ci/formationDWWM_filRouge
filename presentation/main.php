@@ -37,7 +37,7 @@
             <body>
                 <!----------------------------------------------------------------------PAGE 1------------------------------------------------------------------------->
                 <div id="page1" class="container-fluid">
-                    <?php include_once 'navbar.php';?>
+                    <?php include_once '../navbar.php';?>
                     <div class="row">
                         <div class="col-sm-12 col-lg-1"></div>
                         <div id="blocLogo" class="col-sm-12 col-md-6 col-lg-4">
@@ -96,6 +96,7 @@
                 </div>
 
                 <!----------------------------------------------------------------------PAGE 3------------------------------------------------------------------------>
+                <!-- BUTTON ADD PERSONNEL (FOR ADMIN) -->
                 <div id="page3" class="container-fluid ombre">
                     <div class="row text-center mt-2">
                         <div class="col-lg-2"></div>
@@ -199,7 +200,7 @@
 
                 <!-------------------------------------------------------------------FOOTER------------------------------------------------------------------------------->
                 <footer>
-                    <?php include_once 'footer.php'; ?>
+                    <?php include_once '../footer.php'; ?>
                 </footer>
 
 

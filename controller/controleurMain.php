@@ -1,5 +1,5 @@
 <?php 
-include_once('../main.php');
+include_once('../presentation/main.php');
 
 getMainPage();
 ?>

@@ -59,6 +59,19 @@
             } catch(ServiceException $ce) {
                 RenderForumMain($Topics, $ce);
             }  
+        } else if ($_GET["filter"]) {
+            $Topics = ServiceTopic::serviceReseachAll();
+            $TopicsFiltered = filter($Topics, $_GET["filter"]);
         }
+    }
+
+    function filter(array $topics, string $filter) :?Array { //TODO
+        $TopicsReturned = [];
+        foreach ($topics as $topic) {
+            if($filter && $filter == $topic->getDateTopic()) {
+                $TopicsReturned[] = $topic;
+            }
+        }
+        return $TopicsReturned;
     }
 ?> 
