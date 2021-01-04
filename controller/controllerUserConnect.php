@@ -160,6 +160,10 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             $data = $userEdit->editUser($user); 
             var_dump($user);
             
+        include_once('../controller/controleurMain.php');
+        //htmlUser();
+        //connection(24002); "Vous etes connecté"
+        // "Votre modification a bien été enregistrée !"
         //UserConnectService::editUser($user); 
         //var_dump(UserConnectService::editUser($user));
     }

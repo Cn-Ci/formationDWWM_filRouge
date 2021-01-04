@@ -17,15 +17,24 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
-<<<<<<< HEAD
+				
 				$email = $_SESSION['email']; var_dump($email);
-=======
-				
->>>>>>> daf048d... le bug
+
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
+				<?php
+				$email = $_SESSION['email']; 
+				?>
+					<a class="col-sm-12 col-md-12 col-lg alink ml-auto nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
+						MON COMPTE <?php echo $_SESSION['email'] ?>
+					</a>
+					<div class="dropdown-menu dropdown-menu-rigth" aria-labelledby="accountDropdownLink">
+						<li><a href="../controller/controllerUserConnect.php?action=modif&amp;email=<?php echo $_SESSION['email'] ?>" class="dropdown-item" >Modifier mon profil</a></li>
+						<li><a href='../controller/controllerUserConnect.php?action=deconnexion' class="dropdown-item" >Deconnexion</a></li>
+
+					</div>
+			
 				
-				<a type='button' class='btn btn-danger col-lg m-5 text-black' href='../controller/controllerUserConnect.php?action=deconnexion'>SE DÉCONNECTER</a>
-				<a type='button' class='btn btn-danger col-lg m-5 text-black' href="../controller/controllerUserConnect.php?action=modif&amp;email=<?php echo $_SESSION['email'] ?>">MODIFIER MON PROFIL</a><?php	
+				<?php	
 		} else {
 				?>
 				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>
@@ -37,6 +46,9 @@
 </div>
 
 <style>
+::marker {
+   display: none;
+}
 	#navBar{
 		z-index           : 999;
 		text-align        : center;
@@ -52,6 +64,12 @@
 		max-width: 100px;
 		max-height: 100px;
 		margin-top: 10px;
+	}
+	#accountDropdownLink{
+		color      :#228b22;
+	}
+	.dropdown-menu {
+		left: 600px !important;
 	}
 	.alink{
 		font-size  : 23px;

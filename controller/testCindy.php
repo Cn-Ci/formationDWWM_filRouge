@@ -39,3 +39,70 @@ modification($userEdit);
 
          UserConnectService::editUser($user); 
  }
+
+
+ if (isset($_SESSION['id'])){
+				
+    <<<<<<< HEAD
+    <<<<<<< HEAD
+                    $email = $_SESSION['email']; var_dump($email);
+    =======
+                    
+    >>>>>>> daf048d... le bug
+                    ?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
+    =======
+                    $email = $_SESSION['email']; 
+    
+                    
+                    ?>
+        
+    
+                    
+                        <a class="col-sm-12 col-md-12 col-lg alink ml-auto nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
+                            MON COMPTE <?php echo $_SESSION['email'] ?>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-rigth" aria-labelledby="accountDropdownLink">
+                            <li><a href="../controller/controllerUserConnect.php?action=modif&amp;email=<?php echo $_SESSION['email'] ?>" class="dropdown-item" >Modifier mon profil</a></li>
+                            <li><a href='../controller/controllerUserConnect.php?action=deconnexion' class="dropdown-item" >Deconnexion</a></li>
+    
+                        </div>
+                    
+    >>>>>>> f01c32f (modif nav)
+                    
+                    <?php	
+            } else {
+                    ?>
+                    <a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>
+                    <a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=connexion'>SE CONNECTER</a>
+                    <?php
+                }
+            ?>
+        </nav>
+    </div>
+    
+    <style>
+    ::marker {
+       display: none;
+    }
+        #navBar{
+            z-index           : 999;
+            text-align        : center;
+            position          : fixed;
+            -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+            -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+            box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+            opacity           : 0.9;
+            height            : 100px;
+            background-color  : white;
+        }
+        #logo{
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 10px;
+        }
+        #accountDropdownLink{
+            color      :#228b22;
+        }
+        .dropdown-menu {
+            left: 600px !important;
+        }
