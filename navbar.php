@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 
 <link rel="stylesheet" href="inscription.css">
 

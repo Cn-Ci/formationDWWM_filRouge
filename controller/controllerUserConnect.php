@@ -1,7 +1,6 @@
 <?php
 
-
-//session_start();
+session_start();
 
 include_once("..//presentation/userPresentation.php");
 include_once('../service/ServiceException.php');  
@@ -108,7 +107,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ CONNEXION - If email exist ______**/
                     echo "test 15 user exist --- ";
-                    include_once('../navbar.php');
+                    include_once('../controller/controleurMain.php');
                     // htmlUser();
                     // connection(24002);
                 }
