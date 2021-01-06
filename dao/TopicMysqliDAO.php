@@ -21,8 +21,9 @@
                     ":datePost" => $topicDate,
                     ":contenue" => $topicContent,
                     ":nbComm"   => $topicNbComment,
-                    ":author"   => $idUser));
-            } catch (mysqli_sql_exception $DaoException) {
+                    ":author"   => $idUser)
+                );
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
                 $db->close();
@@ -35,10 +36,11 @@
             try {
                 $searchByRequest = $db->prepare("SELECT * FROM topic WHERE idTopic = :idTopic");
                 $searchByRequest->execute(array(
-                    ":idTopic" => $idTopic));
+                    ":idTopic" => $idTopic)
+                );
                 $result   = $searchByRequest->get_result();
                 $data     = $result->fetch_array(MYSQLI_ASSOC);
-            } catch (mysqli_sql_exception $DaoException) {
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
             
@@ -56,7 +58,7 @@
                 $searchRequest->execute();
                 $Topics = $searchRequest->fetchAll();
                 return $Topics;
-            } catch (mysqli_sql_exception $DaoException) {
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
         }
@@ -79,25 +81,56 @@
                     ":contenue" => $topicContent,
                     ":nbComm"   => $topicNbComment,
                     ":author"   => $idUser,
-                    ":idTopic"  => $idTopic));
-            } catch (mysqli_sql_exception $DaoException) {
+                    ":idTopic"  => $idTopic)
+                );
+            } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
                 $db->close();
             }
         }   
 
-        public  function delete(Int $idTopic) :Void {
+        public function delete(Int $idTopic) :Void {
             $db = ConnectionMysqliDao::connect();
 
             try {
                 $DeleteRequest = $dbServ->prepare("DELETE FROM topic WHERE idTopic = :idTopic");
-                $DeleteRequest->execute(array(":idTopic" => $idTopic));
-            } catch (mysqli_sql_exception $DaoException) {
+                $DeleteRequest->execute(array(
+                    ":idTopic" => $idTopic)
+                );
+            } catch (PDOException  $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
                 $db->close();
             }
-        }        
+        }     
+        
+        public function searchByNbComments() :?Array{
+            $db = ConnectionMysqliDao::connect();
+
+            try {
+                $searchByRequest = $db->prepare("SELECT * FROM `topic` AS t ORDER BY t.nbComm DESC");
+                $searchByRequest->execute();
+                $rs = $searchByRequest->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            } finally {
+                return $rs;
+            }
+        }
+
+        public function searchByDate() :?Array{
+            $db = ConnectionMysqliDao::connect();
+
+            try {
+                $searchByRequest = $db->prepare("SELECT * FROM `topic` AS t ORDER BY t.date DESC");
+                $searchByRequest->execute();
+                $rs = $searchByRequest->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            } finally {
+                return $rs;
+            }
+        }
     }
 ?> 

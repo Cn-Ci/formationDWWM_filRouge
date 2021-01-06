@@ -33,7 +33,7 @@ class Topic implements JsonSerializable{
         return $dateToString = $datetime->format('Y-m-d');
     }
     
-    public function getIdTopic() :Int {
+    public function getIdTopic() :?Int {
         return $this->idTopic;
     }
  

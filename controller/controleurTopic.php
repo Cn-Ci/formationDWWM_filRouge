@@ -4,15 +4,15 @@
 
     if (!empty($_POST)) {
         if (isset($_POST['AddTopic'])) {
-            if (!empty($_POST['title'])       && isset($_POST['title'])    &&
-                !empty($_POST['content'])     && isset($_POST['content'])  &&
-                !empty($_SESSION['username']) && isset($_SESSION['username'])) {
+            if (!empty($_POST['title'])     && isset($_POST['title'])    &&
+                !empty($_POST['content'])   && isset($_POST['content'])  &&
+                !empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {
 
                 $title     = htmlentities($_POST['title']);
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
                 $nbComment = 0;
-                $Author    = $_SESSION['username'];
+                $Author    = $_SESSION['pseudo'];
 
                 try {
                     ServiceTopic::service_addEmp($title, $datePost, $content, $nbComment, $Author);
@@ -60,18 +60,23 @@
                 RenderForumMain($Topics, $ce);
             }  
         } else if ($_GET["filter"]) {
-            $Topics = ServiceTopic::serviceReseachAll();
-            $TopicsFiltered = filter($Topics, $_GET["filter"]);
+            $TopicsFiltered = filter($_GET["filter"]);
+            echo json_encode($TopicsFiltered);
         }
     }
 
-    function filter(array $topics, string $filter) :?Array { //TODO
-        $TopicsReturned = [];
-        foreach ($topics as $topic) {
-            if($filter && $filter == $topic->getDateTopic()) {
-                $TopicsReturned[] = $topic;
+    function filter(string $filter) :?Array {
+        $TopicsReturned = null;
+
+        if($filter) {
+            if ($filter == 'Date') {
+                $TopicsReturned = ServiceTopic::serviceSearchByDate();
+            } else if ($filter == 'Nombre de commentaire') {
+                $TopicsReturned = ServiceTopic::serviceSearchByNbComments();
             }
         }
+
         return $TopicsReturned;
+
     }
 ?> 

@@ -60,9 +60,29 @@
 
         public static function serviceDeleteTopic(Int $idTopicToDelete) :Void {
             try {    
-                Employe_mysqli_DAO::delete($idTopicToDelete);
+                TopicMysqliDAO::delete($idTopicToDelete);
             } catch(DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+            }
+        }
+
+        public static function serviceSearchByNbComments() :?Array {
+            try {
+                $topicsFiltered = TopicMysqliDAO::searchByNbComments();
+            } catch (DaoSqlException $ServiceException) {
+                throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+            } finally {
+                return $topicsFiltered;
+            }
+        }
+
+        public static function serviceSearchByDate() :?Array {
+            try {
+                $topicsFiltered = TopicMysqliDAO::searchByDate();
+            } catch (DaoSqlException $ServiceException) {
+                throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+            } finally {
+                return $topicsFiltered;
             }
         }
     }

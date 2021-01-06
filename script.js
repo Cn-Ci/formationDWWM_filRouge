@@ -10,8 +10,9 @@ $(document).ready(function(){
 });
 
 $('#filter').on('change', function(e) {
-	const filterSelected = $('#filter :selected');
+	const filterSelected = $('#filter :selected').val();
 	let url = filterSelected ? 'controleurTopic.php?filter=' + filterSelected : 'controleurTopic.php?action=showAllTopic';
+	console.log
 	doGetJson(url, true);
 });
 
@@ -23,17 +24,16 @@ $('#SearchBar').on('input', function(e) {
 	});
 });
 
-function doGetJson(url, selected) {
+function doGetJson(url, isSelected) {
 	const deferred = $.Deferred();
 	$.getJSON(url, function(data) {
+		console.log('test');
 		response = data;
-		$('tbody').empty();
-
+		
 		$.each(data, function(cle, valeur) {
-			if (selected) {
-				console.log('test');
+			if (isSelected) {
+				console.log('is selected');
 			}
-
 			$('<tr>').append(
 				$('<td>')).html(valeur.titre),
 				$('<td>').html(valeur.auteur),
