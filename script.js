@@ -47,35 +47,23 @@ function doGetJson(url, isSelected) {
 }
 
 
-// Afficher le formulaire en cliquant sur le bouton ajouter - Destination
-$('#ajoutDestination').click(function(e){
-	const display=$('#formAjoutDestination');
-	
-	if(display.css("display","none")){
-		$('#formAjoutDestination').slideDown();
-		display.css("display","block");
+// Afficher le formulaire d'ajout ou de modification, selon le bouton - Destination
+$('div button').click(function(e){
+	let id=e.target.id;
+	var displayForm= $("#form"+id);
+	console.log("#form"+id);
+
+	if(displayForm.css("display")==="none"){
 		
-	}else if(display.css("display","block")){
-		$('#formAjoutDestination').slideUp();
-		display.css("display","none");
-	}
-	console.log(e)
-	
-})
-$('#ModifDestination').click(function(e){
-	const display=$('#formModifDestination');
-	
-	if(display.css("display","none")){
-		$('#formModifDestination').slideDown();
-		display.css("display","block");
+		displayForm.attr("style","display:block");
+		console.log("coucou");
 		
-	}else if(display.css("display","block")){
-		$('#formModifDestination').slideUp();
-		display.css("display","none");
+	 } else if(displayForm.css("display","block")){
+		
+		displayForm.css("display","none");
 	}
-	console.log(e)
-	
-})
+});
+
 
 
 

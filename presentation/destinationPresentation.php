@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+$_SESSION['email']="bonjour@gmail.com";
+
 function html($title){ ?>
     <!DOCTYPE html>
         <html lang="fr">
@@ -141,18 +143,15 @@ function affichageDestination($destination, $region)
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
                                         <?php if($_SESSION['id']==$dest->getIdUser())
-                                        { ?>
+                                        {  
+                                                    $maj=true;
+                                                    buttonAjout($maj, $dest);
+                                                ?>
                                             <div>
                                                 <a href='../controller/controllerDestination.php?action=suppDestination&amp;id=<?php echo $dest->getIdDestination()?>'>
                                                     <button class='btn btn-outline-danger' value='Remove'>Supprimer</button>
                                                 </a>
                                             </div> 
-                                            <div>
-                                                <?php 
-                                                    $maj=true;
-                                                    buttonAjout($maj, $dest);
-                                                ?>
-                                            </div>
                                         <?php 
                                         } ?>
                                     </div>
@@ -184,14 +183,16 @@ function affichageDestination($destination, $region)
 function buttonAjout($maj=null, $dest=null)
 { ?>
         <div> 
-            <button id="ajoutDestination" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
-                <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
+            <?php $ajout= !$maj || $maj==null ?>
+            <button id="<?php if($ajout){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $dest->getIdDestination();} ?>" class='<?php if($ajout){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
+                <?php if($ajout){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
             </button> 
         </div>
-
-        <div id="formAjoutDestination" class="container" <?php if(!$maj || $maj==null){ echo 'style="display:none" ';}elseif($maj){echo 'style="display:block"';}else{};?>>
-            <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=ajoutDestination" method="POST">
+        
+        <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $dest->getIdDestination();}else{};?>" class="container" style="display:none">
+        
+        <div class="globalConnexion text-center p-2 col-10 offset-1">
+                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination";} ?>" method="POST">
                     <!-- Region -->
                     <div class="form-group">
                         <div class="form-row align-items-center">
@@ -203,7 +204,7 @@ function buttonAjout($maj=null, $dest=null)
                                 </div>
                             
                                 <div class="form-group ">
-                                    <label for="selectRegion"><?php if(!$maj || $maj==null){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}else{};?></label>
+                                    <label for="selectRegion"><?php if($ajout){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}else{};?></label>
                                     <select class="form-control" id="selectRegion" name="region">
                                         <option>Auvergne-Rhône-Alpes</option>
                                         <option>Bourgogne-Franche-Comté</option>
@@ -222,15 +223,16 @@ function buttonAjout($maj=null, $dest=null)
                                 </div>
                             </div>
                             <!-- Image -->
-                            <div class="col-6 form-group">
-                                
+                            <div class="col-6 form-group d-flex justify-content-between ">
+                                <div class="col-6">
+                                    <?php if($maj==true){ ?>
+                                         <img id='imageDestinationModif' src='data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage()) ?>'/>
+                                    <?php } ?>
+                                </div>
+                                <div class="col-6">
                                     <label for="photoDestination">Photo</label>
-                                    <?php if($maj==true){
-                                        $suite= base64_encode( $dest->getImage());
-                                        echo "<img id='imageDestinationModif' src='data:image/jpeg;base64,".  $suite ."/>'";
-                                    } ?>
-                                    <input type="file" name="image" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
-                                
+                                    <input type="file" name="image" placeholder="bla" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
+                                </div>
                             </div>
                         </div>
                     </div>               
@@ -264,7 +266,7 @@ function buttonAjout($maj=null, $dest=null)
                         <label for="lienExtraitForum">Lien vers un extrait du forum </label>
                         <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
-                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if(!$maj || $maj==null){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}else{};?></button>
+                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if($ajout){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}else{};?></button>
                 </form>
             </div>
         </div>

@@ -40,6 +40,7 @@ ul {
 
 /* changer la taille de l'image dans la modification de la destination */
 #imageDestinationModif{
-    width: 64px;
-    height:64px;
+    width: 200px;
+    height:100px;
+    border-radius:50% 20% / 10% 40%;;
 }
