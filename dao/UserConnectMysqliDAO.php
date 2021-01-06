@@ -98,7 +98,7 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
         }
     }
 
-    public function researchUserById(Int $id) {
+    static public function researchUserById(Int $id) {
         try {
             $newConnect = new ConnectionMysqliDAO();
             $db = $newConnect->connect();
@@ -107,7 +107,7 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt = $db->prepare($query);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            $userId = $stmt->fetch_array(MYSQLI_ASSOC);
+            $userId = $stmt->fetch(MYSQLI_ASSOC);
 
             return $userId;
             

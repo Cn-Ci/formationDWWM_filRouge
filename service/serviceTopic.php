@@ -30,13 +30,14 @@
         }
 
         public static function serviceReseachAll() :?Array {
+            $dao = new TopicMysqliDao();
+            $dataToObject = array (); 
             try {
-                $data = TopicMysqliDao::research();
-                $dataToObject = array (); 
+                $data = $dao->research();
                 foreach ($data as $value) {
                     $author = UserConnectMysqliDAO::researchUserById($value['idUsers']);
                     $Topic = new Topic();
-                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'])->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->getPseudo());
+                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'] = new Datetime)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
                     array_push($dataToObject, $Topic);
                 }
                 

@@ -1,3 +1,3 @@
 <?php 
-    class DaoSqlException extends Exception {}
+    /* class DaoSqlException extends Exception {} */
 ?>
