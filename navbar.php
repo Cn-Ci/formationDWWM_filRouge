@@ -1,4 +1,6 @@
-
+<?php 
+	session_start();
+?>
 <link rel="stylesheet" href="../inscription.css">
 
 <div class="col-sm-12 row pr-0" id="navBar">

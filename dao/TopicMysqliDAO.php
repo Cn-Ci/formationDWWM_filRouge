@@ -8,15 +8,15 @@
         public function add(Object $Topic) :Void {
             $db = ConnectionMysqliDao::connect();
 
-            $topicTitle     = getTitreTopic();
-            $topicDate      = getDatePost(); //? USE DATETIMETOSTRING() METHOD
-            $topicContent   = getContenu();
-            $topicNbComment = getNbComm();
-            $idUser         = getIdUser();
+            $topicTitle     = $Topic->getTitreTopic();
+            $topicDate      = $Topic->datetimeToString($Topic->getDateTopic());
+            $topicContent   = $Topic->getContentTopic();
+            $topicNbComment = $Topic->getNbComm();
+            $idUser         = $Topic->getIdAuthor();
 
             try {
-                $addRequest = $db->prepare("INSERT INTO topic (idTopic, titre, datePost, contenue, nbComm, author) VALUES (NULL, UPPER(:titre), :datePost, :contenue, :nbComm, :author");
-                $addRequest->execute(array(
+                $addRequest = $db->prepare("INSERT INTO topic (idTopic, titre, datePost, contenue, nbComm, author) VALUES (NULL, :titre, :datePost, :contenue, :nbComm, :author");
+                $addRequest->execute($t= array(
                     ":titre"    => $topicTitle,
                     ":datePost" => $topicDate,
                     ":contenue" => $topicContent,
@@ -25,8 +25,6 @@
                 );
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
-            } finally {
-                $db->close();
             }
         }
 

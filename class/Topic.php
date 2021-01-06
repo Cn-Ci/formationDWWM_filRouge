@@ -29,7 +29,7 @@ class Topic implements JsonSerializable{
         ];
     }
 
-    public function datetimeToString($datetime) :?String {
+    public function datetimeToString(Datetime $datetime) :?String {
         return $dateToString = $datetime->format('Y-m-d');
     }
     
@@ -48,9 +48,8 @@ class Topic implements JsonSerializable{
     public function getDateTopic() :Datetime {
         return $this->date;
     }
-    public function setDateTopic(String $StringDate) :Self {
-        $date = new datetime($StringDate);
-        $this->date = $date;
+    public function setDateTopic(Datetime $Date) :Self {
+        $this->date = $Date;
         return $this;
     }
  

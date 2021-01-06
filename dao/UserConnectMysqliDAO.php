@@ -10,7 +10,7 @@ ini_set("display_errors", 1);
 class UserConnectMysqliDAO extends ConnectionMysqliDao {
 
 
- public function addUser(User $user)
+    public function addUser(User $user)
     {   
         try {
             $newConnect = new ConnectionMysqliDAO();
@@ -93,6 +93,25 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt = null; 
         }
         catch (PDOException $e) {
+            print "erreur !: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    public function researchUserById(Int $id) {
+        try {
+            $newConnect = new ConnectionMysqliDAO();
+            $db = $newConnect->connect();
+
+            $query = "SELECT * FROM user WHERE id = :id";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $userId = $stmt->fetch_array(MYSQLI_ASSOC);
+
+            return $userId;
+            
+        } catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";
             die();
         }

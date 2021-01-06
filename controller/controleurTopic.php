@@ -12,10 +12,10 @@
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
                 $nbComment = 0;
-                $Author    = $_SESSION['pseudo'];
+                $Author    = $_SESSION['id'];
 
                 try {
-                    ServiceTopic::service_addEmp($title, $datePost, $content, $nbComment, $Author);
+                    ServiceTopic::serviceAddTopic($title, $datePost, $content, $nbComment, $Author);
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }
