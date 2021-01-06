@@ -17,7 +17,7 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])){
-				$email = $_SESSION['email']; var_dump($email);
+				$email = $_SESSION['email']; 
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
 				<?php
 				$email = $_SESSION['email']; 
@@ -70,7 +70,7 @@
 		left: 600px !important;
 	}
 	.alink{
-		font-size  : 23px;
+		font-size  : 20px;
 		padding    : 35px 20px 35px 20px;
 		transition : color 1s;
 		color      :#228b22;
@@ -164,5 +164,7 @@
 			cursor  : pointer;
 		} 
 	}	
+
+
 </style>
 

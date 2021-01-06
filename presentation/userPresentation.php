@@ -63,7 +63,7 @@ function inscription($errorCode=null){
         <a href='../controller/controllerUserConnect.php?action=connexion'>
             <button class='btnConnexion col col-lg-2 text-center btn btn-primary mb-4'> Se connecter</button>
         </a>
-        <a href='../main.php'>
+        <a href='../controller/controleurMain.php'>
             <button type="submit" class="retour col col-lg-4 text-center m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>           
         </a>
     </div>
@@ -95,7 +95,7 @@ function connection($errorCode=null){
             <button class="btnInscription col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connecter" >Connexion</button>    
         </form>
         <div class="text-center">
-            <a href='../navbar.php'>
+            <a href='../controller/controleurMain.php'>
                 <button type="submit" class="retour col-4 text-center btn btn-dark m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>
         </div>
@@ -141,7 +141,7 @@ function modification($user, $errorCode=null){
             <input type="submit" class="btnConnexion col col-lg-2 text-center btn btn-primary mb-4 mt-3" value="Modifier"/>
         </form>
         <div class="col-12 text-center mb-">
-            <a href='../navbar' class='text-white'>
+            <a href='../controller/controleurMain.php' class='text-white'>
                 <button type="submit" class='retour col-4 text-center btn btn-dark m-2 '><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>    
         </div>

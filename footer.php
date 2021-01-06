@@ -12,11 +12,12 @@
         </h4>
         
         <div class="fondfoot">
-            <form method="post" action="indexNewsletter.php?email=1">
+            <form method="post" action="../controller/controllerNewsletter.php?email=1">
                 <input type="text"  id="email" name="email" size="25" class="col-11 text-center form-control-plaintext rounded m-4" placeholder="Votre adresse e-mail"/>
-                <input type="radio" name="new" value="0" />S''inscrire
-                <input type="radio" name="new" value="1" />Se désinscrire<br />
-                <input type="submit" value="Envoyer" name="submit"  class="btn btn-success" /> 
+                <div class="row">
+                    <div class="col-12"><input type="radio" name="new" value="1" />S''inscrire</div> 
+                </div>
+                <input class="btn btn-success mt-2" type="submit" value="Envoyer" name="submit"  class="btn btn-success" /> 
             </form>
         </div>
 
@@ -26,20 +27,18 @@
             <div class="col-12 col-lg-4 text-center p-2">
                 Navigation
                 <hr class="hrcon">
-                <p><a href="orga.php">Accueil</a></p>
-                <p><a href="orga.php">Organisation</a></p>
-                <p> <a href="#">Destinations</a></p>
-                <p><a href="#">Forum</a> </p>
+                <p><a href="../filrouge2/controller/controleurMain.php">Accueil</a></p>
+                <p><a href="../orga.php">Organisation</a></p>
+                <p><a href="../filrouge2/controller/controllerDestination.php">Destinations</a></p>
+                <p><a href="../filrouge2/controller/controleurTopic.php?action=showAllTopic">Forum</a> </p>
             </div>
 
             <!-- colonne 2 -->
             <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                 Aide
                 <hr class="hrcon">
-                <p><a href="#">Personnel</a></p>
-                <p><a href="#">Recherche</a></p>
-                <p><a href="#">s'inscrire</a></p>
-                <p><a href="#">Votre compte</a></p>
+                <p><a href="../filrouge2/controller/controllerUserConnect.php?action=afficherInscription">S'inscrire</a></p>
+                <p><a href="../filrouge2/controller/controllerUserConnect.php?action=connexion">Se connecter</a></p>
             </div>
 
             <!-- colonne 3 -->

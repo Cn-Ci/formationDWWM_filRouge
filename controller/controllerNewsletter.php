@@ -1,12 +1,7 @@
-<!DOCTYPE html >
-<html lang="fr" >
-<head>
-    <title>La newsletter de Mobili'T</title>
-</head>
-<body>
- <?php
-    // On vérifie que la variable $_GET['email'] existe.
-    if(isset($_GET['email'])) 
+<?php
+
+/* ****************************************** DECONNEXION - Affichage formulaire deconnexion */
+if(isset($_GET['email'])) 
     {
         // On vérifie que la variable $_POST['email'] contient bien quelque chose, que la variable $_GET['email']  est égale à 1 et que la variable $_POST['new'] existe. 
         if( !empty($_POST['email']) AND $_GET['email']==1 AND isset($_POST['new']))
@@ -17,7 +12,6 @@
                 // Si la variable $_POST['new'] est égale à 0, cela signifie que l'on veut s'inscrire.
                 if($_POST['new']==0) 
                 {
- 
                 // On définit les paramètres de l'e-mail.
                 $email = $_POST['email'];
                 $message = "Bravo ! Vous etes inscrit a MobiliT";
@@ -48,14 +42,7 @@
         echo "Il y a eu une erreur de variable.";
         }
     }
-    // Si les champs n'ont pas été remplis.
-    else 
-    {
-        ?>
-        La newsletter :
+    else {
 
-        <?php
+        "echo test";
     }
-        ?>
-</body>
-</html>
