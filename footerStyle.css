@@ -12,6 +12,7 @@ footer {
 }
 
 .hrcon {
+    margin:auto;
     height: 10px;
     width: 30px;
     border: 0;
@@ -86,6 +87,7 @@ footer {
         width: 100px;
         border: 0;
         box-shadow: inset 0 15px 5px -12px #1f9a22;
+        opacity: 1
     }
     
     .contact {

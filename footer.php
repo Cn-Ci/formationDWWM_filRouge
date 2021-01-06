@@ -26,7 +26,7 @@
             <!-- colonne 1 -->
             <div class="col-12 col-lg-4 text-center p-2">
                 Navigation
-                <hr class="hrcon">
+                <hr class="hrcon mt-2 mb-2">
                 <p><a href="../filrouge2/controller/controleurMain.php">Accueil</a></p>
                 <p><a href="../orga.php">Organisation</a></p>
                 <p><a href="../filrouge2/controller/controllerDestination.php">Destinations</a></p>
@@ -36,7 +36,7 @@
             <!-- colonne 2 -->
             <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                 Aide
-                <hr class="hrcon">
+                <hr class="hrcon mt-2 mb-2">
                 <p><a href="../filrouge2/controller/controllerUserConnect.php?action=afficherInscription">S'inscrire</a></p>
                 <p><a href="../filrouge2/controller/controllerUserConnect.php?action=connexion">Se connecter</a></p>
             </div>
@@ -44,7 +44,7 @@
             <!-- colonne 3 -->
             <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                 CONTACT
-                <hr class="hrcon">
+                <hr class="hrcon mt-2 mb-2">
                 <p class="text-center">mobiliT</p>
                 <p class="text-center"><i class="fas fa-map-marker-alt pr-3"></i>79 Rue de Marseille, 75010 Paris</p>
                 <p class="text-center"><i class="fas fa-phone-square-alt pr-3"></i>0 123 456 789 </p>
