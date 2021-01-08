@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 include_once("..//presentation/userPresentation.php");
@@ -106,6 +105,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ CONNEXION - If email exist ______**/
                     echo "test 15 user exist --- ";
+                    
                     include_once('../controller/controleurMain.php');
                     // htmlUser();
                     // connection(24002); "Vous etes connecté"
@@ -158,7 +158,6 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
             $userEdit = new UserConnectService;
             $data = $userEdit->editUser($user); 
-            var_dump($user);
             
         include_once('../controller/controleurMain.php');
         //htmlUser();
@@ -173,6 +172,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         {
             try {
                 echo "test 22 Deconnexion OK";
+                session_start();
                 session_destroy();
                 include_once('../controller/controleurMain.php');
                 // "Vous êtes deconnecté"

@@ -70,18 +70,17 @@ Class UserConnectService {
         try { 
             echo "UserConnect test 108 OK --- ";
             $userConnect = new UserConnectMysqliDAO;
-            $data = $userConnect->researchUserByEmail($user);  var_dump($data);
+            $data = $userConnect->researchUserByEmail($user); 
         if ($data) 
         {     
             echo "UserConnect test 109 if data (email exist) OK --- ";
             $password = $_POST['password'];
-            //var_dump($data['mdp']);die;
+            
             if (password_verify($password,$data['mdp']))
             {
                 echo "UserConnect  test 110 if password/hash (mdp OK with bdd) OK --- ";
                 $_SESSION = $data;
-                //var_dump($_SESSION = $data);
-                //var_dump($_SESSION = $data['email']);
+                
                 return true;
             }
             else 
@@ -105,11 +104,11 @@ Class UserConnectService {
     {
         try { 
             echo "EditUser test 114 OK --- ";
-            //var_dump($user);
+            
             
             $userEdit = new UserConnectMysqliDAO;
             $data = $userEdit->editUser($user); 
-            //var_dump($user);
+            
         } 
         catch (UserException $de) {
             echo "EditUser test 115 KO --- ";
