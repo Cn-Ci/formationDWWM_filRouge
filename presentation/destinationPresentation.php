@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-$_SESSION['email']="bonjour@gmail.com";
+
 
 function html($title){ ?>
     <!DOCTYPE html>
@@ -142,7 +141,8 @@ function affichageDestination($destination, $region)
                                     </div>
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
-                                        <?php if($_SESSION['id']==$dest->getIdUser())
+                                    <?php $_SESSION['id']=4;
+                                         if(isset($_SESSION) && isset($_SESSION['id']) && $_SESSION['id']==$dest->getIdUser())
                                         {  
                                                     $maj=true;
                                                     buttonAjout($maj, $dest);
@@ -192,7 +192,7 @@ function buttonAjout($maj=null, $dest=null)
         <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $dest->getIdDestination();}else{};?>" class="container" style="display:none">
         
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination";} ?>" method="POST">
+                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination?id=".$dest->getIdDestination();} ?>" method="POST">
                     <!-- Region -->
                     <div class="form-group">
                         <div class="form-row align-items-center">

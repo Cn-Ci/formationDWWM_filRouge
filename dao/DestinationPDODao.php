@@ -93,8 +93,8 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
     }
 
     //UPDATE
-    public function update(object $objet){
-        $idDestination= $objet->getIdDestination();
+    public function update(object $objet, int $idObjet){
+        
         $region=$objet->getRegion();
         $lieu=$objet->getLieu();
         $image=$objet->getImage();
@@ -105,7 +105,6 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout3=$objet->getAtout3();
         $lien=$objet->getLien();
         $extraitForum=$objet->getExtraitForum();
-        $idUser= $objet->getIdUser();
             
         try{$db=parent :: connect();
             
@@ -120,6 +119,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
             $stmt->bindParam(':atout3', $atout3);
             $stmt->bindParam(':lien', $lien);
             $stmt->bindParam(':extraitForum', $extraitForum);
+            $stmt->bindParam(':idDestination', $idDestination);
             $rs=$stmt->execute();
 
             
