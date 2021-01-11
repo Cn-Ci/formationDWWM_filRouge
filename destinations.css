@@ -46,6 +46,10 @@ ul {
 }
 
 /* réduction de l'image clicable faisant apparaitre le modal de modification de l'image destination */
+#boutonModifImageDestination{
+    border-style: none;
+}
+
 #penUpdateDestination{
     width: 40px;
     height: 50px;

@@ -224,22 +224,25 @@ function buttonAjout($maj=null, $dest=null)
                             </div>
                             <!-- Image -->
                             <div class="col-6 form-group  ">
-                                <div class="col-10 offset-1 mb-3">
+                                <div class="col-10 offset-1 ">
                                     <?php if($maj==true){ ?>
                                          <img id='imageDestinationModif' src='data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage()) ?>' />
                                     <?php } ?>
                                 </div>
                                 <div class="col-10 offset-1">
                                 <?php if(!$maj){ ?>
-                                    <label for="photoDestination">Photo
+                                    <label for="photoDestination" class="mt-3">Photo
                                         <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé" ><span>
                                     </label>
                                 <?php }elseif($maj==true){ ?>
                                     <!-- bouton pour le modal -->
-                                    <div class="col-2 offset-10">
-                                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
-                                            <img id="penUpdateDestination" src="../img/penUpdate.png">
-                                        </button>
+                                    <div class="row">
+                                        <div>Modification de l'image</div>
+                                        <div>   
+                                            <button id="boutonModifImageDestination" type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
+                                                <img id="penUpdateDestination" src="../img/penUpdate.png">
+                                            </button>
+                                        </div>
                                     </div>
                                     <!-- modal pour modifier l'image de destination -->
                                     <div class="modal fade" id="formulaireModifPhoto" tabindex="-1" role="dialog" aria-labelledby="ModificationdelaPhoto" aria-hidden="true">
