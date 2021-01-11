@@ -121,7 +121,7 @@ function affichageDestination($destination, $region)
                         <div class="row">
                             <!-- image  -->
                             <div class="col-12 col-lg-4 mb-2">
-                                <img src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>" class="img-fluid w-100" alt="les côtes roses de la région bretonne"/>
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage() ); ?>" class="img-fluid w-100" alt="Image descriptive de la region"/>
                             </div>
                             <!-- desription + atouts -->
                             <div class="col-12  col-lg-7 align-item-rigth text-justify">
@@ -141,7 +141,7 @@ function affichageDestination($destination, $region)
                                     </div>
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
-                                    <?php $_SESSION['id']=4;
+                                    <?php 
                                          if(isset($_SESSION) && isset($_SESSION['id']) && $_SESSION['id']==$dest->getIdUser())
                                         {  
                                                     $maj=true;
@@ -192,7 +192,7 @@ function buttonAjout($maj=null, $dest=null)
         <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $dest->getIdDestination();}else{};?>" class="container" style="display:none">
         
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination?id=".$dest->getIdDestination();} ?>" method="POST">
+                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$dest->getIdDestination();} ?>" method="POST">
                     <!-- Region -->
                     <div class="form-group">
                         <div class="form-row align-items-center">
@@ -223,15 +223,49 @@ function buttonAjout($maj=null, $dest=null)
                                 </div>
                             </div>
                             <!-- Image -->
-                            <div class="col-6 form-group d-flex justify-content-between ">
-                                <div class="col-6">
+                            <div class="col-6 form-group  ">
+                                <div class="col-10 offset-1 mb-3">
                                     <?php if($maj==true){ ?>
-                                         <img id='imageDestinationModif' src='data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage()) ?>'/>
+                                         <img id='imageDestinationModif' src='data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage()) ?>' />
                                     <?php } ?>
                                 </div>
-                                <div class="col-6">
-                                    <label for="photoDestination">Photo</label>
-                                    <input type="file" name="image" placeholder="bla" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé">
+                                <div class="col-10 offset-1">
+                                <?php if(!$maj){ ?>
+                                    <label for="photoDestination">Photo
+                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé" ><span>
+                                    </label>
+                                <?php }elseif($maj==true){ ?>
+                                    <!-- bouton pour le modal -->
+                                    <div class="col-2 offset-10">
+                                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
+                                            <img id="penUpdateDestination" src="../img/penUpdate.png">
+                                        </button>
+                                    </div>
+                                    <!-- modal pour modifier l'image de destination -->
+                                    <div class="modal fade" id="formulaireModifPhoto" tabindex="-1" role="dialog" aria-labelledby="ModificationdelaPhoto" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="TitreModificationdelaPhoto">Modification de l'image qui illustre la destination</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id=id='.$dest->getIdDestination() ?>" method="POST">
+                                                    <label for="majPhotoDestination" > Nouvelle photo :</label>
+                                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="majPhotoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
+                                                    
+                                                    <button type="submit" class="btn btn-outline-primary mt-5">Enregistrer</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer align-items-center">
+                                                <img id="logoModifDestination" src="../img/logoMobiliT.png">
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
                                 </div>
                             </div>
                         </div>

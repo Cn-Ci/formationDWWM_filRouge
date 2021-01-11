@@ -42,5 +42,41 @@ ul {
 #imageDestinationModif{
     width: 200px;
     height:100px;
-    border-radius:50% 20% / 10% 40%;;
+    border-radius:50% 20% / 10% 40%;
+}
+
+/* réduction de l'image clicable faisant apparaitre le modal de modification de l'image destination */
+#penUpdateDestination{
+    width: 40px;
+    height: 50px;
+}
+/* faire apparaitre  le logo en tout petit dans le formulaire de modification de l'image destination */
+#logoModifDestination{
+    width: 160px;
+    height: 115px;
+}
+
+/* BOUTTON  AFFICHAGE FORMULAIRE INPUT FILE */
+label.photoDestination {
+    width:120px;
+    height:40px;
+    overflow:hidden;
+    position:relative;
+    background-color:#ccc;
+}
+
+label span input {
+    z-index: 999;
+    line-height: 0;
+    font-size: 50px;
+    position: absolute;
+    top: -2px;
+    left: -700px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding:0;
 }

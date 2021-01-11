@@ -50,13 +50,13 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
     public  function researchBy(int $idDestination){
             try{$db= parent :: connect();
                 $stmt=$db->prepare("SELECT * FROM destination WHERE idDestination=:idDestination"); //récupère les données d'un utilisateur précisé
-                $stmt->bindParam(':iDestination', $idDestination);
+                $stmt->bindParam(':idDestination', $idDestination);
                 $stmt->execute();
                 $data=$stmt->fetch();
                 $dest = new Destination();
-                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']->setIdUser($data['idUser']));
+                $dest->setIdDestination($data['idDestination'])->setRegion($data['region'])->setLieu($data['lieu'])->setImage($data['image'])->setPetiteDescription($data['petiteDescription'])->setDescription($data['description'])->setAtout1($data['atout1'])->setAtout2($data['atout2'])->setAtout3($data['atout3'])->setLien($data['lien'])->setExtraitForum($data['extraitForum']);
                 
-                $rs->closeCursor();
+                $stmt->closeCursor();
                 
         
                 return $dest;
@@ -97,7 +97,6 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         
         $region=$objet->getRegion();
         $lieu=$objet->getLieu();
-        $image=$objet->getImage();
         $petiteDescription=$objet->getPetiteDescription();
         $description=$objet->getDescription();
         $atout1=$objet->getAtout1();
@@ -105,13 +104,14 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout3=$objet->getAtout3();
         $lien=$objet->getLien();
         $extraitForum=$objet->getExtraitForum();
-            
+        var_dump($objet);
+        echo"objet reçu dans le dao";
+        echo $idObjet;
         try{$db=parent :: connect();
             
-            $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, image=:image, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
+            $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
             $stmt->bindParam(':region', $region);
             $stmt->bindParam(':lieu', $lieu);
-            $stmt->bindParam(':image', $image);
             $stmt->bindParam(':petiteDescription', $petiteDescription);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':atout1', $atout1);
@@ -119,11 +119,10 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
             $stmt->bindParam(':atout3', $atout3);
             $stmt->bindParam(':lien', $lien);
             $stmt->bindParam(':extraitForum', $extraitForum);
-            $stmt->bindParam(':idDestination', $idDestination);
+            $stmt->bindParam(':idDestination', $idObjet);
             $rs=$stmt->execute();
-
             
-                        
+            
             return $rs; /** le résultat est retourné pour pouvoir afficher le message de succes */
         }catch (PDOException $DaoException) {
             throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
