@@ -10,7 +10,8 @@
             $Topic->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($Author);
 
             try {
-                TopicMysqliDAO::add($Topic);
+                $dao = new TopicMysqliDAO();
+                $dao->add($Topic);
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }
@@ -37,7 +38,8 @@
                 foreach ($data as $value) {
                     $author = UserConnectMysqliDAO::researchUserById($value['idUsers']);
                     $Topic = new Topic();
-                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'] = new Datetime)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
+                    $datePost = new Datetime($value['date']);
+                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
                     array_push($dataToObject, $Topic);
                 }
                 
@@ -69,7 +71,8 @@
 
         public static function serviceSearchByNbComments() :?Array {
             try {
-                $topicsFiltered = TopicMysqliDAO::searchByNbComments();
+                $dao = new TopicMysqliDao();
+                $topicsFiltered = $dao->searchByNbComments();
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             } finally {

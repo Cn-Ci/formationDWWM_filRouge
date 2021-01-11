@@ -7,6 +7,7 @@
     class TopicMysqliDAO implements interfaceDao {
         public function add(Object $Topic) :Void {
             $db = ConnectionMysqliDao::connect();
+            var_dump($Topic);
 
             $topicTitle     = $Topic->getTitreTopic();
             $topicDate      = $Topic->datetimeToString($Topic->getDateTopic());
@@ -15,13 +16,13 @@
             $idUser         = $Topic->getIdAuthor();
 
             try {
-                $addRequest = $db->prepare("INSERT INTO topic (idTopic, titre, datePost, contenue, nbComm, author) VALUES (NULL, :titre, :datePost, :contenue, :nbComm, :author");
-                $addRequest->execute($t= array(
+                $addRequest = $db->prepare("INSERT INTO topic (idTopic, titreTopic, date, contenu, nbComm, idUsers) VALUES (NULL, :titre, :datePost, :contenue, :nbComm, :idAuthor)");
+                $addRequest->execute(array(
                     ":titre"    => $topicTitle,
                     ":datePost" => $topicDate,
                     ":contenue" => $topicContent,
                     ":nbComm"   => $topicNbComment,
-                    ":author"   => $idUser)
+                    ":idAuthor" => $idUser)
                 );
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
@@ -52,7 +53,7 @@
             $db = ConnectionMysqliDao::connect();
 
             try {
-                $searchRequest = $db->query("SELECT * FROM topic AS t ORDER BY t.date DESC LIMIT 20");
+                $searchRequest = $db->query("SELECT * FROM topic LIMIT 20");
                 $searchRequest->execute();
                 $Topics = $searchRequest->fetchAll();
                 return $Topics;

@@ -11,7 +11,8 @@
     }
 
     function printTd(Object $Topic) :Void {  
-        echo '<td>' . $Topic->getTitreTopic() . '</td>  
+        echo '
+            <td>' . $Topic->getTitreTopic() . '</td>  
             <td class="text-center">' . $Topic->getIdAuthor() . '</td>
             <td class="text-center">' . $Topic->datetimeToString($Topic->getDateTopic()) . '</td>
             <td class="text-center">' . $Topic->getNbComm() . '</td>' 

@@ -30,6 +30,8 @@ function doGetJson(url, isSelected) {
 		console.log('test');
 		response = data;
 		
+		$("tbody").empty();
+
 		$.each(data, function(cle, valeur) {
 			if (isSelected) {
 				console.log('is selected');
@@ -48,22 +50,15 @@ function doGetJson(url, isSelected) {
 
 
 // Afficher le formulaire d'ajout ou de modification, selon le bouton - Destination
-$('div button').click(function(e){
-	let id=e.target.id;
-	var displayForm= $("#form"+id);
+$('div button').click(function(e) {
+	let id = e.target.id;
+	var displayForm = $("#form"+id);
 	console.log("#form"+id);
 
-	if(displayForm.css("display")==="none"){
-		
+	if(displayForm.css("display")==="none") {
 		displayForm.attr("style","display:block");
 		console.log("coucou");
-		
-	 } else if(displayForm.css("display","block")){
-		
+	} else if(displayForm.css("display","block")) {
 		displayForm.css("display","none");
 	}
 });
-
-
-
-

@@ -5,17 +5,18 @@
     if (!empty($_POST)) {
         if (isset($_POST['AddTopic'])) {
             if (!empty($_POST['title'])     && isset($_POST['title'])    &&
-                !empty($_POST['content'])   && isset($_POST['content'])  &&
-                !empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {
+                !empty($_POST['content'])   && isset($_POST['content'])) {
 
                 $title     = htmlentities($_POST['title']);
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
                 $nbComment = 0;
-                $Author    = $_SESSION['id'];
+                $Author    = 4;
 
                 try {
                     ServiceTopic::serviceAddTopic($title, $datePost, $content, $nbComment, $Author);
+                    $Topics = ServiceTopic::serviceReseachAll();
+                    RenderForumMain($Topics);
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }

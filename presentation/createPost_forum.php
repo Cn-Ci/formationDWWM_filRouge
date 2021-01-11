@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col-12">
                     <div id="blockTopic">
-                        <form method='POST' action='../controller/controleurTopic.php'>                                                
+                        <form method='POST' action='../controller/controleurTopic.php?action=add'>                                                
                             <input type="text" name="title" id="inputTitle" placeholder="Titre..." class="mb-5">
 
                             <textarea name="content" id="inputContent" cols="30" rows="15" placeholder="Mon avis..."></textarea>

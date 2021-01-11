@@ -1,6 +1,7 @@
 <?php 
 	session_start();
 ?>
+
 <link rel="stylesheet" href="../inscription.css">
 
 <div class="col-sm-12 row pr-0" id="navBar">
@@ -18,7 +19,7 @@
 		<a href="../controller/controllerDestination.php" class="col-sm-12 col-md-12 col-lg alink">DESTINATIONS</a>
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
-			if (isset($_SESSION['id'])){
+			if (isset($_SESSION['id'])) {
 				$email = $_SESSION['email']; 
 				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
 				<?php
@@ -35,10 +36,10 @@
 			
 				
 				<?php	
-		} else {
+			} else {
 				?>
 				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=afficherInscription'>S'INSCRIRE</a>
-                <a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=connexion'>SE CONNECTER</a>
+				<a type='button' class='col-sm-12 col-md-12 col-lg alink' href='../controller/controllerUserConnect.php?action=connexion'>SE CONNECTER</a>
 				<?php
 			}
 		?>

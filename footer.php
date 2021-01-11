@@ -14,9 +14,11 @@
         <div class="fondfoot">
             <form method="post" action="../controller/controllerNewsletter.php?email=1">
                 <input type="text"  id="email" name="email" size="25" class="col-11 text-center form-control-plaintext rounded m-4" placeholder="Votre adresse e-mail"/>
+
                 <div class="row">
                     <div class="col-12"><input type="radio" name="new" value="1" />S''inscrire</div> 
                 </div>
+
                 <input class="btn btn-success mt-2" type="submit" value="Envoyer" name="submit"  class="btn btn-success" /> 
             </form>
         </div>

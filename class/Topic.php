@@ -5,7 +5,6 @@ class Topic implements JsonSerializable{
     private $titreTopic;
     private $date;
     private $contenu;
-    private $nbLike;
     private $nbComm;
     private $Author;
 

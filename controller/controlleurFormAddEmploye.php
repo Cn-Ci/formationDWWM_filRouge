@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     require_once('../presentation/formAdd_Personnel.php');
 
     if (isset($_GET)) {
