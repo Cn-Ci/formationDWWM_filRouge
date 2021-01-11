@@ -126,12 +126,12 @@ footer {
     .fondfoot {
         z-index         : 10;
         background-color: rgba(255, 255, 255, 0.418);
-        margin-bottom   : 50px;
-        margin-right    : 220px;
-        margin-left     : 220px;
-        margin-top      : 30px;
+        margin-bottom   : 1%;
+        margin-right    : 10%;
+        margin-left     : 10%;
+        margin-top      : 1%;
         border-radius   : 5px;
-        padding         : 10px;
+        padding-right   : 3%;
         color           : black !important;
     }
 

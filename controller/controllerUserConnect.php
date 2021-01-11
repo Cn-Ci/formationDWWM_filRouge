@@ -183,6 +183,46 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 include_once('../controller/controleurMain.php');
             } 
     } 
+
+    /* ****************************************** NEWSLETTER - Formulaire ?action=newsletter */
+    if ($_GET['action']=="newsletter")   
+    { 
+        echo "test 24 action inscription newsletter OK --- ";
+        /* :::::::::::::: NEWSLETTER - Name bouton "inscrire" ::::::::::::::*/
+        if (isset($_POST["Envoyer"]) && isset($_POST["email"] ))
+        {
+            echo "test 25 name inscrire OK --- ";
+            try {
+            /**_ NEWSLETTER - Verification email _________**/
+            $newsletter = new Newsletter;
+            $newsletter->setEmail($_POST['email']);
+
+            //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
+            //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
+
+            if (NewsletterService::addEmailNewsletter($newsletter))
+                {
+                    /**_ NEWSLETTER - if email not exist et hash ______**/
+                    echo "test 26 affichage connexion Verification email et hash OK --- ";
+                    include_once('../controller/controleurMain.php');
+                    // "Vous etes inscrit"
+                }
+                else 
+                {
+                /**_ NEWSLETTER - If email exist ______**/
+                  echo "test 27 affichage page connexion et verification email et hash KO --- ";
+                  htmlUser();
+                  inscription(1062); 
+                }  
+            } 
+            catch (ServiceException $se){
+                /**_ NEWSLETTER - Affichage erreur  _______**/
+                echo "test 28 affichager page inscription KO --- ";
+                htmlUser();
+                inscription($se->getMessage(), $se->getCode());
+            } 
+        } 
+    }
 } 
 
 // ?>

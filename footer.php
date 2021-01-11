@@ -11,12 +11,18 @@
             pour recevoir nos meilleurs offres !
         </h4>
         
+        <form method="post" action="../controller/controllerUserConnect.php?action=newsletter">
+Adresse e-mail : <input type="text" name="email" size="25" /><br />
+
+<input type="submit" value="envoyer" name="submit" /> 
+</form>
+
+
         <div class="fondfoot">
             <form method="post" action="../controller/controllerNewsletter.php?email=1">
-                <input type="text"  id="email" name="email" size="25" class="col-11 text-center form-control-plaintext rounded m-4" placeholder="Votre adresse e-mail"/>
-
+                <input type="text"  id="email" name="email" size="25" class="col-12 text-center form-control-plaintext rounded m-4" placeholder="Votre adresse e-mail"/>
                 <div class="row">
-                    <div class="col-12"><input type="radio" name="new" value="1" />S''inscrire</div> 
+                    <div class="col-12"><input type="radio" name="new" value="0" />S''inscrire</div> 
                 </div>
 
                 <input class="btn btn-success mt-2" type="submit" value="Envoyer" name="submit"  class="btn btn-success" /> 

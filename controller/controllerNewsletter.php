@@ -25,6 +25,7 @@ if(isset($_GET['email']))
                     if ( mail($destinataire, $objet, $message, $headers) ) // On envoie l'e-mail.
                     {
                     echo "<script>alert('Félicitation, vous venez de recevoir un email de bienvenue 😜')</script>";
+                    header ('location: controllerMain.php');
                     }
                     else
                     {
