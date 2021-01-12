@@ -3,15 +3,15 @@
     require_once '../service/ServiceException.php';
     require_once '../dao/MainMysqliDAO.php';
 
-    class ServiceTopic {
+    class ServiceMain {
         public static function serviceGetTopicOrderByDate() :?Array {
             try {
-                $data = TopicMysqliDao::getTopicOrderByDate();
+                $data = MainMysqliDAO::getTopicOrderByDate();
                 $dataToObject = array (); 
                 foreach ($data as $value) {
-                    $author = "test";
                     $Topic = new Topic();
-                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($value['date'])->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($value['author']);
+                    $date = new Datetime($value['date']);
+                    $Topic->setIdTopic($value['idTopic'])->setTitreTopic($value['titreTopic'])->setDateTopic($date)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor(4);
                     array_push($dataToObject, $Topic);
                 }
                 

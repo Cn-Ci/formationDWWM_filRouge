@@ -175,22 +175,70 @@
                         <div id="apercuForum" class="col-sm-12 col-lg-8">
                             <div class="row">
 
-                                <?php 
-                                    //! SELECT INTO TOPICDAO TOPIC LIMIT 3 ORDER BY DATE 
-                                ?> 
+                                <?php $RecentPost = renderRecentPost(); ?> 
 
                                 <div class="col-sm-12 col-lg-12 col-xl-6 row" style="padding-right: 0px !important">
+                                    <!--POST 0-->
                                     <div class="col-12 postRecent row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="../img/bretagne.jpg" alt="Apercu image post forum"></div>
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
+                                            <img class="ImgPostForum" src="../img/bretagne.jpg" alt="Apercu image post forum">
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                            <h5>
+                                                <?php echo $RecentPost[0]->getTitreTopic(); ?>
+                                            </h5>
+
+                                            <p>
+                                                <?php checkContentLenght($RecentPost[0]->getContentTopic()); ?>
+                                            </p>
+
+                                            <h6>
+                                                <?php echo $RecentPost[0]->datetimeToString($RecentPost[0]->getDateTopic()); ?>
+                                            </h6>
+                                        </div>
                                     </div>
-                                    <div class="col-12 postRecent row bg-color secondPost">
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="../img/vignoble.jpg" alt="Apercu image post forum"></div>
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
-                                    </div>
+
+                                    <!--POST 1-->
                                     <div class="col-12 postRecent row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3"><img class="ImgPostForum" src="../img/vallee.jpg" alt="Apercu image post forum"></div>
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font"><h5>Sujet</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur </p><h6>Date:Heure</h6></div>
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
+                                            <img class="ImgPostForum" src="../img/vignoble.jpg" alt="Apercu image post forum">
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                            <h5>
+                                                <?php echo $RecentPost[1]->getTitreTopic(); ?>
+                                            </h5>
+
+                                            <p>
+                                                <?php checkContentLenght($RecentPost[1]->getContentTopic()); ?>
+                                            </p>
+
+                                            <h6>
+                                                <?php echo $RecentPost[1]->datetimeToString($RecentPost[1]->getDateTopic()); ?>
+                                            </h6>
+                                        </div>
+                                    </div>
+
+                                    <!--POST 2-->
+                                    <div class="col-12 postRecent row">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
+                                            <img class="ImgPostForum" src="../img/vallee.jpg" alt="Apercu image post forum">
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                            <h5>
+                                                <?php echo $RecentPost[2]->getTitreTopic(); ?>
+                                            </h5>
+
+                                            <p>
+                                                <?php checkContentLenght($RecentPost[2]->getContentTopic()); ?>
+                                            </p>
+
+                                            <h6>
+                                                <?php echo $RecentPost[2]->datetimeToString($RecentPost[2]->getDateTopic()); ?>
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="imgBlockApercuForum" class="col-sm-12 col-lg-12 col-xl-6 row">

@@ -43,6 +43,11 @@ ul {
 .text-justify{
     text-align: justify;
 }
+.postRecent:hover{
+    transition      : background-color 1s;
+    background-color:  #228b22; 
+    color: white;
+}
 
 /** SLOGAN MILIEU ECRAN --------------------------------------------------*/
 #mdSlogan{
