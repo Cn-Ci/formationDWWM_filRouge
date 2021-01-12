@@ -2,9 +2,9 @@
 
     <div class="col-sm-12 col-lg-2">
         <select class="form-control" name="filter" id="filter">
-            <option >Trier par</option>
-            <option >Date</option>
-            <option >Nombre de commentaire</option>
+            <option value="">Trier par</option>
+            <option value="Date">Date</option>
+            <option value="NombreDeCommentaire">Nombre de commentaire</option>
         </select>
     </div> 
 
@@ -16,7 +16,7 @@
 
 
     <div class="col-sm-12 col-lg-2 text-center">
-        <a href="../presentation/createPost_forum.php"><button type="submit" class="btn btn-success color-228B22 mb-10" id="boutonsubmit">+ Créer un post</button></a>
+        <a href="../controller/controlleurCreatePostForum.php"><button type="submit" class="btn btn-success color-228B22 mb-10" id="boutonsubmit">+ Créer un post</button></a>
     </div>
 </div>
 

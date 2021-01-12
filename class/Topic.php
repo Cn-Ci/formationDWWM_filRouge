@@ -35,6 +35,10 @@ class Topic implements JsonSerializable{
     public function getIdTopic() :?Int {
         return $this->idTopic;
     }
+    public function setIdTopic(Int $idTopic) :Self {
+        $this->idTopic = $idTopic;
+        return $this;
+    }
  
     public function getTitreTopic() :String {
         return $this->titreTopic;

@@ -19,13 +19,15 @@
 
         public static function serviceResearchTopicBy(Int $idTopic) :?Topic {
             try {
-                $data = TopicMysqliDao::researchBy($idTopic);
+                $dao = new TopicMysqliDAO();
+                $data = $dao->researchBy($idTopic);
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }
 
             $Topic = new Topic();
-            $Topic->setIdTopic($data[''])->setTitreTopic($data[''])->setDateTopic($data[''])->setContentTopic($data[''])->setNbComm($data[''])->setIdAuthor($data['']);
+            $date = new Datetime($data['date']);
+            $Topic->setIdTopic($data['idTopic'])->setTitreTopic($data['titreTopic'])->setDateTopic($date)->setContentTopic($data['contenu'])->setNbComm($data['nbComm'])->setIdAuthor($data['idUsers']);
 
             return $Topic;
         }
@@ -39,7 +41,7 @@
                     $author = UserConnectMysqliDAO::researchUserById($value['idUsers']);
                     $Topic = new Topic();
                     $datePost = new Datetime($value['date']);
-                    $Topic->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
+                    $Topic->setIdTopic($value['idTopic'])->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
                     array_push($dataToObject, $Topic);
                 }
                 
@@ -55,7 +57,8 @@
             $TopicToModify->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($idAuthor);
 
             try {
-                TopicMysqliDAO::update($TopicToModify, $idTopic);
+                $dao = new TopicMysqliDAO();
+                $dao->update($TopicToModify, $idTopic);
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }
@@ -63,7 +66,8 @@
 
         public static function serviceDeleteTopic(Int $idTopicToDelete) :Void {
             try {    
-                TopicMysqliDAO::delete($idTopicToDelete);
+                $dao = new TopicMysqliDAO();
+                $dao->delete($idTopicToDelete);
             } catch(DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             }
@@ -82,7 +86,8 @@
 
         public static function serviceSearchByDate() :?Array {
             try {
-                $topicsFiltered = TopicMysqliDAO::searchByDate();
+                $dao = new TopicMysqliDAO();
+                $topicsFiltered = $dao->searchByDate();
             } catch (DaoSqlException $ServiceException) {
                 throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
             } finally {

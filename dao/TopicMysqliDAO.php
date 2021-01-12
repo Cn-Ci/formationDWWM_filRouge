@@ -7,7 +7,6 @@
     class TopicMysqliDAO implements interfaceDao {
         public function add(Object $Topic) :Void {
             $db = ConnectionMysqliDao::connect();
-            var_dump($Topic);
 
             $topicTitle     = $Topic->getTitreTopic();
             $topicDate      = $Topic->datetimeToString($Topic->getDateTopic());
@@ -29,7 +28,7 @@
             }
         }
 
-        public function researchBy(Int $idTopic) :?Array {
+        public function researchBy(Int $idTopic) :?Object {
             $db = ConnectionMysqliDao::connect();
 
             try {
@@ -37,16 +36,11 @@
                 $searchByRequest->execute(array(
                     ":idTopic" => $idTopic)
                 );
-                $result   = $searchByRequest->get_result();
-                $data     = $result->fetch_array(MYSQLI_ASSOC);
+                $data = $searchByRequest->fetch(MYSQLI_ASSOC);
+                return $data;
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
-            
-            $result->free();
-            $db->close();
-
-            return $data;
         }
 
         public function research() :?Array {
@@ -62,19 +56,17 @@
             }
         }
 
-        public function update(Object $Topic) :Void {
+        public function update(Object $Topic, Int $idTopic) :Void {
             $db = ConnectionMysqliDao::connect();
-
-            $idTopic        = getIdTopic();
-            $topicTitle     = getTitreTopic();
-            $topicDate      = getDatePost();
-            $topicContent   = getContenu();
-            $topicNbComment = getNbComm();
-            $idUser         = getIdUser();
+            $topicTitle     = $Topic->getTitreTopic();
+            $topicDate      = $Topic->datetimeToString($Topic->getDateTopic());
+            $topicContent   = $Topic->getContentTopic();
+            $topicNbComment = $Topic->getNbComm();
+            $idUser         = $Topic->getIdAuthor();
 
             try {
-                $updateRequest = $dbServ->prepare("UPDATE `employes` SET titre = :titre, datePost = :datePost, contenue = :contenue, nbComm = :nbComm, author = :author WHERE idTopic = :idTopic");
-                $updateRequest->execute(array(
+                $updateRequest = $db->prepare("UPDATE `topic` SET titreTopic = :titre, date = :datePost, contenu = :contenue, nbComm = :nbComm, idUsers = :author WHERE idTopic = :idTopic");
+                $updateRequest->execute($t= array(
                     ":titre"    => $topicTitle,
                     ":datePost" => $topicDate,
                     ":contenue" => $topicContent,
@@ -84,8 +76,6 @@
                 );
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
-            } finally {
-                $db->close();
             }
         }   
 
@@ -93,14 +83,12 @@
             $db = ConnectionMysqliDao::connect();
 
             try {
-                $DeleteRequest = $dbServ->prepare("DELETE FROM topic WHERE idTopic = :idTopic");
+                $DeleteRequest = $db->prepare("DELETE FROM topic WHERE idTopic = :idTopic");
                 $DeleteRequest->execute(array(
                     ":idTopic" => $idTopic)
                 );
             } catch (PDOException  $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
-            } finally {
-                $db->close();
             }
         }     
         

@@ -12,7 +12,6 @@ $(document).ready(function(){
 $('#filter').on('change', function(e) {
 	const filterSelected = $('#filter :selected').val();
 	let url = filterSelected ? 'controleurTopic.php?filter=' + filterSelected : 'controleurTopic.php?action=showAllTopic';
-	console.log
 	doGetJson(url, true);
 });
 
@@ -25,11 +24,11 @@ $('#SearchBar').on('input', function(e) {
 });
 
 function doGetJson(url, isSelected) {
-	const deferred = $.Deferred();
 	$.getJSON(url, function(data) {
-		console.log('test');
 		response = data;
 		
+		console.log(data);
+
 		$("tbody").empty();
 
 		$.each(data, function(cle, valeur) {
@@ -43,9 +42,7 @@ function doGetJson(url, isSelected) {
 				$('<td>').html(valeur.commentaires).appendTo($('tbody')
 			);
 		});
-		deferred.resolve(response);
 	});
-	return deferred.promise();
 }
 
 
