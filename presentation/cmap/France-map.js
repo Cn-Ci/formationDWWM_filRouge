@@ -93,7 +93,7 @@ var cmap = '';
 cmap += '<link rel="stylesheet" href="../presentation/cmap/style.css" type="text/css" media="screen" />';
 cmap += '<script src="../presentation/cmap/jquery-1.11.1.min.js"></script>';
 cmap += '<script src="../presentation/cmap/France-map.js"></script>';
-cmap += '<div id="legende"></div><map  name="map"><div id="areas"></div> </map><img id="canvasMap" id="image" src="../presentation/cmap/trans.gif" usemap="#map"/><canvas id="canvas">Mettez à jour votre navigateur Internet !</canvas>';
+cmap += '<div id="legende"></div><map  name="map"><div id="areas"></div> </map><img id="canvasMap" id="image" src="../presentation/cmap/trans.gif" usemap="#map"/><canvas id="canvas">Zone des Canvas</canvas>';
 document.write(""+cmap+"");
 }
 
@@ -127,12 +127,12 @@ $(function(){
           strokeStyle : maplines,
           lineWidth : 1.2,
 		  alt : ""+txt+""
-        }).mouseenter(function(){
+        }).mouseenter(function(){								//quand on survole la map
           $(this).render({strokeStyle: maplines,
                           fillStyle : mapcolor_hover});
          $("div#legende").html(""+this.alt+"");
 		 render();
-        }).mouseleave(function(){
+        }).mouseleave(function(){ 								//quand on quitte la map
           $(this).render({strokeStyle: maplines,
                           fillStyle : mapcolor});
 		$("div#legende").html("");
@@ -141,7 +141,7 @@ $(function(){
 		  window.location.href;
         }).appendTo(areas);
         render();
-}
+	}
         function fillStroke(fillStyle, strokeStyle){
           if (fillStyle) c.fill();
           if (strokeStyle) c.stroke();

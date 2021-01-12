@@ -29,10 +29,7 @@ function html($title){ ?>
                 rel="stylesheet" 
                 type="text/css" 
                 href="../destinations.css">
-            <link 
-                rel="stylesheet" 
-                type="text/css" 
-                href="../footerStyle.css">
+        
             <!-- TYPO -->
             <link 
                 href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
@@ -67,7 +64,7 @@ function footer(){ ?>
     </div>
             <!-- ligne de séparation -->
             <hr class="hrsep">
-                <?php include '../footer.php';?>
+                <?php include '../templates/footer.php';?>
             </footer>
 
             <!-- JQUERY -->
@@ -181,44 +178,46 @@ function affichageDestination($destination, $region)
 }
 
 function buttonAjout($maj=null, $dest=null)
-{ ?>
+{ 
+    if($maj){$idDestination = $dest->getIdDestination();}?>
         <div> 
             <?php $ajout= !$maj || $maj==null ?>
-            <button id="<?php if($ajout){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $dest->getIdDestination();} ?>" class='<?php if($ajout){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
+            <button id="<?php if($ajout){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $idDestination;} ?>" class='<?php if($ajout){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
                 <?php if($ajout){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
             </button> 
         </div>
         
-        <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $dest->getIdDestination();}else{};?>" class="container" style="display:none">
+        <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $idDestination;}else{};?>" class="container" style="display:none">
         
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$dest->getIdDestination();} ?>" method="POST">
+                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$idDestination;} ?>" method="POST">
                     <!-- Region -->
                     <div class="form-group">
                         <div class="form-row align-items-center">
                             <div class="col-6">
                                 <!-- lieu -->
                                 <div class="form-group ">
-                                    <label for="lieuDestination">Lieu </label>
-                                    <input type="text" class="form-control" id="lieuDestination" name="lieu" value="<?php if($maj){echo $dest->getLieu() ;}?>" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
+                                    <label for="<?php if(!$maj){echo "lieuDestination" ;}else{echo "lieuDestination". $idDestination;}?>">Lieu </label>
+                                    <input type="text" class="form-control" id="<?php if(!$maj){echo "lieuDestination" ;}else{echo "lieuDestination". $idDestination;}?>" name="lieu" value="<?php if($maj){echo $dest->getLieu() ;}?>" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
                                 </div>
                             
                                 <div class="form-group ">
-                                    <label for="selectRegion"><?php if($ajout){ echo "Choisissez une région de France";}elseif($maj==true){echo $dest->getRegion();}else{};?></label>
-                                    <select class="form-control" id="selectRegion" name="region">
-                                        <option>Auvergne-Rhône-Alpes</option>
-                                        <option>Bourgogne-Franche-Comté</option>
-                                        <option>Bretagne</option>
-                                        <option>Centre</option>
-                                        <option>Corse</option>
-                                        <option>Grand-Est</option>
-                                        <option>Hauts-de-France</option>
-                                        <option>Ile-de-France</option>
-                                        <option>Normandie</option>
-                                        <option>Nouvelle-Aquitaine</option>
-                                        <option>Occitanie</option>
-                                        <option>Pays-de-Loire</option>
-                                        <option>Provence-Alpes-Côte-d-Azur</option>
+                                    <label for="<?php if(!$maj){echo "selectRegion" ;}else{echo "selectRegion". $idDestination;}?>">Région</label>
+                                    <select class="form-control" id="<?php if(!$maj){echo "selectRegion" ;}else{echo "selectRegion". $idDestination;}?>" name="region">
+                                        <option <?php if(!$maj){echo "selected";}elseif($maj){echo "value=".$dest->getRegion();} ?>><?php if(!$maj){echo "Choisir votre région";}elseif($maj){echo $dest->getRegion();}?></option>
+                                        <option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+                                        <option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+                                        <option value="Bretagne">Bretagne</option>
+                                        <option value="Centre">Centre</option>
+                                        <option value="Corse">Corse</option>
+                                        <option value="Grand-Est">Grand-Est</option>
+                                        <option value="Hauts-de-France">Hauts-de-France</option>
+                                        <option value="Ile-de-France">Ile-de-France</option>
+                                        <option value="Normandie">Normandie</option>
+                                        <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+                                        <option value="Occitanie">Occitanie</option>
+                                        <option value="Pays-de-Loire">Pays-de-Loire</option>
+                                        <option value="Provence-Alpes-Côte-d-Azur">Provence-Alpes-Côte-d'Azur</option>
                                     </select>
                                 </div>
                             </div>
@@ -239,7 +238,7 @@ function buttonAjout($maj=null, $dest=null)
                                     <div class="row">
                                         <div>Modification de l'image</div>
                                         <div>   
-                                            <button id="boutonModifImageDestination" type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
+                                            <button id="<?php echo "boutonModifImageDestination".$idDestination?> type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
                                                 <img id="penUpdateDestination" src="../img/penUpdate.png">
                                             </button>
                                         </div>
@@ -255,9 +254,9 @@ function buttonAjout($maj=null, $dest=null)
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id=id='.$dest->getIdDestination() ?>" method="POST">
-                                                    <label for="majPhotoDestination" > Nouvelle photo :</label>
-                                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="majPhotoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
+                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id=id='.$idDestination ?>" method="POST">
+                                                    <label for="<?php echo "majPhotoDestination".$idDestination ?>" > Nouvelle photo :</label>
+                                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="<?php echo "majPhotoDestination".$idDestination ?>" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
                                                     
                                                     <button type="submit" class="btn btn-outline-primary mt-5">Enregistrer</button>
                                                 </form>
@@ -276,32 +275,32 @@ function buttonAjout($maj=null, $dest=null)
                     
                     <!-- Petite description -->
                     <div class="form-group">
-                        <label for="introDestination">Description introductive</label>
-                        <input type="text" class="form-control" name="petiteDescription" minlength="10" maxlength="255" id="introDestination" value="<?php if($maj){echo $dest->getPetiteDescription() ;}?>" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
+                        <label for="<?php if(!$maj){echo "petiteDescription" ;}else{echo "petiteDescription". $idDestination;}?>">Description introductive</label>
+                        <input type="text" class="form-control" name="petiteDescription" minlength="10" maxlength="255" id="<?php if(!$maj){echo "petiteDescription" ;}else{echo "petiteDescription". $idDestination;}?>" value="<?php if($maj){echo $dest->getPetiteDescription() ;}?>" placeholder="Veillez saisir un texte court d'introduction au lieu" alt="Veillez saisir une petite introduction du lieu présenté" >
                     </div>
                     <div class="form-group">
-                        <label for="descriptionDestination">Description du lieu</label>
-                        <input type="text" class="form-control" name="description" minlength="100" maxlength="500" id="descriptionDestination" value="<?php if($maj){echo $dest->getDescription() ;}?>" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
+                        <label for="<?php if(!$maj){echo "descriptionDestination";}else{echo "descriptionDestination".$idDestination ;} ?>">Description du lieu</label>
+                        <input type="text" class="form-control" name="description" minlength="100" maxlength="500" id="<?php if(!$maj){echo "descriptionDestination";}else{echo "descriptionDestination".$idDestination ;} ?>" value="<?php if($maj){echo $dest->getDescription() ;}?>" placeholder="Veillez décrire plus précisémment le lieu a visiter" alt="Veillez saisir description précise et détaillée du lieu à visiter" required>
                     </div>
                     <div class="form-group">
-                        <label for="atout1Destination">Premier atout</label>
-                        <input type="text" class="form-control" name="atout1" minlength="100" maxlength="300" id="atout1Destination" value="<?php if($maj){echo $dest->getAtout1() ;}?>" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
+                        <label for="<?php if(!$maj){echo "atout1Destination" ;}else{echo "atout1Destination". $idDestination;}?>">Premier atout</label>
+                        <input type="text" class="form-control" name="atout1" minlength="100" maxlength="300" id="<?php if(!$maj){echo "atout1Destination" ;}else{echo "atout1Destination". $idDestination;}?>" value="<?php if($maj){echo $dest->getAtout1() ;}?>" placeholder="Premier atout du lieu proposé" alt="Présenter le premier atout du lieu proposé en visite" required>
                     </div>
                     <div class="form-group">
-                        <label for="atout2Destination">Deuxième atout</label>
-                        <input type="text" class="form-control" name="atout2" minlength="100" maxlength="300" id="atout2Destination" value="<?php if($maj){echo $dest->getAtout2() ;}?>" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
+                        <label for="<?php if(!$maj){echo "atout2Destination" ;}else{echo "atout2Destination". $idDestination;}?>">Deuxième atout</label>
+                        <input type="text" class="form-control" name="atout2" minlength="100" maxlength="300" id="<?php if(!$maj){echo "atout2Destination" ;}else{echo "atout2Destination". $idDestination;}?>" value="<?php if($maj){echo $dest->getAtout2() ;}?>" placeholder="Deuxième atout du lieu proposé" alt="Présenter le deuxième atout du lieu proposé en visite" required>
                     </div>
                     <div class="form-group">
-                        <label for="atout3Destination">Deuxième atout</label>
-                        <input type="text" class="form-control" name="atout3" minlength="100" maxlength="300" id="atout3Destination" value="<?php if($maj){echo $dest->getAtout3() ;}?>" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
+                        <label for="<?php if(!$maj){echo "atout3Destination" ;}else{echo "atout3Destinaton". $idDestination;}?>">Troisième atout</label>
+                        <input type="text" class="form-control" name="atout3" minlength="100" maxlength="300" id="<?php if(!$maj){echo "atout3Destination" ;}else{echo "atout3Destination". $idDestination;}?>" value="<?php if($maj){echo $dest->getAtout3() ;}?>" placeholder="Troisième atout du lieu proposé" alt="Présenter le troisième atout du lieu proposé en visite" >
                     </div>
                     <div class="form-group">
-                        <label for="lienSiteWeb">Lien vers un site web </label>
-                        <input type="text" class="form-control" name="lien" maxlength="300" id="lienSiteWeb" value="<?php if($maj){echo $dest->getLien() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
+                        <label for="<?php if(!$maj){echo "lienSiteWeb" ;}else{echo "lienSiteWeb". $idDestination;}?>">Lien vers un site web </label>
+                        <input type="text" class="form-control" name="lien" maxlength="300" id="<?php if(!$maj){echo "lienSiteWeb" ;}else{echo "lienSiteWeb". $idDestination;}?>" value="<?php if($maj){echo $dest->getLien() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à plus d'informations pour cette destination">
                     </div>
                     <div class="form-group">
-                        <label for="lienExtraitForum">Lien vers un extrait du forum </label>
-                        <input type="text" class="form-control" name="extraitForum" maxlength="300" id="lienExtraitForum" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
+                        <label for="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>">Lien vers un extrait du forum </label>
+                        <input type="text" class="form-control" name="extraitForum" maxlength="300" id="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
                     <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if($ajout){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}else{};?></button>
                 </form>

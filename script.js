@@ -59,3 +59,13 @@ $('div button').click(function(e) {
 		displayForm.css("display","none");
 	}
 });
+
+//dynamiser l'affichage des destinations 
+
+$('<area />').click(function(e){
+	console.log(e);
+	console.log('coucou');
+});
+
+// #areas > area:nth-child(11)
+// var area= document.querySelector("#areas > area:nth-child(11)")
