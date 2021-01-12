@@ -4,6 +4,7 @@ session_start();
 include_once("..//presentation/userPresentation.php");
 include_once('../service/ServiceException.php');  
 include_once('../service/UserConnectService.php');  
+include_once('../service/NewsletterService.php');  
 
 /* IF ACTION -----------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------*/
@@ -17,13 +18,11 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         try {
             /**_ INSCRIPTION - Affichage ________________**/
             echo "test 3 affichage page inscription OK --- ";
-            htmlUser();
             inscription();
         } 
         catch (ServiceException $se) {
             /**_ INSCRIPTION - Affichage erreur  _______**/
             echo "test 4 affichager page inscription KO --- ";
-            htmlUser();
             inscription(23002);
         } 
     }
@@ -58,14 +57,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                 /**_ INSCRIPTION - If email exist ______**/
                   echo "test 8 affichage page connexion et verification email et hash KO --- ";
-                  htmlUser();
+    
                   inscription(1062); 
                 }  
             } 
             catch (ServiceException $se){
                 /**_ INSCRIPTION - Affichage erreur  _______**/
                 echo "test 9 affichager page inscription KO --- ";
-                htmlUser();
+
                 inscription($se->getMessage(), $se->getCode());
             } 
         } 
@@ -78,13 +77,11 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         try {
             /**_ CONNEXION - Affichage ___________________**/
             echo "test 11 affichage page connexion affiche OK --- ";
-            htmlUser();
             connection();
         } 
         catch (ServiceException $se) {
             /**_ CONNEXION - Affichage erreur ____________**/
             echo "test 12 affichage page connexion affiche KO --- ";
-            htmlUser();
             connection(23003);
         }  
     }
@@ -107,21 +104,21 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                     echo "test 15 user exist --- ";
                     
                     include_once('../controller/controleurMain.php');
-                    // htmlUser();
+                
                     // connection(24002); "Vous etes connecté"
                 }
                 else 
                 {
                     /**_ CONNEXION - If email not-exist ___**/ 
                     echo "test 16 user not exist --- ";
-                    htmlUser();
+    
                     inscription(23004);
                 }  
             }
             catch (ServiceException $se) {
                 /**_ CONNEXION - erreur verification ______**/
                 echo "test 17 verification KO --- ";
-                htmlUser();
+
                 inscription($se->getMessage(), $se->getCode());
             }  
         }
@@ -141,7 +138,6 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
             /**_ CONNEXION - If email not-exist ___**/ 
             echo "test 20 user not exist --- Pret pour modification";
-            htmlUser();
             modification($user);
         
     }
@@ -160,7 +156,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             $data = $userEdit->editUser($user); 
             
         include_once('../controller/controleurMain.php');
-        //htmlUser();
+
         //connection(24002); "Vous etes connecté"
         // "Votre modification a bien été enregistrée !"
         //UserConnectService::editUser($user); 
@@ -189,18 +185,19 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     { 
         echo "test 24 action inscription newsletter OK --- ";
         /* :::::::::::::: NEWSLETTER - Name bouton "inscrire" ::::::::::::::*/
-        if (isset($_POST["Envoyer"]) && isset($_POST["email"] ))
+        if (isset($_POST["envoyer"]) && isset($_POST["email"] ))
         {
             echo "test 25 name inscrire OK --- ";
-            try {
-            /**_ NEWSLETTER - Verification email _________**/
-            $newsletter = new Newsletter;
-            $newsletter->setEmail($_POST['email']);
+            try 
+            {
+                /**_ NEWSLETTER - Verification email _________**/
+                $newsletter = new Newsletter;
+                $newsletter->setEmail($_POST['email']);
 
-            //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
-            //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
+                //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
+                //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
 
-            if (NewsletterService::addEmailNewsletter($newsletter))
+                if (NewsletterService::addEmailNewsletter($newsletter))
                 {
                     /**_ NEWSLETTER - if email not exist et hash ______**/
                     echo "test 26 affichage connexion Verification email et hash OK --- ";
@@ -210,15 +207,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 else 
                 {
                 /**_ NEWSLETTER - If email exist ______**/
-                  echo "test 27 affichage page connexion et verification email et hash KO --- ";
-                  htmlUser();
-                  inscription(1062); 
+                    echo "test 27 affichage page connexion et verification email et hash KO --- ";
+                    include_once('../controller/controleurMain.php');
                 }  
             } 
             catch (ServiceException $se){
                 /**_ NEWSLETTER - Affichage erreur  _______**/
                 echo "test 28 affichager page inscription KO --- ";
-                htmlUser();
+
                 inscription($se->getMessage(), $se->getCode());
             } 
         } 

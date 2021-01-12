@@ -1,3 +1,38 @@
+<link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../mainStyle.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../addTopic.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../destinations.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../forumStyle.css">
+    <link 
+        rel="stylesheet" 
+        href="../css/connexionStyle.css">
+    <link 
+        rel="stylesheet" 
+        href="../css/inscriptionStyle.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../viewPost.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="styleOrga.css">
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="timeline.css">
+
 <?php
 //session_start();
 

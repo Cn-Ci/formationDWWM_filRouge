@@ -1,0 +1,39 @@
+body {
+background-image: url(../img/oliver-schwendener-9lcWCCRXiKU-unsplash.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.titre {
+    color: rgba(83, 81, 81, 0.856);
+}
+
+.mail {
+    margin: auto;
+    border: none;
+}
+
+
+.btnConnexion {
+    background-color: #228b229f;
+    border-radius: 20px;
+    border-color: white;
+}
+
+.fichier {
+        margin-left: auto;
+        margin-right: auto;
+        width: 20em
+
+}
+.retour {
+    background-color: #22588bad;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+}
+
+
+@media (min-width: 992px) {
+   }

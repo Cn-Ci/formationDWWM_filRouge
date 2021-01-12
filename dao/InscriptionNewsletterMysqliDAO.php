@@ -23,8 +23,10 @@ class InscriptionNewsletterMysqliDAO extends ConnectionMysqliDao {
          
             $stmt->bindParam(':email', $email);
 
-            $stmt->execute();
+            $rs = $stmt->execute();
 
+            return $rs;
+            
             $db = null;
             $stmt = null;           
         } 

@@ -1,5 +1,5 @@
 <?php 
-include_once('../dao/UserConnectMysqliDAO.php');
+include_once('../dao/InscriptionNewsletterMysqliDAO.php');
 include_once("../Exception/UserException.php");
 include_once('../service/ServiceException.php');
 
@@ -12,9 +12,10 @@ Class NewsletterService {
     static function addEmailNewsletter(Newsletter $newsletter) 
     {
         try { 
-            echo "AddUser test 200 OK --- ";
+            echo "AddUser test 204 OK --- ";
             $emailNewsletter = new InscriptionNewsletterMysqliDAO;
-            $emailNewsletter->addEmailNewsletter($newsletter);
+            $rs = $emailNewsletter->addEmailNewsletter($newsletter);
+            return $rs;
         } 
         catch (NewsletterException $de) {
             echo "AddUser test 201 KO --- ";

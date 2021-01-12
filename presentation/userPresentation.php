@@ -1,23 +1,5 @@
-<?php function htmlUser(){
-?>    
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/connexionStyle.css">
-    <link rel="stylesheet" href="../css/inscriptionStyle.css">
-    <title> Formulaire</title>
-</head>
-<body>
+
 <?php 
-}
 function inscription($errorCode=null){
     if($errorCode && $errorCode == 1062){
         echo "<center><div class='alert alert-danger'> Cet utilisateur existe déjà ! !</div></center>";
@@ -35,26 +17,35 @@ function inscription($errorCode=null){
         echo "<center><div class='alert alert-success'> Féliciation ! Vous êtes inscrit !</div></center>";
     }
 ?>
+<head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../assets/inscriptionStyle.css">
+</head>
     <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=inscription" method="post">
         <h3 class="col titre mt-5 mb-5">Formulaire d'inscription</h3>
         <div class="mail col col-sm-5">
-            <input required id="myTextFocusPseudo" class="col col-4 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
+            <input required id="myTextFocusPseudo" class="col col-12 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
         </div>
         <div class="mail col col-sm-5">
-            <input required class="col col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
+            <input required class="col col-12 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
         </div>
         <div class="mail col col-sm-5">
-            <input required class="col col-4 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
+            <input required class="col col-12 text-center form-control-plaintext" type="text" name="nom"  placeholder="Saisir votre nom"> <br/>
         </div>
         <div class="mail col col-sm-5">
-            <input required class="col col-4 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
+            <input required class="col col-12 text-center form-control-plaintext" type="text" name="prenom"  placeholder="Saisir votre prenom"> <br/>
         </div>   
         <div class="mail col align-items-center text-center col-sm-5">
-            <input requided class="col col-4 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
+            <input requided class="col col-12 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mot de passe"> <br/>
             <hr>
         </div>
         <div class="fichier col col-sm-5">
-            <input requided class="col col-4 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
+            <input requided class="col col-12 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
             <hr>
         </div>    
             <button class="btnConnexion col col-lg-2 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
@@ -83,14 +74,24 @@ function connection($errorCode=null){
         echo "<center><div class='alert alert-success'> Bonjour Toto, vous êtes bien connecté ! !</div></center>";
     }
     ?>
+    <head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../assets/connexionStyle.css">
+</head>
         <form class="tableau text-center m-5" action="../controller/controllerUserConnect.php?action=connect" method="post">
             <h3 class="titre m-3">Connexion</h3>
-            <div class="mail col-sm-5">
-                <input required id="myTextFocusEmail" class="col-4 text-center form-control-plaintext" type="email" name="email"  placeholder="Saisir votre email"> <br/>
+            <div class="mail col-sm-5 mt-2 ">
+                <input required id="myTextFocusEmail" class="col-4 col-lg-12 text-center form-control-plaintext rounded" type="email" name="email"  placeholder="Saisir votre email"> <br/>
                 <hr class="m-0">
+                
             </div>
             <div class="mail col-sm-5 mt-2">
-                <input requided class="col-4 col-lg-2 text-center form-control-plaintext" type="password" name="password" placeholder="Saisir votre mdp"> <br/>
+                <input requided class="col-4 col-lg-12 text-center form-control-plaintext rounded" type="password" name="password" placeholder="Saisir votre mdp"> <br/>
             </div>
             <button class="btnInscription col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connecter" >Connexion</button>    
         </form>

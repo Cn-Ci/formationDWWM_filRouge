@@ -24,7 +24,7 @@
                 <link 
                     rel="stylesheet" 
                     type="text/css" 
-                    href="../footerStyle.css">
+                    href="../assets/footerStyle.css">
                 <!-- TYPO -->
                 <link 
                     href="https://fonts.cdnfonts.com/css/caviar-dreams" 
@@ -252,7 +252,7 @@
 
                 <!-------------------------------------------------------------------FOOTER------------------------------------------------------------------------------->
                 <footer>
-                    <?php include_once '../footer.php'; ?>
+                    <?php include_once '../templates/footer.php'; ?>
                 </footer>
 
 

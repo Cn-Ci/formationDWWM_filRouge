@@ -2,8 +2,6 @@
 	session_start()
 ?>
 
-<link rel="stylesheet" href="../inscription.css">
-
 <div class="col-sm-12 row pr-0" id="navBar">
 
 	<div id="BoutonBurgermenuTab">
@@ -15,14 +13,11 @@
 
 	<nav class="row col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 menuTab">
 		<a href="../controller/controleurMain.php" class="col-sm-12 col-md-12 col-lg alink">ACCUEIL</a>
-		<a href="../orga.php" class="col-sm-12 col-md-12 col-lg alink">ORGANISATION</a>
+		<a href="../presentation/orga.php" class="col-sm-12 col-md-12 col-lg alink">ORGANISATION</a>
 		<a href="../controller/controllerDestination.php" class="col-sm-12 col-md-12 col-lg alink">DESTINATIONS</a>
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])) {
-				$email = $_SESSION['email']; 
-				?><a href ='#' class="col-sm-12 col-md-12 col-lg alink">MON COMPTE</a>
-				<?php
 				$email = $_SESSION['email']; 
 				?>
 					<a class="col-sm-12 col-md-12 col-lg alink ml-auto nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
@@ -67,7 +62,8 @@
 		margin-top: 10px;
 	}
 	#accountDropdownLink{
-		color      :#228b22;
+		color      	: #228b22;
+		padding-top	: 3%;
 	}
 	.dropdown-menu {
 		left: 600px !important;

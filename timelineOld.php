@@ -1,96 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <title>MOBILI'T - Organisation</title>
-        <meta charset="utf-8">
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
-            crossorigin="anonymous" />
-        <!-- BOOTSTRAP -->
-        <link 
-            rel="stylesheet" 
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-            crossorigin="anonymous">
-        <!-- CSS -->
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="styleOrga.css">
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="styleOrga.css">
-        <link 
-            rel="stylesheet" 
-            type="text/css" 
-            href="footerStyle.css">
-        <!-- TYPO -->
-        <link 
-            href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
-            rel="stylesheet"
-            type="text/css"/>
-        <!-- autres -->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    
+<head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../assets/timeline.css">
+</head>
+
     <body>
-        <!-- Navbar -->
         <div class="container-fluid">
-            <?php include 'navbar.php';?>
+            <?php include_once 'navbar.php';?>
         </div>
 
-       <!-- Caroussel -->
-       <div class="container-fluid text-center ">
-            <div id="carousel">
-                <div id="carouselExampleIndicators" class="carousel slide  " data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                    </ol>
-
-                    <div class="carousel-inner rounded">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/car1.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/car2.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/car3.png" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/car4.png" alt="fourth slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/car5.png" alt="fifth slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/car6.jpg" alt="sixth slide">
-                        </div>
-                    </div>
-                    
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div> 
-        </div>
-
-        <!-- timeline -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -179,26 +101,21 @@
         </div>
         <hr>
 
-<!-- footer include -->
-        
-            <footer>
-                <?php include_once 'footer.php';
-                ?>
-            </footer>
+        <footer>
+            <?php include_once '../templates/footer.php'; ?>
+        </footer>
 
+        <!-- jQuery and JS bundle w/ Popper.js -->
         <script 
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
             crossorigin="anonymous">
         </script>
-        <script
-            src         ="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin ="anonymous">
-        </script>
         <script 
-            type="text/javascript" 
-            src="script.js">
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" 
+            crossorigin="anonymous">
         </script>
+        <script src="script.js"></script>
     </body>
 </html>

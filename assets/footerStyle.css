@@ -1,0 +1,116 @@
+/** Footer   --------------------------------------------------------------*/
+
+body {
+    padding                 : 0;
+    margin                  : 0;
+    box-sizing              : border-box;
+}
+
+footer {
+    font-size               : small;
+    box-sizing              : border-box;
+}
+
+.hrcon {
+    margin                  :auto;
+    height                  : 10px;
+    width                   : 130px;
+    opacity                 : 1;
+    box-shadow              : inset 0 15px 5px -12px #1f9a22;
+}
+
+#foot {
+    background-image        : url('../img/bg-foot.jpg');
+    background-position     : initial;
+    background-repeat       : no-repeat;
+    background-size         : cover;
+    padding                 : 10px;
+}
+
+.news a {
+    color                   : white !important;
+    text-decoration         : none !important;
+}
+
+.news a:hover {
+    color                   : white !important;
+    text-decoration         : none !important;
+}
+
+.news {
+    text-align              : center !important;
+    background-color        : rgba(0, 0, 0, 0.6);
+    margin-top              : 10px;
+    padding-bottom          : 5px;
+    border-radius           : 5px;
+    color                   : white !important;
+    font-size               : 25px;
+}
+
+.news h2, .news h4 {
+    font-size               : 25px;
+}
+
+.fondfoot {
+    z-index                 : 10;
+    background-color        : rgba(255, 255, 255, 0.418);
+    margin-bottom           : 50px;
+    margin-right            : 10px;
+    margin-left             : 10px;
+    margin-top              : 30px;
+    border-radius           : 5px;
+    padding                 : 10px;
+    color                   : black !important;
+}
+
+#email {
+    background-color        : rgba(255, 255, 255, 0.774);
+}
+.mail{
+    margin: auto;
+}
+
+#btn-newsletter {
+    width                   : 110px;
+    height                  : 50px;
+    font-size               : 20px !important;
+}
+
+@media (min-width: 992px) {
+    /** Footer   --------------------------------------------------------------*/
+    .hrcon {
+        width               : 100px;
+        opacity             : 1
+    }
+    
+    .contact {
+        background-color    : rgba(0, 0, 0, 0.6);
+        margin-right        : 150px;
+        margin-left         : 150px;
+        margin-bottom       : 100px;
+        margin-top          : 25px;
+        border-radius       : 10px;
+        color               : white !important;
+    }
+
+    .news {
+        padding-top         : 10px;
+        font-size           : 18px;
+    }
+
+    .news h2, .news h4 {
+        font-size           : 20px;
+    }
+
+    .mail{
+        margin: auto;
+    }
+
+    .fondfoot {
+        margin-bottom       : 1%;
+        margin-right        : 10%;
+        margin-left         : 10%;
+        margin-top          : 1%;
+    }
+
+}
