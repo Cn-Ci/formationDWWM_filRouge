@@ -177,14 +177,14 @@
 
                                 <?php $RecentPost = renderRecentPost(); ?> 
 
-                                <div class="col-sm-12 col-lg-12 col-xl-6 row" style="padding-right: 0px !important">
+                                <div class="col-sm-12 col-lg-12 col-xl-6 p-0">
                                     <!--POST 0-->
                                     <div class="col-12 postRecent row">
                                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
                                             <img class="ImgPostForum" src="../img/bretagne.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[0]->getTitreTopic(); ?>
                                             </h5>
@@ -205,7 +205,7 @@
                                             <img class="ImgPostForum" src="../img/vignoble.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[1]->getTitreTopic(); ?>
                                             </h5>
@@ -226,7 +226,7 @@
                                             <img class="ImgPostForum" src="../img/vallee.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[2]->getTitreTopic(); ?>
                                             </h5>
@@ -241,7 +241,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="imgBlockApercuForum" class="col-sm-12 col-lg-12 col-xl-6 row">
+                                <div id="imgBlockApercuForum" class="col-sm-12 col-lg-12 col-xl-6 p-0">
                                     <img id="ImgApercuForum" src="../img/paysbasque.jpg" alt="Aperçu Forum">
                                 </div>
                             </div>

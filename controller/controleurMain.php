@@ -8,8 +8,8 @@ function renderRecentPost() :?Array {
 }
 
 function checkContentLenght(String $content) :Void {
-    if (strlen($content) > 100) {
-        $cutContent = html_entity_decode(substr($content, 0, 75) . "...");
+    if (strtolower(strlen($content)) >= 60) {
+        $cutContent = html_entity_decode(substr($content, 0, 60) . "...");
         echo $cutContent;
     } else {
         echo html_entity_decode($content);

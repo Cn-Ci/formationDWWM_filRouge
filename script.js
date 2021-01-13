@@ -1,4 +1,3 @@
-//! CFG 
 let response;
 
 $(document).ready(function(){
@@ -7,6 +6,12 @@ $(document).ready(function(){
 		$('#BoutonBurgermenuTab .barre1').toggleClass('isClick');
         $('#BoutonBurgermenuTab .barre2').toggleClass('isClick');  
 	});
+});
+
+$('#filter').on('change', function(e) {
+	const filterSelected = $('#filter :selected').val();
+	let url = filterSelected ? 'controleurTopic.php?filter=' + filterSelected : 'controleurTopic.php?action=showAllTopic';
+	doGetJson(url, true);
 });
 
 function doGetJson(url, isSelected) {
