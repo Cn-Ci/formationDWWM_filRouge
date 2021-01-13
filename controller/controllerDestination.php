@@ -11,8 +11,11 @@
     html($title="Destinations");
     navbar();
     boutonFrance();
+   if(isset($_GET) && isset($_GET['region']) && !empty($_GET['region'])){
+        $region= $_GET['region'];
+        affichageDestination($destinations, $region);
+   }
     
-    affichageDestination($destinations, $region="Bourgogne-Franche-Comté");
     if(isset($_SESSION) && $_SESSION['profil']= "administrateur"){
         buttonAjout();
      }

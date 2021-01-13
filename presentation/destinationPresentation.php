@@ -58,9 +58,7 @@ function navbar(){ ?>
 <?php }
 
 function footer(){ ?>
-<!-- fin de la d.iv destination $region -->
-</div>
-    <!-- fin de la d.iv class="principale" -->
+<!-- fin de la d.iv class="principale" -->
     </div>
             <!-- ligne de séparation -->
             <hr class="hrsep">
@@ -96,12 +94,13 @@ function footer(){ ?>
 function boutonFrance(){ ?>
         
             <!-- Image de la France -->
-            <div id="les4img" class="col-6 offset-3 mb-2">
-                <center>
-                    <script src="../presentation/cmap/France-map.js"></script>
-                    <script>francefree()</script>
-                </center>
-            </div>   
+            <div id="divContenantFranceMap" class="col-6 offset-3 mb-2">
+                <div id="les4img" class="col-12 mb-2">
+                    <center>
+                        <?php   include('../presentation/cmap/carte.html') ?>
+                    </center>
+                </div> 
+            </div>  
 <?php }
 
 function affichageDestination($destination, $region)
@@ -113,7 +112,7 @@ function affichageDestination($destination, $region)
             if($dest->getRegion() == $region){ ?>
 
                 <!-- affichage de la destination -->
-                <div class="<?php  echo $region.$i ?> row d-flex justify-content-center m-2 mb-4">
+                <div class="<?php  echo $dest->getRegion().$i ?> row d-flex justify-content-center m-2 mb-4">
                     <div class="">
                         <div class="row">
                             <!-- image  -->
@@ -175,6 +174,8 @@ function affichageDestination($destination, $region)
                 echo "</div>";
             }
         }
+        //fermeture div de toutes les destinations
+    echo "</div>";    
 }
 
 function buttonAjout($maj=null, $dest=null)

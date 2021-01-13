@@ -53,10 +53,51 @@ $('div button').click(function(e) {
 
 //dynamiser l'affichage des destinations 
 
-$('<area />').click(function(e){
-	console.log(e);
-	console.log('coucou');
-});
+var map= document.querySelector('#map')
+var paths = map.querySelectorAll('.map__image a')
+var links= map.querySelectorAll('.map__list a')
 
-// #areas > area:nth-child(11)
-// var area= document.querySelector("#areas > area:nth-child(11)")
+paths.forEach(function(path){
+    // path.addEventListener('click', function(e){
+	// 	var id= this.id.replace('region-', '')
+	// 	console.log("coucou");
+	// 	console.log(e.a);
+    //     map.querySelectorAll('.is-active').forEach(function(item){
+    //         item.classList.remove('is-active')
+    //     })
+    //     document.querySelector('#list-'+ id ).classList.add('is-active') //permet de dire quel lien est actif --> peut l'utiliser pour afficher 
+
+    // })
+})
+
+
+function transmissionRegion(){
+ 	console.log('coucou');
+}
+
+
+$('.map').ready(function(){
+	$('.map a').click(function(e){
+		console.log(e.currentTarget.id);
+		let region = e.currentTarget.id;
+		let url	= 'controllerDestination.php?region='+region
+		$.get(url, transmissionRegion(region)).done(function(data) {
+        	
+		})
+		.fail(function(){
+			alert("error");
+		})
+		.always(function(){
+			//alert ("finished");
+		})
+		
+	})
+})
+function doGetJson2(url){
+    $.getJSON(url,  function(){  //fonction raccourcis de l'appel AJAX
+    
+    console.log("coucou");
+    
+    })
+}	
+
