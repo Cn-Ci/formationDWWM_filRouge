@@ -10,12 +10,12 @@ body{
 }
 #title{
     border-bottom   : 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #228b22;
+    background-color: #28a745;
     color           : white;
 }
 #infoBlock{
     bottom: 0px;
-    background-color: #228b22;
+    background-color: #28a745;
     color:white;
 }
 #info {

@@ -4,7 +4,7 @@
         <!DOCTYPE html>
         <html lang="fr">
             <head>
-                <title>MOBILI'T - Acceuil</title>
+                <title>MOBILI'T - Forum</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta charset="utf-8">
                 <!-- BOOTSTRAP -->
@@ -66,6 +66,24 @@
                         <div class="col-1"></div>
                     </div>
 
+                    <!-- ESPACE COMMENTAIRE -->
+                    <div class="row mt-5">
+                        <div class="col-1"></div>
+
+                        <div class="col p-0">
+                            <div>
+                                <form action='controllerViewTopic.php' method='POST'>
+                                    <div>
+                                        <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
+                                    </div>
+
+                                    <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-1"></div>
+                    </div>
                 </div>
             </body>
         </html><?php 

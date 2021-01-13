@@ -20,16 +20,13 @@
 			if (isset($_SESSION['id'])) {
 				$email = $_SESSION['email']; 
 				?>
-					<a class="col-sm-12 col-md-12 col-lg alink ml-auto nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
+					<a class="col-sm-12 col-md-12 col-lg alink nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
 						MON COMPTE <?php echo $_SESSION['email'] ?>
 					</a>
 					<div class="dropdown-menu dropdown-menu-rigth" aria-labelledby="accountDropdownLink">
 						<li><a href="../controller/controllerUserConnect.php?action=modif&amp;email=<?php echo $_SESSION['email'] ?>" class="dropdown-item" >Modifier mon profil</a></li>
 						<li><a href='../controller/controllerUserConnect.php?action=deconnexion' class="dropdown-item" >Deconnexion</a></li>
-
 					</div>
-			
-				
 				<?php	
 			} else {
 				?>
