@@ -111,7 +111,7 @@
                                 Educatrice spécialisée</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à lécoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
+                                Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à l'écoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -126,7 +126,7 @@
                                 Auxiliaire de Periculture</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour.  N'hésitez pas à la contacter !  
+                                Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour. N'hésitez pas à la contacter !  
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -141,7 +141,7 @@
                                 Accompagnateur à la mobilité</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Nicodemus est Russe, il voyagee énormement depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
+                                Nicodemus est Russe, il voyage énormément depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -156,7 +156,7 @@
                                 Aide médico-psychologique</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Gabriel est francais, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
+                                Gabriel est français, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>

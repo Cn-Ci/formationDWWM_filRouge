@@ -10,6 +10,7 @@
             $prenom = $personnel->getPrenom();
             $emp    = $personnel->getEmploi();
             $desc   = $personnel->getDescription();
+            $photo  = $personnel->getPhoto();
             $fb     = $personnel->getFbLink();
             $tw     = $personnel->getTwLink();
             $li     = $personnel->getLiLink();
@@ -19,12 +20,13 @@
 
             //* ADD   
             try {
-                $addRequest = $db->prepare("INSERT INTO topic (id, nom, prenom, emploi, description, facebookLink, twitterLink, linkedinLink) VALUES (NULL, :nom, :prenom, :emp, :description, :fb, :tw, :li");
+                $addRequest = $db->prepare("INSERT INTO topic (id, nom, prenom, emploi, description, photo, facebookLink, twitterLink, linkedinLink) VALUES (NULL, :nom, :prenom, :emp, :description, :photo, :fb, :tw, :li");
                 $addRequest->execute(array(
                     ":nom"         => $nom,
                     ":prenom"      => $prenom,
                     ":emp"         => $emp,
                     ":description" => $desc,
+                    ":photo"       => $photo,
                     ":fb"          => $fb,
                     ":tw"          => $tw,
                     ":li"          => $li));

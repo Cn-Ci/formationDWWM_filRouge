@@ -4,6 +4,7 @@
         private $prenom;
         private $emploi;
         private $description;
+        private $photo;
         private $fbLink;
         private $twLink;
         private $liLink;
@@ -38,6 +39,15 @@
         public function setDescription($description) :Self {
             $this->description = $description;
             return $this;
+        }
+
+        public function getPhoto():String {
+            return $this->photo;
+        }
+
+        public function setPhoto($photo) :Self {
+                $this->photo = $photo;
+                return $this;
         }
 
         public function getFbLink() :String {
