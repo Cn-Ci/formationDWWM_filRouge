@@ -1,0 +1,268 @@
+/**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ul {
+    list-style-type: none;
+}
+.ombre{
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+}
+.font {
+    font-family     : 'Caviar Dreams', sans-serif;
+}
+.nopadding{
+    padding: 0px;
+}
+#page1 {
+    background-image: url('img/mainBG.jpg');
+    background-size : cover;
+    height          : 100vh;
+    object-fit      : contain;
+}
+#page2 {
+    height          : 100vh; 
+    font-family     : 'Caviar Dreams', sans-serif;
+    background-color: #f8f8f8;
+    z-index         : 995;
+}
+#page3 {
+    height          : 100vh; 
+    font-family     : 'Caviar Dreams', sans-serif;
+}
+#page4 {
+    height          : 100vh; 
+    font-family     : 'Caviar Dreams', sans-serif;
+}
+.couleur{
+    color: #228b22;   
+}
+.bg-color{
+    background-color: #228b22;   
+}
+.text-justify{
+    text-align: justify;
+}
+.postRecent:hover{
+    transition      : background-color 1s;
+    background-color:  #228b22; 
+    color: white;
+}
+
+/** SLOGAN MILIEU ECRAN --------------------------------------------------*/
+#mdSlogan{
+    font-size  : 150px;
+    font-family: Impact, Charcoal, sans-serif;    
+}
+#sousSlogan{
+    font-size  : 30px;
+    font-family: 'Caviar Dreams', sans-serif;
+}
+#blocLogo{
+    margin-top: 13%;
+}
+#showDestination{
+    background-color: #c1c1c1;
+    padding         : 15px 50px 15px 50px;
+    border-radius   : 100px;
+    transition      : background-color 1s;                   
+}
+#showDestination:hover{
+    transition      : background-color 1s;
+    background-color:  #228b22; 
+}
+#showDBlock{
+    display:inline-block;
+}
+
+/** BOTTOM ---------------------------------------------------------------*/
+#triangle{
+    display     : inline-block;
+    height      : 0;
+    width       : 0;
+    border-top  : 25px solid white;
+    border-right: 25px solid transparent;
+    border-left : 25px solid transparent;
+}
+.footer{
+    text-align: center;
+}
+#blocOverlay{
+    height    : 130px; 
+    transition: box-shadow 500ms;
+    margin-top: 8%;
+}
+#blocOverlay:hover{
+    box-shadow: 0 -100px 115px -100px white inset; 
+    transition: box-shadow 500ms;
+}
+#discoverSite{
+    color: white;
+}
+
+/** PAGE 2 ----------------------------------------------------------------*/
+#EntetePresentation{
+    padding-top: 10%; 
+    color      : #8f8f8f;
+}
+.img_150w_150h{
+    max-width : 150px;
+    max-height: 150px;
+}
+
+/** PAGE 3 ----------------------------------------------------------------*/
+.imagePersonne{
+    border       : black solid 1px;
+    border-radius: 10%;
+}
+.descriptionPersonne{ 
+    text-align: justify;
+}
+.personnel{
+    margin-top: 10%;
+}
+​
+/*! SOCIAL  BLOCK*/
+#facebook{
+    background-color: blue;
+    color           : white;
+    border          : 1px solid white;
+    height          : 50px;
+    width           : 50px;
+    border-radius   : 50%;
+}
+ul.social-network {
+	padding-top    : 20px;
+	padding-bottom : 20px;
+	border-radius  : 50px;
+	list-style     : none;
+    margin-left    : 0 !important;
+    padding-left   : 0px !important;
+}
+ul.social-network li {
+	display: inline;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+.social-network a.icoRss   :hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+.social-circle li a {
+	display              : inline-block;
+	position             : relative;
+	margin               : 0 auto 0 auto;
+	-moz-border-radius   : 50%;
+	-webkit-border-radius: 50%;
+	border-radius        : 50%;
+	text-align           : center;
+	width                : 50px;
+	height               : 50px;
+	font-size            : 20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform    : rotate(360deg);
+	-webkit-transform : rotate(360deg);
+	-ms--transform    : rotate(360deg);
+	transform         : rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition   : all 0.2s;
+	-o-transition     : all 0.2s;
+	-ms-transition    : all 0.2s;
+	transition        : all 0.2s;
+}
+.social-circle i {
+	color             : black;
+	-webkit-transition: all 0.8s;
+	-moz-transition   : all 0.8s;
+	-o-transition     : all 0.8s;
+	-ms-transition    : all 0.8s;
+	transition        : all 0.8s;
+}
+
+/** PAGE 4---------------------------------------------------------------- */
+#apercuForum {
+    margin-top: 15%;
+}
+#imgBlockApercuForum {
+    width: fit-content  !important;
+    object-fit: contain !important;
+}
+.ImgPostForum {
+    max-width : 300px;
+    max-height: 100px;
+    margin    : 2%;
+}
+#ImgApercuForum {
+    max-width : 643.5px;
+    max-height: 425px;
+}
+.postRecent {
+    border      : 1px solid rgba(0,0,0,0.1);
+    padding-left: 0px !important;
+}
+.secondPost {
+    color : white;
+}
+#sticky-footer {
+    flex-shrink: none;
+}
+@media screen and (max-width: 1600px){
+    #page1, #page2, #page3, #page4 {
+        height: 100%;
+    }
+}
+
+/** VERSION TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 991px){
+    #page1, #page2, #page3, #page4{
+        height: 100%;
+    }
+    #blocLogo{
+        margin-top   : 20%; 
+        margin-bottom: 5%;           
+    }
+    #blocOverlay{
+        display: none;
+    }
+}
+
+/** VERSION PORTABLE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 560px){
+    #mdSlogan{
+        font-size  : 130px;
+        font-family: Impact, Charcoal, sans-serif;    
+    }
+}
+@media only screen and (max-width: 500px) {
+    html {
+        width: fit-content  !important;
+    }
+    body { 
+        font-size: 1.5em; 
+    }
+    h5{
+        font-size: 1em; 
+    }
+}

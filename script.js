@@ -9,20 +9,6 @@ $(document).ready(function(){
 	});
 });
 
-$('#filter').on('change', function(e) {
-	const filterSelected = $('#filter :selected').val();
-	let url = filterSelected ? 'controleurTopic.php?filter=' + filterSelected : 'controleurTopic.php?action=showAllTopic';
-	doGetJson(url, true);
-});
-
-$('#SearchBar').on('input', function(e) {
-	var value = $(this).val().toLowerCase();
-	
-	$("tbody tr").filter(function() {
-		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	});
-});
-
 function doGetJson(url, isSelected) {
 	$.getJSON(url, function(data) {
 		response = data;

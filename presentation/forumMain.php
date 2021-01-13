@@ -4,7 +4,7 @@
 
     function showTableContent($Topics) :Void {
         foreach ($Topics as $Topic) {
-            echo "<tr>";
+            echo "<tr class='topic' onclick='redirectToViewTopic(". $Topic->getIdTopic() .")'>";
                 printTd($Topic);
             echo "</tr>";
         }
@@ -17,11 +17,8 @@
             <td class="text-center">' . $Topic->datetimeToString($Topic->getDateTopic()) . '</td>
             <td class="text-center">' . $Topic->getNbComm() . '</td>'
         ;
-
-        //TODO $_SESSION['id'] == $Topic->getIdAuthor() || $_SESSION['profil'] == admin
         
-        $a = 5;
-        if($a == 5) {
+        if($_SESSION['id'] == $Topic->getIdAuthor() || $_SESSION['profil'] == 'administrateur') {
             //*BOUTTON MODIFIER
             echo '<td class="text-center">
                     <a class ="btn btn-success" href="../controller/controlleurCreatePostForum.php?action=modify&idPost=' 
@@ -69,15 +66,21 @@ function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-xl-8 m-5">
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th class="pl-3" id='thTitle'>Titre</th>
                                     <th class="text-center">Auteur</th>
                                     <th class="text-center">Date</th>
                                     <th class="text-center">Commentaires</th>
-                                    <th class="text-center">Modifier</th>
-                                    <th class="text-center">Supprimer</th>
+                                    <?php 
+                                        if (isset($_SESSION)) {
+                                            ?>
+                                            <th class="text-center">Modifier</th>
+                                            <th class="text-center">Supprimer</th>
+                                            <?php
+                                        }
+                                    ?>
                                 </tr>
                             </thead>
 
@@ -86,7 +89,6 @@ function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
                                     if($e) {
                                         echo "Erreur lors du chargement des topics";  
                                     } 
-
                                     showTableContent($Topics);
                                 ?> 
                             </tbody>
@@ -127,6 +129,10 @@ function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
             <script 
                 type="text/javascript" 
                 src="../script.js">
+            </script>
+            <script
+                type="text/javascript"  
+                src="../assets/scriptForum.js">
             </script>
         </body>
     </html>

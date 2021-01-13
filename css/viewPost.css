@@ -1,0 +1,26 @@
+body{
+    font-family     : 'Caviar Dreams', sans-serif;
+}
+#buttonBack {
+    margin: 7% 0% 2% 4%;
+}
+#content{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40vh;
+}
+#title{
+    border-bottom   : 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #228b22;
+    color           : white;
+}
+#infoBlock{
+    bottom: 0px;
+    background-color: #228b22;
+    color:white;
+}
+#info {
+    margin-bottom: 0px;
+}
+#author{
+    float: right;
+}

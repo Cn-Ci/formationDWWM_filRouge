@@ -1,8 +1,4 @@
 <?php 
-/*     if (!$_SESSION) {
-        header("location: ../controller/controleurMain.php");
-    } */
-
     require_once('../service/serviceTopic.php');
     require_once('../presentation/forumMain.php');
 
@@ -15,7 +11,7 @@
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
                 $nbComment = 0;
-                $Author    = 4; //TODO
+                $Author    = $_SESSION['id'];
 
                 try {
                     ServiceTopic::serviceAddTopic($title, $datePost, $content, $nbComment, $Author);
@@ -33,8 +29,8 @@
                 $title     = htmlentities($_POST['title']);
                 $datePost  = new DateTime('NOW');
                 $content   = htmlentities($_POST['content']);
-                $nbComment = 0; //TODO 
-                $idAuthor  = 4; //TODO
+                $nbComment = ServiceTopic::serviceResearchTopicBy($id)->getNbComm();
+                $idAuthor  = $_SESSION['id'];
 
                 try {
                     ServiceTopic::serviceUpdateTopic($id, $title, $datePost, $content, $nbComment, $idAuthor);

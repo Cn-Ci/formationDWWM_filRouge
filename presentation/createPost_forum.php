@@ -13,7 +13,7 @@
         <link 
             rel="stylesheet" 
             type="text/css" 
-            href="../addTopic.css">
+            href="../css/addTopic.css">
         <!-- TYPO -->
         <link 
             href="https://fonts.cdnfonts.com/css/caviar-dreams" 
