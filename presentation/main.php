@@ -71,8 +71,8 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm-8">
                             <h1 class="couleur">MOBILI'T QU'EST-CE-QUE C'EST ?</h1>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus velit non elit bibendum, at suscipit arcu dignissim. Pellentesque viverra neque quis.</h5>
-                            <h5>Cras tempus velit non elit bibendum, at suscipit arcu dignissim. Pellentesque viverra.</h5>
+                            <h5>Mobili'T est une société qui a pour but d'aider les personnes en situation de handicap ! </h5>
+                            <h5>Quelque soit votre handicap, nous somme là pour vous ! </h5>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
@@ -81,19 +81,19 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                             <img class="img_150w_150h" src="../img/valise.png" alt=""><br>
                             <h3 class="mt-5"><span class="couleur">L'organisation</span></h3>
-                            <p class="text-justify">Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                            <p class="text-justify">Mobili'T permet de vous guider dans les démarches d'un voyage, de la prise de décision, de la destination en passant par les transports ou vos besoins, jusqu'a votre retour ! Nous somme là votre ecoute pour toutes vos questions ! </p>
                         </div>
                         <div class="col-lg-1"></div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                             <img class="img_150w_150h" src="../img/plane.png" alt=""><br>
                             <h3 class="mt-5"><span class="couleur">Les destinations</span></h3>
-                            <p class="text-justify">Donec sed iaculis sem. Proin ac lorem vel tortor viverra luctus in a quam. Suspendisse sed leo nec est ultricies consequat. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                            <p class="text-justify">Mobili'T met à disposition des destinations adaptés à votre situation de handicap, nos lieux sont soignement choisis afin que vous ayez tout le matériels dont vous avez besoin et vous pouvez ainsi participer à toutes les activités proposés par ces lieux de vacances. Nous somme là pour vous faire vivre une expérience inoubliable !</p>
                         </div>
                         <div class="col-lg-1"></div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-5">
                             <img class="img_150w_150h" src="../img/forumImage.png" alt=""><br>
-                            <h3 class="mt-5"><span class="couleur">Blabla</span></h3>
-                            <p class="text-justify">Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.</p>
+                            <h3 class="mt-5"><span class="couleur">Avis et Commentaires</span></h3>
+                            <p class="text-justify">Mobili'T vous permet de commenter votre destination, de laisser un avis positif ou négatif sur votre séjour, sur la qualité de nos choix de destination ou sur le lieux de vos vacances. Vous pouvez également échanger sur votre expérience afin de donner envie aux prochains vacanciers, ou de les conseillers et ainsi vous pouvez aiderà votre tour les personnes dans une situation de handicap similaire à la votre ou non et répondre à leurs questions ! Nous sommes là aussi pour vous aider ! </p>
                         </div>
                         <div class="col-lg-2"></div>    
                     </div> 
@@ -105,13 +105,13 @@
                     <div class="row text-center mt-2">
                         <div class="col-lg-2"></div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel" src="../img/man.png" alt="Pesonnel2"><br>
+                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/62.jpg" alt="Pesonnel2"><br>
                             <h3>
-                                <strong>Nom Prénom<br>
-                                Personnel 2</strong>
+                                <strong>Donna R. Blankenship<br>
+                                Educatrice spécialisée</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                                Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à lécoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -120,13 +120,13 @@
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel" src="../img/man.png" alt="Pesonnel2"><br>
+                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Pesonnel2"><br>
                             <h3>
-                                <strong>Nom Prénom<br>
-                                Personnel 2</strong>
+                                <strong>Shuang Ts'ui<br>
+                                Auxiliaire de Periculture</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                                Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour.  N'hésitez pas à la contacter !  
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -135,13 +135,13 @@
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel" src="../img/man.png" alt="Pesonnel3"><br>
+                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Pesonnel3"><br>
                             <h3>
-                                <strong>Nom Prénom<br>
-                                Personnel 3</strong>
+                                <strong>Nicodemus Mordvinov<br>
+                                Accompagnateur à la mobilité</strong>
                             </h3>
                             <p class="couleur mt-3 descriptionPersonne">
-                                Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
+                                Nicodemus est Russe, il voyagee énormement depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
                             </p><br>
                             <ul class="social-network social-circle">
                                 <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -150,6 +150,21 @@
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
+                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Pesonnel4"><br>
+                            <h3>
+                                <strong>Gabriel Duperré<br>
+                                Aide médico-psychologique</strong>
+                            </h3>
+                            <p class="couleur mt-3 descriptionPersonne">
+                                Gabriel est francais, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
+                            </p><br>
+                            <ul class="social-network social-circle">
+                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                             <img class="img_150w_150h imagePersonnel" src="../img/man.png" alt="Pesonnel4"><br>
                             <h3>
                                 <strong>Nom Prénom<br>
@@ -163,7 +178,7 @@
                                 <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="col-lg-2"></div>    
                     </div>
                 </div>
