@@ -18,15 +18,10 @@
 		<a href="../controller/controleurTopic.php?action=showAllTopic" class="col-sm-12 col-md-12 col-lg alink">FORUM</a>
 		<?php
 			if (isset($_SESSION['id'])) {
-				$email = $_SESSION['email']; 
 				?>
 					<a class="col-sm-12 col-md-12 col-lg alink nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
 						<?php echo $_SESSION['email'] ?>
 					</a>
-					<div class="dropdown-menu dropdown-menu-rigth" aria-labelledby="accountDropdownLink">
-						<li><a href="../controller/controllerUserConnect.php?action=modif&amp;email=<?php echo $_SESSION['email'] ?>" class="dropdown-item" >Modifier mon profil</a></li>
-						<li><a href='../controller/controllerUserConnect.php?action=deconnexion' class="dropdown-item" >Deconnexion</a></li>
-					</div>
 				<?php	
 			} else {
 				?>
@@ -39,9 +34,14 @@
 </div>
 
 <style>
-::marker {
-   display: none;
-}
+	::marker {
+		display: none;
+	}
+	.alink:hover {
+		font-size: 1.5em;
+		color : #228b22 !important;
+    	text-decoration: none !important;
+	}	
 	#navBar{
 		z-index           : 999;
 		text-align        : center;
@@ -60,24 +60,18 @@
 	}
 	#accountDropdownLink{
 		color      	: #228b22;
-		padding-top	: 3%;
+		padding-top	: 20px;
 	}
 	.dropdown-menu {
 		left: 600px !important;
 	}
-	.alink{
-		font-size  : 20px;
+	.alink {
+		font-size  : 1.2em;
+		font-weight: bold;
 		padding    : 35px 20px 35px 20px;
 		transition : color 1s;
-		color      :#228b22;
+		color      : #228b22;
 		font-family: 'Caviar Dreams', sans-serif;
-	}
-	a:hover{
-		text-decoration: none;    
-	}
-	.alink:hover{
-		transition: color 1s;
-		color     : #114811;   
 	}
 	.whiteColor, a {
 		color    : white;
@@ -163,4 +157,3 @@
 
 
 </style>
-

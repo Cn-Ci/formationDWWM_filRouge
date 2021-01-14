@@ -1,5 +1,3 @@
-let response;
-
 $(document).ready(function(){
 	$('#BoutonBurgermenuTab').click(function(){
         $('.menuTab').toggleClass('isOpen');

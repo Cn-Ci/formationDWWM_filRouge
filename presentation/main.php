@@ -104,6 +104,7 @@
                 <div id="page3" class="container-fluid ombre">
                     <div class="row text-center mt-2">
                         <div class="col-lg-2"></div>
+
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                             <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/62.jpg" alt="Pesonnel2"><br>
                             <h3>
@@ -119,6 +120,7 @@
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                             <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Pesonnel2"><br>
                             <h3>
@@ -134,6 +136,7 @@
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                             <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Pesonnel3"><br>
                             <h3>
@@ -149,6 +152,7 @@
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
                             <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Pesonnel4"><br>
                             <h3>
@@ -164,21 +168,7 @@
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
-                        <!-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel" src="../img/man.png" alt="Pesonnel4"><br>
-                            <h3>
-                                <strong>Nom Prénom<br>
-                                Personnel 4</strong>
-                            </h3>
-                            <p class="couleur mt-3 descriptionPersonne">
-                                Proin ac lorem vel tortor viverra luctus in a quam. Donec ornare ligula ut nulla ornare semper. Ut efficitur velit sit amet purus bibendum, a rutrum ex congue. Sed rhoncus arcu diam, in mattis erat rhoncus quis. In elementum egestas purus a porta.
-                            </p><br>
-                            <ul class="social-network social-circle">
-                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div> -->
+
                         <div class="col-lg-2"></div>    
                     </div>
                 </div>

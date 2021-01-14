@@ -45,7 +45,7 @@ class Commentaire {
         return $this;
     }
  
-    public function getIdUsers() :Int //? Jointure SQL pas besoin de getter and setter ?
+    public function getIdUsers()
     {
         return $this->idUsers;
     }

@@ -70,21 +70,31 @@
                     <div class="row mt-5">
                         <div class="col-1"></div>
 
-                        <div class="col p-0">
-                            <div>
-                                <form action='controllerViewTopic.php' method='POST'>
-                                    <div>
-                                        <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
-                                    </div>
+                        <button class='btn btn-success' id="toggleComment">Répondre</button><br>
 
-                                    <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
-                                </form>
-                            </div>
+                        <div class="col p-0" id="messageBox" style="display : none">
+                            <form action='controllerViewTopic.php' method='POST'>
+                                <div>
+                                    <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
+                                </div>
+
+                                <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
+                            </form>
                         </div>
+                        
 
                         <div class="col-1"></div>
                     </div>
                 </div>
+                <script
+                    src         ="https://code.jquery.com/jquery-3.3.1.min.js"
+                    integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin ="anonymous">
+                </script>
+                <script
+                    type="text/javascript"  
+                    src="../assets/scriptViewTopic.js">
+                </script>
             </body>
         </html><?php 
     }
