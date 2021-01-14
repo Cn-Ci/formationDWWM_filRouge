@@ -67,22 +67,23 @@
                     </div>
 
                     <!-- ESPACE COMMENTAIRE -->
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                         <div class="col-1"></div>
 
-                        <button class='btn btn-success' id="toggleComment">Répondre</button><br>
+                        <div class="col p-0">
+                            <a href="#messageBox" class='btn btn-success mb-3' id="toggleComment">Répondre</a>
+                            <div id="messageBox" style="display : none">
+                                <form action='controllerViewTopic.php' method='POST'>
+                                    <div>
+                                        <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
+                                    </div>
 
-                        <div class="col p-0" id="messageBox" style="display : none">
-                            <form action='controllerViewTopic.php' method='POST'>
-                                <div>
-                                    <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
-                                </div>
-
-                                <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
-                            </form>
+                                    <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
+                                </form>
+                            
+                            </div>
                         </div>
                         
-
                         <div class="col-1"></div>
                     </div>
                 </div>

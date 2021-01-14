@@ -1,4 +1,4 @@
 $("#toggleComment").on('click', function(e){
-	$("#messageBox").toggle(500)
+	$("#messageBox").toggle('fast', 'linear')
 	/* alert(); */
 });
