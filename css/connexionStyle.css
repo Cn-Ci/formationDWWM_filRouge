@@ -3,7 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 100%;
-    }
+}
 
 .titre {
     color: rgba(83, 81, 81, 0.856);
@@ -14,7 +14,7 @@ body {
     border: none;
 }
 
-.btnInscription {
+.btnConnexion {
     background-color: #228b229f;
     border-radius: 20px;
     border-color: white;
@@ -34,5 +34,5 @@ body {
 @media only screen and (max-width:990px) {
     body {
         background-size: 250%;
-        }
+    }
 }

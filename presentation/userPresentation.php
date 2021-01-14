@@ -52,7 +52,7 @@ include_once('../templates/header.php');
     </form>
     <div class="row text-center">
         <a href='../controller/controllerUserConnect.php?action=connexion'>
-            <button class='btnConnexion col col-lg-2 text-center btn btn-primary mb-4'> Se connecter</button>
+            <button class='btnInscription col col-lg-2 text-center btn btn-primary mb-4'> Se connecter</button>
         </a>
         <a href='../controller/controleurMain.php'>
             <button type="submit" class="retour col col-lg-4 text-center m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>           
@@ -74,7 +74,7 @@ function connection($errorCode=null){
         echo "<center><div class='alert alert-success'> Bonjour Toto, vous êtes bien connecté ! !</div></center>";
     }
     ?>
-    <head>
+<head>
 <?php 
 include_once('../templates/header.php');
 ?>
@@ -93,7 +93,7 @@ include_once('../templates/header.php');
             <div class="mail col-sm-5 mt-2">
                 <input requided class="col-4 col-lg-12 text-center form-control-plaintext rounded" type="password" name="password" placeholder="Saisir votre mdp"> <br/>
             </div>
-            <button class="btnInscription col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connecter" >Connexion</button>    
+            <button class="btnConnexion col-4 col-lg-3 text-center btn btn-primary " type="submit" name="connecter" >Connexion</button>    
         </form>
         <div class="text-center">
             <a href='../controller/controleurMain.php'>
@@ -107,7 +107,17 @@ include_once('../templates/header.php');
     </script>
 <?php
 }
-
+?>
+<head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../assets/inscriptionStyle.css">
+</head>
+<?php
 function modification($user, $errorCode=null){
     if($errorCode && $errorCode == 24005){
         echo "<div class='alert alert-danger'> Erreur lors de l'affichage de la page du formulaire de modification !</div>";
@@ -122,22 +132,23 @@ function modification($user, $errorCode=null){
         <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=modifierOK" method="post"> 
             <h3 class="col titre mt-5 mb-5"><i class="fas fa-pen"></i> Formulaire de modification</h3>
             <div class="mail col col-sm-5">
-                <input id="myTextFocusPseudoModif" class="col-4 text-center form-control-plaintext" type="text" name="pseudo" value="<?php echo $user->getPseudo()?>" placeholder="Modifiez votre pseudo" ></br>
+                <input id="myTextFocusPseudoModif" class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="pseudo" value="<?php echo $user->getPseudo()?>" placeholder="Modifiez votre pseudo" ></br>
             </div>
             <div class="mail col col-sm-5">
-                <input readonly class="col-4 text-center form-control-plaintext " type="email" name="email" value="<?php echo $user->getEmail()?>" placeholder=" Modifiez votre email" ><br/>
+                <input readonly class="col-4 col-lg-12 text-center form-control-plaintext " type="email" name="email" value="<?php echo $user->getEmail()?>" placeholder=" Modifiez votre email" ><br/>
             </div>
             <div class="mail col col-sm-5">
-                <input class="col-4 text-center form-control-plaintext" type="text" name="nom" value="<?php echo $user->getNom()?>" placeholder="Modifiez votre nom" > <br/>
+                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="nom" value="<?php echo $user->getNom()?>" placeholder="Modifiez votre nom" > <br/>
             </div>
             <div class="mail col col-sm-5">    
-                <input class="col-4 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
+                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
             </div>
             </div>
             <div class="fichier col col-sm-5">
-                <input class="col col-4 text-center form-control-plaintext " type="file" name="photo" value="<?php echo $user->getPhoto()?>" placeholder="Modifiez votre photo"><br/>
-            <hr>
+                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="file" name="photo" value="<?php echo $user->getPhoto()?>" placeholder="Modifiez votre photo"><br/>
+                <hr>
             </div>  
+            
             
             <input type="submit" class="btnConnexion col col-lg-2 text-center btn btn-primary mb-4 mt-3" value="Modifier"/>
         </form>
