@@ -85,7 +85,7 @@ function footer(){ ?>
             </script>
             <script 
                 type="text/javascript" 
-                src="../script.js">
+                src="../assets/scriptDestination.js">
             </script>
         </body>
     </html>

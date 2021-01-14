@@ -5,7 +5,7 @@
     require_once('../presentation/destinationPresentation.php');
 
           
-    
+   
                
     $destinations=ServiceDestination::serviceReseachAll();
     html($title="Destinations");
@@ -16,8 +16,10 @@
         affichageDestination($destinations, $region);
    }
     
-    if(isset($_SESSION) && $_SESSION['profil']= "administrateur"){
+    if(isset($_SESSION) && !empty($_SESSION) && $_SESSION['profil']=="administrateur" && isset($_SESSION['id'])){
         buttonAjout();
+        echo("bien arrivée");
+        var_dump($_SESSION['profil']);
      }
     footer();
 
