@@ -62,11 +62,5 @@ $('.map').ready(function(){
 		
 	})
 })
-function doGetJson2(url){
-    $.getJSON(url,  function(){  //fonction raccourcis de l'appel AJAX
-    
-    console.log("coucou");
-    
-    })
-}	
+	
 

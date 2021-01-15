@@ -13,40 +13,29 @@ $('div button').click(function(e) {
 
 //dynamiser l'affichage des destinations 
 
-var map = document.querySelector('#map')
-var paths = map.querySelectorAll('.map__image a')
-var links = map.querySelectorAll('.map__list a')
 
-function transmissionRegion() {
-    console.log('coucou');
+function transmissionRegion(region){
+    console.log(region);
+    
+    
 }
 
 
-$(document).ready(function() {
-    $('.')
-    $('.map a').click(function(e) {
-        console.log(e.currentTarget.id);
-        let region = e.currentTarget.id;
-        let url = 'controllerDestination.php?region=' + region
-        $.get(url, transmissionRegion(region)).done(function(data) {
-
-            })
-            .fail(function() {
-                alert("error");
-            })
-            .always(function() {
-                //alert ("finished");
-            })
-
-    })
+$('.map').ready(function(){
+   $('.map a').click(function(e){
+       
+       let region = e.currentTarget.id;
+       let url	= 'ControllerAjaxDestination.php?region='+region;
+       $.get(url, transmissionRegion(region)).done(function(data) {
+           $('#textAjax').load(url);
+       })
+       .fail(function(){
+           alert("error");
+       })
+       .always(function(){
+           //alert ("finished");
+       })
+       
+   })
 })
 
-function doGetJson2(url) {
-    $.getJSON(url, function() { //fonction raccourcis de l'appel AJAX
-
-        console.log("coucou");
-
-    })
-}
-
-append to div class = "principale"

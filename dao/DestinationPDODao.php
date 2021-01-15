@@ -66,6 +66,32 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         
     }
 
+    //RESEARCH BY idDestination
+    public  function researchByRegion(string $nomRegion){
+        try{$db= parent :: connect();
+            $stmt=$db->prepare("SELECT * FROM destination WHERE region=:nomRegion"); //récupère les données d'un utilisateur précisé
+            $stmt->bindParam(':nomRegion', $nomRegion);
+            $stmt->execute();
+            $data=$stmt->fetchAll();
+            $i=0;
+            foreach($data as $key=>$value){
+                $dest = new Destination();
+                $dest->setIdDestination($data[$i]['idDestination'])->setRegion($data[$i]['region'])->setLieu($data[$i]['lieu'])->setImage($data[$i]['image'])->setPetiteDescription($data[$i]['petiteDescription'])->setDescription($data[$i]['description'])->setAtout1($data[$i]['atout1'])->setAtout2($data[$i]['atout2'])->setAtout3($data[$i]['atout3'])->setLien($data[$i]['lien'])->setExtraitForum($data[$i]['extraitForum'])->setIdUser($data[$i]['idUser']);
+                $tableauDestinationParRegion[$i]=$dest;
+                $i++ ;
+            }
+            
+            $stmt->closeCursor();
+            
+            if(empty($data)){
+                $tableauDestinationParRegion= [];
+            }
+            return $tableauDestinationParRegion;
+        } catch (PDOException $DaoException) {
+            throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+        }
+    }
+
     //RESEARCH ALL
     public  function research(){
         try{$db= parent :: connect();

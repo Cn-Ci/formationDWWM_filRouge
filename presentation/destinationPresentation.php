@@ -83,6 +83,7 @@ function footer(){ ?>
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
                 crossorigin="anonymous">
             </script>
+            
             <script 
                 type="text/javascript" 
                 src="../assets/scriptDestination.js">
@@ -101,6 +102,7 @@ function boutonFrance(){ ?>
                     </center>
                 </div> 
             </div>  
+            <div id="textAjax" ></div>
 <?php }
 
 function affichageDestination($destination, $region)
