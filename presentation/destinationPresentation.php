@@ -61,7 +61,7 @@ function footer(){ ?>
 <!-- fin de la d.iv class="principale" -->
     </div>
             <!-- ligne de séparation -->
-            <hr class="hrsep">
+           
                 <?php include '../templates/footer.php';?>
             </footer>
 

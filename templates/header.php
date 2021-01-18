@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head></head>
-    <title>Mobili'T - Accueil</title>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <!-- BOOTSTRAP -->
@@ -36,16 +35,7 @@
     <script 
         src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" 
         referrerpolicy="origin">
-    </script>
-    <script>
-        tinymce.init({
-            selector: 'textarea#inputContent',
-            skin: 'bootstrap',
-            plugins: 'lists, link, image, media',
-            toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-            menubar: false
-        });
-    </script>    
+    </script> 
     <!-- TYPO -->
     <link 
         href="//db.onlinewebfonts.com/c/7a8bc7c29b5bcadb9510cca51210ac46?family=Sitka+Banner" 
