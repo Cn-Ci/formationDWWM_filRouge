@@ -1,5 +1,5 @@
 <?php 
-    function renderViewPost(Topic $Topic, Object $Author) {
+    function renderViewPost(Topic $Topic, Object $Author, Array $commentaires = null) {
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -66,19 +66,47 @@
                         <div class="col-1"></div>
                     </div>
 
-                    <!-- ESPACE COMMENTAIRE -->
+                    <!-- ESPACE FIND ALL COMMENTAIRES -->
+                    <?php 
+                        if ($commentaires) {
+                            foreach ($commentaires as $commentaire) {
+                                ?>
+                                <div class="row">
+                                    <div class="col-1"></div>
+
+                                    <div id="blockCommentaire" class="col mt-3">
+                                        <div id='commentaire' class="p-3">
+                                            <?php echo $commentaire->getContenuComm(); ?>
+                                        </div>
+
+                                        <div id='infoBlock' class='p-3'>
+                                            <p id='info'>
+                                                <span>Créer le : <?php echo $commentaire->datetimeToString($commentaire->getDate()); ?></span>
+                                                <span id='author'>Auteur : <?php echo 'test'; ?></span>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-1"></div>
+                                </div>
+                                <?php
+                            }
+                        }
+                    ?>
+
+                    <!-- ESPACE AJOUT COMMENTAIRE -->
                     <div class="row mt-3">
                         <div class="col-1"></div>
 
                         <div class="col p-0">
                             <a href="#messageBox" class='btn btn-success mb-3' id="toggleComment">Répondre</a>
                             <div id="messageBox" style="display : none">
-                                <form action='controllerViewTopic.php' method='POST'>
+                                <form action='controllerAddComment.php?idPost=<?php echo $_GET['idPost']; ?>' method='POST'>
                                     <div>
-                                        <textarea style='height: 50px; width: 100%;' name='comments' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
+                                        <textarea style='height: 50px; width: 100%;' name='comment' class='ChampAvis' placeholder='Ma réponse...' required></textarea>
                                     </div>
-
-                                    <input type='submit' class='btn btn-success' name='addComment' value=' + Publier'>
+                                    
+                                    <input type='submit' class='btn btn-success mb-3' name='addComment' value=' + Publier'>
                                 </form>
                             
                             </div>
