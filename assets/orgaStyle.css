@@ -1,467 +1,416 @@
 /**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
-    height: 100%;
-    scroll-behavior: smooth;
+    height              : 100%;
+    scroll-behavior     : smooth;
 }
 
 ul {
-    list-style-type: none;
+    list-style-type     : none;
 }
 
 .nopadding {
-    padding: 0px;
+    padding             : 0px;
 }
 
 .couleur {
-    color: #228B22;
+    color               : #228B22;
 }
 
 #page1 {
-    background-image: url('img/mainBG.jpg');
-    background-size: cover;
-    height: 100vh;
+    background-image    : url('img/mainBG.jpg');
+    background-size     : cover;
+    height              : 100vh;
 }
 
-
-/** NAVABR   --------------------------------------------------------------*/
-
-#navBar {
-    z-index: 999;
-    text-align: center;
-    position: fixed;
-    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
-    opacity: 0.9;
-    height: 100px;
-    background-color: white;
-}
-
-#logo {
-    max-width: 100px;
-    max-height: 100px;
-    margin-top: 10px;
-}
-
-.alink {
-    font-size: 23px;
-    padding: 35px 20px 35px 20px;
-    transition: color 1s;
-    color: #228b22;
-    font-family: 'Caviar Dreams', sans-serif;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.alink:hover {
-    transition: color 1s;
-    color: #114811;
-}
-
-.whiteColor,
-a {
-    color: white;
-}
-
-#BoutonBurgermenuTab {
-    width: 30px;
-    height: 30px;
-    margin-top: 30px;
-    position: absolute;
-    z-index: 999;
-    cursor: pointer;
-}
 
 
 /** IMAGE et Autre   --------------------------------------------------------------*/
 
 #carousel {
-    padding-top: 200px;
-    padding-bottom: 50px;
-    width: 70%;
-    margin:auto;
+    padding-top         : 200px;
+    padding-bottom      : 50px;
+    width               : 70%;
+    margin              :auto;
 }
 
 .hrsep {
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    height              : 12px;
+    border              : 0;
+    box-shadow          : inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
 
 
 /** TIMELINE   --------------------------------------------------------------*/
 
 .main-timeline9 {
-    position: relative
+    position            : relative
 }
 
 .main-timeline9:after,
 .main-timeline9:before {
-    content: "";
-    display: block;
-    width: 100%;
-    clear: both
+    content             : "";
+    display             : block;
+    width               : 100%;
+    clear               : both
 }
 
 .main-timeline9:before {
-    content: "";
-    width: 3px;
-    height: 100%;
-    background: #302124;
-    position: absolute;
-    top: 0;
-    left: 50%
+    content             : "";
+    width               : 3px;
+    height              : 100%;
+    background          : #302124;
+    position            : absolute;
+    top                 : 0;
+    left                : 50%
 }
 
 .main-timeline9 .timeline {
-    width: 50%;
-    float: left;
-    position: relative;
-    z-index: 1
+    width               : 50%;
+    float               : left;
+    position            : relative;
+    z-index             : 1
 }
 
 .main-timeline9 .timeline:after,
 .main-timeline9 .timeline:before {
-    content: "";
-    display: block;
-    width: 100%;
-    clear: both
+    content             : "";
+    display             : block;
+    width               : 100%;
+    clear               : both
 }
 
 .main-timeline9 .timeline:first-child:before,
 .main-timeline9 .timeline:last-child:before {
-    content: "";
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #fff;
-    border: 4px solid #228b22;
-    position: absolute;
-    top: 0;
-    right: -14px;
-    z-index: 1
+    content             : "";
+    width               : 25px;
+    height              : 25px;
+    border-radius       : 50%;
+    background          : #fff;
+    border              : 4px solid #228b22;
+    position            : absolute;
+    top                 : 0;
+    right               : -14px;
+    z-index             : 1
 }
 
 .main-timeline9 .timeline:last-child:before {
-    top: auto;
-    bottom: 0
+    top                 : auto;
+    bottom              : 0
 }
 
 .main-timeline9 .timeline:last-child:nth-child(even):before {
-    right: auto;
-    left: -12px;
-    bottom: -2px
+    right               : auto;
+    left                : -12px;
+    bottom              : -2px
 }
 
 .main-timeline9 .timeline-content {
-    text-align: center;
-    margin-top: 8px;
-    position: relative;
-    transition: all .3s ease 0s
+    text-align          : center;
+    margin-top          : 8px;
+    position            : relative;
+    transition          : all .3s ease 0s
 }
 
 .main-timeline9 .timeline-content:before {
-    content: "";
-    width: 100%;
-    height: 5px;
-    background: #000000;
-    position: absolute;
-    top: 88px;
-    left: 0;
-    z-index: -1
+    content             : "";
+    width               : 100%;
+    height              : 5px;
+    background          : #000000;
+    position            : absolute;
+    top                 : 88px;
+    left                : 0;
+    z-index             : -1
 }
 
 .main-timeline9 .circle {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: #fff;
-    border: 8px solid #050505;
-    float: left;
-    margin-right: 25px;
-    position: relative
+    width               : 180px;
+    height              : 180px;
+    border-radius       : 50%;
+    background          : #fff;
+    border              : 8px solid #050505;
+    float               : left;
+    margin-right        : 25px;
+    position            : relative
 }
 
 .main-timeline9 .circle span:after,
 .main-timeline9 .circle span:before,
 .main-timeline9 .circle:before {
-    content: "";
-    margin: auto;
-    position: absolute;
-    right: -33px;
-    bottom: 0;
-    z-index: -1
+    content             : "";
+    margin              : auto;
+    position            : absolute;
+    right               : -33px;
+    bottom              : 0;
+    z-index             : -1
 }
 
 .main-timeline9 .circle:before {
-    width: 26px;
-    height: 30px;
-    background: #000000;
-    top: 0;
-    box-shadow: inset 7px 0 9px -7px #444
+    width               : 26px;
+    height              : 30px;
+    background          : #000000;
+    top                 : 0;
+    box-shadow          : inset 7px 0 9px -7px #444
 }
 
 .main-timeline9 .circle span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    line-height: 160px;
-    border: 3px solid #52bcc4;
-    font-size: 80px;
-    color: #52bcc4
+    display             : block;
+    width               : 100%;
+    height              : 100%;
+    border-radius       : 50%;
+    line-height         : 160px;
+    border              : 3px solid #52bcc4;
+    font-size           : 80px;
+    color               : #52bcc4
 }
 
 .main-timeline9 .circle span:after,
 .main-timeline9 .circle span:before {
-    width: 28px;
-    height: 50px;
-    background: #fff;
-    border-radius: 0 0 0 21px;
-    top: -54px
+    width               : 28px;
+    height              : 50px;
+    background          : #fff;
+    border-radius       : 0 0 0 21px;
+    top                 : -54px
 }
 
 .main-timeline9 .circle span:after {
-    border-radius: 21px 0 0;
-    top: 0;
-    bottom: -56px
+    border-radius       : 21px 0 0;
+    top                 : 0;
+    bottom              : -56px
 }
 
 .main-timeline9 .content {
-    display: table;
-    padding-right: 40px;
-    position: relative
+    display             : table;
+    padding-right       : 40px;
+    position            : relative
 }
 
 .main-timeline9 .year {
-    display: block;
-    padding: 10px;
-    margin: 10px 0 50px;
-    background: #228b22;
-    border-radius: 7px;
-    font-size: 25px;
-    color: #fff
+    display             : block;
+    padding             : 10px;
+    margin              : 10px 0 50px;
+    background          : #228b22;
+    border-radius       : 7px;
+    font-size           : 25px;
+    color               : #fff
 }
 
 .main-timeline9 .icon span:after,
 .main-timeline9 .icon span:before,
 .main-timeline9 .icon:before {
-    content: "";
-    height: 25px;
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    left: -15px
+    content             : "";
+    height              : 25px;
+    margin              : auto;
+    position            : absolute;
+    bottom              : 0;
+    z-index             : -1;
+    left                : -15px
 }
 
 .main-timeline9 .description {
-    font-size: 14px;
-    color: #7e7878;
-    text-align: justify
+    font-size           : 14px;
+    color               : #7e7878;
+    text-align          : justify
 }
 
 .main-timeline9 .icon {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #fff;
-    border: 4px solid #228b22;
-    position: absolute;
-    top: 78px;
-    right: -14px
+    width               : 25px;
+    height              : 25px;
+    border-radius       : 50%;
+    background          : #fff;
+    border              : 4px solid #228b22;
+    position            : absolute;
+    top                 : 78px;
+    right               : -14px
 }
 
 .main-timeline9 .icon:before {
-    width: 15px;
-    background: #000000;
-    top: -1px
+    width               : 15px;
+    background          : #000000;
+    top                 : -1px
 }
 
 .main-timeline9 .icon span:after,
 .main-timeline9 .icon span:before {
-    width: 21px;
-    background: #fff;
-    border-radius: 0 0 21px;
-    top: -30px
+    width               : 21px;
+    background          : #fff;
+    border-radius       : 0 0 21px;
+    top                 : -30px
 }
 
 .main-timeline9 .icon span:after {
-    border-radius: 0 21px 0 0;
-    top: 0;
-    left: -15px;
-    bottom: -30px
+    border-radius       : 0 21px 0 0;
+    top                 : 0;
+    left                : -15px;
+    bottom              : -30px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .circle,
 .main-timeline9 .timeline:nth-child(2n) .timeline-content {
-    float: right
+    float               : right
 }
 
 .main-timeline9 .timeline:nth-child(2n) .circle {
-    margin: 0 0 0 25px
+    margin              : 0 0 0 25px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .circle:before {
-    right: auto;
-    left: -33px;
-    box-shadow: -7px 0 9px -7px #444 inset
+    right               : auto;
+    left                : -33px;
+    box-shadow          : -7px 0 9px -7px #444 inset
 }
 
 .main-timeline9 .timeline:nth-child(2n) .circle span:after,
 .main-timeline9 .timeline:nth-child(2n) .circle span:before {
-    right: auto;
-    left: -33px;
-    border-radius: 0 0 21px
+    right               : auto;
+    left                : -33px;
+    border-radius       : 0 0 21px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .circle span:after {
-    border-radius: 0 21px 0 0
+    border-radius       : 0 21px 0 0
 }
 
 .main-timeline9 .timeline:nth-child(2n) .content {
-    padding: 0 0 0 40px;
-    margin-left: 2px
+    padding             : 0 0 0 40px;
+    margin-left         : 2px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .icon {
-    right: auto;
-    left: -14px
+    right               : auto;
+    left                : -14px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .icon span:after,
 .main-timeline9 .timeline:nth-child(2n) .icon span:before,
 .main-timeline9 .timeline:nth-child(2n) .icon:before {
-    left: auto;
-    right: -15px
+    left                : auto;
+    right               : -15px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .icon span:before {
-    border-radius: 0 0 0 21px
+    border-radius       : 0 0 0 21px
 }
 
 .main-timeline9 .timeline:nth-child(2n) .icon span:after {
-    border-radius: 21px 0 0
+    border-radius       : 21px 0 0
 }
 
 .main-timeline9 .timeline:nth-child(2) {
-    margin-top: 180px
+    margin-top          : 180px
 }
 
 .main-timeline9 .timeline:nth-child(odd) {
-    margin: -175px 0 0
+    margin              : -175px 0 0
 }
 
 .main-timeline9 .timeline:nth-child(even) {
-    margin-bottom: 80px
+    margin-bottom       : 80px
 }
 
 .main-timeline9 .timeline:first-child,
 .main-timeline9 .timeline:last-child:nth-child(even) {
-    margin: 0
+    margin              : 0
 }
 
 @media only screen and (max-width:990px) {
     .main-timeline9:before {
-        left: 100%
+        left            : 100%
     }
     .main-timeline9 .timeline {
-        width: 100%;
-        float: none;
-        margin-bottom: 20px!important
+        width           : 100%;
+        float           : none;
+        margin-bottom   : 20px!important
     }
     .main-timeline9 .timeline:first-child:before,
     .main-timeline9 .timeline:last-child:before {
-        left: auto!important;
-        right: -13px!important
+        left            : auto!important;
+        right           : -13px!important
     }
     .main-timeline9 .timeline:nth-child(2n) .circle {
-        float: left;
-        margin: 0 25px 0 0
+        float           : left;
+        margin          : 0 25px 0 0
     }
     .main-timeline9 .timeline:nth-child(2n) .circle:before {
-        right: -33px;
-        left: auto;
-        box-shadow: 7px 0 9px -7px #444 inset
+        right           : -33px;
+        left            : auto;
+        box-shadow      : 7px 0 9px -7px #444 inset
     }
     .main-timeline9 .timeline:nth-child(2n) .circle span:after,
     .main-timeline9 .timeline:nth-child(2n) .circle span:before {
-        right: -33px;
-        left: auto;
-        border-radius: 0 0 0 21px
+        right           : -33px;
+        left            : auto;
+        border-radius   : 0 0 0 21px
     }
     .main-timeline9 .timeline:nth-child(2n) .circle span:after {
-        border-radius: 21px 0 0
+        border-radius   : 21px 0 0
     }
     .main-timeline9 .timeline:nth-child(2n) .content {
-        padding: 0 40px 0 0;
-        margin-left: 0
+        padding         : 0 40px 0 0;
+        margin-left     : 0
     }
     .main-timeline9 .timeline:nth-child(2n) .icon {
-        right: -14px;
-        left: auto
+        right           : -14px;
+        left            : auto
     }
     .main-timeline9 .timeline:nth-child(2n) .icon span:after,
     .main-timeline9 .timeline:nth-child(2n) .icon span:before,
     .main-timeline9 .timeline:nth-child(2n) .icon:before {
-        left: -15px;
-        right: auto
+        left            : -15px;
+        right           : auto
     }
     .main-timeline9 .timeline:nth-child(2n) .icon span:before {
-        border-radius: 0 0 21px
+        border-radius   : 0 0 21px
     }
     .main-timeline9 .timeline:nth-child(2n) .icon span:after {
-        border-radius: 0 21px 0 0
+        border-radius   : 0 21px 0 0
     }
     .main-timeline9 .timeline:nth-child(2),
     .main-timeline9 .timeline:nth-child(even),
     .main-timeline9 .timeline:nth-child(odd) {
-        margin: 0
+        margin          : 0
     }
 }
 
 @media only screen and (max-width:480px) {
     .main-timeline9:before {
-        left: 0
+        left            : 0
     }
     .main-timeline9 .timeline:first-child:before,
     .main-timeline9 .timeline:last-child:before {
-        left: -12px!important;
-        right: auto!important
+        left            : -12px!important;
+        right           : auto!important
     }
     .main-timeline9 .circle,
     .main-timeline9 .timeline:nth-child(2n) .circle {
-        width: 130px;
-        height: 130px;
-        float: none;
-        margin: 0 auto
+        width           : 130px;
+        height          : 130px;
+        float           : none;
+        margin          : 0 auto
     }
     .main-timeline9 .timeline-content:before {
-        width: 99.5%;
-        top: 68px;
-        left: .5%
+        width           : 99.5%;
+        top             : 68px;
+        left            : .5%
     }
     .main-timeline9 .circle span {
-        line-height: 115px;
-        font-size: 60px
+        line-height     : 115px;
+        font-size       : 60px
     }
     .main-timeline9 .circle span:after,
     .main-timeline9 .circle span:before,
     .main-timeline9 .circle:before,
     .main-timeline9 .icon {
-        display: none
+        display         : none
     }
     .main-timeline9 .content,
     .main-timeline9 .timeline:nth-child(2n) .content {
-        padding: 0 10px
+        padding         : 0 10px
     }
     .main-timeline9 .year {
-        margin-bottom: 15px
+        margin-bottom   : 15px
     }
     .main-timeline9 .description {
-        text-align: center
+        text-align      : center
     }
 }

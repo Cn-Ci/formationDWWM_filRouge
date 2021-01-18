@@ -1,38 +1,38 @@
 body {
-    background-image: url(../img/paysage-hd_1600x900.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 100%;
+    background-image    : url(../img/paysage-hd_1600x900.jpg);
+    background-repeat   : no-repeat;
+    background-size     : cover;
+    background-size     : 100%;
     }
 
 .titre {
-    color: rgba(83, 81, 81, 0.856);
+    color               : rgba(83, 81, 81, 0.856);
 }
 
 .mail {
-    margin: auto;
-    border: none;
+    margin              : auto;
+    border              : none;
 }
 
 .btnInscription {
-    background-color: #228b229f;
-    border-radius: 20px;
-    border-color: white;
+    background-color    : #228b229f;
+    border-radius       : 20px;
+    border-color        : white;
 }
 
 .retour {
-    background-color: #22588bad;
-    border-radius: 20px;
-    border-color: white;
-    color: white;
+    background-color    : #22588bad;
+    border-radius       : 20px;
+    border-color        : white;
+    color               : white;
 }
 
 .form-control-plaintext {
-    color: white !important;
+    color               : white !important;
 }
 
 @media only screen and (max-width:990px) {
     body {
-        background-size: 250%;
+        background-size : 250%;
         }
 }

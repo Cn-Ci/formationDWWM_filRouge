@@ -21,6 +21,19 @@ class User {
             "[profil] -> " . $this->profil;
     }
 
+    public function jsonSerialize() {
+        return [
+            'id'        => $this->getId(),
+            'pseudo'    => $this->getPseudo(),
+            'email'     => $this->getEmail(),
+            'nom'       => $this->getNom(),
+            'prenom'    => $this->getPrenom(),
+            'photo'     => $this->getPhoto(),
+            'mdp'       => $this->getMdp(),
+            'profil'    => $this->getProfil()
+        ];
+    }
+
     public function getId() :Int 
     {
         return $this->id;
