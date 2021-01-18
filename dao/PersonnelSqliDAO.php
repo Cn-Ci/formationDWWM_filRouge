@@ -4,7 +4,7 @@
     require_once(__DIR__.'/interfaceDao.php');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    class PersonnelSqliDAO  implements interfaceDao {
+    class PersonnelSqliDAO  {
         public function add(Object $personnel) :Void {
             $nom    = $personnel->getNom();
             $prenom = $personnel->getPrenom();

@@ -1,10 +1,10 @@
 <?php
 require_once '../dao/UserConnectMysqliDAO.php';
-require_once '../class/Topic.php';
+require_once '../class/Personnel.php';
 require_once '../service/ServiceException.php';
-require_once '../dao/TopicMysqliDAO.php';
+require_once '../dao/PersonnelSqliDAO.php';
 
-class ServiceTopic {
+class ServicePersonnel {
     public static function serviceAddPersonne(String $nom, String $prenom, String $emp, String $desc, String $photo, String $fb, String $tw, String $li) :Void {
         $Personnel = new Personnel();
         $Personnel->setNom($prenom)->setPrenom($nom)->setEmploi($emp)->setDescription($desc)->setPhoto($photo)->setFbLink($fb)->setTwLink($tw)->setLiLink($li);

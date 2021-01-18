@@ -27,7 +27,7 @@ ul {
 }
 #page3 {
     padding-top     : 10%; 
-    height          : 190vh; 
+    height          : 200vh; 
     font-family     : 'Caviar Dreams', sans-serif;
 }
 #page4 {
@@ -282,7 +282,7 @@ a.socialIcon:hover, .socialHoverClass {
     .photoPersonnel{
         width: 10vh;
     }
-    #page3 {
+    #c {
         height          : 350vh; 
     }
 }

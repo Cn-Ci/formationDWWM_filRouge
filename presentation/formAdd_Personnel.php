@@ -1,7 +1,7 @@
 <?php 
-    if ($_SESSION['ROLE'] != 'administrateur') {
-        header('main.php');
-    }
+    //if ($_SESSION['ROLE'] != 'administrateur') {
+    //    header('main.php');
+    //}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
                             <h1 class="text-center">Formulaire Ajout</h1>
-                            <form action="../Controleur/controleur_Employe.php" method="post">
+                            <form action="../controller/controlleurFormAddEmploye.php?action=ajouter" method="post">
                                 <!-- NOM -->
                                 <div class="form-group">
                                     <label>Nom *</label>

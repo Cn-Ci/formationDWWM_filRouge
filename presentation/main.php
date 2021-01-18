@@ -125,6 +125,12 @@
                                     <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
                                 </ul>
                             </div>
+                            <?php if($_SESSION['profil'] == 'administrateur'){
+                                ?>
+                            <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
+                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                            </a>
+                            <?php } ?>
                             <hr>
                         </div>
 
@@ -149,6 +155,12 @@
                                     <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
                                 </ul>
                             </div>
+                            <?php if($_SESSION['profil'] == 'administrateur'){
+                                ?>
+                            <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
+                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                            </a>
+                            <?php } ?>
                             <hr>
                         </div>
 
@@ -174,6 +186,12 @@
                                     <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
                                 </ul>
                             </div>
+                            <?php if($_SESSION['profil'] == 'administrateur'){
+                                ?>
+                            <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
+                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                            </a>
+                            <?php } ?>
                             <hr>
                         </div>
 
@@ -199,21 +217,30 @@
                                 <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter" style="font-size:3rem; color:#0590B8"></i></a</li>
                                 <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
                             </ul>
+                            <?php if($_SESSION['profil'] == 'administrateur'){
+                                ?>
+                            <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
+                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                            </a>
+                            <?php } ?>
                             <hr class="m-5">
                         </div>
                                                    
                      
-                   <div class="col-12 text-center">
-                        <a href='../controller/controleurMain.php'>
+                    <div class="col-12 text-center">
+                    <?php if($_SESSION['profil'] == 'administrateur'){
+                    ?>
+                        <a href='../controller/controlleurFormAddEmploye.php?action=ajouter'>
                             <button type="submit" class="btn-success col col-lg-2 text-center m-2 "><i class="fas fa-plus-circle"></i> Ajouter un employé </button>           
                         </a>
+                        <?php } ?>
                 </div>
 
                 <!----------------------------------------------------------------------PAGE 4------------------------------------------------------------------------>
                 <div id="page4" class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2"></div>
-                        <div id="apercuForum" class="col-sm-12 col-lg-8">
+                        <div class="col-lg-1"></div>
+                        <div id="apercuForum" class="col-sm-12 col-lg-10">
                             <div class="row">
 
                                 <?php $RecentPost = renderRecentPost(); ?> 
@@ -225,7 +252,7 @@
                                             <img class="ImgPostForum" src="../img/bretagne.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[0]->getTitreTopic(); ?>
                                             </h5>
@@ -246,7 +273,7 @@
                                             <img class="ImgPostForum" src="../img/vignoble.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[1]->getTitreTopic(); ?>
                                             </h5>
@@ -267,7 +294,7 @@
                                             <img class="ImgPostForum" src="../img/vallee.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[2]->getTitreTopic(); ?>
                                             </h5>
@@ -287,7 +314,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2"></div>
                     </div>
                 </div>
 
