@@ -5,7 +5,6 @@
     html($title="Destinations");
     navbar();
     boutonFrance();
-    ?> <script type='text/javascript'> var userId= <?php echo $_SESSION['id']?>; </script> <?php
     if(isset($_SESSION) && !empty($_SESSION) && $_SESSION['profil']=="administrateur" && isset($_SESSION['id'])){
         buttonAjout();
     }

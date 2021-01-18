@@ -137,14 +137,12 @@ function affichageDestination($destination, $region, $session)
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
                                     <?php 
-                                        var_dump($session);
-                                        echo $dest->getIdUser();
                                          if(isset($session) && isset($session['id']) && $session['id']==$dest->getIdUser())
                                         {  
                                                     $maj=true;
                                                     buttonAjout($maj, $dest);
                                                 ?>
-                                            <div>
+                                            <div class="col-5 m-4">
                                                 <a href='../controller/controllerDestination.php?action=suppDestination&amp;id=<?php echo $dest->getIdDestination()?>'>
                                                     <button class='btn btn-outline-danger' value='Remove'>Supprimer</button>
                                                 </a>
@@ -183,7 +181,7 @@ function buttonAjout($maj=null, $dest=null)
 { 
     if($maj){$idDestination = $dest->getIdDestination();}?>
      
-        <div> 
+        <div class="m-4 col-5"> 
             <?php $ajout= !$maj || $maj==null ?>
             <button id="<?php if(!$maj || $maj==null){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $idDestination;} ?>" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
                 <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
