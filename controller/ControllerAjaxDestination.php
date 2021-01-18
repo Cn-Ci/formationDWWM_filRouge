@@ -2,6 +2,10 @@
     require_once('../service/ServiceDestination.php');
     require_once('../presentation/destinationPresentation.php'); 
 
+    session_start();
+
+    
+    $session= $_SESSION;
 
     //comment récupérer 
       if(isset($_GET) && !empty($_GET) && isset($_GET['region'])){

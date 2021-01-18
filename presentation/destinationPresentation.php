@@ -137,12 +137,11 @@ function affichageDestination($destination, $region, $session)
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
                                     <?php 
-                                        var_dump($_SESSION);
+                                        var_dump($session);
                                         echo $dest->getIdUser();
-                                         if(isset($_SESSION) && isset($_SESSION['id']) && $_SESSION['id']==$dest->getIdUser())
+                                         if(isset($session) && isset($session['id']) && $session['id']==$dest->getIdUser())
                                         {  
                                                     $maj=true;
-                                                    echo"pamplemousse";
                                                     buttonAjout($maj, $dest);
                                                 ?>
                                             <div>
