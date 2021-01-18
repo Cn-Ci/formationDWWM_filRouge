@@ -17,8 +17,7 @@ include_once('../templates/header.php');
 		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
 		crossorigin="anonymous">
 	</script>    
-	<link 	rel="stylesheet" 
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 	<script 
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
 	</script>

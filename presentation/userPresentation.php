@@ -205,18 +205,7 @@ include_once('../templates/header.php');
         </script>
 <?php
 }
-?>
-<head>
-<?php 
-include_once('../templates/header.php');
-?>
-    <title>Mobili'T - Modification</title>
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
-        href="../assets/inscriptionStyle.css">
-</head>
-<?php
+
 function modification($user, $errorCode=null){
     if($errorCode && $errorCode == 24005){
         echo "<div class='alert alert-danger'> Erreur lors de l'affichage de la page du formulaire de modification !</div>";
@@ -228,6 +217,16 @@ function modification($user, $errorCode=null){
         echo "<center><div class='alert alert-success'> Votre modification a bien été enregistré !</div></center>";
     } 
 ?>
+<head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <title>Mobili'T - Modification</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="../assets/inscriptionStyle.css">
+</head>
         <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=modifierOK" method="post"> 
             <h3 class="col titre mt-5 mb-5"><i class="fas fa-pen"></i> Formulaire de modification</h3>
             <div class="mail col col-sm-5">

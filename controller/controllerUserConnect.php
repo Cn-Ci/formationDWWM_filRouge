@@ -112,7 +112,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                     /**_ CONNEXION - If email not-exist ___**/ 
                     echo "test 16 user not exist --- ";
     
-                    inscription(23004);
+                    connexion(23004);
                 }  
             }
             catch (ServiceException $se) {
@@ -168,7 +168,6 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         {
             try {
                 echo "test 22 Deconnexion OK";
-                session_start();
                 session_destroy();
                 include_once('../controller/controleurMain.php');
                 // "Vous êtes deconnecté"
