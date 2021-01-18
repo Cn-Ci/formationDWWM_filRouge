@@ -24,7 +24,7 @@ function html($title){ ?>
             <link 
                 rel="stylesheet" 
                 type="text/css" 
-                href="../mainStyle.css">
+                href="../css/mainStyle.css">
             <link 
                 rel="stylesheet" 
                 type="text/css" 
@@ -193,8 +193,8 @@ function buttonAjout($maj=null, $dest=null)
         <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $idDestination;}else{};?>" class="container" style="display:none">
         
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$idDestination;} ?>" method="POST">
-                    <!-- Region -->
+                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$idDestination;} ?>" method="POST" enctype="multipart/formdata">
+                    
                     <div class="form-group">
                         <div class="form-row align-items-center">
                             <div class="col-6">
@@ -203,7 +203,7 @@ function buttonAjout($maj=null, $dest=null)
                                     <label for="<?php if(!$maj){echo "lieuDestination" ;}else{echo "lieuDestination". $idDestination;}?>">Lieu </label>
                                     <input type="text" class="form-control" id="<?php if(!$maj){echo "lieuDestination" ;}else{echo "lieuDestination". $idDestination;}?>" name="lieu" value="<?php if($maj){echo $dest->getLieu() ;}?>" placeholder="Ville ou zone" alt="Saisissez le nom du lieu que vous souhaitez faire découvrir">
                                 </div>
-                            
+                                <!-- Region -->
                                 <div class="form-group ">
                                     <label for="<?php if(!$maj){echo "selectRegion" ;}else{echo "selectRegion". $idDestination;}?>">Région</label>
                                     <select class="form-control" id="<?php if(!$maj){echo "selectRegion" ;}else{echo "selectRegion". $idDestination;}?>" name="region">
@@ -233,9 +233,9 @@ function buttonAjout($maj=null, $dest=null)
                                 </div>
                                 <div class="col-10 offset-1">
                                 <?php if(!$maj){ ?>
-                                    <label for="photoDestination" class="mt-3">Photo
-                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="photoDestination" alt="Veillez téléverser une photo illustrant le lieu proposé" ><span>
-                                    </label>
+                                    <label for="image" class="mt-2">Photo</label>
+                                    <input type="file" name="image" placeholder="bla" class="form-control h-100 " id="image" alt="Veillez téléverser une photo illustrant le lieu proposé" accept="image/png, image/jpeg">
+                                    
                                 <?php }elseif($maj==true){ ?>
                                     <!-- bouton pour le modal -->
                                     <div class="row">
@@ -305,7 +305,7 @@ function buttonAjout($maj=null, $dest=null)
                         <label for="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>">Lien vers un extrait du forum </label>
                         <input type="text" class="form-control" name="extraitForum" maxlength="300" id="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
-                    <button type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;"><?php if($ajout){ echo 'Ajouter" ';}elseif($maj){echo 'Modifier';}else{};?></button>
+                    <input type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;" value="<?php if($ajout){ echo 'Ajouter ';}elseif($maj){echo 'Modifier';}else{};?>"></input>
                 </form>
             </div>
         </div>
