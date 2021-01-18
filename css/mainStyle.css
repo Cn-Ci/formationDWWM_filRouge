@@ -256,10 +256,10 @@ a.socialIcon:hover, .socialHoverClass {
 
 @media screen and (max-width: 991px){
     #page1, #page2, #page4{
-        height: 100%;
+        height: 50%;
     }
     #page3 {
-        height          : 210vh; 
+        height          : 370vh; 
     }
     #blocLogo{
         margin-top   : 20%; 

@@ -128,7 +128,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -158,7 +158,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -189,7 +189,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -220,7 +220,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5"><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5"><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr class="m-5">
@@ -252,7 +252,7 @@
                                             <img class="ImgPostForum" src="../img/bretagne.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-3 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[0]->getTitreTopic(); ?>
                                             </h5>
@@ -273,7 +273,7 @@
                                             <img class="ImgPostForum" src="../img/vignoble.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-3 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[1]->getTitreTopic(); ?>
                                             </h5>
@@ -294,7 +294,7 @@
                                             <img class="ImgPostForum" src="../img/vallee.jpg" alt="Apercu image post forum">
                                         </div>
 
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-5 mt-3 mb-3 font">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 ml-3 mt-3 mb-3 font">
                                             <h5>
                                                 <?php echo $RecentPost[2]->getTitreTopic(); ?>
                                             </h5>
