@@ -147,7 +147,6 @@ include_once('../templates/header.php');
                 </div>
             </div>
         </div>
-        <hr>
 
 <!-- footer include -->
         

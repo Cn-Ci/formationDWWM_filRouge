@@ -53,8 +53,8 @@ include_once('../templates/header.php');
 						</a>
 
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg alink" href="../controller/controllerUserConnect.php?action=modif">Modifier mon profil</a></li>
-							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg alink" href="../controller/controllerUserConnect.php?action=deconnexion">Deconnexion</a></li>
+							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg " href="../controller/controllerUserConnect.php?action=modif">Modifier mon profil</a></li>
+							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg " href="../controller/controllerUserConnect.php?action=deconnexion">Deconnexion</a></li>
 						</ul>
 					
 					
@@ -74,9 +74,6 @@ include_once('../templates/header.php');
 <style>
 	::marker {
 		display: none;
-	}
-	.alink {
-		text-decoration : none !important;
 	}
 	.alink:hover {
 		font-size: 1.5em;
@@ -113,6 +110,7 @@ include_once('../templates/header.php');
 		transition : color 1s;
 		color      : #228b22;
 		font-family: 'Caviar Dreams', sans-serif;
+		text-decoration : none !important;
 	}
 	.whiteColor, a {
 		color    : white;
