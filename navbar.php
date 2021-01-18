@@ -2,6 +2,34 @@
 	session_start()
 ?>
 
+<head>
+<?php 
+include_once('../templates/header.php');
+?>
+    <!-- CSS only -->
+	<link 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+			rel="stylesheet" 
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+			crossorigin="anonymous">
+	<!-- JavaScript Bundle with Popper -->
+	<script 
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+		crossorigin="anonymous">
+	</script>    
+	<link 	rel="stylesheet" 
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script 
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+	</script>
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+	</script>
+ 
+
+ 
+</head>
+
 <div class="col-sm-12 row pr-0" id="navBar">
 
 	<div id="BoutonBurgermenuTab">
@@ -19,9 +47,18 @@
 		<?php
 			if (isset($_SESSION['id'])) {
 				?>
-					<a class="col-sm-12 col-md-12 col-lg alink nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink" aria-expanded="false">
-						<?php echo $_SESSION['email'] ?>
-					</a>
+					
+					
+						<a class="col-sm-12 col-md-12 col-lg alink nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+							<?php echo $_SESSION['email'] ?>
+						</a>
+
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg alink" href="../controller/controllerUserConnect.php?action=modif">Modifier mon profil</a></li>
+							<li><a class="dropdown-item col-sm-12 col-md-12 col-lg alink" href="../controller/controllerUserConnect.php?action=deconnexion">Deconnexion</a></li>
+						</ul>
+					
+					
 				<?php	
 			} else {
 				?>
@@ -32,6 +69,8 @@
 		?>
 	</nav>
 </div>
+
+
 
 <style>
 	::marker {
@@ -160,3 +199,4 @@
 
 
 </style>
+

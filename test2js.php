@@ -1,66 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<?php 
-include_once('templates/header.php');
-?>
-</head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-<form>
-  <p>Entrer une adresse e-mail:</p>
-  <input id='email'>
-  <input type='button' id='valider' value='Valider' />
-  <p>Entrer un pseudo</p>
-  <input id='pseudo'>
-  <input type='button' id='valider' value='Valider' />
-  <p>Entrer une mot de passe</p>
-  <input id='password_inscription_apprenant'>
-  <input type='button' id='valider' value='Valider' />
-</form>
-<div id="resultat"></div>
-<div class="row">
-    <div class="col-12">
-        <div id="jumbo" class="jumbotron">Le mot de passe doit comporter au moins 
-            <div class="col-12">
-                <span class="caracteres">
-                    <span class="caracteres_ok"><i class="fas fa-check-circle"></i></span>
-                    <span class="caracteres_pas_ok"><i class="fas fa-times-circle"></i></span><b>8 caractères</b>
-                </span>
-            </div>
-            <div class="col-12">
-                <span class="chiffre">
-                    <span class="chiffre_ok"><i class="fas fa-check-circle"></i></span>
-                    <span class="chiffre_pas_ok"><i class="fas fa-times-circle"></i></span><b>1 chiffres</b>
-                </span>
-            </div>
-            <div class="col-12">
-                <span class="majuscule">
-                    <span class="majuscule_ok"><i class="fas fa-check-circle"></i></span>
-                    <span class="majuscule_pas_ok"><i class="fas fa-times-circle"></i></span><b>1 majuscule</b>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-function validerEmail(email) {
-        var re = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
-        return re.test(email);
-}
-
-function valider() {
-  $("#resultat").text("");
-  var email = $("#email").val();
-
-  if (validerEmail(email)) {
-    $("#resultat").text(email + " est valide.");
-    $("#resultat").css("color", "green");
-  } else {
-    $("#resultat").text(email + " n'est pas valide.");
-    $("#resultat").css("color", "red");
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
  
-}
-$("#valider").bind("click", valider);
+
+ 
+
+    <title>Document</title>
+</head>
+<body>
+
+<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
 

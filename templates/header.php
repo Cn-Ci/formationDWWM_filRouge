@@ -16,6 +16,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
             crossorigin="anonymous" />
+   
     <!-- SCRIPT -->
     <script 
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
@@ -55,5 +56,8 @@
         rel="stylesheet" 
         href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
-        crossorigin="anonymous">
+        crossorigin="anonymous">    
+    
 </head>
+
+
