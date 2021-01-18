@@ -26,8 +26,8 @@ ul {
     z-index         : 995;
 }
 #page3 {
-    padding-top: 10%; 
-    height          : 100vh; 
+    padding-top     : 10%; 
+    height          : 190vh; 
     font-family     : 'Caviar Dreams', sans-serif;
 }
 #page4 {
@@ -100,6 +100,7 @@ ul {
     color: white;
 }
 
+
 /** PAGE 2 ----------------------------------------------------------------*/
 #EntetePresentation{
     padding-top: 10%; 
@@ -111,16 +112,23 @@ ul {
 }
 
 /** PAGE 3 ----------------------------------------------------------------*/
-.imagePersonne{
+
+img{
     border       : black solid 1px;
-    border-radius: 10%;
+    border-radius: 20%;
 }
+img:hover {
+    transform: scaleX(-1);
+}
+.photoPersonnel{
+    width: 20vh;
+}
+
 .descriptionPersonne{ 
     text-align: justify;
 }
-.personnel{
-    margin-top: 10%;
-}
+
+
 ​
 /*! SOCIAL  BLOCK*/
 #facebook{
@@ -142,20 +150,28 @@ ul.social-network {
 ul.social-network li {
 	display: inline;
 }
+.social-network a.icoFacebook {
+    background-color: white;
+    color           : white;
+    border          : 1px solid white;
+    height          : 50px;
+    width           : 50px;
+    border-radius   : 50%;
+}
 .social-network a.icoFacebook:hover {
-	background-color:#3B5998;
+    background-color:white;
 }
 .social-network a.icoTwitter:hover {
 	background-color:#33ccff;
 }
-.social-network a.icoGoogle:hover {
+/* .social-network a.icoGoogle:hover {
 	background-color:#BD3518;
-}
-.social-network a.icoVimeo:hover {
+} */
+/* .social-network a.icoVimeo:hover {
 	background-color:#0590B8;
-}
+} */
 .social-network a.icoLinkedin:hover {
-	background-color:#007bb7;
+	background-color:white;
 }
 .social-network a.icoRss   :hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
@@ -230,16 +246,20 @@ a.socialIcon:hover, .socialHoverClass {
     flex-shrink: none;
 }
 @media screen and (max-width: 1600px){
-    #page1, #page2, #page3, #page4 {
+    #page1, #page2, #page4 {
         height: 100%;
     }
+  
 }
 
 /** VERSION TABLETTE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 991px){
-    #page1, #page2, #page3, #page4{
+    #page1, #page2, #page4{
         height: 100%;
+    }
+    #page3 {
+        height          : 210vh; 
     }
     #blocLogo{
         margin-top   : 20%; 
@@ -248,6 +268,9 @@ a.socialIcon:hover, .socialHoverClass {
     #blocOverlay{
         display: none;
     }
+    .photoPersonnel{
+        width: 15vh;
+    }
 }
 
 /** VERSION PORTABLE ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -255,6 +278,12 @@ a.socialIcon:hover, .socialHoverClass {
     #mdSlogan{
         font-size  : 130px;
         font-family: Impact, Charcoal, sans-serif;    
+    }
+    .photoPersonnel{
+        width: 10vh;
+    }
+    #page3 {
+        height          : 350vh; 
     }
 }
 @media only screen and (max-width: 500px) {
@@ -267,4 +296,5 @@ a.socialIcon:hover, .socialHoverClass {
     h5{
         font-size: 1em; 
     }
+    
 }

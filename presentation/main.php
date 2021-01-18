@@ -102,75 +102,111 @@
                 <!----------------------------------------------------------------------PAGE 3------------------------------------------------------------------------>
                 <!-- BUTTON ADD PERSONNEL (FOR ADMIN) -->
                 <div id="page3" class="container-fluid ombre">
-                    <div class="row text-center mt-2">
-                        <div class="col-lg-2"></div>
+                    
+                        
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/62.jpg" alt="Pesonnel2"><br>
-                            <h3>
-                                <strong>Donna R. Blankenship<br>
-                                Educatrice spécialisée</strong>
-                            </h3>
-                            <p class="couleur mt-3 descriptionPersonne">
-                                Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à l'écoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
-                            </p><br>
-                            <ul class="social-network social-circle">
-                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12  personnel">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                    <img class="photoPersonnel" src="https://randomuser.me/api/portraits/women/62.jpg" alt="Pesonnel1"><br>
+                                    <h3>
+                                        <strong>Donna R. Blankenship<br>
+                                        Educatrice spécialisée</strong>
+                                    </h3>
+                                </div>
+                                <div class="col-12 col-md-5 mt-5">
+                                    <p class="couleur mt-3 descriptionPersonne">
+                                        Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à l'écoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
+                                    </p><br>  
+                                </div>
+                                <ul class="social-network social-circle text-center">
+                                    <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook" style="font-size:3rem; color:#3B5998"></i></a></li>
+                                    <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter" style="font-size:3rem; color:#0590B8"></i></a</li>
+                                    <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
+                                </ul>
+                            </div>
+                            <hr>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Pesonnel2"><br>
-                            <h3>
-                                <strong>Shuang Ts'ui<br>
-                                Auxiliaire de Periculture</strong>
-                            </h3>
-                            <p class="couleur mt-3 descriptionPersonne">
-                                Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour. N'hésitez pas à la contacter !  
-                            </p><br>
-                            <ul class="social-network social-circle">
-                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
+                            <div class="row">
+                                <div class="col-12 col-md-5 mt-5 pl-5">
+                                    <p class="couleur mt-3 descriptionPersonne">
+                                    Nicodemus est Russe, il voyage énormément depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
+                                    </p><br>
+                                    
+                                </div>
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                    <img class="photoPersonnel" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Pesonnel2"><br>
+                                    <h3>
+                                    <strong>Nicodemus Mordvinovi<br>
+                                    Accompagnateur à la mobilité</strong>
+                                    </h3>
+                                </div>
+                                <ul class="social-network social-circle text-center">
+                                    <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook" style="font-size:3rem; color:#3B5998"></i></a></li>
+                                    <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter" style="font-size:3rem; color:#0590B8"></i></a</li>
+                                    <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
+                                </ul>
+                            </div>
+                            <hr>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Pesonnel3"><br>
-                            <h3>
-                                <strong>Nicodemus Mordvinov<br>
-                                Accompagnateur à la mobilité</strong>
-                            </h3>
-                            <p class="couleur mt-3 descriptionPersonne">
-                                Nicodemus est Russe, il voyage énormément depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
-                            </p><br>
-                            <ul class="social-network social-circle">
-                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                        
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                    <img class="photoPersonnel" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Pesonnel2"><br>
+                                    <h3>
+                                    <strong>Shuang Ts'ui<br>
+                                        Auxiliaire de Periculture</strong>
+                                    </h3>
+                                </div>
+                                <div class="col-12 col-md-5 mt-5">
+                                    <p class="couleur mt-3 descriptionPersonne">
+                                    Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour. N'hésitez pas à la contacter !  
+                                    </p><br>
+                                   
+                                </div> 
+                                <ul class="social-network social-circle text-center">
+                                    <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook" style="font-size:3rem; color:#3B5998"></i></a></li>
+                                    <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter" style="font-size:3rem; color:#0590B8"></i></a</li>
+                                    <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
+                                </ul>
+                            </div>
+                            <hr>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 pl-5 pr-5 personnel">
-                            <img class="img_150w_150h imagePersonnel rounded" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Pesonnel4"><br>
-                            <h3>
-                                <strong>Gabriel Duperré<br>
-                                Aide médico-psychologique</strong>
-                            </h3>
-                            <p class="couleur mt-3 descriptionPersonne">
-                                Gabriel est français, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
-                            </p><br>
-                            <ul class="social-network social-circle">
-                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                       
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
+                            <div class="row">
+                                <div class="col-12 col-md-5 mt-5 pl-5">
+                                    <p class="couleur mt-3 descriptionPersonne">
+                                    Gabriel est français, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
+                                    </p><br> 
+                                </div>
+                                
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                    <img class="photoPersonnel" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Pesonnel2"><br>
+                                    <h3>
+                                    <strong>Gabriel Duperré<br>
+                                    Aide médico-psychologique</strong>
+                                    </h3>
+                                </div>
+                            </div>
+                            <ul class="social-network social-circle text-center">
+                                <li><a href ="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook" style="font-size:3rem; color:#3B5998"></i></a></li>
+                                <li><a href ="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter" style="font-size:3rem; color:#0590B8"></i></a</li>
+                                <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"></i></a></li>
                             </ul>
+                            <hr class="m-5">
                         </div>
-
-                        <div class="col-lg-2"></div>    
-                    </div>
+                                                   
+                     
+                   <div class="col-12 text-center">
+                        <a href='../controller/controleurMain.php'>
+                            <button type="submit" class="btn-success col col-lg-2 text-center m-2 "><i class="fas fa-plus-circle"></i> Ajouter un employé </button>           
+                        </a>
                 </div>
 
                 <!----------------------------------------------------------------------PAGE 4------------------------------------------------------------------------>
