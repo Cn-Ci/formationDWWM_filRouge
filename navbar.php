@@ -48,7 +48,7 @@ include_once('../templates/header.php');
 				?>
 					
 					
-						<a class="col-sm-12 col-md-12 col-lg alink nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="col-sm-12 col-md-12 col-lg alink dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 							<?php echo $_SESSION['email'] ?>
 						</a>
 

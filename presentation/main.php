@@ -107,15 +107,15 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12  personnel">
                             <div class="row">
-                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                <div class="col-sm-12 col-md-6 col-lg-5 ml-5">
                                     <img class="photoPersonnel" src="https://randomuser.me/api/portraits/women/62.jpg" alt="Pesonnel1"><br>
                                     <h3>
                                         <strong>Donna R. Blankenship<br>
                                         Educatrice spécialisée</strong>
                                     </h3>
                                 </div>
-                                <div class="col-12 col-md-5 mt-5">
-                                    <p class="couleur mt-3 descriptionPersonne">
+                                <div class="col-12 col-md-6 mt-5">
+                                    <p class="couleur mt-3 descriptionPersonne text-right">
                                         Donna est américaine, elle est donc bilingue et connait le langage des signes. Elle est très souriante et à l'écoute, elle aime prendre soin des personnes qui l'entoure et aime aider les autres. Elle est devenue éducatrice spécialisée chez Mobili'T car son frère est atteint d'autisme et elle a toujours voulu essayer de lui donner le sourire et de le faire voyager aux quatres coins de la terre, c'est pour cela qu'elle sera répondre à toutes les questions que vous lui poserez.
                                     </p><br>  
                                 </div>
@@ -128,7 +128,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -136,13 +136,13 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
                             <div class="row">
-                                <div class="col-12 col-md-5 mt-5 pl-5">
-                                    <p class="couleur mt-3 descriptionPersonne">
+                                <div class="col-12 col-md-6 mt-5 pl-5">
+                                    <p class="couleur mt-3 descriptionPersonne ">
                                     Nicodemus est Russe, il voyage énormément depuis qu'il est petit, il connait tout les recoins de la planète et s'est régulièrement occupée de groupe de vacances provenant de centre spécialisé pour personnes handicapés. Il a déjà été dans les Vosges pour pratiquer une descente en fauteuil tout terrain CIMGO avec un groupe de vacances, un séjour qu'il n'a jamais oublié ! C'est pour cela qu'aujourd'hui, il peut vous guider sur les destinations et les précautions a prendre.
                                     </p><br>
                                     
                                 </div>
-                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-right">
                                     <img class="photoPersonnel" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Pesonnel2"><br>
                                     <h3>
                                     <strong>Nicodemus Mordvinovi<br>
@@ -158,7 +158,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -167,14 +167,14 @@
                         
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
                             <div class="row">
-                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                <div class="col-sm-12 col-md-5 col-lg-5 ml-5">
                                     <img class="photoPersonnel" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Pesonnel2"><br>
                                     <h3>
                                     <strong>Shuang Ts'ui<br>
                                         Auxiliaire de Periculture</strong>
                                     </h3>
                                 </div>
-                                <div class="col-12 col-md-5 mt-5">
+                                <div class="col-12 col-md-6 mt-5">
                                     <p class="couleur mt-3 descriptionPersonne">
                                     Shuang est chinoise, ainée d'une grande famille et elle est passionnée par les enfants, elle s'est occupée de ses 5 frères et 3 soeurs, elle en a donc fait son métier ! Ses qualités principales : la patience et la maîtrise de soi ! Elle sera vous conseiller les différentes activités accessibles à vos enfants et vous aidera dans le choix de votre destination afin que vos enfants puissent profitez pleinement de leur séjour. N'hésitez pas à la contacter !  
                                     </p><br>
@@ -189,7 +189,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr>
@@ -198,13 +198,13 @@
                        
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 personnel">
                             <div class="row">
-                                <div class="col-12 col-md-5 mt-5 pl-5">
+                                <div class="col-12 col-md-6 mt-5 pl-5">
                                     <p class="couleur mt-3 descriptionPersonne">
                                     Gabriel est français, il apporte un soutien au bien être des personnes handicapées ou dépendantes et met en place des activités sociales et de loisirs pour maintenir leur socialisation. Il cherche aussi à établir une communication par la parole ou par les gestes. Il sera vous apporter soutien et réconfort lors de votre démarche. Il sera être à votre écoute et répondre à toutes questions !
                                     </p><br> 
                                 </div>
                                 
-                                <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                                <div class="col-sm-12 col-md-5 col-lg-5 text-right">
                                     <img class="photoPersonnel" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Pesonnel2"><br>
                                     <h3>
                                     <strong>Gabriel Duperré<br>
@@ -220,7 +220,7 @@
                             <?php if($_SESSION['profil'] == 'administrateur'){
                                 ?>
                             <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                                <button type="submit" class="btn-warning col col-lg-3 text-center m-2 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                                <button type="submit" class="btn-warning col col-lg-3 text-center ml-5"><i class="fas fa-pen"></i> Modifier le personnel </button>           
                             </a>
                             <?php } ?>
                             <hr class="m-5">
