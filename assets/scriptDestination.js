@@ -26,8 +26,7 @@ $('.map').ready(function(){
        
        let region = e.currentTarget.id;
        let url	= 'ControllerAjaxDestination.php?region='+region;
-       console.log(userId);
-       console.log(idSession);
+
        $.get(url, transmissionRegion(region)).done(function(data) {
            $('#textAjax').load(url);
        })
