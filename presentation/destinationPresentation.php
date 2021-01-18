@@ -1,7 +1,5 @@
 <?php
 
-
-
 function html($title){ ?>
     <!DOCTYPE html>
         <html lang="fr">
@@ -28,7 +26,7 @@ function html($title){ ?>
             <link 
                 rel="stylesheet" 
                 type="text/css" 
-                href="../destinations.css">
+                href="../assets/destinations.css">
         
             <!-- TYPO -->
             <link 
@@ -61,7 +59,7 @@ function footer(){ ?>
 <!-- fin de la d.iv class="principale" -->
     </div>
             <!-- ligne de séparation -->
-           
+            
                 <?php include '../templates/footer.php';?>
             </footer>
 
@@ -105,14 +103,13 @@ function boutonFrance(){ ?>
             <div id="textAjax" ></div>
 <?php }
 
-function affichageDestination($destination, $region)
+function affichageDestination($destination, $region, $session)
 { 
     $i=1; ?>
 
     <div id="<?php  echo $region ?>" class="align-items-center m-3">
         <?php foreach($destination as $dest){
             if($dest->getRegion() == $region){ ?>
-
                 <!-- affichage de la destination -->
                 <div class="<?php  echo $dest->getRegion().$i ?> row d-flex justify-content-center m-2 mb-4">
                     <div class="">
@@ -140,9 +137,12 @@ function affichageDestination($destination, $region)
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
                                     <?php 
+                                        var_dump($_SESSION);
+                                        echo $dest->getIdUser();
                                          if(isset($_SESSION) && isset($_SESSION['id']) && $_SESSION['id']==$dest->getIdUser())
                                         {  
                                                     $maj=true;
+                                                    echo"pamplemousse";
                                                     buttonAjout($maj, $dest);
                                                 ?>
                                             <div>
@@ -183,17 +183,18 @@ function affichageDestination($destination, $region)
 function buttonAjout($maj=null, $dest=null)
 { 
     if($maj){$idDestination = $dest->getIdDestination();}?>
+     
         <div> 
             <?php $ajout= !$maj || $maj==null ?>
-            <button id="<?php if($ajout){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $idDestination;} ?>" class='<?php if($ajout){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
-                <?php if($ajout){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
+            <button id="<?php if(!$maj || $maj==null){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $idDestination;} ?>" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
+                <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
             </button> 
         </div>
         
-        <div id="<?php if($ajout){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $idDestination;}else{};?>" class="container" style="display:none">
+        <div id="<?php if(!$maj || $maj==null){ echo "formAjoutDestination";}elseif($maj){echo "formModifDestination". $idDestination;}else{};?>" class="container" style="display:none">
         
         <div class="globalConnexion text-center p-2 col-10 offset-1">
-                <form action="../controller/controllerDestination.php?action=<?php if($ajout){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$idDestination;} ?>" method="POST" enctype="multipart/formdata">
+                <form action="../controller/controllerDestination.php?action=<?php if(!$maj || $maj==null){echo "ajoutDestination";}elseif($maj){echo "modifDestination&id=".$idDestination;} ?>" method="POST" enctype="multipart/form-data">
                     
                     <div class="form-group">
                         <div class="form-row align-items-center">
@@ -257,9 +258,9 @@ function buttonAjout($maj=null, $dest=null)
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id=id='.$idDestination ?>" method="POST">
+                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id='.$idDestination ?>" method="POST" enctype="multipart/form-data">
                                                     <label for="<?php echo "majPhotoDestination".$idDestination ?>" > Nouvelle photo :</label>
-                                                        <span><input type="file" name="image" placeholder="bla" class="form-control h-100 " id="<?php echo "majPhotoDestination".$idDestination ?>" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
+                                                        <span><input type="file" name="modifiedImage" placeholder="bla" class="form-control h-100 " id="<?php echo "majPhotoDestination".$idDestination ?>" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
                                                     
                                                     <button type="submit" class="btn btn-outline-primary mt-5">Enregistrer</button>
                                                 </form>
@@ -305,7 +306,7 @@ function buttonAjout($maj=null, $dest=null)
                         <label for="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>">Lien vers un extrait du forum </label>
                         <input type="text" class="form-control" name="extraitForum" maxlength="300" id="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
-                    <input type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;" value="<?php if($ajout){ echo 'Ajouter ';}elseif($maj){echo 'Modifier';}else{};?>"></input>
+                    <input type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;" value="<?php if(!$maj || $maj==null){ echo 'Ajouter ';}elseif($maj){echo 'Modifier';}else{};?>"></input>
                 </form>
             </div>
         </div>

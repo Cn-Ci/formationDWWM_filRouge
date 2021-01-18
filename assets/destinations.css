@@ -1,0 +1,116 @@
+/**  VERSION  PC 1920 x 1080  -------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nopadding {
+    padding-top: 0px;
+}
+
+.btn{
+    width: auto;
+    height: auto;
+    font-size: auto;
+}
+
+
+/* NAVABR  --------------------------------------------------------------*/
+
+.principale {
+    padding-top: 200px;
+}
+
+
+/* deploiement du texte */
+
+#fermeture {
+    display: none;
+}
+
+#fermeture:target {
+    display: block;
+}
+
+
+/* changer la taille de l'image dans la modification de la destination */
+#imageDestinationModif{
+    width: 200px;
+    height:100px;
+    border-radius:50% 20% / 10% 40%;
+}
+
+/* réduction de l'image clicable faisant apparaitre le modal de modification de l'image destination */
+#boutonModifImageDestination{
+    border-style: none;
+}
+
+#penUpdateDestination{
+    width: 40px;
+    height: 50px;
+}
+/* faire apparaitre  le logo en tout petit dans le formulaire de modification de l'image destination */
+#logoModifDestination{
+    width: 160px;
+    height: 115px;
+}
+
+/* BOUTTON  AFFICHAGE FORMULAIRE INPUT FILE */
+label.photoDestination {
+    width:120px;
+    height:40px;
+    overflow:hidden;
+    position:relative;
+    background-color:#ccc;
+}
+
+/* Carte interactive */
+#divContenantFranceMap{
+    height: auto;
+}
+.map__image{
+    width: 75%;
+    height:75%;
+}
+
+.map__image path{
+    fill : rgba(34, 139, 34, 0.5);
+    stroke: #ffffff;
+    stroke-width: 1px;
+    transition: fill 0.3s;
+}
+
+.map__image .is-active path{
+    fill : rgba(34, 139, 34);
+}
+
+.map__image path:hover{
+    fill : rgba(34, 139, 34 );
+    
+}
+
+
+
+
+
+
+label span input {
+    z-index: 999;
+    line-height: 0;
+    font-size: 50px;
+    position: absolute;
+    top: -2px;
+    left: -700px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding:0;
+}
