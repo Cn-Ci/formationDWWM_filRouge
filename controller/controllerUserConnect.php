@@ -37,12 +37,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             try {
             /**_ INSCRIPTION - Verification email _________**/
             $user = new User;
-            $user->setPseudo($_POST['pseudo'])
-                ->setEmail($_POST['email'])
-                ->setNom($_POST['nom'])
-                ->setPrenom($_POST['prenom'])
-                ->setPhoto($_POST['photo'])
-                ->setMdp($_POST['password']);
+            $user->setPseudo(htmlentities($_POST['pseudo']))
+                ->setEmail(htmlentities($_POST['email']))
+                ->setNom(htmlentities($_POST['nom']))
+                ->setPrenom(htmlentities($_POST['prenom']))
+                ->setPhoto(htmlentities($_POST['photo']))
+                ->setMdp(htmlentities($_POST['password']));
 
             //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
             //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
@@ -95,8 +95,8 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 /**_ CONNEXION - Verification email ______**/
                 echo "test 14 name connecter OK --- ";
                 $user = new User;
-                $user->setEmail($_POST['email'])
-                    ->setMdp($_POST['password']);
+                $user->setEmail(htmlentities($_POST['email']))
+                    ->setMdp(htmlentities($_POST['password']));
 
                 if (UserConnectService::userConnect($_POST['email']))
                 {
@@ -129,12 +129,12 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     {
         echo "test 18 page modif ok ";
         $user = new User;
-        $user->setPseudo($_SESSION['pseudo'])
-            ->setEmail($_SESSION['email'])
-            ->setNom($_SESSION['nom'])
-            ->setPrenom($_SESSION['prenom'])
-            ->setPhoto($_SESSION['photo'])
-            ->setMdp($_SESSION['mdp']);
+        $user->setPseudo(htmlentities($_SESSION['pseudo']))
+            ->setEmail(htmlentities($_SESSION['email']))
+            ->setNom(htmlentities($_SESSION['nom']))
+            ->setPrenom(htmlentities($_SESSION['prenom']))
+            ->setPhoto(htmlentities($_SESSION['photo']))
+            ->setMdp(htmlentities($_SESSION['mdp']));
 
             /**_ CONNEXION - If email not-exist ___**/ 
             echo "test 20 user not exist --- Pret pour modification";
@@ -146,11 +146,11 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         echo "test 21 modif ok ";
         
         $user = new User;
-        $user->setPseudo($_POST['pseudo'])
-            ->setEmail($_POST['email'])
-            ->setNom($_POST['nom'])
-            ->setPrenom($_POST['prenom'])
-            ->setPhoto($_POST['photo']);
+        $user->setPseudo(htmlentities($_POST['pseudo']))
+            ->setEmail(htmlentities($_POST['email']))
+            ->setNom(htmlentities($_POST['nom']))
+            ->setPrenom(htmlentities($_POST['prenom']))
+            ->setPhoto(htmlentities($_POST['photo']));
 
             $userEdit = new UserConnectService;
             $data = $userEdit->editUser($user); 

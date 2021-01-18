@@ -27,9 +27,7 @@ body {
     color               : white;
 }
 
-.form-control-plaintext {
-    color               : white !important;
-}
+
 
 @media only screen and (max-width:990px) {
     body {

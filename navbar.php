@@ -37,6 +37,9 @@
 	::marker {
 		display: none;
 	}
+	.alink {
+		text-decoration : none !important;
+	}
 	.alink:hover {
 		font-size: 1.5em;
 		color : #228b22 !important;

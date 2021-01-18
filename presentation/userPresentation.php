@@ -97,7 +97,7 @@ include_once('../templates/header.php');
     </form>
     <div class="row text-center">
         <a href='../controller/controllerUserConnect.php?action=connexion'>
-            <button class='btnInscription col col-lg-2 text-center btn btn-primary mb-4'> Se connecter</button>
+            <button class='btnConnexion col col-lg-2 text-center btn btn-primary mb-4'> Se connecter</button>
         </a>
         <a href='../controller/controleurMain.php'>
             <button type="submit" class="retour col col-lg-4 text-center m-2 "><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>           
@@ -110,28 +110,28 @@ include_once('../templates/header.php');
         }
     </script>
     <!-- JQUERY -->
-            <script
-                src         ="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin ="anonymous">
-            </script>
+    <script
+        src         ="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin ="anonymous">
+    </script>
 
-            <!-- JAVASCRIPT -->
-            <script 
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
-                crossorigin="anonymous">
-            </script>
-            <script 
-                src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-                crossorigin="anonymous">
-            </script>
-            
-            <script 
-                type="text/javascript" 
-                src="../assets/userScript.js">
-            </script>
+    <!-- JAVASCRIPT -->
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous">
+    </script>
+    
+    <script 
+        type="text/javascript" 
+        src="../assets/userInscriptionScript.js">
+    </script>
 <?php
 }
 
@@ -157,7 +157,12 @@ include_once('../templates/header.php');
             <h3 class="titre m-3">Connexion</h3>
             <div class="mail col-sm-5 mt-2 ">
                 <input required id="myTextFocusEmail" class="col-4 col-lg-12 text-center form-control-plaintext rounded" type="email" name="email"  placeholder="Saisir votre email"> <br/>
-                <hr class="m-0">
+                <div id="email_verif" class="alert alert-danger text-center">
+                    <span class="email">
+                        <span class="email_exist"><i class="fas fa-check-circle"></i></span>
+                        <span class="email_not_exist"><i class="fas fa-exclamtion-circle"></i>Cet adresse e-mail n'existe pas !</span>
+                    </span>
+                </div>
                 
             </div>
             <div class="mail col-sm-5 mt-2">
@@ -171,10 +176,33 @@ include_once('../templates/header.php');
             </a>
         </div>
         <script>
-        window.onload = function(){
-            document.getElementById('myTextFocusEmail').focus();
-        }
-    </script>
+            window.onload = function(){
+                document.getElementById('myTextFocusEmail').focus();
+            }
+        </script>
+        <!-- JQUERY -->
+        <script
+            src         ="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin ="anonymous">
+        </script>
+
+        <!-- JAVASCRIPT -->
+        <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+            crossorigin="anonymous">
+        </script>
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+            crossorigin="anonymous">
+        </script>
+        
+        <script 
+            type="text/javascript" 
+            src="../assets/userConnexionScript.js">
+        </script>
 <?php
 }
 ?>

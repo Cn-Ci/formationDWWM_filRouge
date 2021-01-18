@@ -38,20 +38,6 @@
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
             </head>
 
-            <head>
-<?php 
-include_once('../templates/header.php');
-?>
-    <title>Mobili'T - Accueil</title>
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
-        href="../assets/mainStyle.css">
-    <link
-        rel="stylesheet" 
-        type="text/css" 
-        href="../assets/footerStyle.css">
-</head>
             <body>
                 <!----------------------------------------------------------------------PAGE 1------------------------------------------------------------------------->
                 <div id="page1" class="container-fluid">
