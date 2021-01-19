@@ -12,4 +12,9 @@
     } else {
         renderViewPost($Topic, $author);
     }
+
+    function getUsernameById(Int $id) {
+        $rs = ServiceViewTopic::searchUserById($id);
+        return $rs['pseudo'];
+    }
 ?> 

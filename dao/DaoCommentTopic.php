@@ -27,6 +27,9 @@
             $idAuthor         = $comment->getIdAuthor();
             $idPost           = $comment->getIdTopic();
 
+            //* LAUNCH AUTO INCREMENT OF NBCOMM IN PARENTTOPIC
+            Self::incrementParentPostNbComm($idPost);
+
             try {
                 $addRequest = $db->prepare("INSERT INTO commentaire (idComm, date, contenuComm, idUsers, idTopic) VALUES (NULL, :dateComm, :contentComm, :idAuthor, :idPost)");
                 $addRequest->execute(array(
@@ -41,6 +44,46 @@
         }
 
         public static function delete(Int $idComm) {
+            $db = ConnectionMysqliDao::connect();
 
+            //* LAUNCH AUTO DECREMENT OF NBCOMM IN PARENTTOPIC
+            Self::decrementParentPostNbComm($idComm);
+
+            try {
+                $deleteRequest = $db->prepare("DELETE FROM commentaire WHERE idComm = :idComm");
+                $deleteRequest->execute(array(
+                    ":idComm" => $idComm)
+                );
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            }
+        }
+
+        public static function modify(Int $idComm) {}
+
+        public static function incrementParentPostNbComm(Int $idTopic) :Void {
+            $db = ConnectionMysqliDao::connect();
+
+            try {
+                $incrementComm = $db->prepare("UPDATE `topic` SET nbComm = (@cur_value := nbComm) + 1 WHERE idTopic = :idTopic");
+                $incrementComm->execute(array(
+                    ":idTopic" => $idTopic)
+                );
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            }
+        }
+
+        public static function decrementParentPostNbComm(int $idTopic) :Void {
+            $db = ConnectionMysqliDao::connect();
+
+            try {
+                $incrementComm = $db->prepare("UPDATE `topic` SET nbComm = (@cur_value := nbComm) - 1 WHERE idTopic = :idTopic");
+                $incrementComm->execute(array(
+                    ":idTopic" => $idTopic)
+                );
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            }
         }
     }

@@ -28,6 +28,7 @@ body{
     padding: 0px;
     border : 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
-/* PAGINATION */
+#options{
+    float: right;
+    color: black;
+}

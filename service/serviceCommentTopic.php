@@ -23,13 +23,14 @@ class ServiceCommentTopic {
             $commentaires = $dao->searchAllCommentByIdTopic($idTopic);
 
             foreach ($commentaires as $commentaire) {
+                $idComm   = $commentaire['idComm'];
                 $idAuthor = $commentaire['idUsers'];
                 $content  = $commentaire['contenuComm'];
                 $idTopic  = $commentaire['idTopic'];
                 $date     = new Datetime($commentaire['date']);
                 
                 $commentaire = new Commentaire();
-                $commentaire->setIdAuthor($idAuthor)->setContenuComm($content)->setDate($date)->setIdTopic($idTopic);
+                $commentaire->setIdComm($idComm)->setIdAuthor($idAuthor)->setContenuComm($content)->setDate($date)->setIdTopic($idTopic);
                 array_push($dataToObject, $commentaire);
             }
         } catch (DaoSqlException $ServiceException) {
@@ -37,5 +38,18 @@ class ServiceCommentTopic {
         }
 
         return $dataToObject;
+    }
+
+    public static function modifyComment(Int $idComment) {
+
+    }
+
+    public function deleteComment(Int $idComment) :Void {
+        try {
+            $dao = new DaoCommentTopic();
+            $dao->delete($idComment);
+        } catch (DaoSqlException $ServiceException) {
+            throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+        }
     }
 }
