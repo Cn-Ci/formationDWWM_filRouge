@@ -74,6 +74,7 @@ Class UserConnectService {
                 $_SESSION['nom'] = $data->getNom();
                 $_SESSION['email'] = $data->getEmail();
                 $_SESSION['profil'] = $data->getProfil();
+                header('location: ../controller/controleurMain.php');
                 return true;
             }
             else 
