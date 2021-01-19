@@ -39,7 +39,7 @@ footer {
 
 .news {
     text-align              : center !important;
-    background-color        : rgba(0, 0, 0, 0.6);
+    background-color        : rgba(0, 0, 0, 0.3);
     margin-top              : 10px;
     padding-bottom          : 5px;
     border-radius           : 5px;
@@ -53,7 +53,7 @@ footer {
 
 .fondfoot {
     z-index                 : 10;
-    background-color        : rgba(255, 255, 255, 0.418);
+    background-color        : rgba(255, 255, 255, 0.8);
     margin-bottom           : 50px;
     margin-right            : 10px;
     margin-left             : 10px;
