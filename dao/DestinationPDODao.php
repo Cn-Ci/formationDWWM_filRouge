@@ -131,9 +131,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         $atout3=$objet->getAtout3();
         $lien=$objet->getLien();
         $extraitForum=$objet->getExtraitForum();
-        var_dump($objet);
-        echo"objet reçu dans le dao";
-        echo $idObjet;
+        
         try{$db=parent :: connect();
             if(!empty($image) && $image!=null){
                 $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, image=:image, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
