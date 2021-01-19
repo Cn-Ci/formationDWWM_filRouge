@@ -57,8 +57,16 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt->bindParam(":email", $email);
             $stmt->execute();
             $userEmail = $stmt->fetch();
-
-            return $userEmail;
+            $user = new User();
+            $user->setId($userEmail['id'])
+                ->setPseudo($userEmail['pseudo'])
+                ->setEmail($userEmail['email'])
+                ->setNom($userEmail['nom'])
+                ->setPrenom($userEmail['prenom'])
+                ->setPhoto($userEmail['photo'])
+                ->setMdp($userEmail['mdp'])
+                ->setProfil($userEmail['profil']);
+            return $user;
         }
         catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";
@@ -75,17 +83,24 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $nom= $user->getNom();
             $prenom = $user->getPrenom();
             $photo = $user->getPhoto();
-    
+            
             $newConnect = new ConnectionMysqliDAO();
             $db = $newConnect->connect();
             
-            $stmt = $db->prepare( "UPDATE user SET pseudo = :pseudo , email= :email , nom= :nom, photo = :photo where email = :email");
-
+            
+            if(!empty($photo) && $photo!=null){
+                $stmt = $db->prepare( "UPDATE user SET pseudo = :pseudo , email= :email , nom= :nom, photo = :photo where email = :email"); 
+            }elseif(empty($photo) && $photo ==null){
+                $stmt = $db->prepare( "UPDATE user SET pseudo = :pseudo , email= :email , nom= :nom where email = :email");             
+            }
             $stmt->bindParam(':pseudo', $pseudo);           
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
-            $stmt->bindParam(':photo', $photo);
+            if(!empty($photo) && $photo!=null){
+                $stmt->bindParam(':photo', $photo);
+            }
+            
 
             $stmt->execute();
             

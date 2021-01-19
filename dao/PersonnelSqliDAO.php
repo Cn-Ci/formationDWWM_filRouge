@@ -20,7 +20,7 @@
 
             //* ADD   
             try {
-                $addRequest = $db->prepare("INSERT INTO topic (id, nom, prenom, emploi, description, photo, facebookLink, twitterLink, linkedinLink) VALUES (NULL, :nom, :prenom, :emp, :description, :photo, :fb, :tw, :li");
+                $addRequest = $db->prepare("INSERT INTO personnel (id, nom, prenom, emploi, description, photo, facebookLink, twitterLink, linkedinLink) VALUES (NULL, :nom, :prenom, :emp, :description, :photo, :fb, :tw, :li");
                 $addRequest->execute(array(
                     ":nom"         => $nom,
                     ":prenom"      => $prenom,
@@ -33,7 +33,7 @@
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
-                $db->close();
+                
             }
         }
          
@@ -42,7 +42,7 @@
             $db = ConnectionMysqliDao::connect();
             //* REQUETE SQL SEARCH BY ID
             try {
-                $searchByRequest = $db->prepare("SELECT * FROM topic WHERE id= :id");
+                $searchByRequest = $db->prepare("SELECT * FROM personnel WHERE id= :id");
                 $searchByRequest->execute(array(
                     ":id" => $id));
                 $result   = $searchByRequest->get_result();

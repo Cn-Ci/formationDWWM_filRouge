@@ -30,16 +30,16 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         {
             try {
             /**_ INSCRIPTION - Verification email _________**/
+            $image=$_FILES['photo']['tmp_name'];           
+            $imageaEnvoyer = file_get_contents($image);
             $user = new User;
             $user->setPseudo(htmlentities($_POST['pseudo']))
                 ->setEmail(htmlentities($_POST['email']))
                 ->setNom(htmlentities($_POST['nom']))
                 ->setPrenom(htmlentities($_POST['prenom']))
-                ->setPhoto(htmlentities($_POST['photo']))
+                ->setPhoto($imageaEnvoyer)
                 ->setMdp(htmlentities($_POST['password']));
-
-            //UserConnectService::UserVerifEmailAndHash($user,($_POST['email']));
-            //var_dump(UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])));die;
+                
             if (UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])))
                 {
                     /**_ INSCRIPTION - if email not exist et hash ______**/
@@ -103,31 +103,43 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 
  /* ****************************************** CONNEXION - Affichage formulaire modification */
     if($_GET["action"]=="modif" && isset($_SESSION['email']) ) 
-    {
-        $user = new User;
-        $user->setPseudo(htmlentities($_SESSION['pseudo']))
-            ->setEmail(htmlentities($_SESSION['email']))
-            ->setNom(htmlentities($_SESSION['nom']))
-            ->setPrenom(htmlentities($_SESSION['prenom']))
-            ->setPhoto(htmlentities($_SESSION['photo']))
-            ->setMdp(htmlentities($_SESSION['mdp']));
-
-            /**_ CONNEXION - If email not-exist ___**/ 
-            modification($user);
-        
+    {    
+            $searchEmail = new UserConnectService;
+            $user = $searchEmail->researchUserByEmail($_SESSION['email']);
+            modification($user);    
     }
     elseif($_GET["action"]=="modifierOK") 
-    {        
-        $user = new User;
-        $user->setPseudo(htmlentities($_POST['pseudo']))
-            ->setEmail(htmlentities($_POST['email']))
-            ->setNom(htmlentities($_POST['nom']))
-            ->setPrenom(htmlentities($_POST['prenom']))
-            ->setPhoto(htmlentities($_POST['photo']));
+    {    
+        var_dump($_FILES);
+        $photo = $_FILES['photo']['tmp_name'];
 
+        if($photo != null){
+
+            echo "test si il ya une photo";
+            $image=$_FILES['photo']['tmp_name'];           
+            $imageaEnvoyer = file_get_contents($image);  
+            
+            $user = new User;
+            $user->setPseudo(htmlentities($_POST['pseudo']))
+                ->setEmail(htmlentities($_POST['email']))
+                ->setNom(htmlentities($_POST['nom']))
+                ->setPrenom(htmlentities($_POST['prenom']))
+                ->setPhoto($imageaEnvoyer);
+    
             $userEdit = new UserConnectService;
             $data = $userEdit->editUser($user); 
-            
+        }elseif(empty($_POST['photo'])){
+            echo "test si il ya pas photo";
+            $user = new User;
+            $user->setPseudo(htmlentities($_POST['pseudo']))
+                ->setEmail(htmlentities($_POST['email']))
+                ->setNom(htmlentities($_POST['nom']))
+                ->setPrenom(htmlentities($_POST['prenom']))
+                ->setPhoto($image = null);
+    
+            $userEdit = new UserConnectService;
+            $data = $userEdit->editUser($user);         
+        }
         include_once('../controller/controleurMain.php');
         // "Votre modification a bien été enregistrée !"
     }
@@ -146,35 +158,6 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             } 
     } 
 
-    /* ****************************************** NEWSLETTER - Formulaire ?action=newsletter */
-    // if ($_GET['action']=="newsletter")   
-    // { 
-    //     /* :::::::::::::: NEWSLETTER - Name bouton "inscrire" ::::::::::::::*/
-    //     if (isset($_POST["envoyer"]) && isset($_POST["email"] ))
-    //     {
-    //         try 
-    //         {
-    //             /**_ NEWSLETTER - Verification email _________**/
-    //             $newsletter = new Newsletter;
-    //             $newsletter->setEmail($_POST['email']);
-    //             if (NewsletterService::addEmailNewsletter($newsletter))
-    //             {
-    //                 /**_ NEWSLETTER - if email not exist et hash ______**/
-    //                 include_once('../controller/controleurMain.php');
-    //                 // "Vous etes inscrit"
-    //             }
-    //             else 
-    //             {
-    //             /**_ NEWSLETTER - If email exist ______**/
-    //                 include_once('../controller/controleurMain.php');
-    //             }  
-    //         } 
-    //         catch (ServiceException $se){
-    //             /**_ NEWSLETTER - Affichage erreur  _______**/
-    //             inscription($se->getMessage(), $se->getCode());
-    //         } 
-    //     } 
-    // }
 } 
 
 ?>

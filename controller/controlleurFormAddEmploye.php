@@ -21,9 +21,9 @@
                     $emp = htmlentities($_POST['emploi']);
                     $desc = htmlentities($_POST['description']);
                     $photo = htmlentities($_POST['photo']);
-                    $fb = htmlentities($_POST['facebookLink']);
-                    $tw = htmlentities($_POST['twitterLink']);
-                    $li = htmlentities($_POST['linkedinLink']);
+                    $fb = htmlentities($_POST['LinkFB']);
+                    $tw = htmlentities($_POST['LinkTW']);
+                    $li = htmlentities($_POST['LinkLI']);
 
         
                     ServicePersonnel::serviceAddPersonne($nom, $prenom, $emp, $desc, $photo, $fb, $tw, $li);

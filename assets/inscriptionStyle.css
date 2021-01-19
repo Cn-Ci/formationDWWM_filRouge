@@ -33,3 +33,13 @@ background-size         : cover;
     border-color        : white;
     color               : white;
 }
+
+img#photoUser {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.form-control-plaintext {
+    text-align: center;
+}

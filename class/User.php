@@ -84,11 +84,11 @@ class User {
         return $this;
     }
 
-    public function getPhoto() :String
+    public function getPhoto() :?String
     {
         return $this->photo;
     }
-    public function setPhoto(String $photo) :Self //? Url de l'image ?
+    public function setPhoto(?String $photo) :Self //? Url de l'image ?
     {
         $this->photo = $photo;
         return $this;

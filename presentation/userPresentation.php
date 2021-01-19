@@ -27,7 +27,7 @@ include_once('../templates/header.php');
         type="text/css" 
         href="../assets/inscriptionStyle.css">
 </head>
-    <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=inscription" method="post">
+    <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=inscription" method="post" enctype="multipart/form-data">
         <h3 class="col titre mt-5 mb-5">Formulaire d'inscription</h3>
         <div class="mail col col-sm-5">
             <input required id="myTextFocusPseudo" class="col col-12 text-center form-control-plaintext" type="text" name="pseudo"  placeholder="Saisir votre pseudo"> <br/>
@@ -227,23 +227,25 @@ include_once('../templates/header.php');
         type="text/css" 
         href="../assets/inscriptionStyle.css">
 </head>
-        <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=modifierOK" method="post"> 
+        <form class="tableau text-center m-2" action="../controller/controllerUserConnect.php?action=modifierOK" method="post" enctype="multipart/form-data"> 
             <h3 class="col titre mt-5 mb-5"><i class="fas fa-pen"></i> Formulaire de modification</h3>
             <div class="mail col col-sm-5">
-                <input id="myTextFocusPseudoModif" class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="pseudo" value="<?php echo $user->getPseudo()?>" placeholder="Modifiez votre pseudo" ></br>
+                <input id="myTextFocusPseudoModif" class="col-12 col-lg-12 text-center form-control-plaintext" type="text" name="pseudo" value="<?php echo $user->getPseudo()?>" placeholder="Modifiez votre pseudo" ></br>
             </div>
             <div class="mail col col-sm-5">
-                <input readonly class="col-4 col-lg-12 text-center form-control-plaintext " type="email" name="email" value="<?php echo $user->getEmail()?>" placeholder=" Modifiez votre email" ><br/>
+                <input readonly class="col-12 col-lg-12 text-center form-control-plaintext " type="email" name="email" value="<?php echo $user->getEmail()?>" placeholder=" Modifiez votre email" ><br/>
             </div>
             <div class="mail col col-sm-5">
-                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="nom" value="<?php echo $user->getNom()?>" placeholder="Modifiez votre nom" > <br/>
+                <input class="col-12 col-lg-12 text-center form-control-plaintext" type="text" name="nom" value="<?php echo $user->getNom()?>" placeholder="Modifiez votre nom" > <br/>
             </div>
             <div class="mail col col-sm-5">    
-                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
+                <input class="col-12 col-lg-12 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
             </div>
             </div>
+            <img id="photoUser" src="data:image/jpeg;base64,<?php echo base64_encode( $user->getPhoto()) ?>" alt="">
             <div class="fichier col col-sm-5">
-                <input class="col-4 col-lg-12 text-center form-control-plaintext" type="file" name="photo" value="<?php echo $user->getPhoto()?>" placeholder="Modifiez votre photo"><br/>
+                
+                <input class="col-12 col-lg-12 text-center form-control-plaintext" type="file" name="photo" value="" placeholder="Modifiez votre photo"><br/>
                 <hr>
             </div>  
             

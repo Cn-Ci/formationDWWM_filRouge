@@ -39,6 +39,11 @@
                                     <label>Prénom *</label>
                                     <input type="text" class="form-control" name="prenom" required>
                                 </div>
+                                <!-- Photo -->
+                                <div class="form-group">
+                                    <label>Photo *</label>
+                                    <input type="file" class="form-control" name="photo" required>
+                                </div>
                                  <!-- EMPLOI -->
                                  <div class="form-group">
                                     <label>Emploi *</label>
@@ -56,12 +61,12 @@
                                 </div>
                                 <!-- LINK TWITTER -->
                                 <div class="form-group">
-                                    <label>Emploi</label>
+                                    <label>Lien Twitter</label>
                                     <input type="text" class="form-control" name="LinkTW">
                                 </div>
                                 <!-- LINK LINKEDIN -->
                                 <div class="form-group">
-                                    <label>Emploi</label>
+                                    <label>Lien Linkedin</label>
                                     <input type="text" class="form-control" name="LinkLI">
                                 </div>
 

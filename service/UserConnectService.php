@@ -20,11 +20,11 @@ Class UserConnectService {
         }  
     } 
 
-    function researchUserByEmail(User $user) 
+    function researchUserByEmail(String $email) 
     {
         try { 
             $userConnect = new UserConnectMysqliDAO;
-            $data = $userConnect->researchUserByEmail($user);
+            $data = $userConnect->researchUserByEmail($email);
             return $data;
         } 
         catch (UserException $de) {
@@ -66,9 +66,14 @@ Class UserConnectService {
         {     
             $password = $_POST['password'];
             
-            if (password_verify($password,$data['mdp']))
+            if (password_verify($password,$data->getMdp()))
             {
-                $_SESSION = $data;
+                $_SESSION['id'] = $data->getId();
+                $_SESSION['pseudo'] = $data->getPseudo();
+                $_SESSION['prenom'] = $data->getPrenom();
+                $_SESSION['nom'] = $data->getNom();
+                $_SESSION['email'] = $data->getEmail();
+                $_SESSION['profil'] = $data->getProfil();
                 return true;
             }
             else 

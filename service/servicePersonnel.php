@@ -17,7 +17,7 @@ class ServicePersonnel {
         }
     }
 
-    public static function serviceResearchPersonnelBy(Int $idTopic) :?Topic {
+    public static function serviceResearchPersonnelBy(Int $idPersonnel) :?Topic {
         try {
             $dao = new PersonnelSqliDAO();
             $data = $dao->searchBy($idTopic);
