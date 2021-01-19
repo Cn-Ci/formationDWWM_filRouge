@@ -49,8 +49,11 @@
         public  function serviceUpdateDestination(int $idDestination, string $region, string $lieu, ?string $image, string $petiteDescription, string $description,string $atout1, string $atout2, string $atout3,string $lien, string $extraitForum) {
             $destinationToModify = new Destination();
                       
-            
-            $destinationToModify->setRegion($region)->setLieu($lieu)->setPetiteDescription($petiteDescription)->setDescription($description)->setAtout1($atout1)->setAtout2($atout2)->setAtout3($atout3)->setLien($lien)->setExtraitForum($extraitForum);
+            if($image!=null){
+                $destinationToModify->setRegion($region)->setLieu($lieu)->setImage($image)->setPetiteDescription($petiteDescription)->setDescription($description)->setAtout1($atout1)->setAtout2($atout2)->setAtout3($atout3)->setLien($lien)->setExtraitForum($extraitForum);
+            }elseif(empty($image) && $image==null|| !isset($image)){
+                $destinationToModify->setRegion($region)->setLieu($lieu)->setPetiteDescription($petiteDescription)->setDescription($description)->setAtout1($atout1)->setAtout2($atout2)->setAtout3($atout3)->setLien($lien)->setExtraitForum($extraitForum);
+            }
             try {
                 $rs=DestinationPDODao::update($destinationToModify, $idDestination);
                 return $rs;
@@ -60,6 +63,7 @@
         }
 
         public  function serviceDelete(Int $idDestination) {
+            
             try {    
                 DestinationPDODao::delete($idDestination);
             } catch(DaoSqlException $ServiceException) {

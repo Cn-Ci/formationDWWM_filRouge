@@ -87,11 +87,11 @@ class Destination extends Region{
         return $this;
     }
 
-    public function getImage() :String
+    public function getImage() :?String
     {
         return $this->image;
     }
-    public function setImage(String $image) :Self //? Url de l'image ?
+    public function setImage(?String $image) :Self //? Url de l'image ?
     {
         $this->image = $image;
         return $this;

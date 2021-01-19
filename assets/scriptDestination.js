@@ -1,5 +1,5 @@
 // Afficher le formulaire d'ajout ou de modification, selon le bouton - Destination
-$('div button').click(function(e) {
+$('.buttonsDestination button').click(function(e) {
     let id = e.target.id;
     var displayForm = $("#form" + id);
     console.log("#form" + id);
@@ -11,24 +11,24 @@ $('div button').click(function(e) {
     }
 });
 
-//dynamiser l'affichage des destinations 
+//dynamiser l'affichage des destinations , au clic, on va sonder dans la base de données, 
+//toutes les destinations qui correspondent à la région cliquée
 
 
 function transmissionRegion(region){
     console.log(region);
     
-    
 }
-
 
 $('.map').ready(function(){
    $('.map a').click(function(e){
        
        let region = e.currentTarget.id;
        let url	= 'ControllerAjaxDestination.php?region='+region;
-
+      
        $.get(url, transmissionRegion(region)).done(function(data) {
            $('#textAjax').load(url);
+           
        })
        .fail(function(){
            alert("error");

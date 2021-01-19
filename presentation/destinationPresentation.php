@@ -126,13 +126,13 @@ function affichageDestination($destination, $region, $session)
                                 </h4>
                                 <!-- intro et description -->
                                 <p style="text-indent: 20px"><?php echo $dest->getPetiteDescription() ?></p>
-                                </br> <p style="text-indent: 20px" class="font-weight-bold color-228b22" > <?php echo $dest->getDescription() ?></p>
+                                </br> <p style="text-indent: 20px" class="font-weight-bold text-break" > <?php echo $dest->getDescription() ?></p>
                                 <!-- en lire plus = les atouts -->
                                 <div class="collapse multi-collapse" id="fermeture1">
                                     <div>
-                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout1() ?></p>
-                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout2() ?></p>
-                                        <p id="fermeture1" style="text-indent: 20px"><?php echo $dest->getAtout3() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px" class="text-break"><?php echo $dest->getAtout1() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px" class="text-break"><?php echo $dest->getAtout2() ?></p>
+                                        <p id="fermeture1" style="text-indent: 20px" class="text-break"><?php echo $dest->getAtout3() ?></p>
                                     </div>
                                     <!-- les boutons -->
                                     <div class="row d-flex justify-content-around ">
@@ -181,8 +181,8 @@ function buttonAjout($maj=null, $dest=null)
 { 
     if($maj){$idDestination = $dest->getIdDestination();}?>
      
-        <div class="m-4 col-5"> 
-            <?php $ajout= !$maj || $maj==null ?>
+        <div class="buttonsDestination m-4 col-5"> 
+            
             <button id="<?php if(!$maj || $maj==null){echo "AjoutDestination";}elseif($maj){echo "ModifDestination". $idDestination;} ?>" class='<?php if(!$maj || $maj==null){ echo "btn btn-outline-success";}elseif($maj==true){echo "btn btn-outline-danger";}else{}?>'> 
                 <?php if(!$maj || $maj==null){ echo "+ Ajouter un article ";}elseif($maj){echo "Modifier l'article";}else{};?>
             </button> 
@@ -228,48 +228,11 @@ function buttonAjout($maj=null, $dest=null)
                                     <?php if($maj==true){ ?>
                                          <img id='imageDestinationModif' src='data:image/jpeg;base64,<?php echo base64_encode( $dest->getImage()) ?>' />
                                     <?php } ?>
-                                </div>
-                                <div class="col-10 offset-1">
-                                <?php if(!$maj){ ?>
                                     <label for="image" class="mt-2">Photo</label>
                                     <input type="file" name="image" placeholder="bla" class="form-control h-100 " id="image" alt="Veillez téléverser une photo illustrant le lieu proposé" accept="image/png, image/jpeg">
                                     
-                                <?php }elseif($maj==true){ ?>
-                                    <!-- bouton pour le modal -->
-                                    <div class="row">
-                                        <div>Modification de l'image</div>
-                                        <div>   
-                                            <button id="<?php echo "boutonModifImageDestination".$idDestination?> type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#formulaireModifPhoto">
-                                                <img id="penUpdateDestination" src="../img/penUpdate.png">
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!-- modal pour modifier l'image de destination -->
-                                    <div class="modal fade" id="formulaireModifPhoto" tabindex="-1" role="dialog" aria-labelledby="ModificationdelaPhoto" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="TitreModificationdelaPhoto">Modification de l'image qui illustre la destination</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="<?php echo '../controller/controllerDestination.php?action=modifDestinationPhoto?id='.$idDestination ?>" method="POST" enctype="multipart/form-data">
-                                                    <label for="<?php echo "majPhotoDestination".$idDestination ?>" > Nouvelle photo :</label>
-                                                        <span><input type="file" name="modifiedImage" placeholder="bla" class="form-control h-100 " id="<?php echo "majPhotoDestination".$idDestination ?>" alt="Veillez téléverser une photo illustrant le lieu proposé" /><span>
-                                                    
-                                                    <button type="submit" class="btn btn-outline-primary mt-5">Enregistrer</button>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer align-items-center">
-                                                <img id="logoModifDestination" src="../img/logoMobiliT.png">
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>               
@@ -303,7 +266,7 @@ function buttonAjout($maj=null, $dest=null)
                         <label for="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>">Lien vers un extrait du forum </label>
                         <input type="text" class="form-control" name="extraitForum" maxlength="300" id="<?php if(!$maj){echo "extraitForum" ;}else{echo "extraitForum". $idDestination;}?>" value="<?php if($maj){echo $dest->getExtraitForum() ;}?>" placeholder="ex : www.handitourisme-champagne.org" alt="Veuillez saisir un lien pour accéder à un sujet du forum pertinent">
                     </div>
-                    <input type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;" value="<?php if(!$maj || $maj==null){ echo 'Ajouter ';}elseif($maj){echo 'Modifier';}else{};?>"></input>
+                    <input type="submit" class="btn btn-primary col-2 offset-5" style="background-color: #228b22;border: black;" value="<?php if(!$maj || $maj==null){ echo 'Ajouter ';}elseif($maj){echo 'Modifier ';}else{};?>"></input>
                 </form>
             </div>
         </div>

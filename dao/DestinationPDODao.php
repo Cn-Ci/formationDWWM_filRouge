@@ -123,6 +123,7 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         
         $region=$objet->getRegion();
         $lieu=$objet->getLieu();
+        $image= $objet->getImage();
         $petiteDescription=$objet->getPetiteDescription();
         $description=$objet->getDescription();
         $atout1=$objet->getAtout1();
@@ -134,10 +135,16 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
         echo"objet reçu dans le dao";
         echo $idObjet;
         try{$db=parent :: connect();
-            
-            $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
+            if(!empty($image) && $image!=null){
+                $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, image=:image, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
+            }elseif(empty($image) && $image ==null){
+                $stmt=$db->prepare("UPDATE destination SET region=:region, lieu=:lieu, petiteDescription=:petiteDescription, description=:description, atout1=:atout1, atout2=:atout2 , atout3=:atout3, lien=:lien, extraitForum=:extraitForum WHERE idDestination=:idDestination"); // mise à jour des données
+            }
             $stmt->bindParam(':region', $region);
             $stmt->bindParam(':lieu', $lieu);
+            if(!empty($image) && $image!=null){
+                $stmt->bindParam(':image', $image);
+            }
             $stmt->bindParam(':petiteDescription', $petiteDescription);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':atout1', $atout1);
@@ -157,9 +164,9 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
 
     //DELETE
     public  function delete(int $idDestination){
- 
-        try{$db=parent :: connect();
-            $stmt=$db->prepare("DELETE * FROM destination WHERE idDestination=:idDestination"); // on supprime les données
+        try{
+            $db=parent :: connect();
+            $stmt=$db->prepare("DELETE FROM destination WHERE idDestination=:idDestination"); // on supprime les données
             $stmt->bindParam(':idDestination', $idDestination);
             $rs=$stmt->execute();
                     

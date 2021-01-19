@@ -1,7 +1,7 @@
 <?php
     require_once('../service/ServiceDestination.php');
     require_once('../presentation/destinationPresentation.php'); 
-
+    
     session_start();
 
     
@@ -24,5 +24,9 @@
         }
     }
     
-    
+?>
+    <script 
+        type="text/javascript" 
+        src="../assets/scriptDestination.js">
+    </script>
     

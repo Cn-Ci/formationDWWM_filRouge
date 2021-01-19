@@ -32,7 +32,7 @@
                 $lien      = htmlentities($_POST['lien']);
                 $extraitForum   = htmlentities($_POST['extraitForum']);
                 $idUser = $_SESSION['id'];
-                $image=$_FILES['image']['tmp_name'];           
+                $image=$_FILES['image']['tmp_name'];      //     
                 $imageaEnvoyer = file_get_contents($image);
                 
                 try {
@@ -43,9 +43,8 @@
             }
         }elseif($_GET['action']=="suppDestination"){
             if (!empty($_GET['id'])) {
-                echo($_GET['id']);
-                $idDestination = htmlentities($_GET['id']);
                 
+                $idDestination = htmlentities($_GET['id']);
                 try {
                     ServiceDestination::serviceDelete($idDestination);
                     
@@ -54,8 +53,7 @@
                 }    
             }
         }elseif($_GET['action']=="modifDestination") {
-            if (!empty($_POST['image']) || 
-                    (!empty($_POST['lieu'])             && isset($_POST['lieu'])                &&
+            if ((!empty($_POST['lieu'])             && isset($_POST['lieu'])                &&
                     !empty($_POST['region'])            && isset($_POST['region'])              &&
                     !empty($_POST['petiteDescription']) && isset($_POST['petiteDescription'])   &&
                     !empty($_POST['description'])       && isset($_POST['description'])         &&
@@ -66,7 +64,6 @@
                     $idDestination = $_GET['id'];
                     $lieu   = htmlentities($_POST['lieu']);
                     $region = htmlentities($_POST['region']);
-                    $image  = file_get_contents($_POST['image']);
                     $petiteDescription  = htmlentities($_POST['petiteDescription']);
                     $description    = htmlentities($_POST['description']);
                     $atout1    = htmlentities($_POST['atout1']);
@@ -74,11 +71,33 @@
                     $atout3    = htmlentities($_POST['atout3']);
                     $lien      = htmlentities($_POST['lien']);
                     $extraitForum   = htmlentities($_POST['extraitForum']);
-                    $image=$_FILES['image']['tmp_name'];           
-                    $imageaEnvoyer = file_get_contents($image);
+                    if(isset($_POST['image']) && !empty($_POST['image'])){
+                        $image=$_FILES['image']['tmp_name'];           
+                        $imageaEnvoyer = file_get_contents($image);
+                    }
+                    
+                    
                 
                 try {
-                    ServiceDestination :: serviceUpdateDestination($idDestination, $region,  $lieu,  $image,  $petiteDescription,  $description, $atout1,  $atout2,  $atout3, $lien,  $extraitForum, $_SESSION) ;
+                    if(isset($_POST['image']) && !empty($_POST['image'])){
+                        ServiceDestination :: serviceUpdateDestination($idDestination, $region,  $lieu,  $imageaEnvoyer,  $petiteDescription,  $description, $atout1,  $atout2,  $atout3, $lien,  $extraitForum) ;
+                    }elseif(!isset($imageaEnvoyer)){
+                        ServiceDestination :: serviceUpdateDestination($idDestination, $region,  $lieu, $image=null,  $petiteDescription,  $description, $atout1,  $atout2,  $atout3, $lien,  $extraitForum) ;
+                    }
+                } catch(ServiceException $ce) {
+                    echo 'Error';
+                }
+            }
+        }elseif($_GET['action']=="modifDestinationPhoto") {
+            if (isset($_POST) && !empty($_POST['image'])    &&
+                isset($_GET)    && !empty($_GET)    && isset($_GET['id'])){
+                    
+                    $image=$_FILES['image']['tmp_name'];           
+                    $imageaEnvoyer = file_get_contents($image);
+                    echo('coucou');
+                
+                try {
+                    ServiceDestination :: serviceUpdateDestinationPhoto($idDestination, $region,  $lieu,  $image,  $petiteDescription,  $description, $atout1,  $atout2,  $atout3, $lien,  $extraitForum, $_SESSION) ;
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }
@@ -87,3 +106,6 @@
         }
     
     }
+
+
+    
