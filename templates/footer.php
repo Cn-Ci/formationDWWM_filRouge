@@ -17,7 +17,7 @@ include_once('header.php');
         <h2> Newsletter </h2>
         <h4> Inscrivez-vous 
             </br>
-            pour recevoir nos meilleurs offres !
+            pour recevoir nos meilleures offres !
         </h4>
 
         <div class="fondfoot">
@@ -43,18 +43,18 @@ include_once('header.php');
             <div class="col-12 col-lg-4 text-center p-2">
                 Navigation
                 <hr class="hrcon mt-2 mb-2">
-                <p><a href="../filrouge2/controller/controleurMain.php">Accueil</a></p>
-                <p><a href="../orga.php">Organisation</a></p>
-                <p><a href="../filrouge2/controller/controllerDestination.php">Destinations</a></p>
-                <p><a href="../filrouge2/controller/controleurTopic.php?action=showAllTopic">Forum</a> </p>
+                <p><a href="../controller/controleurMain.php">Accueil</a></p>
+                <p><a href="../presentation/orga.php">Organisation</a></p>
+                <p><a href="../controller/controllerDestination.php">Destinations</a></p>
+                <p><a href="../controller/controleurTopic.php?action=showAllTopic">Forum</a> </p>
             </div>
 
             <!-- colonne 2 -->
             <div class="col-12 col-lg-4 text-center p-2 text-black-100">
                 Aide
                 <hr class="hrcon mt-2 mb-2">
-                <p><a href="../filrouge2/controller/controllerUserConnect.php?action=afficherInscription">S'inscrire</a></p>
-                <p><a href="../filrouge2/controller/controllerUserConnect.php?action=connexion">Se connecter</a></p>
+                <p><a href="../controller/controllerUserConnect.php?action=afficherInscription">S'inscrire</a></p>
+                <p><a href="../controller/controllerUserConnect.php?action=connexion">Se connecter</a></p>
             </div>
 
             <!-- colonne 3 -->

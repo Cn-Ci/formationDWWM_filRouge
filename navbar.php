@@ -114,7 +114,9 @@ include_once('../templates/header.php');
 	}
 	.whiteColor, a {
 		color    : white;
+		text-decoration:none;
 	}
+
 	#BoutonBurgermenuTab{
 		width     : 30px;
 		height    : 30px;
