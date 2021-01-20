@@ -17,18 +17,13 @@ class ServicePersonnel {
         }
     }
 
-    public static function serviceResearchPersonnelBy(Int $idPersonnel) :?Personnem {
+    public static function serviceResearchPersonnelBy(Int $idPersonnel) :?Personnel {
         try {
-            $dao = new PersonnelSqliDAO();
-            $data = $dao->searchBy($idTopic);
+            $personnel = ( new PersonnelSqliDAO())->searchBy($idPersonnel);
+            return $personnel;
         } catch (DaoSqlException $ServiceException) {
             throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
         }
-
-        $Personnel = new Personnel();
-        $Personnel->setId($data['id'])->setNom($data['nom'])->setPrenom($data['prenom'])->setEmploi($data['emploi'])->setDescription($data['description'])->setPhoto($data['photo'])->setFbLink($data['facebookLink'])->setTwLink($data['twitterLink'])->setLiLink($data['linkedinLink']);
-
-        return $Personnel;
     }
 
     public static function searchAllPersonnels() : Array {

@@ -58,7 +58,6 @@ class DestinationPDODao extends ConnectionMysqliDao implements interfaceDAO{
                 
                 $stmt->closeCursor();
                 
-        
                 return $dest;
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());

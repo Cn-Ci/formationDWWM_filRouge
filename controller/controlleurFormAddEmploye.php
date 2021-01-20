@@ -4,39 +4,23 @@
     include_once('../service/ServicePersonnel.php');
     
 
-    if (isset($_GET)) {
-        if ($_GET['action'] == 'ajouter') {
+    if (isset($_GET) && isset($_GET['action'])  && !empty ($_GET['action'])) {
+        if (isset($_GET['id']) && !empty($_GET['id']) && $_GET['action']=="modifier") {
             try{
-                renderAddForm();
+                
+                $personnel = ServicePersonnel :: serviceResearchPersonnelBy($_GET['id']);
+                renderForm($personnel);
+
             } 
             catch (ServiceException $se){
                 renderAddForm($se->getMessage(), $se->getCode());
-            }
-        
-            if (isset($_POST["add"]) )
-            {  
-                try{
-                    $nom = htmlentities($_POST['nom']);
-                    $prenom =htmlentities($_POST['prenom']);
-                    $emp = htmlentities($_POST['emploi']);
-                    $desc = htmlentities($_POST['description']);
-                    $photo = htmlentities($_POST['photo']);
-                    $fb = htmlentities($_POST['LinkFB']);
-                    $tw = htmlentities($_POST['LinkTW']);
-                    $li = htmlentities($_POST['LinkLI']);
+            }  
+        }elseif($_GET['action']=="ajouter"){
 
-        
-                    ServicePersonnel::serviceAddPersonne($nom, $prenom, $emp, $desc, $photo, $fb, $tw, $li);
-                } 
-                catch (ServiceException $se){
-                    renderAddForm($se->getMessage(), $se->getCode());
-                }
-            }
+            renderForm($personnel=null);
         }
     } 
     
-    if ($_GET['action'] == 'modify') {
-        renderModifyForm();
-    }
+    
     
 ?> 

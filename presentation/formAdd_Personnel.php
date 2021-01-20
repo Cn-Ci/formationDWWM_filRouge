@@ -17,60 +17,60 @@
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
             crossorigin="anonymous">
     </head>
-
+    
     <body>
         <?php
             //* FORMULAIRE AJOUT PERSONNEL
-            function renderAddForm() :Void {
+            function renderForm(?Personnel $personnel) :Void {
                 ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
-                            <h1 class="text-center">Formulaire Ajout</h1>
-                            <form action="../controller/controlleurFormAddEmploye.php?action=ajouter" method="post">
+                            <h1 class="text-center"><?php if($personnel){ echo "Formulaire de modification ";}else{echo "Formulaire Ajout";} ?></h1>
+                            <form action="../controller/controlleurFormAddEmploye.php?action=<?php if($personnel){ echo "modifier?id=". $personnel->getId() ;}else{echo "ajouter" ;}?>" method="post">
                                 <!-- NOM -->
                                 <div class="form-group">
                                     <label>Nom *</label>
-                                    <input type="text" class="form-control" name="nom" required>
+                                    <input type="text" class="form-control" name="nom" <?php if($personnel){ echo "value=". $personnel->getNom() ;}?> required>
                                 </div>
                                 <!-- PRENOM -->
                                 <div class="form-group">
                                     <label>Prénom *</label>
-                                    <input type="text" class="form-control" name="prenom" required>
+                                    <input type="text" class="form-control" name="prenom" <?php if($personnel){ echo "value=". $personnel->getPrenom() ;}?> required>
                                 </div>
                                 <!-- Photo -->
                                 <div class="form-group">
                                     <label>Photo *</label>
-                                    <input type="file" class="form-control" name="photo" required>
+                                    <input type="text" class="form-control" name="photo" <?php if($personnel){ echo "value=". $personnel->getPhoto() ;}?> required>
                                 </div>
                                  <!-- EMPLOI -->
                                  <div class="form-group">
                                     <label>Emploi *</label>
-                                    <input type="text" class="form-control" name="emploi" required>
+                                    <input type="text" class="form-control" name="emploi" <?php if($personnel){ echo "value=". $personnel->getEmploi() ;}?> required>
                                 </div>
                                 <!-- DESCRIPTION -->
                                 <div class="form-group">
                                     <label>Description *</label>
-                                    <input type="textarea" class="form-control" name="description" required>
+                                    <input type="textarea" class="form-control" name="description" <?php if($personnel){ echo "value=". $personnel->getDescription() ;}?> required>
                                 </div>
                                 <!-- LINK FACEBOOK -->
                                 <div class="form-group">
                                     <label>Lien facebook</label>
-                                    <input type="text" class="form-control" name="LinkFB">
+                                    <input type="text" class="form-control" name="LinkFB" <?php if($personnel){ echo "value=". $personnel->getFbLink() ;}?> >
                                 </div>
                                 <!-- LINK TWITTER -->
                                 <div class="form-group">
                                     <label>Lien Twitter</label>
-                                    <input type="text" class="form-control" name="LinkTW">
+                                    <input type="text" class="form-control" name="LinkTW" <?php if($personnel){ echo "value=". $personnel->getTwLink() ;}?>>
                                 </div>
                                 <!-- LINK LINKEDIN -->
                                 <div class="form-group">
                                     <label>Lien Linkedin</label>
-                                    <input type="text" class="form-control" name="LinkLI">
+                                    <input type="text" class="form-control" name="LinkLI" <?php if($personnel){ echo "value=". $personnel->getLiLink() ;}?> >
                                 </div>
 
-                                <input name="add" type="submit" class="btn btn-primary"></input>
+                                <input name="<?php if($personnel){ echo "modifier" ;}else{echo "ajouter";}?>" type="submit" class="btn btn-primary"></input>
                             </form>
                         </div>
                         <div class="col-sm-4"></div>
@@ -78,59 +78,7 @@
                 </div>
                 <?php 
             }
-            //* FORMULAIRE MODIF PERSONNEL
-            function renderModifyForm(String $nom, String $prenom, String $emp, String $desc, ?string $fb, ?string $tw, ?string $li) :Void {
-                ?>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
-                            <h1 class="text-center">Formulaire Modif</h1>
-                            <form action="../Controleur/controleur_Employe.php" method="post">
-                                <!-- NOM -->
-                                <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" name="nom" value="<?php echo $nom ?>" required>
-                                </div>
-                                <!-- PRENOM -->
-                                <div class="form-group">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" name="prenom" value="<?php echo $prenom ?>" required>
-                                </div>
-                                <!-- EMPLOI -->
-                                <div class="form-group">
-                                    <label for="Emp">Emploi</label>
-                                    <input type="text" class="form-control" name="emploi" value="<?php echo $emp ?>" required>
-                                </div>
-                                <!-- DESCRIPTION -->
-                                <div class="form-group">
-                                    <label>Description *</label>
-                                    <input type="textarea" class="form-control" name="description" value="<?php echo $desc?>" required>
-                                </div>
-                                <!-- LINK FACEBOOK -->
-                                <div class="form-group">
-                                    <label>Lien facebook</label>
-                                    <input type="text" class="form-control" name="LinkFB"  value="<?php echo $fb?>">
-                                </div>
-                                <!-- LINK TWITTER -->
-                                <div class="form-group">
-                                    <label>Emploi</label>
-                                    <input type="text" class="form-control" name="LinkTW"  value="<?php echo $tw?>">
-                                </div>
-                                <!-- LINK LINKEDIN -->
-                                <div class="form-group">
-                                    <label>Emploi</label>
-                                    <input type="text" class="form-control" name="LinkLI"  value="<?php echo $li?>">
-                                </div>
-
-                                <input name="modify" type="submit" class="btn btn-primary mb-3" value="Modifier"/>
-                            </form>
-                        </div>
-                        <div class="col-sm-4"></div>
-                    </div>
-                </div>
-                <?php 
-            }
+           
         ?> 
     </body>
 </html>

@@ -37,25 +37,28 @@
             }
         }
          
-        public function searchBy(String $id) :?Array {
+        public function searchBy(String $id) :?Personnel {
             //* CONNECT DB
             $db = ConnectionMysqliDao::connect();
             //* REQUETE SQL SEARCH BY ID
             try {
-                $searchByRequest = $db->prepare("SELECT * FROM personnel WHERE id= :id");
-                $searchByRequest->execute(array(
-                    ":id" => $id));
-                $result   = $searchByRequest->get_result();
-                $data     = $result->fetch_array(MYSQLI_ASSOC);
+                $stmt   = $db->prepare("SELECT * FROM personnel WHERE id= :id");
+                $stmt->bindParam(":id" , $id);
+                $stmt->execute();
+                $data   = $stmt->fetch();
 
-                
+                $personnel = new Personnel();
+                $personnel->setId($data['id'])->setNom($data['nom'])->setPrenom($data['prenom'])->setEmploi($data['emploi'])->setDescription($data['description'])->setPhoto($data['photo'])->setFbLink($data['facebookLink'])->setTwLink($data['twitterLink'])->setLiLink($data['linkedinLink']);
+
+                $stmt->closeCursor();
+
+                return $personnel;
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
-                $result->free();
-                $db->close();
+                
     
-                return $data;
+                
             }
         }
 
