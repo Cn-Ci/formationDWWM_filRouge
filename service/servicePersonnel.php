@@ -17,7 +17,7 @@ class ServicePersonnel {
         }
     }
 
-    public static function serviceResearchPersonnelBy(Int $idPersonnel) :?Topic {
+    public static function serviceResearchPersonnelBy(Int $idPersonnel) :?Personnem {
         try {
             $dao = new PersonnelSqliDAO();
             $data = $dao->searchBy($idTopic);
@@ -29,5 +29,15 @@ class ServicePersonnel {
         $Personnel->setId($data['id'])->setNom($data['nom'])->setPrenom($data['prenom'])->setEmploi($data['emploi'])->setDescription($data['description'])->setPhoto($data['photo'])->setFbLink($data['facebookLink'])->setTwLink($data['twitterLink'])->setLiLink($data['linkedinLink']);
 
         return $Personnel;
+    }
+
+    public static function searchAllPersonnels() : Array {
+        try{
+            $datas = (new PersonnelSqliDAO())->searchAllPersonnel();
+            return $datas;
+
+        }catch(DaoSqlException $ServiceException){
+            throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+        }
     }
 }

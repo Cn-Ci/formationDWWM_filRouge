@@ -1,5 +1,6 @@
 <?php 
     class Personnel {
+        private $id;
         private $nom;
         private $prenom;
         private $emploi;
@@ -72,6 +73,26 @@
         public function setLiLink($liLink) :Self {
             $this->liLink = $liLink;
             return $this;
+        }
+
+        /**
+         * Get the value of id
+         */ 
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        /**
+         * Set the value of id
+         *
+         * @return  self
+         */ 
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
         }
     }
 ?> 

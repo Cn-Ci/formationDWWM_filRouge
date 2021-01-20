@@ -1,11 +1,18 @@
 <?php 
-    require_once('../presentation/formAdd_Personnel.php');
+    require_once('../presentation/personnelPresentation.php');
+    require_once('../service/ServicePersonnel.php');
+
+    session_start();
+    $_SESSION['profil']="administrateur";
+    $personnels = ServicePersonnel :: searchAllPersonnels();
+    afficherPersonnel($personnels);
     
 
+        if(isset($_POST) && !empty($_POST)){
             try {
             /**_ INSCRIPTION - Verification email _________**/
-            $employe = new employe;
-            $employe->setNom(htmlentities($_POST['nom']))
+            $personnel = new Personnel;
+            $personnel->setNom(htmlentities($_POST['nom']))
                 ->setPrenom(htmlentities($_POST['prenom']))
                 ->setEmploi(htmlentities($_POST['emp']))
                 ->setDescription(htmlentities($_POST['description']))
@@ -14,7 +21,7 @@
                 ->setLINKTW(htmlentities($_POST['tw']))
                 ->setLINKLI(htmlentities($_POST['li']));
 
-            serviceAddPersonne($employe);
+            serviceAddPersonne($personnel);
             }
             catch (ServiceException $se){
                 /**_ INSCRIPTION - Affichage erreur  _______**/
@@ -22,4 +29,6 @@
 
                 inscription($se->getMessage(), $se->getCode());
             } 
+        }
+            
          

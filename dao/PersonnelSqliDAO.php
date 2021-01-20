@@ -47,6 +47,8 @@
                     ":id" => $id));
                 $result   = $searchByRequest->get_result();
                 $data     = $result->fetch_array(MYSQLI_ASSOC);
+
+                
             } catch (PDOException $DaoException) {
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             } finally {
@@ -54,6 +56,35 @@
                 $db->close();
     
                 return $data;
+            }
+        }
+
+        public function searchAllPersonnel() :?Array {
+            // CONNECTION DB
+            $db = ConnectionMysqliDao :: connect();
+
+            //REQUETE SQL SEARCHALL
+            try{
+                $query    = $db->prepare("SELECT * FROM personnel ");
+                $query    ->execute();
+                $data         = $query->fetchAll();
+                
+                $i=0;
+                foreach($data as $key=>$value){
+                    
+                    $personnel= new Personnel();
+                    $personnel->setId($data[$i]['id'])->setNom($data[$i]['nom'])->setPrenom($data[$i]['prenom'])->setEmploi($data[$i]['emploi'])->setDescription($data[$i]['description'])->setPhoto($data[$i]['photo'])->setFbLink($data[$i]['facebookLink'])->setTwLink($data[$i]['twitterLink'])->setLiLink($data[$i]['linkedinLink']);
+                    $tableauPersonnels[$i]=$personnel;
+                    $i++;
+                }
+
+            }catch (PDOException $DaoException){
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCOde());
+            }finally{
+                
+                $query->closeCursor();
+
+                return $tableauPersonnels;
             }
         }
     }
