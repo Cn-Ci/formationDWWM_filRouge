@@ -2,8 +2,7 @@
     require_once('../presentation/personnelPresentation.php');
     require_once('../service/ServicePersonnel.php');
 
-    session_start();
-    $_SESSION['profil']="administrateur";
+    
     $personnels = ServicePersonnel :: searchAllPersonnels();
     afficherPersonnel($personnels);
     

@@ -24,9 +24,9 @@ function afficherPersonnel(array $personnels){
             </div>
             <?php if($_SESSION['profil'] == 'administrateur'){
                 ?>
-            <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
-                <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
-            </a>
+                <a href='../controller/controlleurFormAddEmploye.php?action=modify'>
+                    <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le personnel </button>           
+                </a>
             <?php } ?>
             <hr>
         </div>
