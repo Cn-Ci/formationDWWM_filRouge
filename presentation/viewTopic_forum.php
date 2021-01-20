@@ -47,7 +47,7 @@
                         <div class="col-1"></div>
 
                         <div id="blockContent" class="col p-0">
-                            <div id='title' class="p-3">
+                            <div id='title' class="p-3 text-center">
                                 <?php echo $Topic->getTitreTopic(); ?>
                             </div>
 
@@ -55,7 +55,7 @@
                                 <?php echo html_entity_decode($Topic->getContentTopic()); ?>
                             </div>
 
-                            <div id='infoBlock' class='p-3'>
+                            <div id='infoBlock' class='p-1'>
                                 <p id='info'>
                                     <span>Créer le : <?php echo $Topic->datetimeToString($Topic->getDateTopic()); ?></span>
                                     <span id='author'>Auteur : <?php echo $Author['pseudo'] ?></span>
@@ -79,7 +79,7 @@
                                             <?php echo $commentaire->getContenuComm(); ?>
                                         </div>
 
-                                        <div id='infoBlock' class='p-3'>
+                                        <div id='infoBlock' class='p-1'>
                                             <p id='info'>
                                                 <span>Créer le : <?php echo $commentaire->datetimeToString($commentaire->getDate()); ?></span>
                                                 <span id='author'>Auteur : <?php echo 'test'; ?></span>

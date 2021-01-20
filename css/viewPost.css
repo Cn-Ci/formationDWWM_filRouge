@@ -10,13 +10,13 @@ body{
 }
 #title{
     border-bottom   : 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #28a745;
-    color           : white;
+    border: 2px solid #28a745;
+    color           : #28a745;
 }
 #infoBlock{
     bottom: 0px;
-    background-color: #28a745;
-    color:white;
+    color:#28a745;
+    border: 2px solid #28a745;
 }
 #info {
     margin-bottom: 0px;
