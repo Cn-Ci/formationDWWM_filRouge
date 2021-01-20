@@ -190,7 +190,7 @@ include_once('../templates/header.php');
 		#BoutonBurgermenuTab{
 			position: absolute;
 			z-index : 999;
-			width   : 5%;
+			width   : 10%;
 			height  : 10px;
 			cursor  : pointer;
 		} 

@@ -93,7 +93,7 @@ function footer(){ ?>
 function boutonFrance(){ ?>
         
             <!-- Image de la France -->
-            <div id="divContenantFranceMap" class="col-6 offset-3 mb-2">
+            <div id="divContenantFranceMap" class="col-12 col-md-6 ">
                 <div id="les4img" class="col-12 mb-2">
                     <center>
                         <?php   include('../presentation/cmap/carte.html') ?>
@@ -160,10 +160,10 @@ function affichageDestination($destination, $region, $session)
 
                     <!-- lien forum + lien exploration -->
                     <div class="forumLien row col-12">
-                        <div class="forum text-center col-10">
+                        <div class="forum text-center col-6 col-md-10">
                             <a href ="<?php echo $dest->getExtraitForum() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">Accéder au Forum</button> </a>
                         </div>
-                        <div class="bouton text-center col-2"> 
+                        <div class="bouton text-center col-5 col-md-2"> 
                             <a href ="<?php echo $dest->getLien() ?>"><button type="button" class="btn btn-outline-success color-228B22" target="_blank">M'y rendre</button> </a>
                         </div>
                     </div>

@@ -79,10 +79,11 @@ label.photoDestination {
 /* Carte interactive */
 #divContenantFranceMap{
     height: auto;
+    margin: auto;
 }
 .map__image{
-    width: 75%;
-    height:75%;
+    width: 100%;
+    height:auto;
 }
 
 .map__image path{
@@ -101,11 +102,6 @@ label.photoDestination {
     
 }
 
-
-
-
-
-
 label span input {
     z-index: 999;
     line-height: 0;
@@ -120,4 +116,13 @@ label span input {
     _cursor: hand;
     margin: 0;
     padding:0;
+}
+
+
+/*********************** Media Queries */
+@media (min-width: 992px) {
+    .map__image{
+        width: 75%;
+        height:75%;
+    }
 }

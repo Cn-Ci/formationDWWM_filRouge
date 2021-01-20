@@ -22,10 +22,10 @@ include_once('header.php');
 
         <div class="fondfoot">
             <form id="form" method="post" action="">
-                <div class="mail row col-6">
+                <div class="mail row col-12 col-md-6">
                     <input type="text" id="email" name="email" size="25" class="text-center form-control-plaintext rounded m-1" placeholder="Votre adresse e-mail"/>
                 </div>
-                <input class="col-3 btn btn-success mt-2" id="btn-newsletter" type="submit" name="envoyer"/> 
+                <input class="col-6 col-md-3 btn btn-success mt-2" id="btn-newsletter" type="submit" name="envoyer"/> 
                 <div id="emailNewsletter_verif">
                     <span class="emailNewsletter">
                         <span class="emailNewsletter_ok">"Vous êtes inscrits à la Newsletter !</span>
