@@ -25,7 +25,10 @@ function afficherPersonnel(array $personnels){
             <?php if($_SESSION['profil'] == 'administrateur'){
                 ?>
                 <a href='../controller/controlleurFormAddEmploye.php?action=modifier&id=<?= $personne->getId() ?>'>
-                    <button type="submit" class="btn-warning col-7 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i> Modifier le profil </button>           
+                    <button type="submit" class="btn btn-outline-success col-1 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i>  </button>           
+                </a>
+                <a href='../controller/controllerPersonnel.php?action=supprimer&id=<?= $personne->getId() ?>'>
+                    <button type="submit" class="btn btn-outline-danger col-1 col-lg-3"><i class="fas fa-trash-alt"></i> </button>           
                 </a>
             <?php } ?>
             <hr>

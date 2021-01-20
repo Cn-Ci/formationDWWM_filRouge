@@ -5,13 +5,12 @@ require_once '../service/ServiceException.php';
 require_once '../dao/PersonnelSqliDAO.php';
 
 class ServicePersonnel {
-    public static function serviceAddPersonne(String $nom, String $prenom, String $emp, String $desc, String $photo, String $fb, String $tw, String $li) :Void {
-        $Personnel = new Personnel();
-        $Personnel->setNom($prenom)->setPrenom($nom)->setEmploi($emp)->setDescription($desc)->setPhoto($photo)->setFbLink($fb)->setTwLink($tw)->setLiLink($li);
-
+    public static function addPersonnel(Personnel $personnel) :Void {
+        
         try {
             $dao = new PersonnelSqliDAO();
-            $dao->add($Personnel);
+            $dao->add($personnel);
+            
         } catch (DaoSqlException $ServiceException) {
             throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
         }
@@ -34,5 +33,21 @@ class ServicePersonnel {
         }catch(DaoSqlException $ServiceException){
             throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
         }
+    }
+
+    public static function updatePersonnel(Personnel $personnel){
+        try{
+            (new PersonnelSqliDAO())->updatePersonnelDAO($personnel);
+        }catch(DaoSqlException $ServiceException){
+            throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+        }   
+    }
+
+    public static function serviceDeletePersonnel(int $id) : void{
+        try{
+            (new PersonnelSqliDAO())->deletePersonnelDAO($id);
+        }catch(DaoSqlException $ServiceException){
+            throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+        }   
     }
 }

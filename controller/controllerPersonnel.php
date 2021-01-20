@@ -3,31 +3,20 @@
     require_once('../service/ServicePersonnel.php');
 
     
-    $personnels = ServicePersonnel :: searchAllPersonnels();
-    afficherPersonnel($personnels);
+    
     
 
-        if(isset($_POST) && !empty($_POST)){
-            try {
-            /**_ INSCRIPTION - Verification email _________**/
-            $personnel = new Personnel;
-            $personnel->setNom(htmlentities($_POST['nom']))
-                ->setPrenom(htmlentities($_POST['prenom']))
-                ->setEmploi(htmlentities($_POST['emp']))
-                ->setDescription(htmlentities($_POST['description']))
-                ->setPhoto(htmlentities($_POST['photo']))
-                ->setLinkFB(htmlentities($_POST['fb']))
-                ->setLINKTW(htmlentities($_POST['tw']))
-                ->setLINKLI(htmlentities($_POST['li']));
+        if(empty($_GET)){
+            $personnels = ServicePersonnel :: searchAllPersonnels();
+            afficherPersonnel($personnels);
+            
+        }elseif(isset($_GET)    && !empty($_GET)    &&
+                isset($_GET['action'])  && $_GET['action']=='supprimer' &&
+                isset($_GET['id'])){
+                    $id= $_GET['id'];
 
-            serviceAddPersonne($personnel);
-            }
-            catch (ServiceException $se){
-                /**_ INSCRIPTION - Affichage erreur  _______**/
-                echo "test 9 affichager page inscription KO --- ";
-
-                inscription($se->getMessage(), $se->getCode());
-            } 
-        }
+                ServicePersonnel :: serviceDeletePersonnel($id);
+                header('../controller/controleurMain.php');
+                }
             
          

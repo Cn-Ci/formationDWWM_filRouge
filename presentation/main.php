@@ -105,8 +105,9 @@
                 <div id="page3" class="container-fluid ombre">
                     
                         <?php include('../controller/controllerPersonnel.php') ?>
-
-                        
+                        <a href='../controller/controlleurFormAddEmploye.php?action=ajouter'>
+                            <button type="submit" class="btn btn-warning col-1 col-lg-3 text-center ml-5 "><i class="fas fa-user-plus"></i>  </button>           
+                        </a>
                 </div>
 
                 <!----------------------------------------------------------------------PAGE 4------------------------------------------------------------------------>

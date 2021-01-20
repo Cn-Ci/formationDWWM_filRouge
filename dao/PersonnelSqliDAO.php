@@ -5,26 +5,26 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     class PersonnelSqliDAO  {
-        public function add(Object $personnel) :Void {
-            $nom    = $personnel->getNom();
-            $prenom = $personnel->getPrenom();
-            $emp    = $personnel->getEmploi();
-            $desc   = $personnel->getDescription();
-            $photo  = $personnel->getPhoto();
-            $fb     = $personnel->getFbLink();
-            $tw     = $personnel->getTwLink();
-            $li     = $personnel->getLiLink();
-
+        public function add(Personnel $personnel) :Void {
+             $nom    = $personnel->getNom(); 
+             $prenom = $personnel->getPrenom();
+             $emploi    = $personnel->getEmploi();
+             $desc   = $personnel->getDescription();
+             $photo  = $personnel->getPhoto();
+             $fb     = $personnel->getFbLink() ;
+             $tw     = $personnel->getTwLink() ;
+             $li     = $personnel->getLiLink();
+            
             //* CONNECT DB
             $db = ConnectionMysqliDao::connect();   
 
             //* ADD   
             try {
-                $addRequest = $db->prepare("INSERT INTO personnel (id, nom, prenom, emploi, description, photo, facebookLink, twitterLink, linkedinLink) VALUES (NULL, :nom, :prenom, :emp, :description, :photo, :fb, :tw, :li");
+                $addRequest = $db->prepare("INSERT INTO personnel  VALUES (NULL, :nom, :prenom, :emploi, :description, :photo, :fb, :tw, :li)");
                 $addRequest->execute(array(
                     ":nom"         => $nom,
                     ":prenom"      => $prenom,
-                    ":emp"         => $emp,
+                    ":emploi"      => $emploi,
                     ":description" => $desc,
                     ":photo"       => $photo,
                     ":fb"          => $fb,
@@ -88,6 +88,54 @@
                 $query->closeCursor();
 
                 return $tableauPersonnels;
+            }
+        }
+
+        public function updatePersonnelDAO(Personnel $personnel){
+            $nom    = $personnel->getNom();
+            $prenom = $personnel->getPrenom();
+            $emp    = $personnel->getEmploi();
+            $desc   = $personnel->getDescription();
+            $photo  = $personnel->getPhoto();
+            $fb     = $personnel->getFbLink();
+            $tw     = $personnel->getTwLink();
+            $li     = $personnel->getLiLink();
+            $id     = $personnel->getId();
+            
+            //* CONNECT DB
+            $db = ConnectionMysqliDao::connect();   
+
+            //* Modification  
+            try {
+                $updateRequest = $db->prepare("UPDATE personnel SET nom = :nom, prenom= :prenom, emploi = :emp, description = :description, photo = :photo, facebooklink= :fb, twitterlink= :tw, linkedinlink=:li WHERE id = :id" );
+                $updateRequest->execute(array(
+                    ":nom"         => $nom,
+                    ":prenom"      => $prenom,
+                    ":emp"         => $emp,
+                    ":description" => $desc,
+                    ":photo"       => $photo,
+                    ":fb"          => $fb,
+                    ":tw"          => $tw,
+                    ":li"          => $li,
+                    ":id"          => $id));
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            } finally {
+                
+            }
+        }
+        public function deletePersonnelDAO(int $id){
+            //* CONNECT DB
+            $db = ConnectionMysqliDao::connect();   
+
+            //* ADD   
+            try {
+                $deleteRequest = $db->prepare("DELETE * FROM personnel WHERE id = $id");
+                $deleteRequest->execute();               
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            } finally {
+                
             }
         }
     }
