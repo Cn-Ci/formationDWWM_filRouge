@@ -39,7 +39,7 @@
         }
     }
 
-function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
+function RenderForumMain(Array $Topics, Exception $e = NULL, $currentPage, $pages) :Void {
     ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -107,7 +107,23 @@ function RenderForumMain(Array $Topics, Exception $e = NULL) :Void {
                                 <div class="row">
                                     <div class="col-lg-10"></div>
                                     <div class="col-sm-12 col-lg-2 mt-3 text-right">
-                                        <button type="submit" class="btn-pagination btn btn-success color-228B22 mb-10 ombre ml-1 mr-1" id="boutonsubmit">1</button>
+                                     <nav>
+                                        <ul class="pagination">
+                                            <li class="<?php echo ($currentPage== 1) ? "page-item disabled" : "page-item" ?>">
+                                                <a href="../controller/controleurTopic.php?action=showAllTopic&page=<?= $currentPage -1 ?>" class="page-link" >Précédente</a>
+                                            </li>
+                                            <?php for($page=1; $page<= $pages; $page ++): ?>
+                                                    <li class="<?= ($currentPage==$page) ? "page-item active" : "page-item" ?>" >
+                                                        <a href="../controller/controleurTopic.php?action=showAllTopic&page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                                                    </li>
+                                            <?php endfor ?>
+
+                                            <li class="<?= ($currentPage==$pages) ? "page-item disabled" : "page-item" ?>" >
+                                                <a href="../controller/controleurTopic.php?action=showAllTopic&page=<?= $currentPage +1 ?>" class="page-link">Suivante</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                        <!-- <button type="submit" class="btn-pagination btn btn-success color-228B22 mb-10 ombre ml-1 mr-1" id="boutonsubmit">1</button> -->
                                     </div>
                                 </div>
                             </div>
