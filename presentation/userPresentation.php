@@ -61,7 +61,7 @@ include_once('../templates/header.php');
         </div>
         <div class="row">
             <div class="col-12">
-                <div id="jumbo" class="jumbotron p-1 m-1">Le mot de passe doit comporter au moins 
+                <div id="jumbo" class="p-1 m-1">Le mot de passe doit comporter au moins 
                     <div class="col-12">
                         <span class="caracteres">
                             <span class="caracteres_ok"><i class="fas fa-check-circle"></i></span>
