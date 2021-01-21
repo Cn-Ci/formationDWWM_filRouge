@@ -90,8 +90,8 @@ include_once('../templates/header.php');
             </div>
         </div>
         <div class="fichier col col-sm-5">
-        <?php $photo = '../img/profilDefaut.jpg'; ?>
-            <img id="photoUser" src="<?= $photo ?>" alt="photo" width="100px">
+            <?php $photo = '../img/profilDefaut.jpg'; ?>
+            <img id="photoUser" src="<?= $photo ?>" alt="photo">
             <input requided class="col col-12 text-center form-control-plaintext" type="file" name="photo" onchange="previewFile()" placeholder="Selectionner votre photo ci dessous"> <br/>
             <hr>
         </div>    
@@ -259,9 +259,11 @@ include_once('../templates/header.php');
             <div class="mail col col-sm-5">    
                 <input class="col-12 col-lg-12 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
             </div>
-            <?php $photo = ($user->getPhoto() != '') ? 'data:image/jpeg;base64,base64_encode( '.$user->getPhoto().')' : '../img/profilDefaut.jpg'; ?>
-            <img id="photoUser" src="<?= $photo ?>" alt="photo" width="100px">
+            
             <div class="fichier col col-sm-5">
+           
+            <?php $photo = ($user->getPhoto() != '') ? 'data:image/jpeg;base64, '.base64_encode( $user->getPhoto()).'' : '../img/profilDefaut.jpg'; ?>
+            <img id="photoUser" src="<?= $photo ?>" alt="photo" >
                 <input class="col-12 col-lg-12 text-center form-control-plaintext" type="file" onchange="previewFile()" name="photo" value="" placeholder="Modifiez votre photo"><br/>
                 <hr>
             </div>  
@@ -272,7 +274,7 @@ include_once('../templates/header.php');
                 <button type="submit" class='retour col-4 text-center btn btn-dark m-2 '><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>    
         </div>
-        <sodium_crypto_sign_ed25519_pk_to_curve25519>
+        <script>
             window.onload = function(){
                 document.getElementById('myTextFocusPseudoModif').focus();
             }
@@ -292,7 +294,7 @@ include_once('../templates/header.php');
                     preview.src = "";
                 }
             }
-        </sodium_crypto_sign_ed25519_pk_to_curve25519>
+        </script>
 <?php 
 }
 ?>   

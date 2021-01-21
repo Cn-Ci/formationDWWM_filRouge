@@ -103,7 +103,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 else 
                 {
                     /**_ CONNEXION - If email not-exist ___**/ 
-                     connexion(23004);
+                     connection(23004);
                 }  
             }
             catch (ServiceException $se) {
@@ -137,18 +137,19 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     
             $userEdit = new UserConnectService;
             $data = $userEdit->editUser($user); 
-        }elseif(empty($_POST['photo'])){
+        }else{
+            
             $user = new User;
             $user->setPseudo(htmlentities($_POST['pseudo']))
                 ->setEmail(htmlentities($_POST['email']))
                 ->setNom(htmlentities($_POST['nom']))
-                ->setPrenom(htmlentities($_POST['prenom']))
-                ->setPhoto($image = null);
+                ->setPrenom(htmlentities($_POST['prenom']));
+              // ->setPhoto($image = null);
     
             $userEdit = new UserConnectService;
-            $data = $userEdit->editUser($user);         
+            $data = $userEdit->editUser($user); 
         }
-        include_once('../controller/controleurMain.php');
+        header('location:../controller/controllerUserConnect.php?action=modif');
         // "Votre modification a bien été enregistrée !"
     }
 
