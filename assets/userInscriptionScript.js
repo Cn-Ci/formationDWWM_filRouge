@@ -165,4 +165,3 @@ $("#confirm_password_inscription").on('keyup', function(){
         $(".identique").css("color", "green");
     }
 });
-

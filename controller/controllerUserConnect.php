@@ -30,20 +30,32 @@ if (isset($_GET['action']) && !empty($_GET['action']))
         {
             try {
             /**_ INSCRIPTION - Verification email _________**/
-            $image=$_FILES['photo']['tmp_name'];           
-            $imageaEnvoyer = file_get_contents($image);
-            $user = new User;
-            $user->setPseudo(htmlentities($_POST['pseudo']))
-                ->setEmail(htmlentities($_POST['email']))
-                ->setNom(htmlentities($_POST['nom']))
-                ->setPrenom(htmlentities($_POST['prenom']))
-                ->setPhoto($imageaEnvoyer)
-                ->setMdp(htmlentities($_POST['password']));
+            $photo = $_FILES['photo']['tmp_name'];
+
+            if($photo != null){
+                $image=$_FILES['photo']['tmp_name'];           
+                $imageaEnvoyer = file_get_contents($image);
+                $user = new User;
+                $user->setPseudo(htmlentities($_POST['pseudo']))
+                    ->setEmail(htmlentities($_POST['email']))
+                    ->setNom(htmlentities($_POST['nom']))
+                    ->setPrenom(htmlentities($_POST['prenom']))
+                    ->setPhoto($imageaEnvoyer)
+                    ->setMdp(htmlentities($_POST['password']));
+            } elseif(empty($_POST['photo'])) {
+                $user = new User;
+                $user->setPseudo(htmlentities($_POST['pseudo']))
+                    ->setEmail(htmlentities($_POST['email']))
+                    ->setNom(htmlentities($_POST['nom']))
+                    ->setPrenom(htmlentities($_POST['prenom']))
+                    ->setPhoto($image = null)
+                    ->setMdp(htmlentities($_POST['password']));
+            }
                 
             if (UserConnectService::UserVerifEmailAndHash($user,($_POST['email'])))
                 {
                     /**_ INSCRIPTION - if email not exist et hash ______**/
-                    include_once('../controller/controleurMain.php');
+                    connection(24002);
                     // "Vous etes inscrit"
                 }
                 else 
@@ -86,7 +98,7 @@ if (isset($_GET['action']) && !empty($_GET['action']))
                 {
                     /**_ CONNEXION - If email exist ______**/
                     include_once('../controller/controleurMain.php');
-                    // connection(24002); "Vous etes connecté"
+                    
                 }
                 else 
                 {
@@ -110,12 +122,9 @@ if (isset($_GET['action']) && !empty($_GET['action']))
     }
     elseif($_GET["action"]=="modifierOK") 
     {    
-        var_dump($_FILES);
         $photo = $_FILES['photo']['tmp_name'];
 
         if($photo != null){
-
-            echo "test si il ya une photo";
             $image=$_FILES['photo']['tmp_name'];           
             $imageaEnvoyer = file_get_contents($image);  
             
@@ -129,7 +138,6 @@ if (isset($_GET['action']) && !empty($_GET['action']))
             $userEdit = new UserConnectService;
             $data = $userEdit->editUser($user); 
         }elseif(empty($_POST['photo'])){
-            echo "test si il ya pas photo";
             $user = new User;
             $user->setPseudo(htmlentities($_POST['pseudo']))
                 ->setEmail(htmlentities($_POST['email']))

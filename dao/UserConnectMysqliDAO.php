@@ -16,29 +16,28 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $newConnect = new ConnectionMysqliDAO();
             $db = $newConnect->connect(); 
 
-            $getPseudo = $user->getPseudo();
-            $getEmail = $user->getEmail();
-            $getNom = $user->getNom();
-            $getPrenom = $user->getPrenom();
-            $getPhoto = $user->getPhoto();
-            $getMdp = $user->getMdp();
+            $pseudo = $user->getPseudo();
+            $email = $user->getEmail();
+            $nom = $user->getNom();
+            $prenom = $user->getPrenom();
+            $photo = $user->getPhoto();
+            $photoNull = "";
+            $mdp = $user->getMdp();
             $profil = 'utilisateur';
 
-
-            if(!empty($photo) && $photo!=null){
-                $stmt = $db->prepare("INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:photo,:mdp,:profil)");           
-            }elseif (empty($photo) && $photo ==null){
-                $stmt = $db->prepare("INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:mdp,:profil)");           
-            } 
+            $stmt = $db->prepare("INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:photo,:mdp,:profil)");           
             
-            $stmt->bindParam(':pseudo', $getPseudo);           
-            $stmt->bindParam(':email', $getEmail);
-            $stmt->bindParam(':nom', $getNom);
-            $stmt->bindParam(':prenom', $getPrenom);
+            
+            $stmt->bindParam(':pseudo', $pseudo);           
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':prenom', $prenom);
             if(!empty($photo) && $photo!=null){
-                $stmt->bindParam(':photo', $getPhoto);
-            }
-            $stmt->bindParam(':mdp', $getMdp);
+                $stmt->bindParam(':photo', $photo);
+            }elseif (empty($photo) && $photo ==null){
+              $stmt->bindParam(':photo', $photoNull);          
+            } 
+            $stmt->bindParam(':mdp', $mdp);
             $stmt->bindParam(':profil', $profil);
 
             $stmt->execute();

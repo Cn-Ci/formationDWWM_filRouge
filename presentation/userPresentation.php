@@ -90,7 +90,9 @@ include_once('../templates/header.php');
             </div>
         </div>
         <div class="fichier col col-sm-5">
-            <input requided class="col col-12 text-center form-control-plaintext" type="file" name="photo" placeholder="Selectionner votre photo ci dessous"> <br/>
+        <?php $photo = '../img/profilDefaut.jpg'; ?>
+            <img id="photoUser" src="<?= $photo ?>" alt="photo" width="100px">
+            <input requided class="col col-12 text-center form-control-plaintext" type="file" name="photo" onchange="previewFile()" placeholder="Selectionner votre photo ci dessous"> <br/>
             <hr>
         </div>    
             <button class="btnConnexion col col-lg-2 text-center btn btn-primary mt-3" type="submit" name="inscrire">S'inscrire</button>    
@@ -132,6 +134,22 @@ include_once('../templates/header.php');
         type="text/javascript" 
         src="../assets/userInscriptionScript.js">
     </script>
+    <script>
+     function previewFile() {
+                var preview = document.querySelector('img');
+                var file    = document.querySelector('input[type=file]').files[0];
+                var reader  = new FileReader();
+
+                reader.onloadend = function () {
+                    preview.src = reader.result;
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = "";
+                }
+            }</script>
 <?php
 }
 
@@ -140,7 +158,7 @@ function connection($errorCode=null){
         echo "<center><div class='alert alert-danger'> Erreur lors de l'affichage de la page de Connection! !</div></center>";
     }
     elseif($errorCode && $errorCode == 24002){
-        echo "<center><div class='alert alert-success'> Bonjour Toto, vous êtes bien connecté ! !</div></center>";
+        echo "<center><div class='alert alert-success'> Vous êtes inscrit, vous pouvez maintenant vous connecter ! !</div></center>";
     }
     ?>
 <head>
@@ -241,15 +259,12 @@ include_once('../templates/header.php');
             <div class="mail col col-sm-5">    
                 <input class="col-12 col-lg-12 text-center form-control-plaintext" type="text" name="prenom" value="<?php echo $user->getPrenom()?>" placeholder="Modifiez votre prenom" > <br/>
             </div>
-            </div>
-            <img id="photoUser" src="data:image/jpeg;base64,<?php echo base64_encode( $user->getPhoto()) ?>" alt="">
+            <?php $photo = ($user->getPhoto() != '') ? 'data:image/jpeg;base64,base64_encode( '.$user->getPhoto().')' : '../img/profilDefaut.jpg'; ?>
+            <img id="photoUser" src="<?= $photo ?>" alt="photo" width="100px">
             <div class="fichier col col-sm-5">
-                
-                <input class="col-12 col-lg-12 text-center form-control-plaintext" type="file" name="photo" value="" placeholder="Modifiez votre photo"><br/>
+                <input class="col-12 col-lg-12 text-center form-control-plaintext" type="file" onchange="previewFile()" name="photo" value="" placeholder="Modifiez votre photo"><br/>
                 <hr>
             </div>  
-            
-            
             <input type="submit" class="btnConnexion col col-lg-2 text-center btn btn-primary mb-4 mt-3" value="Modifier"/>
         </form>
         <div class="col-12 text-center mb-">
@@ -257,11 +272,27 @@ include_once('../templates/header.php');
                 <button type="submit" class='retour col-4 text-center btn btn-dark m-2 '><i class="fas fa-sign-in-alt"></i> Retour à la page d'accueil</button>
             </a>    
         </div>
-        <script>
+        <sodium_crypto_sign_ed25519_pk_to_curve25519>
             window.onload = function(){
                 document.getElementById('myTextFocusPseudoModif').focus();
             }
-        </script>
+
+            function previewFile() {
+                var preview = document.querySelector('img');
+                var file    = document.querySelector('input[type=file]').files[0];
+                var reader  = new FileReader();
+
+                reader.onloadend = function () {
+                    preview.src = reader.result;
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = "";
+                }
+            }
+        </sodium_crypto_sign_ed25519_pk_to_curve25519>
 <?php 
 }
 ?>   
