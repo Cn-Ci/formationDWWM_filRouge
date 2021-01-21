@@ -28,9 +28,9 @@ include_once('header.php');
                 <input class="col-6 col-md-3 btn btn-success mt-2" id="btn-newsletter" type="submit" name="envoyer"/> 
                 <div id="emailNewsletter_verif">
                     <span class="emailNewsletter">
-                        <span class="emailNewsletter_ok">"Vous êtes inscrits à la Newsletter !</span>
-                        <span class="emailNewsletter_ko">"Un problème est survenu lors de votre inscription !"</span>
-                        <span class="emailNewsletter_pas_ok">"Cet e-mail est déjà inscrit à la Newsletter"</span>
+                        <span class="emailNewsletter_ok">Vous êtes inscrits à la Newsletter !</span>
+                        <span class="emailNewsletter_ko">Un problème est survenu lors de votre inscription !</span>
+                        <span class="emailNewsletter_pas_ok">Cet e-mail est déjà inscrit à la Newsletter</span>
                     </span>
                 </div>
             </form>

@@ -24,12 +24,14 @@ function afficherPersonnel(array $personnels){
             </div>
             <?php if(isset($_SESSION) && !empty($_SESSION) && $_SESSION['profil'] == 'administrateur'){
                 ?>
-                <a href='../controller/controlleurFormAddEmploye.php?action=modifier&id=<?= $personne->getId() ?>'>
-                    <button type="submit" class="btn btn-outline-success col-1 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i>  </button>           
-                </a>
-                <a href='../controller/controllerPersonnel.php?action=supprimer&id=<?= $personne->getId() ?>'>
-                    <button type="submit" class="btn btn-outline-danger col-1 col-lg-3"><i class="fas fa-trash-alt"></i> </button>           
-                </a>
+                <div class="text-right">
+                    <a href='../controller/controlleurFormAddEmploye.php?action=modifier&id=<?= $personne->getId() ?>'>
+                        <button type="submit" class="btn btn-outline-success col-1 col-lg-1 text-center ml-5 "><i class="fas fa-pen"></i>  </button>           
+                    </a>
+                    <a href='../controller/controllerPersonnel.php?action=supprimer&id=<?= $personne->getId() ?>'>
+                        <button type="submit" class="btn btn-outline-danger col-1 col-lg-1"><i class="fas fa-trash-alt"></i> </button>           
+                    </a>
+                </div>
             <?php } ?>
             <hr>
         </div>

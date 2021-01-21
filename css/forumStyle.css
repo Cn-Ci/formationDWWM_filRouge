@@ -24,6 +24,18 @@ th{
     background-color: #228b22 !important; 
     color           : white;
 }
+#test {
+    z-index: 1;
+    height: 84.1%;
+    background-image: url(../img/forumBg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gradientBlock{
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 100%);
+}
 
 @media screen and (min-width: 1920px) {
     #test{

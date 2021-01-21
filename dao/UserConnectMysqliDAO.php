@@ -24,14 +24,20 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $getMdp = $user->getMdp();
             $profil = 'utilisateur';
 
-            $query = "INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:photo,:mdp,:profil)";           
-            $stmt = $db->prepare($query); 
+
+            if(!empty($photo) && $photo!=null){
+                $stmt = $db->prepare("INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:photo,:mdp,:profil)");           
+            }elseif (empty($photo) && $photo ==null){
+                $stmt = $db->prepare("INSERT INTO user VALUES (NULL,:pseudo,:email,:nom,:prenom,:mdp,:profil)");           
+            } 
             
             $stmt->bindParam(':pseudo', $getPseudo);           
             $stmt->bindParam(':email', $getEmail);
             $stmt->bindParam(':nom', $getNom);
             $stmt->bindParam(':prenom', $getPrenom);
-            $stmt->bindParam(':photo', $getPhoto);
+            if(!empty($photo) && $photo!=null){
+                $stmt->bindParam(':photo', $getPhoto);
+            }
             $stmt->bindParam(':mdp', $getMdp);
             $stmt->bindParam(':profil', $profil);
 
@@ -57,6 +63,8 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt->bindParam(":email", $email);
             $stmt->execute();
             $userEmail = $stmt->fetch();
+            if(!empty ($userEmail))
+            {
             $user = new User();
             $user->setId($userEmail['id'])
                 ->setPseudo($userEmail['pseudo'])
@@ -66,6 +74,9 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
                 ->setPhoto($userEmail['photo'])
                 ->setMdp($userEmail['mdp'])
                 ->setProfil($userEmail['profil']);
+            } else {
+                $user = null;
+            }
             return $user;
         }
         catch (PDOException $e) {

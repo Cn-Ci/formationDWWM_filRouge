@@ -31,7 +31,7 @@ ul {
     font-family     : 'Caviar Dreams', sans-serif;
 }
 #page4 {
-    height          : 100vh; 
+    height          : 70vh; 
     font-family     : 'Caviar Dreams', sans-serif;
 }
 .couleur{
@@ -260,7 +260,7 @@ a.socialIcon:hover, .socialHoverClass {
         height: 100%;
     }
     #page3 {
-        height          : 370vh; 
+        height          : 250vh; 
     }
     #blocLogo{
         margin-top   : 20%; 

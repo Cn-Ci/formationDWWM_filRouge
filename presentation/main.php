@@ -106,9 +106,11 @@
                     
                         <?php include('../controller/controllerPersonnel.php') ?>
                         <?php if(isset($_SESSION) && !empty($_SESSION) && $_SESSION['profil']=='administrateur'){?>
+                        <div class="text-center">
                             <a href='../controller/controlleurFormAddEmploye.php?action=ajouter'>
                                 <button type="submit" class="btn btn-warning col-1 col-lg-3 text-center ml-5 "><i class="fas fa-user-plus"></i>  </button>           
                             </a>
+                        </div>
                         <?php } ?>
                 </div>
 
