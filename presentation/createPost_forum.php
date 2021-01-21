@@ -26,10 +26,6 @@
             rel="stylesheet">
 
         <!-- API MESSAGE TOOLSBAR-->
-        <script 
-            src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" 
-            referrerpolicy="origin">
-        </script>
         <script>
             tinymce.init({
                 selector: 'textarea#inputContent',
@@ -38,6 +34,10 @@
                 toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
                 menubar: false
             });
+        </script>
+        <script 
+            src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" 
+            referrerpolicy="origin">
         </script>
     </head>
 
@@ -64,7 +64,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="blockTopic">
-                            <form method='POST' action='../controller/controleurTopic.php?action=add'>                                                
+                            <form method='POST' action='../controller/controleurTopic.php'>                                                
                                 <input type="text" name="title" id="inputTitle" placeholder="Titre..." class="mb-5">
                                 
                                 <textarea name="content" id="inputContent" cols="30" rows="15" placeholder="Mon avis..."></textarea>
@@ -85,7 +85,7 @@
                             <form method='POST' action='../controller/controleurTopic.php?action=modify&idPost=<?php echo "$id"?>'>                                               
                                 <input type="text" name="title" id="inputTitle" class="mb-5" value="<?php echo $title ?>">
                                 
-                                <textarea name="content" id="inputContent" cols="30" rows="15"> <?php echo $content ?></textarea>
+                                <textarea name="content" id="inputContent" cols="30" rows="15"> <?php echo html_entity_decode($content) ?></textarea>
                                 
                                 <input id="validate" name="ModifyTopic" class="btn btn-success color-228B22 text-center pl-5 pr-5 mt-5" type="submit" value="Valider">
                             </form>   
