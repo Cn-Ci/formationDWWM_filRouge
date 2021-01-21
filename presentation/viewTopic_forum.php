@@ -1,5 +1,6 @@
 <?php 
     function renderViewPost(Topic $Topic, Object $Author, Array $commentaires = null) {
+        
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -58,7 +59,7 @@
                             <div id='infoBlock' class='p-1'>
                                 <p id='info'>
                                     <span>Créer le : <?php echo $Topic->datetimeToString($Topic->getDateTopic()); ?></span>
-                                    <span id='author'>Auteur : <?php echo $Author['pseudo'] ?></span>
+                                    <span id='author'>Auteur : <?php echo $Author->getPseudo() ?></span>
                                 </p>
                             </div>
                         </div>
