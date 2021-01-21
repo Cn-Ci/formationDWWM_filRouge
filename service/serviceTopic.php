@@ -52,6 +52,25 @@
             } 
         }
 
+        public  static function serviceSearchAllPerTen($premierTopic, $topicParPage){
+            $dao = new TopicMysqliDao();
+            $dataToObject = array();
+            try{
+                $data = $dao->researchPerTen($premierTopic, $topicParPage);
+                foreach ($data as $value) {
+                    $author = UserConnectMysqliDAO::researchUserById($value['idUsers']);
+                    $topic = new Topic();
+                    $datePost = new Datetime($value['date']);
+                    $topic->setIdTopic($value['idTopic'])->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
+                    array_push($dataToObject, $topic);
+                }
+                return $dataToObject;
+
+            } catch (DaoSqlException $ServiceException) {
+                throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
+            } 
+        }
+
         public static function serviceUpdateTopic(Int $idTopic, String $titre, Datetime $DatePost, String $Content, Int $nbComm, Int $idAuthor) :Void {
             $TopicToModify = new Topic();
             $TopicToModify->setTitreTopic($titre)->setDateTopic($DatePost)->setContentTopic($Content)->setNbComm($nbComm)->setIdAuthor($idAuthor);

@@ -122,9 +122,19 @@ class UserConnectMysqliDAO extends ConnectionMysqliDao {
             $stmt = $db->prepare($query);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            $userId = $stmt->fetch(MYSQLI_ASSOC);
-
-            return $userId;
+            $userId = $stmt->fetch();
+            
+            $user = new User();
+            $user->setId($userId['id'])
+                ->setPseudo($userId['pseudo'])
+                ->setEmail($userId['email'])
+                ->setNom($userId['nom'])
+                ->setPrenom($userId['prenom'])
+                ->setPhoto($userId['photo'])
+                ->setMdp($userId['mdp'])
+                ->setProfil($userId['profil']);
+               
+            return $user;
             
         } catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";

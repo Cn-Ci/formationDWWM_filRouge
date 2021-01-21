@@ -55,6 +55,21 @@
                 throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
             }
         }
+        public function researchPerTen($premierTopic, $topicParPage) :?Array {
+            $db = ConnectionMysqliDao::connect();
+            try{
+                $sql    = 'SELECT * from `topic` order by `idTopic` DESC LIMIT :premierTopic , :topicParPage ;';
+                $query  = $db->prepare($sql);
+                $query->bindParam(':premierTopic', $premierTopic, PDO::PARAM_INT);
+                $query->bindParam(':topicParPage', $topicParPage, PDO::PARAM_INT);
+                $query->execute();
+                $topics= $query->fetchAll(PDO::FETCH_ASSOC) ;
+                return $topics;
+            } catch (PDOException $DaoException) {
+                throw new DaoSqlException($DaoException->getMessage(), $DaoException->getCode());
+            }
+            
+        }
 
         public function update(Object $Topic, Int $idTopic) :Void {
             $db = ConnectionMysqliDao::connect();

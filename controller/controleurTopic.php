@@ -1,6 +1,44 @@
 <?php 
     require_once('../service/serviceTopic.php');
     require_once('../presentation/forumMain.php');
+//on détermine la page où on est
+if(isset($_GET['page']) && !empty($_GET['page'])){
+    $currentPage = (int) strip_tags($_GET['page']);
+}else{
+    $currentPage= 1;
+}
+
+
+
+//nombre article total
+$db= new PDO('mysql:host=localhost;dbname=cnciprrcnci;charset=utf8', 'root', '');
+$sql    = 'SELECT count(*) as nbTopic from `topic`;';
+$query  = $db->prepare($sql);
+$query->execute();
+$resultat= $query->fetch() ;
+
+$nbTopic = (int) $resultat['nbTopic'];
+
+
+//nombre article par page
+$topicParPage = 10;    
+
+//calcul du nombre de pages
+$pages = ceil($nbTopic/ $topicParPage);
+
+//calcul premier topic de la page
+$premierTopic = ($currentPage * $topicParPage) - $topicParPage;
+
+
+//tous les topics
+$sql    = 'SELECT * from `topic` order by `idTopic` DESC LIMIT :premierTopic , :topicParPage ;';
+$query  = $db->prepare($sql);
+$query->bindParam(':premierTopic', $premierTopic, PDO::PARAM_INT);
+$query->bindParam(':topicParPage', $topicParPage, PDO::PARAM_INT);
+$query->execute();
+$topics= $query->fetchAll(PDO::FETCH_ASSOC) ;
+
+
 
     if (!empty($_POST)) {
         if (isset($_POST['AddTopic'])) {
@@ -15,8 +53,9 @@
 
                 try {
                     ServiceTopic::serviceAddTopic($title, $datePost, $content, $nbComment, $Author);
-                    $Topics = ServiceTopic::serviceReseachAll();
-                    RenderForumMain($Topics);
+                    
+                    
+                    
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }
@@ -34,8 +73,7 @@
 
                 try {
                     ServiceTopic::serviceUpdateTopic($id, $title, $datePost, $content, $nbComment, $idAuthor);
-                    $Topics = ServiceTopic::serviceReseachAll();
-                    RenderForumMain($Topics);
+                    
                 } catch(ServiceException $ce) {
                     echo 'Error';
                 }
@@ -50,60 +88,24 @@
                     
                     try {
                         ServiceTopic::serviceDeleteTopic($idTopic);
-                        $Topics = ServiceTopic::serviceReseachAll();
-                        RenderForumMain($Topics);
+                        
                     } catch(ServiceException $ce) {
                         echo 'Error';
                     }    
                 }
              }else if ($_GET["action"]=="showAllTopic") {
                 try {
-                    $Topics = ServiceTopic::serviceReseachAll();
-                    RenderForumMain($Topics);
+                    
                 } catch(ServiceException $ce) {
                     RenderForumMain($Topics, $ce);
                 }  
             }
         }
     }
-    
-//on détermine la page où on est
-    if(isset($_GET['page']) && !empty($_GET['page'])){
-        $currentPage = (int) strip_tags($_GET['page']);
-    }else{
-        $currentPage= 1;
-    }
 
-
-
-//nombre article total
-    $db= new PDO('mysql:host=localhost;dbname=cnciprrcnci;charset=utf8', 'root', '');
-    $sql    = 'SELECT count(*) as nbTopic from `topic`;';
-    $query  = $db->prepare($sql);
-    $query->execute();
-    $resultat= $query->fetch() ;
-
-    $nbTopic = (int) $resultat['nbTopic'];
+    // $Topics = ServiceTopic::serviceReseachAll();
+    RenderForumMain($topics, $e=null,$currentPage, $pages);
     
 
-//nombre article par page
-    $topicParPage = 10;    
-
-//calcul du nombre de pages
-    $pages = ceil($nbTopic/ $topicParPage);
     
-//calcul premier topic de la page
-    $premierTopic = ($currentPage * $topicParPage) - $topicParPage;
-    
-
-//tous les topics
-    $sql    = 'SELECT * from `topic` order by `idTopic` DESC LIMIT :premierTopic , :topicParPage ;';
-    $query  = $db->prepare($sql);
-    $query->bindParam(':premierTopic', $premierTopic, PDO::PARAM_INT);
-    $query->bindParam(':topicParPage', $topicParPage, PDO::PARAM_INT);
-    $query->execute();
-    $topics= $query->fetchAll(PDO::FETCH_ASSOC) ;
-    
-
-    pagination($currentPage,  $pages)
 ?> 
