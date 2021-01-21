@@ -10,7 +10,7 @@
     //comment récupérer 
       if(isset($_GET) && !empty($_GET) && isset($_GET['region'])){
         $region = $_GET['region'];
-        $destinations=ServiceDestination::serviceResearchByRegion($region);
+        $destinations= (new ServiceDestination())->serviceResearchByRegion($region);
         if(!empty($destinations)){
            affichageDestination($destinations, $region, $session); 
         }else{

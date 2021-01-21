@@ -22,7 +22,7 @@ function afficherPersonnel(array $personnels){
                     <li><a href ="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin" style="font-size:3rem; color:#007bb7"><?= $personne->getLiLink()?></i></a></li>
                 </ul>
             </div>
-            <?php if($_SESSION['profil'] == 'administrateur'){
+            <?php if(isset($_SESSION) && !empty($_SESSION) && $_SESSION['profil'] == 'administrateur'){
                 ?>
                 <a href='../controller/controlleurFormAddEmploye.php?action=modifier&id=<?= $personne->getId() ?>'>
                     <button type="submit" class="btn btn-outline-success col-1 col-lg-3 text-center ml-5 "><i class="fas fa-pen"></i>  </button>           
