@@ -156,9 +156,8 @@ function RenderForumMain(Array $topics, Exception $e = NULL, $currentPage, $page
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
                 crossorigin="anonymous">
             </script>
-            <script 
-                type="text/javascript" 
-                src="../script.js">
+            <script type="text/javascript">
+                $(".alert").fadeOut(3000);
             </script>
             <script
                 type="text/javascript"  
