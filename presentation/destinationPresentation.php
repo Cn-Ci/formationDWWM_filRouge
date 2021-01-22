@@ -7,6 +7,7 @@ function html($title){ ?>
             <title><?php echo $title  ?></title>
             <meta charset="utf-8">
             <!-- BOOTSTRAP -->
+            <link rel="shortcut icon" type="image/png" href="../img/favicon-32x32.png"/>
             <link 
                 rel="stylesheet" 
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
@@ -50,6 +51,7 @@ function navbar(){ ?>
     <!-- Navbar -->
     <div class="container-fluid">
         <?php include '../navbar.php';?>
+        
     </div>
     
     <div class="principale">
@@ -179,6 +181,9 @@ function affichageDestination($destination, $region, $session)
 
 function buttonAjout($maj=null, $dest=null)
 { 
+    if (!$_SESSION){
+        header('../controller/controllerDestination.php');
+    }
     if($maj){$idDestination = $dest->getIdDestination();}?>
      
         <div class="buttonsDestination m-4 col-5"> 
