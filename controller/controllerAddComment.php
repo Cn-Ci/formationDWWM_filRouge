@@ -1,6 +1,6 @@
 <?php 
-require_once '../service/serviceCommentTopic.php';
 
+require_once '../service/serviceCommentTopic.php';
 
 if (isset($_POST) && isset($_POST['addComment'])) {
     $idAuthor      = 7;

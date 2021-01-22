@@ -114,9 +114,9 @@ function RenderForumMain(Array $topics, Exception $e = NULL, $currentPage, $page
                             <div class="col-sm-8">
                                 <div class="row">
                                     <div class="col-lg-10"></div>
-                                    <div class="col-sm-12 col-lg-2 mt-3 text-right">
-                                     <nav>
-                                        <ul class="pagination">
+                                    <div class="col-sm-12 col-lg-2 mt-3 ">
+                                     <nav class="d-flex justify-content-center">
+                                        <ul class="pagination ">
                                             <li class="<?php echo ($currentPage== 1) ? "page-item disabled" : "page-item" ?>">
                                                 <a href="../controller/controleurTopic.php?action=showAllTopic&page=<?= $currentPage -1 ?>" class="page-link" >Précédente</a>
                                             </li>
