@@ -41,7 +41,7 @@
                     $author = UserConnectMysqliDAO::researchUserById($value['idUsers']);
                     $Topic = new Topic();
                     $datePost = new Datetime($value['date']);
-                    $Topic->setIdTopic($value['idTopic'])->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->pseudo);
+                    $Topic->setIdTopic($value['idTopic'])->setTitreTopic($value['titreTopic'])->setDateTopic($datePost)->setContentTopic($value['contenu'])->setNbComm($value['nbComm'])->setIdAuthor($author->getPseudo());
                     array_push($dataToObject, $Topic);
                 }
                 

@@ -26,7 +26,7 @@
             $commentContent   = $comment->getContenuComm();
             $idAuthor         = $comment->getIdAuthor();
             $idPost           = $comment->getIdTopic();
-
+            
             //* LAUNCH AUTO INCREMENT OF NBCOMM IN PARENTTOPIC
             Self::incrementParentPostNbComm($idPost);
 
@@ -43,11 +43,12 @@
             }
         }
 
-        public static function delete(Int $idComm) {
+        public static function delete(Int $idComm, Int $idParentTopic) :Void {
             $db = ConnectionMysqliDao::connect();
+            var_dump($idParentTopic);
 
             //* LAUNCH AUTO DECREMENT OF NBCOMM IN PARENTTOPIC
-            Self::decrementParentPostNbComm($idComm);
+            Self::decrementParentPostNbComm($idParentTopic);
 
             try {
                 $deleteRequest = $db->prepare("DELETE FROM commentaire WHERE idComm = :idComm");
@@ -77,6 +78,7 @@
         public static function decrementParentPostNbComm(int $idTopic) :Void {
             $db = ConnectionMysqliDao::connect();
 
+            var_dump($idTopic);
             try {
                 $incrementComm = $db->prepare("UPDATE `topic` SET nbComm = (@cur_value := nbComm) - 1 WHERE idTopic = :idTopic");
                 $incrementComm->execute(array(

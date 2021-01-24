@@ -26,7 +26,7 @@ if (isset($_GET['action'])){
     } elseif ($_GET['action'] == 'deleteComm') {
         $idComm        = $_GET['idComm'];
         $idTopicParent = $_GET['idPost'];
-        ServiceCommentTopic::deleteComment($idComm);
+        ServiceCommentTopic::deleteComment($idComm, $idTopicParent);
         header("location: ../controller/controllerViewTopic.php?idPost=$idTopicParent");
     } else {
         die();

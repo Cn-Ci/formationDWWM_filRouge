@@ -30,5 +30,8 @@ body{
 }
 #options{
     float: right;
-    color: black;
+    color: #28a745;
+}
+#options:hover {
+    cursor: pointer;
 }

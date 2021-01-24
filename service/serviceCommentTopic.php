@@ -44,10 +44,10 @@ class ServiceCommentTopic {
 
     }
 
-    public function deleteComment(Int $idComment) :Void {
+    public function deleteComment(Int $idComment, Int $idParentTopic) :Void {
         try {
             $dao = new DaoCommentTopic();
-            $dao->delete($idComment);
+            $dao->delete($idComment, $idParentTopic);
         } catch (DaoSqlException $ServiceException) {
             throw new ServiceException($ServiceException->getMessage(), $ServiceException->getCode());
         }

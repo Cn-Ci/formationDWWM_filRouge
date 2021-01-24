@@ -15,6 +15,6 @@
 
     function getUsernameById(Int $id) {
         $rs = ServiceViewTopic::searchUserById($id);
-        return $rs['pseudo'];
+        return $rs->getPseudo();
     }
 ?> 
